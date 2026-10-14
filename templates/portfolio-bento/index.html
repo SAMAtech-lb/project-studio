@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lea Sørensen — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.dataset.theme = localStorage.getItem("lea-theme") || "light";</script>
+</head>
+<body>
+  <div class="page">
+    <header class="top">
+      <a href="#" class="top__name"><span>L</span>Lea Sørensen</a>
+      <nav class="pills"><a href="#" class="on">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    </header>
+
+    <section class="bento" id="bento">
+      <!-- Intro -->
+      <article class="card intro w2 h2">
+        <div class="intro__top">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Lea Sørensen" />
+          <span class="badge"><i></i>Available from November</span>
+        </div>
+        <div>
+          <h1>Product designer crafting <span class="serif">calm, useful</span> software people love to open.</h1>
+          <p>Eight years designing apps and design systems for fintech, health and productivity teams. Currently independent, previously Lead Designer at Lumen.</p>
+          <div class="intro__btns">
+            <a href="#contact" class="btn"><i class="ri-mail-send-line"></i> Get in touch</a>
+            <button class="btn btn--soft" id="copyEmail"><i class="ri-file-copy-line"></i> Copy email</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Location -->
+      <article class="card loc">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80" alt="Copenhagen" />
+        <span class="loc__pin"></span>
+        <div class="loc__info"><b>Copenhagen, DK</b><span id="time">--:--</span></div>
+      </article>
+
+      <!-- Music -->
+      <article class="card music" id="music">
+        <span class="label"><i class="ri-headphone-line"></i> Designing to</span>
+        <div class="music__top">
+          <img class="music__cover" src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=150&q=80" alt="" />
+          <div><b>Midnight Studio</b><span>Lo-fi focus mix</span></div>
+        </div>
+        <div class="music__bottom">
+          <div class="eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <button class="play" id="playBtn" aria-label="Pause"><i class="ri-pause-fill"></i></button>
+        </div>
+      </article>
+
+      <!-- Stat -->
+      <article class="card stat">
+        <span class="label"><i class="ri-medal-line"></i> Experience</span>
+        <b>8<small> years</small></b>
+        <span style="font-size:13.5px">40+ products shipped</span>
+      </article>
+
+      <!-- Theme -->
+      <article class="card theme" id="themeCard" role="button" aria-label="Toggle dark mode">
+        <span class="label"><i class="ri-contrast-2-line"></i> Appearance</span>
+        <div class="switch"><i class="ri-sun-line" id="themeIcon"></i></div>
+        <b id="themeLabel">Light mode</b>
+      </article>
+
+      <!-- Featured -->
+      <article class="card feature w2" data-case="0">
+        <div class="feature__text">
+          <span class="label"><i class="ri-star-line"></i> Featured case study</span>
+          <h3>Redesigning onboarding for Lumen Bank</h3>
+          <div><span class="feature__stat">+32%</span><span class="label" style="margin-top:4px">activation in 90 days</span></div>
+        </div>
+        <div class="feature__img"><img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?auto=format&fit=crop&w=800&q=80" alt="" /></div>
+        <span class="arrow"><i class="ri-arrow-right-up-line"></i></span>
+      </article>
+
+      <!-- Tools -->
+      <article class="card tools h2">
+        <span class="label"><i class="ri-tools-line"></i> Toolbox</span>
+        <div class="tools__grid">
+          <div class="tool"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+          <div class="tool"><i class="devicon-framermotion-original"></i><span>Framer</span></div>
+          <div class="tool"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+          <div class="tool"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+          <div class="tool"><i class="devicon-illustrator-plain colored"></i><span>Illustrator</span></div>
+          <div class="tool"><i class="devicon-blender-original colored"></i><span>Blender</span></div>
+          <div class="tool"><i class="devicon-notion-plain"></i><span>Notion</span></div>
+          <div class="tool"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="tool"><i class="devicon-html5-plain colored"></i><span>HTML &amp; CSS</span></div>
+        </div>
+      </article>
+
+      <!-- Socials -->
+      <article class="card socials">
+        <a href="#"><i class="ri-dribbble-line"></i>Dribbble</a>
+        <a href="#"><i class="ri-linkedin-line"></i>LinkedIn</a>
+        <a href="#"><i class="ri-behance-line"></i>Behance</a>
+        <a href="#"><i class="ri-twitter-x-line"></i>X</a>
+      </article>
+
+      <!-- Quote -->
+      <article class="card quote w2" id="quote">
+        <p id="quoteText"></p>
+        <div class="quote__foot">
+          <div class="who"><img id="quoteImg" alt="" /><div><b id="quoteName"></b><span id="quoteRole"></span></div></div>
+          <div class="dots" id="quoteDots"></div>
+        </div>
+      </article>
+
+      <!-- Calendar -->
+      <article class="card cal">
+        <span class="label"><i class="ri-calendar-event-line"></i> Book a 20-min intro call</span>
+        <div class="cal__days" id="calDays"></div>
+        <div class="cal__foot"><span id="calText">Pick a day</span><a href="#contact" class="btn" style="padding:8px 14px;font-size:13px">Book</a></div>
+      </article>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section__head">
+        <h2>Selected <span class="serif">case studies</span></h2>
+        <div class="filters" id="filters">
+          <button class="on" data-f="All">All</button><button data-f="Fintech">Fintech</button><button data-f="Health">Health</button><button data-f="Productivity">Productivity</button>
+        </div>
+      </div>
+      <div class="cases" id="cases"></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="split">
+        <div class="panel">
+          <h3>Experience</h3>
+          <p>Product design, design systems and a bit of front-end.</p>
+          <div class="exp"><span class="exp__logo">I</span><div><b>Independent</b><span>Product designer &amp; consultant</span></div><time>2025 — Now</time></div>
+          <div class="exp"><span class="exp__logo" style="color:var(--accent)">L</span><div><b>Lumen</b><span>Lead Product Designer</span></div><time>2021 — 2025</time></div>
+          <div class="exp"><span class="exp__logo">F</span><div><b>Fieldnote</b><span>Senior Product Designer</span></div><time>2019 — 2021</time></div>
+          <div class="exp"><span class="exp__logo">N</span><div><b>Northwind</b><span>UI Designer</span></div><time>2017 — 2019</time></div>
+        </div>
+        <div class="panel" id="contact">
+          <h3>Let's work <span class="serif" style="color:var(--accent)">together</span></h3>
+          <p>Tell me about your product. I reply within a day.</p>
+          <form class="form" id="form">
+            <div class="chipset" id="chips"><button type="button" class="on">Product design</button><button type="button">Design system</button><button type="button">UX audit</button><button type="button">Prototyping</button></div>
+            <input placeholder="Your name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="What are you building?"></textarea>
+            <button class="btn">Send message <i class="ri-send-plane-fill"></i></button>
+            <p class="ok" id="ok"><i class="ri-checkbox-circle-fill"></i> Thanks! I'll reply within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>© 2026 Lea Sørensen</span><span>Designed in Copenhagen · Built with care</span></footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal__sheet">
+      <div class="modal__top"><span class="label" id="mTag"></span><button class="modal__close" id="mClose" aria-label="Close"><i class="ri-close-line"></i></button></div>
+      <h2 id="mTitle"></h2>
+      <div class="modal__img"><img id="mImg" alt="" /></div>
+      <div class="modal__facts" id="mFacts"></div>
+      <div class="modal__body">
+        <div><h4>The problem</h4><p id="mProblem"></p></div>
+        <div><h4>The process</h4><p id="mProcess"></p></div>
+        <div><h4>The outcome</h4><p id="mOutcome"></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const U = (id, w = 900) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+    /* Cards fade in, staggered */
+    document.querySelectorAll(".card").forEach((c, i) => setTimeout(() => c.classList.add("in"), 80 + i * 70));
+
+    /* Clock */
+    const tick = () => $("time").textContent = new Date().toLocaleTimeString("en-GB", { timeZone: "Europe/Copenhagen", hour: "2-digit", minute: "2-digit" }) + " local";
+    tick(); setInterval(tick, 30000);
+
+    /* Toast + copy */
+    const toast = (m) => { const t = $("toast"); t.textContent = m; t.classList.add("on"); clearTimeout(t.tm); t.tm = setTimeout(() => t.classList.remove("on"), 1800); };
+    $("copyEmail").onclick = () => { navigator.clipboard?.writeText("hello@leasorensen.design"); toast("Email copied — hello@leasorensen.design"); };
+
+    /* Music */
+    $("playBtn").onclick = () => {
+      const paused = $("music").classList.toggle("paused");
+      $("playBtn").innerHTML = `<i class="ri-${paused ? "play" : "pause"}-fill"></i>`;
+    };
+
+    /* Theme */
+    function syncTheme() {
+      const dark = document.documentElement.dataset.theme === "dark";
+      $("themeIcon").className = dark ? "ri-moon-line" : "ri-sun-line";
+      $("themeLabel").textContent = dark ? "Dark mode" : "Light mode";
+    }
+    $("themeCard").onclick = () => {
+      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("lea-theme", next); syncTheme();
+    };
+    syncTheme();
+
+    /* Quotes */
+    const QUOTES = [
+      ["Lea turned a 14-step onboarding into four screens and our activation jumped a third. She's the calmest designer I've ever worked with.", "Helena Brandt", "CPO, Lumen Bank", "1573496359142-b8d87734a5a2"],
+      ["Her design system cut our UI build time in half. Engineers actually enjoy using it.", "Daniel Osei", "Engineering Lead, Fieldnote", "1507003211169-0a1dd7228f2d"],
+      ["Rare mix of taste, research rigour and speed. We'd hire her again tomorrow.", "Maya Rodriguez", "Founder, Pulse Health", "1580489944761-15a19d654956"],
+    ];
+    let qi = 0, qt;
+    $("quoteDots").innerHTML = QUOTES.map((_, i) => `<button aria-label="Quote ${i + 1}"></button>`).join("");
+    function showQuote(i) {
+      qi = i % QUOTES.length;
+      const [t, n, r, img] = QUOTES[qi];
+      $("quoteText").textContent = `"${t}"`; $("quoteName").textContent = n; $("quoteRole").textContent = r; $("quoteImg").src = U(img, 100);
+      $("quoteText").classList.remove("fade"); void $("quoteText").offsetWidth; $("quoteText").classList.add("fade");
+      document.querySelectorAll("#quoteDots button").forEach((d, k) => d.classList.toggle("on", k === qi));
+      clearTimeout(qt); qt = setTimeout(() => showQuote(qi + 1), 6000);
+    }
+    $("quoteDots").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) showQuote([...b.parentNode.children].indexOf(b)); });
+    showQuote(0);
+
+    /* Calendar */
+    const days = []; const d = new Date();
+    while (days.length < 5) { d.setDate(d.getDate() + 1); if (d.getDay() % 6) days.push(new Date(d)); }
+    $("calDays").innerHTML = days.map((x, i) => `<button ${i === 1 ? "disabled" : ""} data-i="${i}">${x.toLocaleDateString("en-GB", { weekday: "short" })}<b>${x.getDate()}</b></button>`).join("");
+    $("calDays").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b || b.disabled) return;
+      $("calDays").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+      $("calText").textContent = days[b.dataset.i].toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short" }) + ", 10:00";
+    });
+
+    /* Case studies */
+    const CASES = [
+      { t: "Lumen Bank onboarding", c: "Fintech", img: "1609921212029-bb5a28e60960", y: "2025", facts: [["+32%", "Activation"], ["4", "Screens (from 14)"], ["−41%", "Support tickets"], ["12 wks", "Timeline"]], p: "New customers abandoned sign-up at the ID verification step, and support was drowning in 'where's my card' tickets.", pr: "Twenty user interviews, a funnel audit and three rounds of prototype testing. We moved verification later and added progress feedback everywhere.", o: "Activation rose 32% in 90 days and onboarding-related tickets dropped by 41%." },
+      { t: "Pulse Health app", c: "Health", img: "1571019613454-1cb2f99b2d8b", y: "2024", facts: [["4.8★", "App Store"], ["+58%", "Week-4 retention"], ["2", "Platforms"], ["6 mo", "Timeline"]], p: "A habit-tracking app with great science but a cluttered interface that users abandoned after the first week.", pr: "Built a calm visual language, simplified the daily check-in to one tap and designed gentle, non-judgmental streaks.", o: "Week-4 retention increased by 58% and the app rating climbed from 3.9 to 4.8." },
+      { t: "Fieldnote design system", c: "Productivity", img: "1561070791-2526d30994b5", y: "2021", facts: [["180+", "Components"], ["−50%", "UI build time"], ["3", "Platforms"], ["100%", "AA contrast"]], p: "Five product squads were building the same buttons five different ways, and accessibility was an afterthought.", pr: "Audited 600 screens, defined tokens, and shipped a Figma library with a matching React package and docs site.", o: "UI build time halved and every component now meets WCAG AA contrast." },
+      { t: "Ledgerly dashboard", c: "Fintech", img: "1551288049-bebda4e38f71", fallback: "1460925895917-afdab827c52f", y: "2023", facts: [["3×", "Faster reporting"], ["9k", "SMB users"], ["−28%", "Churn"], ["4 mo", "Timeline"]], p: "Small-business owners found the accounting dashboard intimidating and exported everything to spreadsheets.", pr: "Shadowed accountants, rebuilt the information architecture around questions owners actually ask.", o: "Reporting became 3× faster and churn dropped 28% within two quarters." },
+    ];
+    let currentFilter = "All";
+    function renderCases() {
+      const list = CASES.map((c, i) => ({ ...c, i })).filter((c) => currentFilter === "All" || c.c === currentFilter);
+      $("cases").innerHTML = list.map((c, k) => `
+        <article class="case" data-case="${c.i}" style="animation-delay:${k * 70}ms">
+          <div class="case__img"><img src="${U(c.img)}" ${c.fallback ? `onerror="this.src='${U(c.fallback)}'"` : ""} alt="" loading="lazy" /><span class="case__tag">${c.c}</span></div>
+          <div class="case__meta"><div><h3>${c.t}</h3><span>${c.facts[0][0]} ${c.facts[0][1].toLowerCase()} · ${c.y}</span></div><i class="ri-arrow-right-up-line"></i></div>
+        </article>`).join("");
+    }
+    $("filters").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      $("filters").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+      currentFilter = b.dataset.f; renderCases();
+    });
+    renderCases();
+
+    function openCase(i) {
+      const c = CASES[i];
+      $("mTag").textContent = `${c.c} · ${c.y}`; $("mTitle").textContent = c.t;
+      $("mImg").src = U(c.img, 1600); if (c.fallback) $("mImg").onerror = () => ($("mImg").src = U(c.fallback, 1600));
+      $("mFacts").innerHTML = c.facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
+      $("mProblem").textContent = c.p; $("mProcess").textContent = c.pr; $("mOutcome").textContent = c.o;
+      $("modal").classList.add("on"); document.body.style.overflow = "hidden";
+    }
+    const closeModal = () => { $("modal").classList.remove("on"); document.body.style.overflow = ""; };
+    document.addEventListener("click", (e) => { const c = e.target.closest("[data-case]"); if (c) openCase(+c.dataset.case); });
+    $("mClose").onclick = closeModal;
+    $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
+    addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    /* Contact */
+    $("chips").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) b.classList.toggle("on"); });
+    $("form").addEventListener("submit", (e) => { e.preventDefault(); $("ok").style.display = "block"; });
+  </script>
+</body>
+</html>

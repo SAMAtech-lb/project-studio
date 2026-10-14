@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Havenly — Find Your Next Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo"><i class="ri-home-5-fill"></i>Havenly</a>
+      <nav class="nav"><a href="#">Home</a><a href="#listings">Properties</a><a href="#calc">Mortgage</a><a href="#agents">Agents</a><a href="#contact">Contact</a></nav>
+      <div class="header__right"><span class="phone"><i class="ri-phone-line"></i> (305) 555-0172</span><a href="#contact" class="btn btn--gold">List your property</a></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container">
+      <span class="over">Miami's trusted real estate agency</span>
+      <h1>Find a home that <span>fits</span> the way you live.</h1>
+      <p>Over 2,400 verified homes, villas and apartments — with local agents who actually pick up the phone.</p>
+    </div>
+  </section>
+
+  <section class="search">
+    <div class="container">
+      <div class="search__tabs" id="modeTabs"><button class="on" data-m="sale">Buy</button><button data-m="rent">Rent</button><button data-m="all">All</button></div>
+      <form class="search__box" id="searchForm">
+        <div class="field"><label>Location</label><input id="qLoc" placeholder="City, neighbourhood or ZIP" /></div>
+        <div class="field"><label>Property type</label><select id="qType"><option value="">Any type</option><option>Villa</option><option>House</option><option>Apartment</option><option>Penthouse</option></select></div>
+        <div class="field"><label>Bedrooms</label><select id="qBeds"><option value="0">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+        <div class="field"><label>Max price</label><select id="qPrice"><option value="0">No max</option><option value="5000">$5,000 / mo</option><option value="1000000">$1,000,000</option><option value="2500000">$2,500,000</option></select></div>
+        <button class="btn"><i class="ri-search-line"></i> Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="cats">
+    <div class="container">
+      <div class="cats__grid" id="cats">
+        <div class="cat" data-t="Villa"><i class="ri-community-line"></i><h4>Villas</h4><span>2 listings</span></div>
+        <div class="cat" data-t="House"><i class="ri-home-4-line"></i><h4>Houses</h4><span>3 listings</span></div>
+        <div class="cat" data-t="Apartment"><i class="ri-building-2-line"></i><h4>Apartments</h4><span>2 listings</span></div>
+        <div class="cat" data-t="Penthouse"><i class="ri-building-4-line"></i><h4>Penthouses</h4><span>1 listing</span></div>
+        <div class="cat" data-t=""><i class="ri-apps-2-line"></i><h4>All types</h4><span>8 listings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="listings" id="listings">
+    <div class="container">
+      <div class="head"><div><span class="over">Featured listings</span><h2 id="resultTitle">Homes for sale</h2></div><span id="resultCount"></span></div>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <div class="why__img">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="" />
+        <div class="why__badge"><b>18+</b>Years in Miami</div>
+      </div>
+      <div>
+        <span class="over">Why Havenly</span>
+        <h2>We make buying, selling and renting feel easy</h2>
+        <p>From your first viewing to the day you collect the keys, one dedicated agent handles everything — paperwork, negotiations and the awkward questions.</p>
+        <div class="why__list">
+          <div><i class="ri-shield-check-line"></i><div><h4>Verified listings</h4><p>Every home inspected by our team.</p></div></div>
+          <div><i class="ri-hand-coin-line"></i><div><h4>Best price</h4><p>Expert negotiators on your side.</p></div></div>
+          <div><i class="ri-customer-service-2-line"></i><div><h4>7-day support</h4><p>Real people, not chatbots.</p></div></div>
+          <div><i class="ri-file-list-3-line"></i><div><h4>Paperwork handled</h4><p>Legal and closing, done for you.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="calc" id="calc">
+    <div class="container">
+      <div>
+        <span class="over">Mortgage calculator</span>
+        <h2>Know what you can afford before you fall in love</h2>
+        <p>Adjust the sliders to estimate your monthly payment. Our mortgage partners can pre-approve you in 24 hours.</p>
+        <ul class="calc__points"><li><i class="ri-checkbox-circle-fill"></i> Rates from 5.9% APR</li><li><i class="ri-checkbox-circle-fill"></i> Pre-approval in 24 hours</li><li><i class="ri-checkbox-circle-fill"></i> No hidden broker fees</li></ul>
+      </div>
+      <div class="calc__box">
+        <div class="range"><div class="range__top"><span>Home price</span><b id="vPrice"></b></div><input type="range" id="price" min="200000" max="5000000" step="10000" value="850000" /></div>
+        <div class="range"><div class="range__top"><span>Down payment</span><b id="vDown"></b></div><input type="range" id="down" min="5" max="60" step="1" value="20" /></div>
+        <div class="range"><div class="range__top"><span>Interest rate</span><b id="vRate"></b></div><input type="range" id="rate" min="3" max="10" step="0.1" value="6.4" /></div>
+        <div class="range"><div class="range__top"><span>Loan term</span><b id="vTerm"></b></div><input type="range" id="term" min="10" max="30" step="5" value="30" /></div>
+        <div class="result">
+          <div class="big"><span>Estimated monthly payment</span><b id="monthly"></b></div>
+          <div><span>Loan amount</span><b id="loan"></b></div>
+          <div><span>Total interest</span><b id="interest"></b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agents" id="agents">
+    <div class="container">
+      <div class="head"><div><span class="over">Our team</span><h2>Meet your local experts</h2></div><a href="#" class="btn btn--line">All agents <i class="ri-arrow-right-line"></i></a></div>
+      <div class="agents__grid">
+        <div class="agent"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="" /><h4>Michael Torres</h4><span>Luxury Villas · 120 sales</span><div class="agent__links"><a href="#"><i class="ri-phone-line"></i></a><a href="#"><i class="ri-mail-line"></i></a><a href="#"><i class="ri-whatsapp-line"></i></a></div></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="" /><h4>Rebecca Stone</h4><span>Brickell &amp; Downtown · 98 sales</span><div class="agent__links"><a href="#"><i class="ri-phone-line"></i></a><a href="#"><i class="ri-mail-line"></i></a><a href="#"><i class="ri-whatsapp-line"></i></a></div></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="" /><h4>David Okafor</h4><span>Rentals · 210 leases</span><div class="agent__links"><a href="#"><i class="ri-phone-line"></i></a><a href="#"><i class="ri-mail-line"></i></a><a href="#"><i class="ri-whatsapp-line"></i></a></div></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=80" alt="" /><h4>Sofia Marín</h4><span>Coral Gables · 84 sales</span><div class="agent__links"><a href="#"><i class="ri-phone-line"></i></a><a href="#"><i class="ri-mail-line"></i></a><a href="#"><i class="ri-whatsapp-line"></i></a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Thinking of selling? Get a free valuation from a local expert in 48 hours.</h2>
+      <a href="#" class="btn btn--gold">Get my free valuation <i class="ri-arrow-right-line"></i></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><a href="#" class="logo"><i class="ri-home-5-fill"></i>Havenly</a><p>Licensed real estate brokerage serving Miami-Dade since 2008.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#listings">Buy</a></li><li><a href="#listings">Rent</a></li><li><a href="#contact">Sell</a></li><li><a href="#calc">Mortgage</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#agents">Agents</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul></div>
+      <div><h4>Office</h4><ul><li>1450 Brickell Ave, Suite 900</li><li>Miami, FL 33131</li><li>(305) 555-0172</li><li>hello@havenly.com</li></ul></div>
+    </div>
+    <div class="footer__bottom">© 2026 Havenly Realty LLC · Equal Housing Opportunity</div>
+  </footer>
+
+  <script>
+    const U = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
+    const HOMES = [
+      { t: "Oceanview Modern Villa", type: "Villa", mode: "sale", price: 4250000, loc: "Key Biscayne, Miami", beds: 5, baths: 6, area: 5400, img: "1613490493576-7fde63acd811", tag: "Featured" },
+      { t: "Contemporary Family Home", type: "House", mode: "sale", price: 1890000, loc: "Coral Gables, Miami", beds: 4, baths: 3, area: 3200, img: "1600585154340-be6161a56a0c", tag: "New" },
+      { t: "Bright Loft Apartment", type: "Apartment", mode: "rent", price: 4200, loc: "Wynwood, Miami", beds: 2, baths: 2, area: 1150, img: "1502672260266-1c1ef2d93688", tag: "" },
+      { t: "Poolside Garden Villa", type: "Villa", mode: "sale", price: 2750000, loc: "Coconut Grove, Miami", beds: 4, baths: 4, area: 3900, img: "1512917774080-9991f1c4c750", tag: "Featured" },
+      { t: "Sky Penthouse", type: "Penthouse", mode: "sale", price: 3600000, loc: "Brickell, Miami", beds: 3, baths: 3, area: 2800, img: "1600607687939-ce8a6c25118c", tag: "Exclusive" },
+      { t: "Minimal Glass House", type: "House", mode: "sale", price: 1350000, loc: "Pinecrest, Miami", beds: 3, baths: 2, area: 2400, img: "1600596542815-ffad4c1539a9", tag: "" },
+      { t: "Designer 1-Bed Apartment", type: "Apartment", mode: "rent", price: 2900, loc: "Edgewater, Miami", beds: 1, baths: 1, area: 780, img: "1586023492125-27b2c045efd7", tag: "New" },
+      { t: "Family Home with Garden", type: "House", mode: "rent", price: 6800, loc: "South Miami", beds: 4, baths: 3, area: 2900, img: "1600210492486-724fe5c67fb0", tag: "" },
+    ];
+    const state = { mode: "sale", loc: "", type: "", beds: 0, max: 0 };
+    const favs = new Set(JSON.parse(localStorage.getItem("havenly-favs") || "[]"));
+    const money = (n) => "$" + n.toLocaleString("en-US");
+
+    function render() {
+      const list = HOMES.filter((h) =>
+        (state.mode === "all" || h.mode === state.mode) &&
+        (!state.type || h.type === state.type) &&
+        h.beds >= state.beds &&
+        (!state.max || h.price <= state.max) &&
+        (h.loc + h.t).toLowerCase().includes(state.loc.toLowerCase()));
+      document.getElementById("resultTitle").textContent = state.mode === "rent" ? "Homes for rent" : state.mode === "sale" ? "Homes for sale" : "All properties";
+      document.getElementById("resultCount").textContent = `${list.length} propert${list.length === 1 ? "y" : "ies"} found`;
+      document.getElementById("cards").innerHTML = list.length ? list.map((h, i) => `
+        <article class="card" style="animation-delay:${i * 50}ms">
+          <div class="card__img"><img src="${U(h.img)}" alt="${h.t}" loading="lazy" />
+            <div class="card__badges"><span class="${h.mode === "sale" ? "sale" : ""}">For ${h.mode === "sale" ? "Sale" : "Rent"}</span>${h.tag ? `<span>${h.tag}</span>` : ""}</div>
+            <button class="fav ${favs.has(h.t) ? "on" : ""}" data-t="${h.t}" aria-label="Save"><i class="ri-heart-${favs.has(h.t) ? "fill" : "line"}"></i></button>
+            <span class="card__price">${money(h.price)}${h.mode === "rent" ? "<small> /mo</small>" : ""}</span>
+          </div>
+          <div class="card__body"><h3>${h.t}</h3><p class="card__loc"><i class="ri-map-pin-line"></i>${h.loc}</p>
+            <div class="card__specs"><span><i class="ri-hotel-bed-line"></i>${h.beds} Beds</span><span><i class="ri-drop-line"></i>${h.baths} Baths</span><span><i class="ri-ruler-2-line"></i>${h.area.toLocaleString()} sqft</span></div>
+          </div>
+        </article>`).join("") : `<div class="empty"><h3>No homes match your search</h3><p>Try a different location or widen your price range.</p></div>`;
+    }
+
+    document.getElementById("modeTabs").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      document.querySelectorAll("#modeTabs button").forEach((x) => x.classList.toggle("on", x === b));
+      state.mode = b.dataset.m; render();
+    });
+    document.getElementById("searchForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      state.loc = document.getElementById("qLoc").value;
+      state.type = document.getElementById("qType").value;
+      state.beds = +document.getElementById("qBeds").value;
+      state.max = +document.getElementById("qPrice").value;
+      render(); document.getElementById("listings").scrollIntoView({ behavior: "smooth" });
+    });
+    document.getElementById("cats").addEventListener("click", (e) => {
+      const c = e.target.closest(".cat"); if (!c) return;
+      document.querySelectorAll(".cat").forEach((x) => x.classList.toggle("on", x === c));
+      state.type = c.dataset.t; document.getElementById("qType").value = c.dataset.t; render();
+    });
+    document.getElementById("cards").addEventListener("click", (e) => {
+      const f = e.target.closest(".fav"); if (!f) return;
+      favs.has(f.dataset.t) ? favs.delete(f.dataset.t) : favs.add(f.dataset.t);
+      localStorage.setItem("havenly-favs", JSON.stringify([...favs])); render();
+    });
+    render();
+
+    /* Mortgage calculator */
+    const $ = (id) => document.getElementById(id);
+    function calc() {
+      const price = +$("price").value, downPct = +$("down").value, rate = +$("rate").value, years = +$("term").value;
+      const loan = price * (1 - downPct / 100), r = rate / 100 / 12, n = years * 12;
+      const monthly = loan * r / (1 - Math.pow(1 + r, -n));
+      $("vPrice").textContent = money(price);
+      $("vDown").textContent = `${downPct}% (${money(Math.round(price * downPct / 100))})`;
+      $("vRate").textContent = rate.toFixed(1) + "%";
+      $("vTerm").textContent = years + " years";
+      $("monthly").textContent = money(Math.round(monthly)) + " /mo";
+      $("loan").textContent = money(Math.round(loan));
+      $("interest").textContent = money(Math.round(monthly * n - loan));
+    }
+    ["price", "down", "rate", "term"].forEach((id) => $(id).addEventListener("input", calc));
+    calc();
+  </script>
+</body>
+</html>

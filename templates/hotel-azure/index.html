@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azure Bay — Luxury Resort &amp; Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <nav id="nav"><a href="#rooms">Rooms</a><a href="#amenities">Resort</a><a href="#experiences">Experiences</a><a href="#location">Location</a></nav>
+      <a href="#" class="brand"><b>AZURE BAY</b><small>Resort &amp; Spa</small></a>
+      <div class="right"><span class="phone">+960 555 0102</span><a href="#book" class="btn">Book Now</a><button class="burger" id="burger" aria-label="Menu"><i class="ri-menu-line"></i></button></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <div class="stars-row">★★★★★</div>
+      <span class="sub">Baa Atoll · Maldives</span>
+      <h1>Where time <em>slows</em> down</h1>
+      <p>Forty-two overwater and beach villas on a private island, surrounded by a UNESCO-protected coral reef.</p>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="container">
+      <form id="bookForm">
+        <div class="f"><label>Check in</label><input type="date" id="ci" required /></div>
+        <div class="f"><label>Check out</label><input type="date" id="co" required /></div>
+        <div class="f"><label>Guests</label><select id="guests"><option>2 Adults</option><option>2 Adults, 1 Child</option><option>2 Adults, 2 Children</option><option>1 Adult</option></select></div>
+        <div class="f"><label>Villa type</label><select id="villa"><option value="890">Beach Villa</option><option value="1290">Overwater Villa</option><option value="2450">Sunset Residence</option></select></div>
+        <button class="btn">Check Availability</button>
+      </form>
+      <p class="book__note" id="note"></p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro__imgs">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Resort pool" />
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" alt="Beach" />
+      </div>
+      <div>
+        <span class="sub">Welcome to Azure Bay</span>
+        <h2>A barefoot island of <em>quiet</em> luxury</h2>
+        <p>Thirty minutes by seaplane from Malé, Azure Bay is a sanctuary of white sand, turquoise lagoons and unhurried days. Every villa has its own pool, a private deck over the water and a dedicated host who remembers how you take your coffee.</p>
+        <div class="sign">
+          <div><b>42</b><span>Private villas</span></div>
+          <div><b>3</b><span>Restaurants</span></div>
+          <div><b>1:4</b><span>Guest to staff</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms" id="rooms">
+    <div class="container">
+      <div class="center"><span class="sub">Accommodation</span><h2>Villas &amp; <em>Residences</em></h2><p>All villas include breakfast, seaplane transfers and access to our house reef.</p></div>
+      <div class="rooms__grid">
+        <article class="room"><div class="room__img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="" /><span class="room__price">From <b>$890</b> / night</span></div><div class="room__body"><h3>Beach Villa</h3><div class="room__specs"><span><i class="ri-ruler-2-line"></i>120 m²</span><span><i class="ri-user-line"></i>3 guests</span><span><i class="ri-water-flash-line"></i>Plunge pool</span></div><p>Steps from the sand, with an outdoor rain shower and shaded garden.</p><div class="room__foot"><a href="#book">Book villa <i class="ri-arrow-right-line"></i></a><span>Free cancellation</span></div></div></article>
+        <article class="room"><div class="room__img"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="" /><span class="room__price">From <b>$1,290</b> / night</span></div><div class="room__body"><h3>Overwater Villa</h3><div class="room__specs"><span><i class="ri-ruler-2-line"></i>160 m²</span><span><i class="ri-user-line"></i>3 guests</span><span><i class="ri-sailboat-line"></i>Lagoon access</span></div><p>Glass floor panels, a sundeck over the lagoon and ladders straight into the sea.</p><div class="room__foot"><a href="#book">Book villa <i class="ri-arrow-right-line"></i></a><span>Most popular</span></div></div></article>
+        <article class="room"><div class="room__img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" alt="" /><span class="room__price">From <b>$2,450</b> / night</span></div><div class="room__body"><h3>Sunset Residence</h3><div class="room__specs"><span><i class="ri-ruler-2-line"></i>420 m²</span><span><i class="ri-user-line"></i>6 guests</span><span><i class="ri-service-line"></i>Private butler</span></div><p>Two bedrooms, a 20-metre pool and front-row seats to every sunset.</p><div class="room__foot"><a href="#book">Book villa <i class="ri-arrow-right-line"></i></a><span>Butler included</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="amen" id="amenities">
+    <div class="container">
+      <div class="center"><span class="sub">The resort</span><h2>Everything, <em>effortlessly</em></h2></div>
+      <div class="amen__grid">
+        <div class="amen__item"><i class="ri-plane-line"></i><h4>Seaplane Transfer</h4><p>A 30-minute scenic flight from Malé, included.</p></div>
+        <div class="amen__item"><i class="ri-leaf-line"></i><h4>Overwater Spa</h4><p>Six treatment pavilions above the reef.</p></div>
+        <div class="amen__item"><i class="ri-restaurant-2-line"></i><h4>Three Restaurants</h4><p>Japanese, Maldivian and beachside grill.</p></div>
+        <div class="amen__item"><i class="ri-sailboat-line"></i><h4>Dive Centre</h4><p>PADI courses and daily reef excursions.</p></div>
+        <div class="amen__item"><i class="ri-goblet-line"></i><h4>Sunset Bar</h4><p>Signature cocktails at the island's tip.</p></div>
+        <div class="amen__item"><i class="ri-run-line"></i><h4>Fitness &amp; Yoga</h4><p>Sunrise yoga deck and open-air gym.</p></div>
+        <div class="amen__item"><i class="ri-parent-line"></i><h4>Kids Club</h4><p>Marine biology for little explorers.</p></div>
+        <div class="amen__item"><i class="ri-wifi-line"></i><h4>Island-wide Wi-Fi</h4><p>Fast, free — and easy to ignore.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="exp" id="experiences">
+    <div class="container">
+      <div class="center"><span class="sub">Experiences</span><h2>Days worth <em>remembering</em></h2></div>
+      <div class="exp__grid">
+        <a href="#" class="exp__card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="" /><div><span class="sub" style="color:#fff">Private sandbank</span><h3>Picnic for Two</h3><p>A chef, a parasol and an empty sandbank in the middle of the ocean.</p></div></a>
+        <a href="#" class="exp__card"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80" alt="" /><div><h3>Fine Dining</h3></div></a>
+        <a href="#" class="exp__card"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="" /><div><h3>Infinity Pool</h3></div></a>
+        <a href="#" class="exp__card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80" alt="" /><div><h3>Sunset Cruise</h3><p>Dolphin spotting aboard a traditional dhoni.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testi">
+    <div class="container">
+      <span class="sub">Guest reviews</span>
+      <blockquote>"We've stayed at resorts all over the world, and nothing has come close. The staff knew our names before we stepped off the seaplane."</blockquote>
+      <cite>— Charlotte &amp; James, London · Honeymoon 2025</cite>
+      <div class="awards">
+        <div><small>Luxe Travel</small>Gold List 2026</div>
+        <div><small>Voyager</small>World's Best</div>
+        <div><small>Spa Guide</small>Five-Star Spa</div>
+        <div><small>Guest Awards</small>Travellers' Choice</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location" id="location">
+    <div class="container">
+      <div>
+        <span class="sub">Getting here</span>
+        <h2>A short flight to <em>another world</em></h2>
+        <p>Fly into Velana International Airport (MLE). Our team meets you at arrivals and escorts you to the seaplane lounge.</p>
+        <ul>
+          <li><span>From Malé by seaplane</span><b>30 minutes</b></li>
+          <li><span>From Dubai</span><b>4h 20m flight</b></li>
+          <li><span>From London</span><b>10h direct</b></li>
+          <li><span>Reservations</span><b>stay@azurebay.mv</b></li>
+        </ul>
+        <a href="#book" class="btn">Plan your stay</a>
+      </div>
+      <iframe title="Map" loading="lazy" src="https://maps.google.com/maps?q=Baa%20Atoll%20Maldives&z=9&output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div><a href="#" class="brand"><b>AZURE BAY</b><small>Resort &amp; Spa</small></a><p>Baa Atoll, Republic of Maldives<br />+960 555 0102 · stay@azurebay.mv</p></div>
+        <div><h4>Stay</h4><ul><li><a href="#rooms">Villas</a></li><li><a href="#">Offers</a></li><li><a href="#">Weddings</a></li><li><a href="#">Gift cards</a></li></ul></div>
+        <div><h4>Discover</h4><ul><li><a href="#amenities">Spa</a></li><li><a href="#">Dining</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#">Sustainability</a></li></ul></div>
+        <div><h4>Island letters</h4><p style="margin-top:0">Exclusive offers, sent four times a year.</p><form id="news"><input type="email" placeholder="Your email" required /><button aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button></form></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 Azure Bay Resort &amp; Spa</span><span>Privacy · Terms · Careers</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const iso = (d) => d.toISOString().slice(0, 10);
+    const today = new Date(), inA = new Date(Date.now() + 14 * 864e5), inB = new Date(Date.now() + 19 * 864e5);
+    $("ci").min = iso(today); $("ci").value = iso(inA); $("co").value = iso(inB);
+    $("ci").addEventListener("change", () => { $("co").min = $("ci").value; if ($("co").value <= $("ci").value) $("co").value = iso(new Date(new Date($("ci").value).getTime() + 864e5)); });
+    $("bookForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nights = Math.round((new Date($("co").value) - new Date($("ci").value)) / 864e5);
+      const note = $("note");
+      if (nights < 1) { note.textContent = "Check-out must be after check-in."; note.style.display = "block"; return; }
+      const villa = $("villa").selectedOptions[0].text, rate = +$("villa").value;
+      note.innerHTML = `Good news — the <b>${villa}</b> is available for <b>${nights} night${nights > 1 ? "s" : ""}</b>. Total from <b>$${(rate * nights).toLocaleString()}</b> incl. breakfast &amp; transfers. Our reservations team will contact you shortly.`;
+      note.style.display = "block";
+    });
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); e.target.innerHTML = "<p style='padding:12px 0;margin:0'>Thank you for subscribing.</p>"; });
+    const header = $("header");
+    addEventListener("scroll", () => header.classList.toggle("solid", scrollY > 80));
+    $("burger").onclick = () => { $("nav").classList.toggle("open"); header.classList.add("solid"); };
+  </script>
+</body>
+</html>

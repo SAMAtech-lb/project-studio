@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Rivers — Landscape &amp; Travel Photographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="wrap">
+      <a href="#" class="logo">Noah <i>Rivers</i></a>
+      <nav class="nav" id="nav"><a href="#series">Series</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#prints">Prints</a><a href="#contact">Contact</a></nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="ri-menu-4-line"></i></button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div id="slides"></div>
+    <div class="hero__caption">
+      <span class="label" id="capPlace"></span>
+      <h1 id="capTitle"></h1>
+    </div>
+    <div class="hero__ctrl">
+      <span class="hero__count"><b id="slideNum">01</b> <span>/ 05</span></span>
+      <span class="hero__bar"><i id="bar"></i></span>
+      <button id="prevSlide" aria-label="Previous"><i class="ri-arrow-left-line"></i></button>
+      <button id="nextSlide" aria-label="Next"><i class="ri-arrow-right-line"></i></button>
+    </div>
+  </section>
+
+  <section class="statement wrap">
+    <span class="label">Landscape · Travel · Editorial</span>
+    <p>I chase <em>quiet light</em> in loud places — glaciers at 4am, empty cities after rain, forests the morning after the first snow.</p>
+  </section>
+
+  <section class="wrap" id="series">
+    <div class="sec-top"><h2>Ongoing <em>series</em></h2><span class="label">Three bodies of work</span></div>
+    <div class="series">
+      <a href="#gallery" class="serie" data-tab="Mountains"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80" alt="" /><div class="serie__info"><h3>Above<br />the Clouds</h3><span>Alps · 24 photos</span></div></a>
+      <a href="#gallery" class="serie" data-tab="Forests"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="" /><div class="serie__info"><h3>Still<br />Forests</h3><span>Norway · 18 photos</span></div></a>
+      <a href="#gallery" class="serie" data-tab="Coast"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="" /><div class="serie__info"><h3>Salt<br />&amp; Light</h3><span>Pacific · 31 photos</span></div></a>
+    </div>
+  </section>
+
+  <section class="wrap gallery-sec" id="gallery">
+    <div class="sec-top">
+      <h2>The <em>gallery</em></h2>
+      <div class="tabs" id="tabs"><button class="on" data-t="All">All</button><button data-t="Mountains">Mountains</button><button data-t="Forests">Forests</button><button data-t="Coast">Coast</button><button data-t="Cities">Cities</button></div>
+    </div>
+    <div class="masonry" id="masonry"></div>
+  </section>
+
+  <section class="wrap about" id="about">
+    <div class="about__img"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Noah Rivers" /><span>Self portrait · Lofoten, 2025</span></div>
+    <div>
+      <span class="label">About</span>
+      <h2>Fifteen years, forty countries, <em>one</em> old camera bag.</h2>
+      <p>I'm a landscape and travel photographer based in Vancouver. My work has been commissioned by tourism boards, outdoor brands and magazines — but most of it starts the same way: an alarm at 3:40am and a long walk in the dark.</p>
+      <div class="facts">
+        <div><b>40</b><span>Countries photographed</span></div>
+        <div><b>12</b><span>International awards</span></div>
+        <div><b>3</b><span>Published books</span></div>
+      </div>
+      <p class="published">Published in <b>Wanderlust Quarterly</b>, <b>Northern Light</b>, <b>Atlas Traveler</b> and <b>The Weekend Review</b>.</p>
+    </div>
+  </section>
+
+  <section class="wrap prints" id="prints">
+    <div class="sec-top"><h2>Fine art <em>prints</em></h2><span class="label">Archival giclée · signed &amp; numbered</span></div>
+    <div class="prints__grid" id="prints-grid"></div>
+  </section>
+
+  <section class="wrap contact" id="contact">
+    <div class="contact__top">
+      <div>
+        <span class="label">Commissions &amp; licensing</span>
+        <h2 style="margin-top:18px">Let's make<br />something <em>timeless</em>.</h2>
+        <div class="contact__links">
+          <a href="mailto:studio@noahrivers.com"><i class="ri-arrow-right-up-line"></i> studio@noahrivers.com</a>
+          <a href="#"><i class="ri-arrow-right-up-line"></i> Instagram — @noahrivers</a>
+          <a href="#"><i class="ri-arrow-right-up-line"></i> Represented by Atlas Agency</a>
+        </div>
+      </div>
+      <form class="cform" id="cform">
+        <input placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <select><option>Commission</option><option>Image licensing</option><option>Print enquiry</option><option>Workshop</option></select>
+        <textarea placeholder="Tell me about the project"></textarea>
+        <button>Send enquiry</button>
+        <p class="ok" id="ok">Thank you — I'll reply within two working days.</p>
+      </form>
+    </div>
+    <div class="foot"><span>© 2026 Noah Rivers Photography</span><span>All images are protected by copyright.</span></div>
+  </section>
+
+  <div class="lb" id="lb">
+    <button class="x" id="lbX" aria-label="Close"><i class="ri-close-line"></i></button>
+    <button class="p" id="lbP" aria-label="Previous"><i class="ri-arrow-left-line"></i></button>
+    <img id="lbImg" alt="" />
+    <button class="n" id="lbN" aria-label="Next"><i class="ri-arrow-right-line"></i></button>
+    <div class="lb__cap" id="lbCap"></div>
+    <div class="lb__count" id="lbCount"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+    /* Hero slideshow */
+    const SLIDES = [
+      ["1469474968028-56623f02e42e", "Moraine Lake, Canada", "Morning <em>stillness</em>"],
+      ["1506905925346-21bda4d32df4", "Dolomites, Italy", "Above the <em>clouds</em>"],
+      ["1519681393784-d120267933ba", "Mount Cook, New Zealand", "Under a <em>thousand</em> stars"],
+      ["1501785888041-af3ef285b470", "Lago di Braies, Italy", "The <em>quiet</em> hour"],
+      ["1470071459604-3b5ec3a7fe05", "Faroe Islands", "Where the <em>fog</em> lives"],
+    ];
+    const slidesEl = document.getElementById("slides");
+    slidesEl.innerHTML = SLIDES.map(([id], i) => `<div class="slide${i ? "" : " on"}"><img src="${U(id, 2000)}" alt="" /></div>`).join("");
+    let s = 0, timer;
+    function show(i) {
+      s = (i + SLIDES.length) % SLIDES.length;
+      slidesEl.querySelectorAll(".slide").forEach((el, k) => el.classList.toggle("on", k === s));
+      document.getElementById("capPlace").textContent = SLIDES[s][1];
+      document.getElementById("capTitle").innerHTML = SLIDES[s][2];
+      document.getElementById("slideNum").textContent = String(s + 1).padStart(2, "0");
+      const bar = document.getElementById("bar"); bar.classList.remove("run"); void bar.offsetWidth; bar.classList.add("run");
+      clearTimeout(timer); timer = setTimeout(() => show(s + 1), 6000);
+    }
+    document.getElementById("prevSlide").onclick = () => show(s - 1);
+    document.getElementById("nextSlide").onclick = () => show(s + 1);
+    show(0);
+
+    /* Gallery */
+    const PHOTOS = [
+      ["1506905925346-21bda4d32df4", "Mountains", "Tre Cime", "Italy"],
+      ["1441974231531-c6227db76b6e", "Forests", "Green Cathedral", "Norway"],
+      ["1507525428034-b723cf961d3e", "Coast", "Low Tide", "Mexico"],
+      ["1486406146926-c627a92ad1ab", "Cities", "Glass Canyon", "Chicago"],
+      ["1519681393784-d120267933ba", "Mountains", "Night Watch", "New Zealand"],
+      ["1447752875215-b2761acb3c5d", "Forests", "The Crossing", "Oregon"],
+      ["1501785888041-af3ef285b470", "Coast", "Emerald", "Dolomites"],
+      ["1511818966892-d7d671e672a2", "Cities", "Vertigo", "Hong Kong"],
+      ["1469474968028-56623f02e42e", "Mountains", "First Light", "Canada"],
+      ["1470071459604-3b5ec3a7fe05", "Coast", "Cliffside", "Faroe Islands"],
+      ["1487958449943-2429e8be8625", "Cities", "Facets", "Copenhagen"],
+      ["1520250497591-112f2f40a3f4", "Coast", "Lagoon", "Maldives"],
+    ];
+    const ratios = ["4/5", "3/2", "1/1", "3/4", "4/3", "2/3"];
+    let list = PHOTOS, idx = 0;
+    const masonry = document.getElementById("masonry");
+    function renderGallery(tab) {
+      list = PHOTOS.filter((p) => tab === "All" || p[1] === tab);
+      masonry.innerHTML = list.map(([id, , t, place], i) => `
+        <figure class="shot" data-i="${i}" style="animation-delay:${i * 60}ms"><img src="${U(id, 900)}" alt="${t}" loading="lazy" style="aspect-ratio:${ratios[i % ratios.length]};object-fit:cover" />
+        <figcaption><span>${t}</span><span>${place}</span></figcaption></figure>`).join("");
+    }
+    function setTab(t) {
+      document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.t === t));
+      renderGallery(t);
+    }
+    document.getElementById("tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) setTab(b.dataset.t); });
+    document.querySelectorAll(".serie").forEach((a) => a.addEventListener("click", () => setTab(a.dataset.tab)));
+    renderGallery("All");
+
+    /* Lightbox */
+    const lb = document.getElementById("lb");
+    function openLb(i) {
+      idx = (i + list.length) % list.length;
+      const [id, cat, t, place] = list[idx];
+      document.getElementById("lbImg").src = U(id, 2000);
+      document.getElementById("lbCap").innerHTML = `<b>${t}</b>${place} · ${cat}`;
+      document.getElementById("lbCount").textContent = `${idx + 1} / ${list.length}`;
+      lb.classList.add("open"); document.body.style.overflow = "hidden";
+    }
+    const closeLb = () => { lb.classList.remove("open"); document.body.style.overflow = ""; };
+    masonry.addEventListener("click", (e) => { const f = e.target.closest(".shot"); if (f) openLb(+f.dataset.i); });
+    document.getElementById("lbX").onclick = closeLb;
+    document.getElementById("lbP").onclick = () => openLb(idx - 1);
+    document.getElementById("lbN").onclick = () => openLb(idx + 1);
+    lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
+    addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowRight") openLb(idx + 1);
+      if (e.key === "ArrowLeft") openLb(idx - 1);
+    });
+
+    /* Prints */
+    const PRINTS = [["1469474968028-56623f02e42e", "First Light", "Moraine Lake, 2024", 180], ["1519681393784-d120267933ba", "Night Watch", "Aoraki, 2023", 220], ["1441974231531-c6227db76b6e", "Green Cathedral", "Norway, 2025", 160]];
+    const SIZES = [["A3", 1], ["A2", 1.6], ["A1", 2.4]];
+    document.getElementById("prints-grid").innerHTML = PRINTS.map(([id, t, p, price]) => `
+      <div class="print" data-price="${price}"><div class="print__img"><img src="${U(id, 700)}" alt="${t}" /></div>
+      <div class="print__meta"><div><h3>${t}</h3><span>${p} · Edition of 25</span></div><span class="print__price">$${price}</span></div>
+      <div class="sizes">${SIZES.map(([s], i) => `<button class="${i ? "" : "on"}" data-m="${SIZES[i][1]}">${s}</button>`).join("")}</div>
+      <button class="buy">Add to cart</button></div>`).join("");
+    const toast = (m) => { const t = document.getElementById("toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2000); };
+    document.getElementById("prints-grid").addEventListener("click", (e) => {
+      const card = e.target.closest(".print"); if (!card) return;
+      const size = e.target.closest(".sizes button");
+      if (size) {
+        card.querySelectorAll(".sizes button").forEach((b) => b.classList.toggle("on", b === size));
+        card.querySelector(".print__price").textContent = `$${Math.round(card.dataset.price * size.dataset.m)}`;
+      }
+      if (e.target.closest(".buy")) toast(`${card.querySelector("h3").textContent} (${card.querySelector(".sizes .on").textContent}) added to cart`);
+    });
+
+    document.getElementById("cform").addEventListener("submit", (e) => { e.preventDefault(); document.getElementById("ok").style.display = "block"; });
+    addEventListener("scroll", () => document.getElementById("header").classList.toggle("dark", scrollY > innerHeight * .6));
+    document.getElementById("menuBtn").onclick = () => document.getElementById("nav").classList.toggle("open");
+  </script>
+</body>
+</html>

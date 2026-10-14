@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma Studio — Template Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="side" id="side">
+      <a href="#" class="brand">
+        <span class="brand__mark">F</span>
+        <span>Forma<sup>®</sup><small class="mono">Studio</small></span>
+      </a>
+
+      <div class="side__group">
+        <span class="mono side__label">Library</span>
+        <nav class="cats" id="cats"></nav>
+      </div>
+
+      <div class="side__group">
+        <span class="mono side__label">Status</span>
+        <div class="status-filter" id="statusFilter">
+          <button class="chip on" data-status="all">All</button>
+          <button class="chip" data-status="live">Live</button>
+          <button class="chip" data-status="soon">In progress</button>
+        </div>
+      </div>
+
+      <div class="side__cta">
+        <span class="mono">Need something custom?</span>
+        <p>We design &amp; build websites, portfolios and landing pages.</p>
+        <a href="mailto:hello@forma.studio" class="btn">Start a project ↗</a>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+      <header class="top">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <label class="search">
+          <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2"/></svg>
+          <input id="search" type="search" placeholder="Search templates, tags…" autocomplete="off" />
+          <kbd>/</kbd>
+        </label>
+        <div class="top__right">
+          <select id="sort" class="select" aria-label="Sort">
+            <option value="new">Newest</option>
+            <option value="az">A — Z</option>
+            <option value="cat">Category</option>
+          </select>
+          <div class="seg" id="viewToggle">
+            <button class="on" data-view="grid" aria-label="Grid view"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 1h6v6H1zM9 1h6v6H9zM1 9h6v6H1zM9 9h6v6H9z" fill="currentColor"/></svg></button>
+            <button data-view="list" aria-label="List view"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 2h14v2H1zM1 7h14v2H1zM1 12h14v2H1z" fill="currentColor"/></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <section class="intro">
+        <div>
+          <span class="mono">Template library — <span id="countLive">0</span> live</span>
+          <h1>Websites we've <em>built</em>.<br />Pick one, make it <span class="hl">yours</span>.</h1>
+        </div>
+        <p>Every template is a real, production-ready build. Open any of them to preview it on desktop, tablet or mobile.</p>
+      </section>
+
+      <div class="results-bar">
+        <span class="mono" id="resultsLabel">All templates</span>
+        <span class="mono" id="resultsCount"></span>
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <h3>Nothing here <em>yet</em>.</h3>
+        <p>Try another search or category.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ VIEWER ============ -->
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer__bar">
+      <div class="viewer__left">
+        <button class="icon-btn" id="closeViewer" aria-label="Close preview">✕</button>
+        <div class="viewer__title">
+          <strong id="vName"></strong>
+          <span class="mono" id="vCat"></span>
+        </div>
+      </div>
+
+      <div class="seg" id="devices">
+        <button class="on" data-device="desktop">Desktop</button>
+        <button data-device="tablet">Tablet</button>
+        <button data-device="mobile">Mobile</button>
+      </div>
+
+      <div class="viewer__right">
+        <span class="mono" id="vIndex"></span>
+        <button class="icon-btn" id="prevBtn" aria-label="Previous template">←</button>
+        <button class="icon-btn" id="nextBtn" aria-label="Next template">→</button>
+        <button class="icon-btn" id="infoBtn" aria-label="Template details">i</button>
+        <a class="btn btn--sm" id="openNew" target="_blank" rel="noopener">Open ↗</a>
+      </div>
+    </div>
+
+    <div class="viewer__body">
+      <div class="stage" id="stage">
+        <div class="device" id="device">
+          <div class="loader" id="loader"><span></span></div>
+          <iframe id="frame" title="Template preview"></iframe>
+        </div>
+      </div>
+
+      <aside class="info" id="info">
+        <span class="mono">About this template</span>
+        <h2 id="iName"></h2>
+        <p id="iDesc"></p>
+        <dl>
+          <dt class="mono">Category</dt><dd id="iCat"></dd>
+          <dt class="mono">Typography</dt><dd id="iFonts"></dd>
+          <dt class="mono">Built with</dt><dd id="iStack"></dd>
+          <dt class="mono">Palette</dt><dd class="swatches" id="iPalette"></dd>
+          <dt class="mono">Highlights</dt><dd class="tags" id="iTags"></dd>
+        </dl>
+        <a href="mailto:hello@forma.studio" class="btn" id="iCta">I want this one ↗</a>
+        <p class="mono keys">← → switch · Esc close</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="templates.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
