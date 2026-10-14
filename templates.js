@@ -257,6 +257,19 @@ const TEMPLATES = [
 
   /* ---------------- Business ---------------- */
   {
+    id: "tawer",
+    name: "Tawer Academy",
+    category: "Business",
+    status: "live",
+    path: "templates/tawer/index.html",
+    description: "A bright, SEO-ready English language academy site: blob photo hero with progress cards, interactive A1–C1 level explorer, filterable course catalogue, a working 10-question placement test that recommends a level, teachers, review slider, monthly/term pricing toggle, FAQ with schema markup and a free-trial booking form.",
+    tags: ["Language school", "Placement test", "Level explorer", "Course filter", "SEO schema"],
+    palette: ["#5b2bd1", "#ff7a1a", "#1d1140", "#ffffff"],
+    fonts: "Lexend · DM Sans",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-21",
+  },
+  {
     id: "agency-monolith",
     name: "Monolith",
     category: "Business",
