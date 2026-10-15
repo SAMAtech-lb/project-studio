@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chronica — Clocks &amp; Watches Shop</title>
+  <meta name="description" content="Wall clocks, alarm clocks, pocket and wrist watches with free engraving, 2-year warranty and in-house watch repairs. Shop online or visit our workshop." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__in">
+      <span><i class="ri-phone-line"></i> (212) 555-0147</span>
+      <span class="topbar__mid"><i class="ri-quill-pen-line"></i> Free engraving on all watches this month</span>
+      <span><i class="ri-map-pin-line"></i> Workshop: 41 Mercer St, New York</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#home" class="logo"><span class="logo__mark"><i class="ri-time-line"></i></span>Chronica</a>
+      <nav class="nav" id="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#shop">Shop</a>
+        <a href="#engrave">Personalise</a>
+        <a href="#repairs">Repairs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="icons">
+        <label class="hsearch"><i class="ri-search-line"></i><input type="search" id="searchInput" placeholder="Search clocks & watches" aria-label="Search" /></label>
+        <button aria-label="Wishlist" id="wishBtn"><i class="ri-heart-line"></i><span id="wishCount">0</span></button>
+        <button aria-label="Cart" id="cartBtn"><i class="ri-shopping-cart-2-line"></i><span id="cartCount">0</span></button>
+        <button class="burger" id="burger" aria-label="Open menu"><i class="ri-menu-3-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero__in">
+      <div class="hero__text reveal">
+        <span class="pill"><i class="ri-award-line"></i> Family-run watchmakers since 1987</span>
+        <h1>Timeless pieces for every <span>room &amp; wrist</span></h1>
+        <p>Hand-picked wall clocks, alarm clocks and watches — tested in our New York workshop and backed by a 2-year warranty.</p>
+        <div class="hero__btns">
+          <a href="#shop" class="btn">Shop collection <i class="ri-arrow-right-line"></i></a>
+          <a href="#repairs" class="btn btn--light"><i class="ri-tools-line"></i> Book a repair</a>
+        </div>
+        <div class="world" id="world"></div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="clock" id="clock" aria-label="Live clock">
+          <div class="clock__face" id="ticks"></div>
+          <div class="clock__brand">CHRONICA<small>New York</small></div>
+          <div class="clock__date" id="clockDate">15</div>
+          <div class="hand hand--h" id="hH"></div>
+          <div class="hand hand--m" id="hM"></div>
+          <div class="hand hand--s" id="hS"></div>
+          <div class="clock__pin"></div>
+        </div>
+        <div class="hcard hcard--a"><img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=200&q=80" alt="Aviator chronograph watch" /><div><small>Bestseller</small><strong>Aviator Chrono</strong><span>$329</span></div></div>
+        <div class="hcard hcard--b"><i class="ri-shield-check-fill"></i><div><strong>2-year warranty</strong><small>On every timepiece</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section class="brands">
+    <div class="container brands__in">
+      <span><i class="ri-windy-line"></i> Northwind</span><span><i class="ri-sun-line"></i> Lumen</span><span><i class="ri-planet-line"></i> Orbit</span><span><i class="ri-compass-3-line"></i> Fieldnote</span><span><i class="ri-flashlight-line"></i> Voltra</span><span><i class="ri-gamepad-line"></i> Arcade</span>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="title reveal"><span class="sub-title">Categories</span><h2>Shop by <span>category</span></h2></div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section class="section section--cream" id="shop">
+    <div class="container">
+      <div class="title reveal"><span class="sub-title">Our shop</span><h2>Featured <span>timepieces</span></h2></div>
+      <div class="toolbar reveal">
+        <div class="chips" id="chips"></div>
+        <div class="toolbar__right">
+          <label class="range">Max price: <strong id="maxVal">$500</strong><input type="range" id="maxPrice" min="30" max="500" step="10" value="500" /></label>
+          <select id="sort" aria-label="Sort">
+            <option value="feat">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="new">Newest</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- Engraving configurator -->
+  <section class="section" id="engrave">
+    <div class="container conf">
+      <div class="conf__preview reveal">
+        <div class="caseback" id="caseback">
+          <div class="caseback__ring"></div>
+          <span class="caseback__text" id="engraveText">Forever yours</span>
+          <span class="caseback__sub" id="engraveSub">15.10.2026</span>
+        </div>
+        <img id="confImg" src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=700&q=80" alt="Selected watch" />
+        <div class="strap-dot" id="strapDot"></div>
+      </div>
+      <div class="conf__form reveal">
+        <span class="sub-title">Personalise it</span>
+        <h2>Make it <span>truly theirs</span></h2>
+        <p>Choose a watch, pick a strap and add a free engraving on the caseback. Perfect for anniversaries, graduations and retirements.</p>
+        <h4>1. Choose a watch</h4>
+        <div class="pick" id="pickWatch"></div>
+        <h4>2. Strap</h4>
+        <div class="swatches" id="swatches"></div>
+        <h4>3. Engraving <small>(free, max 20 characters)</small></h4>
+        <div class="engr">
+          <input type="text" id="engrInput" maxlength="20" value="Forever yours" aria-label="Engraving text" />
+          <select id="engrFont" aria-label="Engraving style"><option value="serif">Classic</option><option value="script">Script</option><option value="sans">Modern</option></select>
+        </div>
+        <label class="check"><input type="checkbox" id="giftBox" checked /><span><i class="ri-gift-2-line"></i> Add a walnut gift box <em>+$19</em></span></label>
+        <div class="conf__total">
+          <div><small>Total</small><strong id="confTotal">$0</strong></div>
+          <button class="btn" id="confAdd"><i class="ri-shopping-cart-2-line"></i> Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deal -->
+  <section class="deal">
+    <div class="container deal__in reveal">
+      <div class="deal__text">
+        <span class="sub-title sub-title--light">Weekend offer</span>
+        <h2>Up to 30% off <span>wall clocks</span></h2>
+        <p>Quiet sweep movements, solid wood and brushed steel. Sale ends Sunday at midnight.</p>
+        <div class="count" id="countdown"><div><strong id="cdD">0</strong><small>Days</small></div><div><strong id="cdH">0</strong><small>Hrs</small></div><div><strong id="cdM">0</strong><small>Min</small></div><div><strong id="cdS">0</strong><small>Sec</small></div></div>
+        <a href="#shop" class="btn btn--amber" id="dealBtn">Shop wall clocks</a>
+      </div>
+      <div class="deal__img"><img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80" alt="Minimal white wall clock" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="section">
+    <div class="container why">
+      <div class="why__item reveal"><i class="ri-truck-line"></i><h3>Free express delivery</h3><p>On all orders over $99, insured and tracked.</p></div>
+      <div class="why__item reveal"><i class="ri-shield-check-line"></i><h3>2-year warranty</h3><p>Every piece is tested in our workshop before it ships.</p></div>
+      <div class="why__item reveal"><i class="ri-quill-pen-line"></i><h3>Free engraving</h3><p>Hand-engraved casebacks with your personal message.</p></div>
+      <div class="why__item reveal"><i class="ri-arrow-go-back-line"></i><h3>60-day returns</h3><p>Not the right fit? Send it back, no questions asked.</p></div>
+    </div>
+  </section>
+
+  <!-- Repairs -->
+  <section class="section section--dark" id="repairs">
+    <div class="container repair">
+      <div class="repair__text reveal">
+        <span class="sub-title sub-title--light">Workshop &amp; repairs</span>
+        <h2>Expert repairs by <span>certified watchmakers</span></h2>
+        <p>From a simple battery change to a full restoration of your grandfather's clock — our three master watchmakers handle every job by hand.</p>
+        <ul class="prices" id="repairPrices"></ul>
+        <div class="repair__img"><img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80" alt="Close-up of a clock face" loading="lazy" /></div>
+      </div>
+      <form class="repair__form reveal" id="repairForm">
+        <h3>Book a repair</h3>
+        <p>Drop in, or send it to us with a free insured shipping label.</p>
+        <label>Service<select id="repairSel" required></select></label>
+        <div class="row">
+          <label>Your name<input type="text" required placeholder="John Miller" /></label>
+          <label>Phone<input type="tel" required placeholder="(212) 555-0100" /></label>
+        </div>
+        <div class="row">
+          <label>Preferred date<input type="date" id="repairDate" required /></label>
+          <label>Drop-off method
+            <select><option>Visit the workshop</option><option>Free insured shipping</option></select>
+          </label>
+        </div>
+        <label>Describe the issue<textarea rows="3" placeholder="e.g. watch stops at night, scratched glass…"></textarea></label>
+        <button class="btn btn--full" type="submit">Request booking</button>
+        <p class="form-msg" id="repairMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="title reveal"><span class="sub-title">Reviews</span><h2>Trusted by <span>8,000+ customers</span></h2></div>
+      <div class="reviews" id="reviewsRow"></div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="title reveal"><span class="sub-title">The Journal</span><h2>Watch care &amp; <span>buying guides</span></h2></div>
+      <div class="posts">
+        <article class="post reveal"><img src="https://images.unsplash.com/photo-1594576722512-582bcd46fba3?auto=format&fit=crop&w=700&q=80" alt="Wooden wrist watch on planks" loading="lazy" /><div><small>Guides · 5 min</small><h3>Automatic vs quartz: which movement is right for you?</h3><a href="#">Read more <i class="ri-arrow-right-line"></i></a></div></article>
+        <article class="post reveal"><img src="https://images.unsplash.com/photo-1415604934674-561df9abf539?auto=format&fit=crop&w=700&q=80" alt="Vintage brass alarm clock" loading="lazy" /><div><small>Home · 4 min</small><h3>How to choose the right wall clock size for your room</h3><a href="#">Read more <i class="ri-arrow-right-line"></i></a></div></article>
+        <article class="post reveal"><img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=700&q=80" alt="Pocket watch on a chain" loading="lazy" /><div><small>Care · 6 min</small><h3>7 simple habits that keep your watch running for decades</h3><a href="#">Read more <i class="ri-arrow-right-line"></i></a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / newsletter -->
+  <section class="section" id="contact">
+    <div class="container contact">
+      <div class="store reveal">
+        <h3>Visit our workshop</h3>
+        <ul>
+          <li><i class="ri-map-pin-2-line"></i><div><small>Address</small>41 Mercer St, SoHo, New York, NY 10013</div></li>
+          <li><i class="ri-phone-line"></i><div><small>Phone</small>(212) 555-0147</div></li>
+          <li><i class="ri-mail-line"></i><div><small>Email</small>hello@chronica.shop</div></li>
+        </ul>
+        <div class="open" id="openNow"></div>
+        <ul class="hours" id="hours"></ul>
+      </div>
+      <div class="news reveal">
+        <i class="ri-mail-send-line"></i>
+        <h2>Get <span>10% off</span> your first order</h2>
+        <p>Join our newsletter for new arrivals, care tips and members-only sales.</p>
+        <form id="newsForm"><input type="email" required placeholder="Your email address" aria-label="Email" /><button class="btn" type="submit">Subscribe</button></form>
+        <small>No spam. Unsubscribe anytime.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#home" class="logo logo--light"><span class="logo__mark"><i class="ri-time-line"></i></span>Chronica</a>
+        <p>Clocks, watches and expert repairs from a family-run New York workshop since 1987.</p>
+        <div class="socials"><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a><a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a><a href="#" aria-label="Pinterest"><i class="ri-pinterest-fill"></i></a></div>
+      </div>
+      <div><h4>Shop</h4><a href="#shop">Wall clocks</a><a href="#shop">Alarm clocks</a><a href="#shop">Wrist watches</a><a href="#shop">Pocket watches</a><a href="#shop">Smart watches</a></div>
+      <div><h4>Service</h4><a href="#repairs">Repairs</a><a href="#engrave">Engraving</a><a href="#">Warranty</a><a href="#">Shipping</a><a href="#">Returns</a></div>
+      <div><h4>We accept</h4><div class="pay"><i class="ri-visa-line"></i><i class="ri-mastercard-line"></i><i class="ri-paypal-line"></i><i class="ri-apple-fill"></i></div><p class="secure"><i class="ri-lock-2-line"></i> 256-bit SSL secure checkout</p></div>
+    </div>
+    <div class="container footer__bottom"><p>© 2026 Chronica Clocks &amp; Watches. All rights reserved.</p><div><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </footer>
+
+  <!-- Cart -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cart" aria-label="Shopping cart">
+    <div class="cart__head"><h3>Shopping cart</h3><button id="cartClose" aria-label="Close cart"><i class="ri-close-line"></i></button></div>
+    <div class="cart__ship"><p id="shipMsg"></p><div class="bar"><span id="shipBar"></span></div></div>
+    <div class="cart__list" id="cartList"></div>
+    <div class="cart__foot">
+      <div class="row2"><span>Subtotal</span><strong id="cSub">$0</strong></div>
+      <div class="row2"><span>Shipping</span><span id="cShip">—</span></div>
+      <div class="row2 row2--total"><span>Total</span><strong id="cTotal">$0</strong></div>
+      <button class="btn btn--full" id="checkout">Secure checkout <i class="ri-lock-2-line"></i></button>
+    </div>
+  </aside>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const U = (id, w = 800) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+    const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2)).toLocaleString("en-US");
+
+    /* Data */
+    const categories = [
+      { k: "Wall Clocks", i: "ri-time-line", img: "1563861826100-9cb868fdbe1c" },
+      { k: "Alarm Clocks", i: "ri-alarm-line", img: "1415604934674-561df9abf539" },
+      { k: "Wrist Watches", i: "ri-timer-line", img: "1524592094714-0f0654e20314" },
+      { k: "Pocket Watches", i: "ri-history-line", img: "1509048191080-d2984bad6ae5" },
+      { k: "Smart Watches", i: "ri-heart-pulse-line", img: "1549482199-bc1ca6f58502" },
+      { k: "Desk & Timers", i: "ri-hourglass-line", img: "1501139083538-0139583c060f" },
+    ];
+    const products = [
+      { id: 1, n: "Aviator Chrono", c: "Wrist Watches", p: 329, old: 0, r: 4.9, img: "1542496658-e33a6d0d50f6", tag: "Bestseller", d: "42 mm · Quartz chronograph", ord: 9, nw: 2 },
+      { id: 2, n: "Nordic Wall Clock", c: "Wall Clocks", p: 59, old: 85, r: 4.8, img: "1563861826100-9cb868fdbe1c", tag: "-30%", d: "30 cm · Silent sweep", ord: 8, nw: 5 },
+      { id: 3, n: "Rosa Chronograph", c: "Wrist Watches", p: 289, old: 0, r: 4.7, img: "1522312346375-d1a52e2b99b3", tag: "", d: "38 mm · Rose gold tone", ord: 7, nw: 4 },
+      { id: 4, n: "Twin-Bell Alarm", c: "Alarm Clocks", p: 49, old: 0, r: 4.6, img: "1415604934674-561df9abf539", tag: "Classic", d: "Brass · Mechanical bell", ord: 6, nw: 8 },
+      { id: 5, n: "Heritage Pocket Watch", c: "Pocket Watches", p: 189, old: 0, r: 4.9, img: "1509048191080-d2984bad6ae5", tag: "", d: "Steel · Hand-wound", ord: 6, nw: 7 },
+      { id: 6, n: "Ocean Blue Automatic", c: "Wrist Watches", p: 449, old: 0, r: 5, img: "1619134778706-7015533a6150", tag: "New", d: "41 mm · Automatic · 100 m", ord: 8, nw: 1 },
+      { id: 7, n: "Pulse Smart S2", c: "Smart Watches", p: 259, old: 299, r: 4.5, img: "1549482199-bc1ca6f58502", tag: "-13%", d: "Heart rate · GPS · 7-day battery", ord: 5, nw: 3 },
+      { id: 8, n: "Walnut Wood Watch", c: "Wrist Watches", p: 139, old: 0, r: 4.7, img: "1594576722512-582bcd46fba3", tag: "Eco", d: "40 mm · Walnut & steel", ord: 5, nw: 6 },
+      { id: 9, n: "Hourglass 30", c: "Desk & Timers", p: 39, old: 0, r: 4.8, img: "1501139083538-0139583c060f", tag: "", d: "30-minute sand timer", ord: 4, nw: 9 },
+      { id: 10, n: "Leather Dress Watch", c: "Wrist Watches", p: 219, old: 0, r: 4.6, img: "1557531365-e8b22d93dbd0", tag: "", d: "39 mm · Italian leather", ord: 4, nw: 10 },
+      { id: 11, n: "Field Watch Denim", c: "Wrist Watches", p: 179, old: 0, r: 4.5, img: "1585123334904-845d60e97b29", tag: "", d: "40 mm · Fabric strap", ord: 3, nw: 11 },
+      { id: 12, n: "Nato Explorer", c: "Wrist Watches", p: 199, old: 239, r: 4.6, img: "1508057198894-247b23fe5ade", tag: "-17%", d: "40 mm · Nylon NATO strap", ord: 3, nw: 12 },
+    ];
+    const straps = [
+      { k: "Cognac leather", c: "#9a5b2e", p: 0 }, { k: "Black leather", c: "#1d1d1d", p: 0 },
+      { k: "Emerald suede", c: "#0f6b55", p: 15 }, { k: "Steel mesh", c: "#a9b0b5", p: 35 },
+    ];
+    const repairs = [
+      { k: "Battery replacement", p: 15, t: "While you wait" }, { k: "Strap fitting & sizing", p: 20, t: "Same day" },
+      { k: "Glass replacement", p: 65, t: "3–5 days" }, { k: "Full watch service", p: 189, t: "2–3 weeks" }, { k: "Clock restoration", p: 249, t: "From 3 weeks" },
+    ];
+    const reviews = [
+      { q: "Bought the Ocean Blue Automatic as a 30th birthday gift with an engraving — it arrived in two days in a gorgeous walnut box. He hasn't taken it off since.", n: "Laura Bennett", r: "Ocean Blue Automatic", img: "1438761681033-6461ffad8d80" },
+      { q: "They restored my grandfather's 1950s mantel clock and it chimes again for the first time in 20 years. True craftsmen, fair price.", n: "Robert Hayes", r: "Clock restoration", img: "1500648767791-00dcc994a43e" },
+      { q: "The Nordic wall clock is completely silent — finally a clock I can hang in the bedroom. Great packaging and fast shipping.", n: "Mia Johnson", r: "Nordic Wall Clock", img: "1544005313-94ddf0286df2" },
+    ];
+    const hours = [["Sun", "Closed"], ["Mon", "10:00 – 19:00"], ["Tue", "10:00 – 19:00"], ["Wed", "10:00 – 19:00"], ["Thu", "10:00 – 20:00"], ["Fri", "10:00 – 20:00"], ["Sat", "11:00 – 18:00"]];
+
+    /* Storage helpers */
+    const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch { return d; } };
+    const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+    let cart = load("chronica-cart", []), wish = new Set(load("chronica-wish", []));
+
+    /* Live analog clock + world clocks */
+    $("ticks").innerHTML = Array.from({ length: 60 }, (_, i) => `<span class="${i % 5 ? "" : "big"}" style="transform:rotate(${i * 6}deg)"></span>`).join("")
+      + [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((n, i) => { const a = (i * 30 - 90) * Math.PI / 180; return `<b style="left:${50 + 37 * Math.cos(a)}%;top:${50 + 37 * Math.sin(a)}%">${n}</b>`; }).join("");
+    const cities = [["New York", "America/New_York"], ["London", "Europe/London"], ["Dubai", "Asia/Dubai"], ["Tokyo", "Asia/Tokyo"]];
+    $("world").innerHTML = cities.map(([c]) => `<div><small>${c}</small><strong data-city="${c}">--:--</strong></div>`).join("");
+    const tickClock = () => {
+      const d = new Date(), s = d.getSeconds() + d.getMilliseconds() / 1000, m = d.getMinutes() + s / 60, h = (d.getHours() % 12) + m / 60;
+      $("hS").style.transform = `rotate(${s * 6}deg)`; $("hM").style.transform = `rotate(${m * 6}deg)`; $("hH").style.transform = `rotate(${h * 30}deg)`;
+      $("clockDate").textContent = d.getDate();
+      cities.forEach(([c, tz]) => { const el = document.querySelector(`[data-city="${c}"]`); try { el.textContent = d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", timeZone: tz }); } catch { el.textContent = "--:--"; } });
+    };
+    tickClock(); setInterval(tickClock, 200);
+
+    /* Categories */
+    $("cats").innerHTML = categories.map((c) => `
+      <button class="cat reveal" data-cat="${c.k}"><div class="cat__img"><img src="${U(c.img, 400)}" alt="${c.k}" loading="lazy" /></div>
+        <div class="cat__body"><i class="${c.i}"></i><h3>${c.k}</h3><small>${((n) => `${n} product${n === 1 ? "" : "s"}`)(products.filter((p) => p.c === c.k).length)}</small></div></button>`).join("");
+
+    /* Shop grid */
+    let cat = "All", maxP = 500, sortBy = "feat", q = "";
+    $("chips").innerHTML = ["All", ...categories.map((c) => c.k)].map((c) => `<button class="${c === "All" ? "on" : ""}" data-c="${c}">${c}</button>`).join("");
+    const setCat = (c) => { cat = c; document.querySelectorAll("#chips button").forEach((b) => b.classList.toggle("on", b.dataset.c === c)); renderGrid(); };
+    const stars = (r) => Array.from({ length: 5 }, (_, i) => `<i class="ri-star-${r >= i + 1 ? "fill" : r >= i + 0.5 ? "half-fill" : "line"}"></i>`).join("");
+    const renderGrid = () => {
+      let list = products.filter((p) => (cat === "All" || p.c === cat) && p.p <= maxP && (!q || (p.n + p.c + p.d).toLowerCase().includes(q)));
+      list.sort((a, b) => sortBy === "low" ? a.p - b.p : sortBy === "high" ? b.p - a.p : sortBy === "new" ? a.nw - b.nw : b.ord - a.ord);
+      $("grid").innerHTML = list.length ? list.map((p) => `
+        <div class="card">
+          <div class="card__img">
+            ${p.tag ? `<span class="tag ${p.tag.startsWith("-") ? "tag--sale" : ""}">${p.tag}</span>` : ""}
+            <button class="card__wish ${wish.has(p.id) ? "on" : ""}" data-wish="${p.id}" aria-label="Save ${p.n}"><i class="ri-heart-${wish.has(p.id) ? "fill" : "line"}"></i></button>
+            <img src="${U(p.img, 600)}" alt="${p.n}" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <small>${p.c}</small>
+            <h3>${p.n}</h3>
+            <p>${p.d}</p>
+            <div class="rate">${stars(p.r)}<span>${p.r.toFixed(1)}</span></div>
+            <div class="card__foot"><div class="price">${money(p.p)}${p.old ? `<del>${money(p.old)}</del>` : ""}</div><button class="add" data-add="${p.id}" aria-label="Add ${p.n} to cart"><i class="ri-shopping-cart-2-line"></i></button></div>
+          </div>
+        </div>`).join("") : `<div class="empty"><i class="ri-search-line"></i><p>No timepieces match these filters.</p><button class="btn" id="resetF">Reset filters</button></div>`;
+    };
+    $("chips").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) setCat(b.dataset.c); });
+    $("cats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (b) { setCat(b.dataset.cat); $("shop").scrollIntoView({ behavior: "smooth" }); } });
+    $("maxPrice").addEventListener("input", (e) => { maxP = +e.target.value; $("maxVal").textContent = "$" + maxP; renderGrid(); });
+    $("sort").addEventListener("change", (e) => { sortBy = e.target.value; renderGrid(); });
+    $("searchInput").addEventListener("input", (e) => { q = e.target.value.trim().toLowerCase(); renderGrid(); });
+    $("searchInput").addEventListener("keydown", (e) => { if (e.key === "Enter") $("shop").scrollIntoView({ behavior: "smooth" }); });
+    $("grid").addEventListener("click", (e) => {
+      const w = e.target.closest("[data-wish]"), a = e.target.closest("[data-add]");
+      if (w) { const id = +w.dataset.wish; wish.has(id) ? wish.delete(id) : wish.add(id); save("chronica-wish", [...wish]); renderGrid(); badges(); toast(wish.has(id) ? "Saved to wishlist" : "Removed from wishlist"); }
+      if (a) addItem({ id: +a.dataset.add });
+      if (e.target.id === "resetF") { maxP = 500; $("maxPrice").value = 500; $("maxVal").textContent = "$500"; q = ""; $("searchInput").value = ""; setCat("All"); }
+    });
+    $("dealBtn").addEventListener("click", () => setCat("Wall Clocks"));
+
+    /* Configurator */
+    const confWatches = [3, 6, 10].map((id) => products.find((p) => p.id === id));
+    let cw = confWatches[0], cs = 0;
+    $("pickWatch").innerHTML = confWatches.map((p, i) => `<button class="${i ? "" : "on"}" data-i="${i}"><img src="${U(p.img, 160)}" alt="${p.n}" /><span>${p.n}<small>${money(p.p)}</small></span></button>`).join("");
+    $("swatches").innerHTML = straps.map((s, i) => `<button class="${i ? "" : "on"}" data-i="${i}" title="${s.k}"><span style="background:${s.c}"></span>${s.k}${s.p ? `<small>+$${s.p}</small>` : ""}</button>`).join("");
+    const renderConf = () => {
+      const txt = $("engrInput").value.trim() || "Your message";
+      $("engraveText").textContent = txt;
+      $("caseback").dataset.font = $("engrFont").value;
+      $("confImg").src = U(cw.img, 700); $("confImg").alt = cw.n;
+      $("strapDot").style.background = straps[cs].c;
+      $("strapDot").title = straps[cs].k;
+      const total = cw.p + straps[cs].p + ($("giftBox").checked ? 19 : 0);
+      $("confTotal").textContent = money(total);
+      return total;
+    };
+    $("pickWatch").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; cw = confWatches[+b.dataset.i]; document.querySelectorAll("#pickWatch button").forEach((x) => x.classList.toggle("on", x === b)); renderConf(); });
+    $("swatches").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; cs = +b.dataset.i; document.querySelectorAll("#swatches button").forEach((x) => x.classList.toggle("on", x === b)); renderConf(); });
+    ["engrInput", "engrFont", "giftBox"].forEach((id) => $(id).addEventListener("input", renderConf));
+    $("engraveSub").textContent = new Date().toLocaleDateString("en-GB").replace(/\//g, ".");
+    renderConf();
+    $("confAdd").addEventListener("click", () => {
+      const total = renderConf();
+      addItem({ id: cw.id, custom: `${straps[cs].k} · “${$("engrInput").value.trim() || "No engraving"}”${$("giftBox").checked ? " · Gift box" : ""}`, price: total });
+    });
+
+    /* Cart */
+    const addItem = ({ id, custom = "", price }) => {
+      const p = products.find((x) => x.id === id), key = id + "|" + custom, it = cart.find((c) => c.key === key);
+      if (it) it.qty++; else cart.push({ key, id, custom, price: price || p.p, qty: 1 });
+      save("chronica-cart", cart); renderCart(); openCart();
+    };
+    const renderCart = () => {
+      const sub = cart.reduce((s, c) => s + c.price * c.qty, 0), FREE = 99, ship = !sub || sub >= FREE ? 0 : 9;
+      $("cartList").innerHTML = cart.length ? cart.map((c) => {
+        const p = products.find((x) => x.id === c.id);
+        return `<div class="ci"><img src="${U(p.img, 200)}" alt="${p.n}" />
+          <div><h4>${p.n}</h4><small>${c.custom || p.d}</small>
+            <div class="qty"><button data-dec="${c.key}" aria-label="Decrease"><i class="ri-subtract-line"></i></button><span>${c.qty}</span><button data-inc="${c.key}" aria-label="Increase"><i class="ri-add-line"></i></button></div></div>
+          <div class="ci__end"><strong>${money(c.price * c.qty)}</strong><button data-rm="${c.key}" aria-label="Remove"><i class="ri-delete-bin-line"></i></button></div></div>`;
+      }).join("") : `<div class="empty"><i class="ri-shopping-cart-2-line"></i><p>Your cart is empty.</p></div>`;
+      $("shipMsg").innerHTML = !sub ? "Free express shipping on orders over <strong>$99</strong>" : sub >= FREE ? '<i class="ri-checkbox-circle-fill"></i> You qualify for <strong>free express shipping</strong>' : `Add <strong>${money(FREE - sub)}</strong> more for free express shipping`;
+      $("shipBar").style.width = Math.min(100, (sub / FREE) * 100) + "%";
+      $("cSub").textContent = money(sub); $("cShip").textContent = !sub ? "—" : ship ? money(ship) : "Free"; $("cTotal").textContent = money(sub + ship);
+      badges();
+    };
+    const badges = () => { $("cartCount").textContent = cart.reduce((s, c) => s + c.qty, 0); $("wishCount").textContent = wish.size; };
+    $("cartList").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      const key = b.dataset.inc || b.dataset.dec || b.dataset.rm, it = cart.find((c) => c.key === key);
+      if (b.dataset.inc) it.qty++;
+      if (b.dataset.dec) it.qty--;
+      if (b.dataset.rm || it.qty < 1) cart = cart.filter((c) => c.key !== key);
+      save("chronica-cart", cart); renderCart();
+    });
+    const openCart = () => { $("cart").classList.add("open"); $("overlay").classList.add("show"); document.body.style.overflow = "hidden"; };
+    const closeCart = () => { $("cart").classList.remove("open"); $("overlay").classList.remove("show"); document.body.style.overflow = ""; };
+    $("cartBtn").onclick = openCart; $("cartClose").onclick = closeCart; $("overlay").onclick = closeCart;
+    $("wishBtn").onclick = () => toast(wish.size ? `${wish.size} item${wish.size > 1 ? "s" : ""} in your wishlist` : "Tap ♡ on any product to save it");
+    $("checkout").onclick = () => { if (!cart.length) return toast("Your cart is empty"); cart = []; save("chronica-cart", cart); renderCart(); closeCart(); toast("Order confirmed! We'll email your tracking number shortly."); };
+
+    /* Countdown to Sunday midnight */
+    const end = new Date(); end.setDate(end.getDate() + ((7 - end.getDay()) % 7)); end.setHours(23, 59, 59, 0);
+    const tickCD = () => { const s = Math.max(0, Math.floor((end - Date.now()) / 1000)); $("cdD").textContent = Math.floor(s / 86400); $("cdH").textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, "0"); $("cdM").textContent = String(Math.floor(s % 3600 / 60)).padStart(2, "0"); $("cdS").textContent = String(s % 60).padStart(2, "0"); };
+    tickCD(); setInterval(tickCD, 1000);
+
+    /* Repairs */
+    $("repairPrices").innerHTML = repairs.map((r) => `<li><span>${r.k}<small>${r.t}</small></span><strong>from ${money(r.p)}</strong></li>`).join("");
+    $("repairSel").innerHTML = `<option value="">Select a service</option>` + repairs.map((r) => `<option>${r.k} — from ${money(r.p)}</option>`).join("");
+    $("repairDate").min = new Date().toISOString().slice(0, 10);
+    $("repairForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const d = new Date($("repairDate").value + "T00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+      $("repairMsg").innerHTML = `<i class="ri-checkbox-circle-fill"></i> Booked for ${d}. We'll text you a confirmation shortly.`;
+      e.target.reset();
+    });
+
+    /* Reviews, hours */
+    $("reviewsRow").innerHTML = reviews.map((r) => `<div class="review reveal"><div class="rate">${stars(5)}</div><p>“${r.q}”</p><div class="review__who"><img src="${U(r.img, 120)}" alt="${r.n}" loading="lazy" /><div><strong>${r.n}</strong><small>Purchased: ${r.r}</small></div></div></div>`).join("");
+    const now = new Date(), dIdx = now.getDay();
+    $("hours").innerHTML = hours.map(([d, h], i) => `<li class="${i === dIdx ? "today" : ""}"><span>${d}</span><span>${h}</span></li>`).join("");
+    const [o, c] = hours[dIdx][1].split(" – ").map((t) => t && +t.split(":")[0]);
+    const isOpen = c && now.getHours() >= o && now.getHours() < c;
+    $("openNow").innerHTML = isOpen ? `<span class="dot dot--on"></span> Open now · closes at ${c}:00` : `<span class="dot"></span> Closed now`;
+
+    /* Toast, newsletter */
+    function toast(m) { const t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 3200); }
+    $("newsForm").addEventListener("submit", (e) => { e.preventDefault(); toast("Subscribed! Your code TIME10 is on its way."); e.target.reset(); });
+
+    /* Header, nav, burger */
+    const links = [...document.querySelectorAll(".nav a")];
+    const onScroll = () => {
+      $("header").classList.toggle("sticky", scrollY > 50);
+      $("toTop").classList.toggle("show", scrollY > 700);
+      let cur = "home";
+      links.forEach((a) => { const s = document.querySelector(a.getAttribute("href")); if (s && s.offsetTop - 140 <= scrollY) cur = s.id; });
+      links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+    };
+    addEventListener("scroll", onScroll); onScroll();
+    $("burger").onclick = () => $("nav").classList.toggle("open");
+    links.forEach((a) => a.addEventListener("click", () => $("nav").classList.remove("open")));
+    addEventListener("keydown", (e) => { if (e.key === "Escape") { closeCart(); $("nav").classList.remove("open"); } });
+    $("toTop").onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+
+    /* Reveal */
+    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    renderGrid(); renderCart();
+  </script>
+</body>
+</html>

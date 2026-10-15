@@ -86,6 +86,19 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-sofia",
+    name: "Sofia Reyes",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-sofia/index.html",
+    description: "A bright brand & marketing designer portfolio: arched photo hero with a rotating 'available' badge, service marquee, filterable case studies with result pop-ups, a working project price estimator that pre-fills the brief, testimonial switcher, packages, journal and a contact form with budget chips.",
+    tags: ["Brand designer", "Marketer", "Light", "Price estimator", "Case studies"],
+    palette: ["#ffffff", "#1c1830", "#ff4d6d", "#ffc94d"],
+    fonts: "Manrope",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-23",
+  },
+  {
     id: "portfolio-layla",
     name: "Layla Mansour",
     category: "Portfolio",
@@ -257,6 +270,19 @@ const TEMPLATES = [
 
   /* ---------------- Business ---------------- */
   {
+    id: "cleaning-sparkle",
+    name: "Sparkle & Co.",
+    category: "Business",
+    status: "live",
+    path: "templates/cleaning-sparkle/index.html",
+    description: "A bright home & office cleaning company site: call-now header, hero quick-quote, services with prices, a working 5-step price calculator and booking (service, rooms, extras, frequency discount, date & time), drag before/after slider, team, reviews, FAQ, ZIP-code coverage checker and opening hours that highlight today.",
+    tags: ["Cleaning", "Local service", "Price calculator", "Before/after", "Online booking"],
+    palette: ["#ffffff", "#0b2341", "#0a84d6", "#7ccf1f"],
+    fonts: "Rubik",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-24",
+  },
+  {
     id: "tawer",
     name: "Tawer Academy",
     category: "Business",
@@ -389,6 +415,45 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-monarch",
+    name: "Monarch Fine Watches",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-monarch/index.html",
+    description: "A dark, premium luxury-watch dealer (Rolex, Omega, Breitling): cinematic hero, brand marquee, collection with brand / new vs pre-owned filters, search and sort, USD / EUR / AED currency switch, quick view with specs and monthly payments, watch-of-the-month spotlight, instant trade-in valuation, private sourcing concierge, boutique open-now status and a bag drawer.",
+    tags: ["Luxury watches", "Rolex", "Dark", "Currency switch", "Trade-in valuation"],
+    palette: ["#0b0c0c", "#161918", "#f2f1ed", "#1e8f62"],
+    fonts: "Montserrat · Inter",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-27",
+  },
+  {
+    id: "shop-chronica",
+    name: "Chronica",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-chronica/index.html",
+    description: "A clocks & watches store with a live ticking analog clock and world-time hero, category cards, product grid with category chips, price slider, search and sort, a watch personaliser (strap, live caseback engraving preview, gift box), weekend-sale countdown, repair booking form, open-now store hours and a cart drawer.",
+    tags: ["Watches", "Clocks", "Live clock", "Engraving configurator", "Repair booking"],
+    palette: ["#ffffff", "#13201c", "#0f6b55", "#e9a23b"],
+    fonts: "Red Hat Display",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-26",
+  },
+  {
+    id: "shop-velora",
+    name: "Velora Parfums",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-velora/index.html",
+    description: "A soft, elegant multi-brand perfume boutique selling designer fragrances (Chanel, YSL, Versace, Armani, D&G): hero slider, category circles, product grid with gender tabs, sorting, live search and wishlist, quick view with scent-note pyramid and size pricing, a 3-question scent-finder quiz, gift-set countdown deal and a cart drawer with free-shipping progress.",
+    tags: ["Perfume", "Designer brands", "Scent quiz", "Quick view", "Cart drawer"],
+    palette: ["#ffffff", "#241a22", "#7a2e63", "#fbf1f2"],
+    fonts: "Josefin Sans · Mulish",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-25",
+  },
+  {
     id: "shop-maison",
     name: "Maison",
     category: "E-commerce",
@@ -403,6 +468,19 @@ const TEMPLATES = [
   },
 
   /* ---------------- Landing pages ---------------- */
+  {
+    id: "landing-nexora",
+    name: "Nexora",
+    category: "Landing page",
+    status: "live",
+    path: "templates/landing-nexora/index.html",
+    description: "A bright SaaS / tech company landing page: live product dashboard mock with animated chart, logo strip, benefits, tabbed feature showcase, how-it-works, integrations grid, ROI calculator, testimonial slider, pricing with monthly/yearly toggle and seat slider, FAQ, demo booking form and CTA band.",
+    tags: ["SaaS", "Tech company", "Pricing toggle", "ROI calculator", "Light"],
+    palette: ["#ffffff", "#0f172a", "#4f46e5", "#eef2ff"],
+    fonts: "Plus Jakarta Sans",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-10-22",
+  },
   {
     id: "event-frontier",
     name: "Frontier Summit",
