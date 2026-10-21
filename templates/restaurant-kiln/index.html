@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiln Coffee Roasters — Specialty Coffee, Roasted Weekly in Bristol</title>
+  <meta name="description" content="Kiln is a specialty coffee roaster and café group in Bristol. Shop freshly roasted beans, build a flexible coffee subscription and brew better at home with our guides." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Announcement -->
+  <div class="announce">Free UK delivery over £30 · Roasted every Tuesday, shipped Wednesday <a href="#subscribe">Subscribe &amp; save 15%</a></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#home" class="logo"><span><i class="ri-fire-fill"></i></span>kiln</a>
+      <nav class="nav" id="nav">
+        <a href="#shop" class="active">Shop Coffee</a>
+        <a href="#subscribe">Subscriptions</a>
+        <a href="#brew">Brew Guide</a>
+        <a href="#cafes">Our Cafés</a>
+        <a href="#wholesale">Wholesale</a>
+      </nav>
+      <div class="header__right">
+        <a href="#subscribe" class="btn btn--blue">Subscribe</a>
+        <button class="icon-btn" id="cart-open" aria-label="Open bag"><i class="ri-shopping-bag-line"></i><b id="cart-count">0</b></button>
+        <button class="icon-btn burger" id="burger" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Specialty roasters · Bristol, UK</span>
+        <h1>Roasted Tuesday. In your cup by <em>Friday.</em></h1>
+        <p>We buy traceable coffees directly from farmers we know by name, roast them in small batches and post them out the next morning — so every bag arrives at its absolute best.</p>
+        <div class="hero__btns">
+          <a href="#shop" class="btn btn--blue">Shop Coffee <i class="ri-arrow-right-line"></i></a>
+          <a href="#subscribe" class="btn btn--ghost">Build a Subscription</a>
+        </div>
+        <div class="hero__trust">
+          <div><i class="ri-star-fill"></i>4.9 from 3,800 reviews</div>
+          <div><i class="ri-plant-line"></i>B Corp certified</div>
+          <div><i class="ri-recycle-line"></i>Home-compostable bags</div>
+        </div>
+      </div>
+      <div class="hero__panel reveal">
+        <div class="ticket"><small>Next roast</small><b id="next-roast">Tue 21 Oct</b></div>
+        <div class="hero__bags" id="hero-bags"></div>
+        <div class="hero__chip"><img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=120&q=80" alt="" /><div><b>Espresso of the month</b>Huila, Colombia</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+  <!-- Shop -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">Shop coffee</span><h2>This Week's <em>Roasts</em></h2></div><p>Every coffee is roasted to order. Choose your bag size and grind — we'll take care of the rest.</p></div>
+      <div class="toolbar">
+        <div class="filters" id="filters"></div>
+        <select class="sort" id="sort" aria-label="Sort coffees"><option value="feat">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="light">Lightest roast first</option></select>
+      </div>
+      <div class="products" id="products"></div>
+    </div>
+  </section>
+
+  <!-- Subscription -->
+  <section class="section section--light" id="subscribe">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">Subscriptions</span><h2>Never Run Out. <em>Save 15%.</em></h2></div><p>Flexible deliveries you can pause, skip or change anytime. Free shipping on every subscription order.</p></div>
+      <div class="sub">
+        <div class="sub__steps reveal" id="sub-steps"></div>
+        <aside class="sum reveal">
+          <div class="bag" id="sum-bag"></div>
+          <h3>Your Subscription</h3>
+          <ul id="sum-list"></ul>
+          <div class="sum__price"><b id="sum-price">£0</b><s id="sum-was"></s><span>/ delivery</span></div>
+          <div class="sum__save" id="sum-save"></div>
+          <button class="btn btn--white" id="sum-go">Start Subscription <i class="ri-arrow-right-line"></i></button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brew guide -->
+  <section class="section" id="brew">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">Brew guide</span><h2>Brew Café-Quality <em>at Home</em></h2></div><p>Pick a method and how many cups. The recipe scales automatically and the timer walks you through every pour.</p></div>
+      <div class="brew">
+        <div class="brew__left reveal">
+          <div class="methods" id="methods"></div>
+          <div class="cups"><label for="cups">Cups <b id="cups-out">2 cups</b></label><input type="range" id="cups" min="1" max="4" value="2" /></div>
+          <div class="recipe" id="recipe"></div>
+          <ol class="steps-list" id="steps"></ol>
+        </div>
+        <div class="brew__right reveal">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy" />
+          <h3 id="t-method">V60 Pour-Over</h3>
+          <div class="ring">
+            <svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52" /><circle class="fg" id="ring" cx="60" cy="60" r="52" /></svg>
+            <div><b id="t-time">0:00</b><small id="t-step">Press play when you're ready</small></div>
+          </div>
+          <div class="timer-btns">
+            <button id="t-reset" aria-label="Reset timer"><i class="ri-restart-line"></i></button>
+            <button class="main" id="t-play" aria-label="Start timer"><i class="ri-play-fill"></i></button>
+            <button id="t-skip" aria-label="Next step"><i class="ri-skip-forward-line"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">From seed to cup</span><h2>How We <em>Work</em></h2></div><p>We pay on average 2.4× the Fairtrade minimum and publish every price we pay on our transparency report.</p></div>
+      <div class="process">
+        <div class="proc reveal"><img src="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=800&q=80" alt="Green coffee in sacks" loading="lazy" /><div><span>01 — SOURCE</span><h3>Direct from farms</h3><p>Long-term relationships with 14 producers in 8 countries, visited every harvest.</p></div></div>
+        <div class="proc reveal"><img src="https://images.unsplash.com/photo-1493925410384-84f842e616fb?auto=format&fit=crop&w=800&q=80" alt="Freshly roasted beans in hand" loading="lazy" /><div><span>02 — ROAST</span><h3>Small batches</h3><p>Roasted in 15 kg batches on our Loring in Bristol, profiled to show each coffee's sweetness.</p></div></div>
+        <div class="proc reveal"><img src="https://images.unsplash.com/photo-1545665225-b23b99e4d45e?auto=format&fit=crop&w=800&q=80" alt="Pour-over coffee brewing" loading="lazy" /><div><span>03 — BREW</span><h3>Tasted daily</h3><p>Every batch is cupped before it ships. If it's not right, it doesn't leave the roastery.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cafés -->
+  <section class="section" id="cafes">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">Visit us</span><h2>Our <em>Cafés</em></h2></div><p>Drink this week's roasts at the source. Free tasting flights every Saturday at 10am.</p></div>
+      <div class="cafes" id="cafes-grid"></div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="head reveal"><div><span class="eyebrow">Reviews</span><h2>4.9 Stars From <em>3,800</em> Coffee Lovers</h2></div></div>
+      <div class="reviews">
+        <div class="review reveal"><div class="stars">★★★★★</div><p>"The Ethiopia is the best filter coffee I've ever brewed at home. Jasmine and peach, exactly like the bag says. Unreal."</p><div class="review__who"><div><b>Sam O.</b><small>Verified buyer</small></div><span>Yirgacheffe</span></div></div>
+        <div class="review reveal"><div class="stars">★★★★★</div><p>"Two years on the subscription and I've never had a stale bag. Skipping a week when I'm away takes two clicks."</p><div class="review__who"><div><b>Leah M.</b><small>Subscriber since 2024</small></div><span>Subscription</span></div></div>
+        <div class="review reveal"><div class="stars">★★★★★</div><p>"Foundry is my go-to espresso — chocolatey, forgiving and gorgeous with milk. The brew timer on the site is genuinely useful too."</p><div class="review__who"><div><b>Dev P.</b><small>Verified buyer</small></div><span>Foundry Espresso</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wholesale -->
+  <section class="section" id="wholesale">
+    <div class="container">
+      <div class="whole reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--yellow)">Wholesale</span>
+          <h2>Serve Kiln at Your Café, Office or Restaurant</h2>
+          <ul>
+            <li><i class="ri-checkbox-circle-fill"></i>Barista training for your whole team</li>
+            <li><i class="ri-checkbox-circle-fill"></i>Equipment supply, install &amp; servicing</li>
+            <li><i class="ri-checkbox-circle-fill"></i>Weekly delivery across the South West</li>
+            <li><i class="ri-checkbox-circle-fill"></i>Seasonal menus and dedicated support</li>
+          </ul>
+        </div>
+        <form id="whole-form">
+          <input required placeholder="Your name" aria-label="Your name" />
+          <input required placeholder="Business name" aria-label="Business name" />
+          <input type="email" required placeholder="Email" aria-label="Email" class="full" />
+          <select aria-label="Business type"><option>Café</option><option>Restaurant</option><option>Office</option><option>Hotel</option><option>Other</option></select>
+          <select aria-label="Weekly volume"><option>Under 5 kg / week</option><option>5–15 kg / week</option><option>15–40 kg / week</option><option>40 kg+ / week</option></select>
+          <button class="btn btn--white full" type="submit">Request a Tasting <i class="ri-arrow-right-line"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="#home" class="logo"><span><i class="ri-fire-fill"></i></span>kiln</a><p>Specialty coffee roasters and cafés. Roasted weekly in Bristol since 2017.</p><div class="socials"><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a><a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a><a href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a><a href="#" aria-label="Spotify"><i class="ri-spotify-fill"></i></a></div></div>
+        <div><h4>Shop</h4><ul><li><a href="#shop">All Coffee</a></li><li><a href="#subscribe">Subscriptions</a></li><li><a href="#">Brew Gear</a></li><li><a href="#">Gift Cards</a></li></ul></div>
+        <div><h4>Kiln</h4><ul><li><a href="#cafes">Our Cafés</a></li><li><a href="#brew">Brew Guides</a></li><li><a href="#wholesale">Wholesale</a></li><li><a href="#">Transparency Report</a></li></ul></div>
+        <div><h4>Roast-day emails</h4><p style="margin:0">New arrivals and limited lots, the moment they're out of the roaster.</p><form class="news" id="news"><input type="email" required placeholder="Email address" aria-label="Email" /><button class="btn btn--blue">Join</button></form></div>
+      </div>
+      <div class="footer__big" aria-hidden="true">kiln</div>
+      <div class="footer__bottom"><span>© 2026 Kiln Coffee Roasters Ltd · Unit 9, Wapping Wharf, Bristol BS1 4RW</span><span>Privacy · Terms · Shipping · Returns</span></div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Your bag">
+    <div class="drawer__head"><div><h3>Your Bag</h3><button id="cart-close" aria-label="Close bag"><i class="ri-close-line"></i></button></div><div class="ship"><span id="ship-msg"></span><div class="ship__bar"><span id="ship-bar"></span></div></div></div>
+    <div class="drawer__list" id="cart-list"></div>
+    <div class="drawer__foot" id="cart-foot">
+      <div class="row"><span>Subtotal</span><span id="c-sub"></span></div>
+      <div class="row"><span>Shipping</span><span id="c-ship"></span></div>
+      <div class="row total"><span>Total</span><span id="c-total"></span></div>
+      <button class="btn btn--blue" id="checkout">Checkout <i class="ri-lock-line"></i></button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"><i class="ri-checkbox-circle-fill"></i><span id="toast-msg"></span></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const U = (id, w = 800) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+    const gbp = (n) => "£" + n.toFixed(2);
+    const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+
+    /* Coffees */
+    const coffees = [
+      { id: "foundry", n: "Foundry", o: "Brazil & Colombia", type: "espresso", notes: ["Milk chocolate", "Hazelnut", "Caramel"], roast: 4, p: 10.5, c: "#2547f5", tag: "Bestseller" },
+      { id: "huila", n: "Huila", o: "Colombia", type: "espresso filter", notes: ["Red apple", "Panela", "Cocoa"], roast: 3, p: 11.5, c: "#f2b84b", tag: "Espresso of the month" },
+      { id: "kochere", n: "Kochere", o: "Yirgacheffe, Ethiopia", type: "filter", notes: ["Jasmine", "Bergamot", "Peach"], roast: 1, p: 13, c: "#f4a6b8" },
+      { id: "gicha", n: "Gichathaini AA", o: "Nyeri, Kenya", type: "filter", notes: ["Blackcurrant", "Grapefruit", "Vine tomato"], roast: 2, p: 14.5, c: "#d4432f" },
+      { id: "elena", n: "Santa Elena", o: "Huehuetenango, Guatemala", type: "espresso", notes: ["Milk chocolate", "Orange", "Almond"], roast: 3, p: 11, c: "#2f6e4f" },
+      { id: "night", n: "Night Shift", o: "Cajamarca, Peru · Decaf", type: "decaf espresso filter", notes: ["Toffee", "Cocoa", "Red grape"], roast: 3, p: 10.5, c: "#17120f", tag: "Sugar-cane decaf" },
+      { id: "wahana", n: "Wahana", o: "North Sumatra, Indonesia", type: "espresso", notes: ["Dark chocolate", "Cedar", "Clove"], roast: 4, p: 11.5, c: "#8a5a35" },
+      { id: "paraiso", n: "El Paraíso Lychee", o: "Cauca, Colombia", type: "filter limited", notes: ["Lychee", "Rose", "Strawberry"], roast: 2, p: 18, c: "#8e7cf0", tag: "Limited · 40 bags" },
+    ];
+    const bagHTML = (c) => `<div class="bag" style="--c:${c.c}"><div class="bag__label"><span class="brand">KILN</span><div><b>${c.n}</b><small>${c.o.split(",").pop().replace("· Decaf", "").trim()}</small></div><div class="bag__dots">${[1, 2, 3, 4, 5].map((i) => `<i class="${i <= c.roast ? "on" : ""}"></i>`).join("")}</div></div></div>`;
+    $("hero-bags").innerHTML = [coffees[2], coffees[0], coffees[1]].map(bagHTML).join("");
+    $("marquee").innerHTML = [...coffees, ...coffees].map((c) => `<span><i class="ri-seedling-fill"></i>${c.n} — ${c.notes.join(", ")}</span>`).join("");
+
+    /* Next roast (next Tuesday) */
+    const nr = new Date(); nr.setDate(nr.getDate() + ((9 - nr.getDay()) % 7 || 7));
+    $("next-roast").textContent = nr.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+
+    /* Shop */
+    const filters = [["all", "All"], ["espresso", "Espresso"], ["filter", "Filter"], ["decaf", "Decaf"], ["limited", "Limited"]];
+    let fil = "all";
+    $("filters").innerHTML = filters.map(([k, n]) => `<button class="${k === "all" ? "active" : ""}" data-f="${k}">${n}<span>${k === "all" ? coffees.length : coffees.filter((c) => c.type.includes(k)).length}</span></button>`).join("");
+    const SIZES = [["250g", 1], ["1kg", 3.4]];
+    const GRINDS = ["Whole bean", "Espresso", "V60 / Filter", "AeroPress", "Cafetière"];
+    function renderShop() {
+      let list = coffees.filter((c) => fil === "all" || c.type.includes(fil));
+      const s = $("sort").value;
+      if (s === "low") list = [...list].sort((a, b) => a.p - b.p);
+      if (s === "high") list = [...list].sort((a, b) => b.p - a.p);
+      if (s === "light") list = [...list].sort((a, b) => a.roast - b.roast);
+      $("products").innerHTML = list.map((c, i) => `
+        <article class="product" style="animation-delay:${i * 60}ms" data-id="${c.id}">
+          <div class="product__vis">${c.tag ? `<span class="product__tag ${c.id === "foundry" ? "blue" : ""}">${c.tag}</span>` : ""}${bagHTML(c)}</div>
+          <div class="product__body">
+            <div class="product__top"><div><h3>${c.n}</h3><div class="product__origin"><i class="ri-map-pin-line"></i>${c.o}</div></div><span class="product__price" data-price>${gbp(c.p)}</span></div>
+            <div class="notes">${c.notes.map((n) => `<span>${n}</span>`).join("")}</div>
+            <div class="roast">Roast <span class="roast__bar">${[1, 2, 3, 4, 5].map((r) => `<i class="${r <= c.roast ? "on" : ""}"></i>`).join("")}</span>${["", "Light", "Light-medium", "Medium", "Medium-dark", "Dark"][c.roast]}</div>
+            <div class="product__opts">
+              <select data-size aria-label="Bag size">${SIZES.map(([n, m], k) => `<option value="${k}">${n} · ${gbp(c.p * m)}</option>`).join("")}</select>
+              <select data-grind aria-label="Grind">${GRINDS.map((g) => `<option>${g}</option>`).join("")}</select>
+            </div>
+            <button class="btn" data-add>Add to Bag <i class="ri-add-line"></i></button>
+          </div>
+        </article>`).join("");
+    }
+    $("filters").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; fil = b.dataset.f; document.querySelectorAll("#filters button").forEach((x) => x.classList.toggle("active", x === b)); renderShop(); });
+    $("sort").addEventListener("change", renderShop);
+    $("products").addEventListener("change", (e) => {
+      if (!e.target.matches("[data-size]")) return;
+      const card = e.target.closest(".product"), c = coffees.find((x) => x.id === card.dataset.id);
+      card.querySelector("[data-price]").textContent = gbp(c.p * SIZES[+e.target.value][1]);
+    });
+    $("products").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-add]"); if (!b) return;
+      const card = b.closest(".product"), c = coffees.find((x) => x.id === card.dataset.id);
+      const size = +card.querySelector("[data-size]").value, grind = card.querySelector("[data-grind]").value;
+      addToCart({ id: c.id, size, grind, sub: false });
+      toast(`${c.n} (${SIZES[size][0]}, ${grind}) added to your bag`);
+    });
+    renderShop();
+
+    /* Cart */
+    let cart = store.get("kiln-cart", []);
+    const FREE = 30;
+    function addToCart(item) {
+      const key = `${item.id}|${item.size}|${item.grind}|${item.sub ? item.sub : ""}`;
+      const ex = cart.find((c) => c.key === key);
+      if (ex) ex.q++; else cart.push({ ...item, key, q: 1 });
+      store.set("kiln-cart", cart); renderCart();
+    }
+    const itemPrice = (it) => it.sub ? it.price : coffees.find((c) => c.id === it.id).p * SIZES[it.size][1];
+    function renderCart() {
+      $("cart-count").textContent = cart.reduce((s, c) => s + c.q, 0);
+      const sub = cart.reduce((s, c) => s + itemPrice(c) * c.q, 0);
+      const hasSub = cart.some((c) => c.sub);
+      const ship = sub === 0 || sub >= FREE || hasSub ? 0 : 3.95;
+      $("ship-msg").innerHTML = sub >= FREE || hasSub ? "<i class='ri-truck-line'></i> You've unlocked <b>free delivery</b>" : `Add <b>${gbp(FREE - sub)}</b> more for free delivery`;
+      $("ship-bar").style.width = Math.min(100, (sub / FREE) * 100) + "%";
+      if (!cart.length) {
+        $("cart-list").innerHTML = '<div class="empty"><i class="ri-cup-line"></i><b>Your bag is empty</b>Fresh roasts are waiting for you.</div>';
+        $("cart-foot").style.display = "none"; return;
+      }
+      $("cart-foot").style.display = "";
+      $("cart-list").innerHTML = cart.map((it, i) => {
+        const c = coffees.find((x) => x.id === it.id);
+        return `<div class="ci">${bagHTML(c)}<div><b>${it.sub ? "Subscription · " : ""}${c.n}</b><small>${it.sub ? it.sub : `${SIZES[it.size][0]} · ${it.grind}`}</small></div>
+          <div class="ci__r"><strong>${gbp(itemPrice(it) * it.q)}</strong><div class="qty"><button data-i="${i}" data-d="-1" aria-label="Less">−</button><span>${it.q}</span><button data-i="${i}" data-d="1" aria-label="More">+</button></div></div></div>`;
+      }).join("");
+      $("c-sub").textContent = gbp(sub); $("c-ship").textContent = ship ? gbp(ship) : "Free"; $("c-total").textContent = gbp(sub + ship);
+    }
+    $("cart-list").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-d]"); if (!b) return;
+      const it = cart[+b.dataset.i]; it.q += +b.dataset.d; if (it.q <= 0) cart.splice(+b.dataset.i, 1);
+      store.set("kiln-cart", cart); renderCart();
+    });
+    const openCart = () => { $("drawer").classList.add("open"); $("overlay").classList.add("open"); };
+    const closeCart = () => { $("drawer").classList.remove("open"); $("overlay").classList.remove("open"); };
+    $("cart-open").onclick = openCart; $("cart-close").onclick = closeCart; $("overlay").onclick = closeCart;
+    $("checkout").onclick = () => { closeCart(); toast(`Order confirmed! Roasting ${$("next-roast").textContent}, shipping the next day.`); cart = []; store.set("kiln-cart", cart); renderCart(); };
+    renderCart();
+
+    /* Subscription builder */
+    const S = {
+      style: { t: "Your coffee", opts: [["roaster", "Roaster's Choice", "A new single origin each time", "ri-shuffle-line", "kochere"], ["espresso", "Espresso Lover", "Foundry or our espresso of the month", "ri-cup-line", "foundry"], ["filter", "Filter Explorer", "Light, fruity single origins", "ri-drop-line", "gicha"]] },
+      bags: { t: "Bags per delivery", opts: [["1", "1 bag", "", "", 1], ["2", "2 bags", "Most popular", "", 2], ["3", "3 bags", "Office favourite", "", 3]] },
+      size: { t: "Bag size", opts: [["250", "250g", "≈ 16 cups", "", 1], ["1000", "1kg", "≈ 64 cups · best value", "", 3.4]] },
+      freq: { t: "How often", opts: [["1", "Every week", "", "", 1], ["2", "Every 2 weeks", "", "", 2], ["3", "Every 3 weeks", "", "", 3], ["4", "Every 4 weeks", "", "", 4]] },
+      grind: { t: "Grind", opts: [["Whole bean", "Whole bean", "Freshest"], ["Espresso", "Espresso", ""], ["V60 / Filter", "Filter", ""], ["Cafetière", "Cafetière", ""]] },
+    };
+    const pick = { style: 0, bags: 1, size: 0, freq: 1, grind: 0 };
+    $("sub-steps").innerHTML = Object.entries(S).map(([k, s], i) => `
+      <div class="step"><h4><span>${i + 1}</span>${s.t}</h4><div class="opts ${s.opts.length === 4 ? "opts--4" : ""}" data-k="${k}">
+      ${s.opts.map((o, j) => `<button class="${pick[k] === j ? "active" : ""}" data-j="${j}">${o[3] ? `<i class="${o[3]}"></i>` : ""}${o[1]}${o[2] ? `<small>${o[2]}</small>` : ""}</button>`).join("")}</div></div>`).join("");
+    function calcSub() {
+      const st = S.style.opts[pick.style], bags = S.bags.opts[pick.bags][4], mult = S.size.opts[pick.size][4], weeks = S.freq.opts[pick.freq][4];
+      const base = 12 * mult * bags, price = base * 0.85;
+      $("sum-bag").outerHTML = bagHTML(coffees.find((c) => c.id === st[4])).replace('class="bag"', 'class="bag" id="sum-bag"');
+      $("sum-list").innerHTML = [["Coffee", st[1]], ["Amount", `${bags} × ${S.size.opts[pick.size][1]}`], ["Delivery", S.freq.opts[pick.freq][1]], ["Grind", S.grind.opts[pick.grind][1]], ["First box ships", new Date(nr.getTime() + 864e5).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })]].map(([a, b]) => `<li><span>${a}</span><b>${b}</b></li>`).join("");
+      $("sum-price").textContent = gbp(price); $("sum-was").textContent = gbp(base);
+      $("sum-save").textContent = `≈ ${gbp((price * 4.345) / weeks)} a month · you save ${gbp(((base - price) * 52) / weeks)} a year · free shipping`;
+      return { st, bags, price };
+    }
+    $("sub-steps").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      const k = b.parentNode.dataset.k; pick[k] = +b.dataset.j;
+      b.parentNode.querySelectorAll("button").forEach((x) => x.classList.toggle("active", x === b)); calcSub();
+    });
+    $("sum-go").onclick = () => {
+      const { st, price } = calcSub();
+      addToCart({ id: st[4], sub: `${S.bags.opts[pick.bags][1]} · ${S.size.opts[pick.size][1]} · ${S.freq.opts[pick.freq][1].toLowerCase()}`, price, size: 0, grind: S.grind.opts[pick.grind][0] });
+      openCart(); toast("Subscription added — you can pause or skip anytime.");
+    };
+    calcSub();
+
+    /* Brew guide + timer */
+    const methods = {
+      v60: { n: "V60 Pour-Over", i: "ri-filter-3-line", ratio: 16, dose: 15, grind: "Medium-fine", temp: "94°C", steps: [["Bloom with 2× water, swirl", 45, 0.13], ["Pour slowly to 60% of water", 30, 0.6], ["Pour to full weight", 30, 1], ["Let it draw down", 60, 1]] },
+      aero: { n: "AeroPress", i: "ri-capsule-line", ratio: 14, dose: 15, grind: "Fine", temp: "90°C", steps: [["Add coffee & all the water", 10, 1], ["Stir 3 times, fit plunger", 50, 1], ["Swirl and wait", 60, 1], ["Press gently for 30s", 30, 1]] },
+      press: { n: "Cafetière", i: "ri-cup-line", ratio: 15, dose: 16, grind: "Coarse", temp: "95°C", steps: [["Pour all the water", 15, 1], ["Steep", 225, 1], ["Break the crust, skim", 30, 1], ["Plunge just to the surface & pour", 20, 1]] },
+    };
+    let method = "v60", running = false, elapsed = 0, tick;
+    $("methods").innerHTML = Object.entries(methods).map(([k, m]) => `<button class="${k === method ? "active" : ""}" data-m="${k}"><i class="${m.i}"></i>${m.n}</button>`).join("");
+    const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+    const total = () => methods[method].steps.reduce((s, x) => s + x[1], 0);
+    function renderRecipe() {
+      const m = methods[method], cups = +$("cups").value, coffee = m.dose * cups, water = coffee * m.ratio;
+      $("cups-out").textContent = cups + (cups > 1 ? " cups" : " cup");
+      $("recipe").innerHTML = [[coffee + "g", "Coffee"], [Math.round(water) + "g", "Water"], [m.grind, "Grind"], [m.temp, "Water temp"]].map(([b, s]) => `<div><b>${b}</b><small>${s}</small></div>`).join("");
+      $("t-method").textContent = m.n;
+      renderSteps();
+    }
+    function renderSteps() {
+      const m = methods[method], water = m.dose * +$("cups").value * m.ratio;
+      let acc = 0;
+      $("steps").innerHTML = m.steps.map(([t, d, w], i) => {
+        const start = acc; acc += d;
+        const state = elapsed >= acc ? "done" : elapsed >= start && (running || elapsed > 0) ? "now" : "";
+        const txt = t.replace("2× water", `${Math.round(m.dose * +$("cups").value * 2)}g water`);
+        return `<li class="${state}"><span>${state === "done" ? "✓" : i + 1}</span>${txt}${method === "v60" && w < 1 && i > 0 ? ` (${Math.round(water * w)}g)` : ""}<small>${fmt(d)}</small></li>`;
+      }).join("");
+      const T = total(), C = 2 * Math.PI * 52;
+      $("ring").style.strokeDasharray = C; $("ring").style.strokeDashoffset = C * (1 - Math.min(1, elapsed / T));
+      $("t-time").textContent = fmt(elapsed);
+      let a2 = 0; const cur = m.steps.find((s) => (a2 += s[1]) > elapsed);
+      $("t-step").textContent = elapsed >= T ? "Done — enjoy your coffee ☕" : running || elapsed ? cur[0] : `Total brew time ${fmt(T)}`;
+      $("t-play").innerHTML = running ? '<i class="ri-pause-fill"></i>' : '<i class="ri-play-fill"></i>';
+    }
+    function play() {
+      if (elapsed >= total()) elapsed = 0;
+      running = !running; clearInterval(tick);
+      if (running) tick = setInterval(() => { elapsed += 1; if (elapsed >= total()) { running = false; clearInterval(tick); toast("Brew complete — time to pour!"); } renderSteps(); }, 1000);
+      renderSteps();
+    }
+    $("t-play").onclick = play;
+    $("t-reset").onclick = () => { running = false; clearInterval(tick); elapsed = 0; renderSteps(); };
+    $("t-skip").onclick = () => { let a = 0; for (const s of methods[method].steps) { a += s[1]; if (a > elapsed) { elapsed = a; break; } } renderSteps(); };
+    $("methods").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; method = b.dataset.m; running = false; clearInterval(tick); elapsed = 0; document.querySelectorAll("#methods button").forEach((x) => x.classList.toggle("active", x === b)); renderRecipe(); });
+    $("cups").addEventListener("input", renderRecipe);
+    renderRecipe();
+
+    /* Cafés with open-now */
+    const cafes = [
+      { n: "Wapping Wharf", d: "Our flagship café and roastery viewing window.", a: "Unit 9, Wapping Wharf, BS1 4RW", h: [[9, 17], [7, 18], [7, 18], [7, 18], [7, 18], [7, 18], [8, 18]], img: "1501339847302-ac426a4a7cbb" },
+      { n: "Stokes Croft", d: "Small, loud and full of plants. Great for takeaway.", a: "88 Stokes Croft, BS1 3RJ", h: [[0, 0], [7.5, 16], [7.5, 16], [7.5, 16], [7.5, 16], [7.5, 16], [9, 16]], img: "1521017432531-fbd92d768814" },
+      { n: "Clifton Village", d: "Brunch, laptops and the best window seat in Bristol.", a: "21 The Mall, Clifton, BS8 4JG", h: [[9, 16], [8, 17], [8, 17], [8, 17], [8, 17], [8, 17], [8.5, 17]], img: "1442975631115-c4f7b05b8a2c" },
+    ];
+    const d = new Date(), dw = d.getDay(), hr = d.getHours() + d.getMinutes() / 60;
+    const t2 = (h) => `${Math.floor(h)}:${h % 1 ? "30" : "00"}`;
+    $("cafes-grid").innerHTML = cafes.map((c) => {
+      const [o, cl] = c.h[dw], open = hr >= o && hr < cl;
+      return `<article class="cafe reveal"><img src="${U(c.img, 700)}" alt="${c.n} café" loading="lazy" /><div class="cafe__body">
+        <span class="cafe__status ${open ? "" : "closed"}">${open ? `Open now · until ${t2(cl)}` : o === cl ? "Closed today" : hr < o ? `Opens today at ${t2(o)}` : "Closed for today"}</span>
+        <h3>${c.n}</h3><p>${c.d}</p>
+        <ul><li><i class="ri-map-pin-line"></i>${c.a}</li><li><i class="ri-time-line"></i>Mon–Fri ${t2(c.h[1][0])}–${t2(c.h[1][1])} · Sat ${t2(c.h[6][0])}–${t2(c.h[6][1])} · Sun ${c.h[0][0] === c.h[0][1] ? "closed" : `${t2(c.h[0][0])}–${t2(c.h[0][1])}`}</li></ul></div></article>`;
+    }).join("");
+
+    /* Forms + toast */
+    function toast(m) { $("toast-msg").textContent = m; $("toast").classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => $("toast").classList.remove("show"), 3500); }
+    $("whole-form").addEventListener("submit", (e) => { e.preventDefault(); toast("Thanks! Our wholesale team will be in touch within 1 working day."); e.target.reset(); });
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); toast("You're on the roast-day list ☕"); e.target.reset(); });
+
+    /* Header & nav */
+    const links = [...document.querySelectorAll("#nav a")];
+    const secs = links.map((a) => document.querySelector(a.getAttribute("href")));
+    addEventListener("scroll", () => {
+      $("header").classList.toggle("sticky", scrollY > 20);
+      let idx = 0; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 150) idx = i; });
+      links.forEach((l, i) => l.classList.toggle("active", i === idx));
+    });
+    $("burger").onclick = () => $("nav").classList.toggle("open");
+    links.forEach((l) => l.addEventListener("click", () => $("nav").classList.remove("open")));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeCart(); $("nav").classList.remove("open"); } });
+
+    /* Reveal */
+    const io = new IntersectionObserver((en) => en.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
