@@ -112,6 +112,19 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-iris",
+    name: "Iris Novak",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-iris/index.html",
+    description: "A bright graphic designer portfolio styled like a design annual: giant name hero with staggered covers, a numbered work index with discipline filters, list/grid views and hover previews, deep-linked full-screen case studies with credits and prev/next, services with timelines, awards, testimonial slider, journal and a validated enquiry form.",
+    tags: ["Graphic designer", "Work index", "Case studies", "Branding", "Light"],
+    palette: ["#ffffff", "#111318", "#e6007e", "#f3f3f0"],
+    fonts: "Familjen Grotesk",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-11-11",
+  },
+  {
     id: "portfolio-maya",
     name: "Maya Carter",
     category: "Portfolio",
