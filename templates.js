@@ -124,6 +124,19 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-rania",
+    name: "Rania Aziz",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-rania/index.html",
+    description: "Immigration lawyer portfolio: serif editorial hero with portrait, pathway finder (work, study, family, PR, citizenship, refusals) with flat fees and processing times, fee table, case results, timeline and a consultation booking calendar.",
+    tags: ["Lawyer","Immigration","Flat fees","Consultation booking"],
+    palette: ["#ffffff","#13233d","#a6332a","#f7f3ee"],
+    fonts: "Source Serif 4 · Public Sans",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-02",
+  },
+  {
     id: "portfolio-rima",
     name: "Rima Saad",
     category: "Portfolio",
@@ -398,6 +411,32 @@ const TEMPLATES = [
   },
 
   /* ---------------- Business ---------------- */
+  {
+    id: "clinic-stride",
+    name: "Stride Physio",
+    category: "Business",
+    status: "live",
+    path: "templates/clinic-stride/index.html",
+    description: "Physiotherapy & sports injury clinic with a live next-available strip in the hero, conditions explorer, per-session price list, 4-step booking wizard (treatment, physio, day & time, details) and a bookable Pilates timetable.",
+    tags: ["Physio clinic","Booking wizard","Class timetable","Medical"],
+    palette: ["#ffffff","#0d2240","#2454e6","#e3f6ee"],
+    fonts: "Wix Madefor Display · Wix Madefor Text",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-01",
+  },
+  {
+    id: "auto-kessler",
+    name: "Kessler Motors",
+    category: "Business",
+    status: "live",
+    path: "templates/auto-kessler/index.html",
+    description: "Certified pre-owned car dealer: split hero with car finder and featured-car slider, filterable and sortable stock of 18 cars, car detail modal with specs and WhatsApp enquiry, saved cars, trade-in offer form, workshop price list and test-drive booking.",
+    tags: ["Car dealer","Inventory filters","Test drives","Trade-in"],
+    palette: ["#ffffff","#15171a","#d6202a","#f4f4f2"],
+    fonts: "Geist",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-11-30",
+  },
   {
     id: "cleaning-sparkle",
     name: "Sparkle & Co.",
