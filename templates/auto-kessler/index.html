@@ -13,15 +13,6 @@
 </head>
 <body>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container topbar__in">
-      <span><i class="ri-map-pin-line"></i> Dbayeh Highway, Metn — opposite the Marina</span>
-      <span><i class="ri-time-line"></i> Mon–Sat 9:00–19:00 · Sun closed</span>
-      <a href="https://wa.me/96170555214"><i class="ri-whatsapp-line"></i> +961 70 555 214</a>
-    </div>
-  </div>
-
   <!-- Header -->
   <header class="header" id="header">
     <div class="container header__in">
@@ -33,6 +24,7 @@
         <a href="#certified">Why Kessler</a>
         <a href="#visit">Visit us</a>
       </nav>
+      <a href="tel:+9614555214" class="header__phone"><i class="ri-phone-line"></i><span><small>Call or WhatsApp</small>+961 4 555 214</span></a>
       <button class="saved-btn" id="savedBtn" aria-label="Saved cars"><i class="ri-heart-line"></i><span id="savedCount">0</span></button>
       <a href="#visit" class="btn btn--sm header__cta">Book a test drive</a>
       <button class="burger" id="burger" aria-label="Open menu"><i class="ri-menu-line"></i></button>
@@ -41,26 +33,30 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero__slides" id="showTrack"></div>
+    <img class="hero__bg" src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=2400&q=80" alt="White Tesla Model 3 parked on a coastal road" />
     <div class="container hero__in">
-      <p class="hero__kicker">Certified pre-owned · Inspected on 160 points · 12-month warranty</p>
-      <div class="hero__car" id="showInfo"></div>
-      <div class="hero__rail" id="showRail"></div>
+      <p class="hero__kicker"><i class="ri-shield-check-fill"></i> Certified pre-owned since 2009 · Dbayeh, Metn</p>
+      <h1>Find a car you'll love.<br />Drive it home this week.</h1>
+      <p class="hero__lead">18 hand-picked cars, each inspected on 160 points and sold with a 12-month warranty.</p>
+      <div class="hero__quick">
+        <span>Popular:</span>
+        <a href="#stock" data-qbody="SUV">SUVs</a>
+        <a href="#stock" data-qbody="Sedan">Sedans</a>
+        <a href="#stock" data-qbody="Coupé">Sports cars</a>
+        <a href="#stock" data-qmax="30000">Under $30,000</a>
+      </div>
     </div>
   </section>
 
   <!-- Finder -->
-  <section class="finder-bar">
-    <div class="container">
-      <form class="finder" id="finder">
-        <p class="finder__title">Find your next car<span>18 cars in stock, updated daily</span></p>
-        <label><span>Make</span><select name="make" id="fMake"><option value="all">Any make</option></select></label>
-        <label><span>Body type</span><select name="body" id="fBody"><option value="all">Any body</option><option>Sedan</option><option>SUV</option><option>Coupé</option><option>Hatchback</option><option>Estate</option></select></label>
-        <label><span>Max price</span><select name="max" id="fMax"><option value="0">No limit</option><option value="30000">$30,000</option><option value="50000">$50,000</option><option value="80000">$80,000</option><option value="120000">$120,000</option></select></label>
-        <button class="btn" type="submit" id="finderBtn">Show 18 cars</button>
-      </form>
-    </div>
-  </section>
+  <div class="container finder-wrap">
+    <form class="finder" id="finder">
+      <label><span>Make</span><select name="make" id="fMake"><option value="all">Any make</option></select></label>
+      <label><span>Body type</span><select name="body" id="fBody"><option value="all">Any body</option><option>Sedan</option><option>SUV</option><option>Coupé</option><option>Hatchback</option><option>Estate</option></select></label>
+      <label><span>Max price</span><select name="max" id="fMax"><option value="0">No limit</option><option value="30000">$30,000</option><option value="50000">$50,000</option><option value="80000">$80,000</option><option value="120000">$120,000</option></select></label>
+      <button class="btn" type="submit" id="finderBtn"><i class="ri-search-line"></i> Show 18 cars</button>
+    </form>
+  </div>
 
   <!-- Makes -->
   <section class="makes">
@@ -453,34 +449,11 @@
     $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
     addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("modal").hidden) closeModal(); });
 
-    // Hero showcase
-    const SHOW = [2, 1, 6, 8].map((id) => CARS.find((c) => c.id === id));
-    const DUR = 6500;
-    let si = 0, timer;
-    $("showTrack").innerHTML = SHOW.map((c, i) => `<img class="${i ? "" : "on"}" src="${U(c.img, 2200)}" alt="${c.year} ${c.make} ${c.model}" />`).join("");
-    $("showRail").innerHTML = SHOW.map((c, i) => `<button class="rail" data-i="${i}" aria-label="Show ${c.make} ${c.model}"><img src="${U(c.img, 240)}" alt="" /><span><strong>${c.make} ${c.model}</strong>${money(c.price)}</span><i class="rail__bar"></i></button>`).join("");
-    function showSet(i) {
-      si = (i + SHOW.length) % SHOW.length;
-      const c = SHOW[si];
-      document.querySelectorAll("#showTrack img").forEach((im, k) => im.classList.toggle("on", k === si));
-      document.querySelectorAll(".rail").forEach((r, k) => {
-        r.classList.toggle("on", k === si);
-        const bar = r.querySelector(".rail__bar");
-        bar.style.animation = "none"; bar.offsetWidth;
-        bar.style.animation = k === si ? `fill ${DUR}ms linear forwards` : "";
-      });
-      $("showInfo").innerHTML = `
-        <p class="hero__meta">${c.year} · ${c.km.toLocaleString("en-US")} km · ${c.gear} · ${c.power}</p>
-        <h1>${c.make} <span>${c.model}</span></h1>
-        <div class="hero__row">
-          <strong class="hero__price">${money(c.price)}</strong>
-          <button class="btn" data-open="${c.id}">View this car <i class="ri-arrow-right-line"></i></button>
-          <a href="#stock" class="btn btn--glass">All 18 cars</a>
-        </div>`;
-      clearTimeout(timer); timer = setTimeout(() => showSet(si + 1), DUR);
-    }
-    $("showRail").addEventListener("click", (e) => { const b = e.target.closest(".rail"); if (b) showSet(+b.dataset.i); });
-    $("showInfo").addEventListener("click", (e) => { const b = e.target.closest("[data-open]"); if (b) openCar(+b.dataset.open); });
+    // Hero quick links
+    document.querySelectorAll("[data-qbody],[data-qmax]").forEach((a) => a.addEventListener("click", () => {
+      Object.assign(state, { make: "all", body: a.dataset.qbody || "all", max: +(a.dataset.qmax || 0), savedOnly: false });
+      render();
+    }));
 
     // Reviews slider
     $("reviewsTrack").innerHTML = REVIEWS.map((r) => `
@@ -504,7 +477,7 @@
       $(f).addEventListener("submit", (e) => { e.preventDefault(); $(ok).hidden = false; e.target.querySelectorAll("input:not([type=date])").forEach((i) => (i.value = "")); });
     });
 
-    updateSaved(); render(); finderCount(); showSet(0);
+    updateSaved(); render(); finderCount();
 
     // Motion: scroll reveals
     const REVEAL = [".makes__in",".stock__head",".car",".cert__copy > *",".cert__list li",".sell__copy > *",".sell .card",".service__head > *",".price-list",".service .card",".reviews__head",".review",".visit__info > *",".visit .card",".map",".footer__grid > div"].join(",");
