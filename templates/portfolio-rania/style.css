@@ -266,3 +266,64 @@ body.menu-open { overflow: hidden; }
   .acc summary { font-size: 18px; }
   .acc details p { padding-right: 0; }
 }
+
+/* Motion */
+.hero__copy > *, .hero__facts > div { opacity: 0; transform: translateY(22px); animation: up 0.9s var(--ease) forwards; }
+.hero__copy > :nth-child(1) { animation-delay: 0.05s; }
+.hero__copy > :nth-child(2) { animation-delay: 0.15s; }
+.hero__copy > :nth-child(3) { animation-delay: 0.3s; }
+.hero__copy > :nth-child(4) { animation-delay: 0.42s; }
+.hero__copy > :nth-child(5) { opacity: 1; transform: none; animation: none; }
+.hero__facts > div:nth-child(1) { animation-delay: 0.55s; }
+.hero__facts > div:nth-child(2) { animation-delay: 0.65s; }
+.hero__facts > div:nth-child(3) { animation-delay: 0.75s; }
+.hero__portrait img { clip-path: inset(100% 0 0 0); transform: scale(1.08); animation: unveil 1.3s 0.2s cubic-bezier(0.77, 0, 0.175, 1) forwards; }
+.hero__portrait figcaption { opacity: 0; animation: up 0.8s 1.1s var(--ease) forwards; }
+.hero__portrait figcaption { border-bottom: 0; position: relative; }
+.hero__portrait figcaption::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--primary); transform: scaleX(0); transform-origin: left; animation: line 0.9s 1.3s var(--ease) forwards; }
+@keyframes up { to { opacity: 1; transform: none; } }
+@keyframes unveil { to { clip-path: inset(0 0 0 0); transform: scale(1); } }
+@keyframes line { to { transform: scaleX(1); } }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.9s var(--ease); transition-delay: calc(var(--i, 0) * 90ms); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-img { overflow: hidden; border-radius: var(--radius); }
+.reveal-img img { clip-path: inset(0 0 100% 0); transform: scale(1.1); transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1), transform 1.6s var(--ease); }
+.reveal-img.in img { clip-path: inset(0 0 0 0); transform: scale(1); }
+
+.path__main > *, .path__side > * { animation: up 0.55s var(--ease) both; }
+.path__main > *, .path__side > * { opacity: 0; transform: translateY(12px); }
+.path__main > :nth-child(2), .path__side > :nth-child(2) { animation-delay: 0.06s; }
+.path__main > :nth-child(3), .path__side > :nth-child(3) { animation-delay: 0.12s; }
+.paths button { transition: background 0.25s, color 0.25s; }
+.paths button i { transition: transform 0.3s var(--ease), color 0.25s; }
+.paths button:hover i { transform: translateY(-3px); }
+
+.timeline::before { transform-origin: top; transform: scaleY(var(--p, 0)); transition: transform 0.15s linear; background: #e6a59c; }
+.timeline li::before { transition: background 0.3s, transform 0.3s var(--ease); }
+.timeline li.lit::before { background: #e6a59c; transform: scale(1.15); }
+
+.case { transition: background 0.3s; }
+.case h3 { transition: color 0.2s; }
+.case:hover h3 { color: var(--primary); }
+.post img { transition: transform 0.7s var(--ease), opacity 0.2s; }
+.post:hover img { transform: scale(1.04); opacity: 1; }
+.post { display: block; }
+.post > div { overflow: hidden; border-radius: var(--radius); margin-bottom: 18px; }
+.post > div img { margin-bottom: 0; }
+
+.quote blockquote { animation: qin 0.6s var(--ease); }
+@keyframes qin { from { opacity: 0; filter: blur(6px); transform: translateY(10px); } }
+.btn i { transition: transform 0.25s var(--ease); }
+.btn:hover i.ri-arrow-down-line { transform: translateY(3px); }
+.link i { transition: transform 0.25s var(--ease); }
+.link:hover i { transform: translateX(4px); }
+.bdays button, .btimes button { transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.16s var(--ease); }
+.bdays button:active, .btimes button:active { transform: scale(0.95); }
+.form__ok:not([hidden]) { animation: up 0.5s var(--ease) both; opacity: 0; transform: translateY(8px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
+  .reveal, .reveal-img img { opacity: 1; transform: none; clip-path: none; }
+}
+.timeline { background: linear-gradient(#33476a, #33476a) 6px 8px / 1px calc(100% - 16px) no-repeat; }

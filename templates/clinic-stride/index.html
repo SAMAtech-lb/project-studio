@@ -492,6 +492,21 @@
     });
 
     showCond(0); go(1); renderPil();
+
+    // Motion: scroll reveals
+    const REVEAL = [".insurers__in",".head",".cond",".hour li",".prices > div:last-child > *",".prow",".person",".wiz",".pil__copy > *",".pil__table",".rev",".faq > div:first-child",".acc details",".visit__info > *",".footer__grid > div"].join(",");
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    function revealAll(root = document) {
+      root.querySelectorAll(REVEAL).forEach((el) => {
+        if (el.classList.contains("reveal")) return;
+        el.classList.add("reveal");
+        const sibs = [...el.parentElement.children].filter((c) => c.matches(REVEAL));
+        el.style.setProperty("--i", Math.min(sibs.indexOf(el), 5));
+        io.observe(el);
+      });
+    }
+    document.querySelectorAll(".prices__img,.visit__img").forEach((el) => { el.classList.add("reveal-img"); io.observe(el); });
+    revealAll(); window.__motion = true;
   </script>
 </body>
 </html>

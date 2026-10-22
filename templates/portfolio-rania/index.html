@@ -41,8 +41,8 @@
           <a href="#services" class="btn btn--line">Find your pathway <i class="ri-arrow-down-line"></i></a>
         </div>
         <dl class="hero__facts">
-          <div><dt>14 years</dt><dd>practising immigration law</dd></div>
-          <div><dt>1,900+</dt><dd>applications filed</dd></div>
+          <div><dt><span data-count="14">14</span> years</dt><dd>practising immigration law</dd></div>
+          <div><dt><span data-count="1900">1,900</span>+</dt><dd>applications filed</dd></div>
           <div><dt>EN · FR · AR</dt><dd>consultations in three languages</dd></div>
         </dl>
       </div>
@@ -167,17 +167,17 @@
       </div>
       <div class="posts">
         <a href="#" class="post">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Plane wing above the clouds" loading="lazy" />
+          <div><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Plane wing above the clouds" loading="lazy" /></div>
           <span>Express Entry · 6 min read</span>
           <h3>Category-based draws in 2026: who is actually getting invited</h3>
         </a>
         <a href="#" class="post">
-          <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Family on a beach at sunset" loading="lazy" />
+          <div><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Family on a beach at sunset" loading="lazy" /></div>
           <span>Family sponsorship · 8 min read</span>
           <h3>Proving your relationship is genuine: what officers look for</h3>
         </a>
         <a href="#" class="post">
-          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Signing an application form" loading="lazy" />
+          <div><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Signing an application form" loading="lazy" /></div>
           <span>Refusals · 5 min read</span>
           <h3>Refused? Reapply, reconsider or go to Federal Court</h3>
         </a>
@@ -375,6 +375,33 @@
       ok.hidden = false;
       e.target.querySelectorAll("input:not([type=radio])").forEach((i) => (i.value = ""));
     });
+
+
+    // Motion: scroll reveals, count-ups, timeline progress
+    const revealSel = [".head", ".head--row", ".paths", ".path", ".fees__intro", ".table-wrap", ".process > div:first-child", ".timeline li", ".case", ".about__copy > *", ".creds > div", ".quote", ".quote__nav", ".post", ".faq > div:first-child", ".acc details", ".book__info", ".book .card", ".fee-table tbody tr"];
+    document.querySelectorAll(revealSel.join(",")).forEach((el) => {
+      el.classList.add("reveal");
+      const sibs = [...el.parentElement.children].filter((c) => c.matches(revealSel.join(",")));
+      el.style.setProperty("--i", Math.min(sibs.indexOf(el), 6));
+    });
+    document.querySelectorAll(".about__img").forEach((el) => el.classList.add("reveal-img"));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal, .reveal-img").forEach((el) => io.observe(el));
+
+    document.querySelectorAll("[data-count]").forEach((el) => {
+      const end = +el.dataset.count, t0 = performance.now() + 500, dur = 1600;
+      const tick = (now) => { const p = Math.min(Math.max((now - t0) / dur, 0), 1), v = Math.round(end * (1 - Math.pow(1 - p, 3))); el.textContent = v.toLocaleString("en-US"); if (p < 1) requestAnimationFrame(tick); };
+      el.textContent = "0"; requestAnimationFrame(tick);
+    });
+
+    const tl = document.querySelector(".timeline");
+    const tlItems = [...tl.querySelectorAll("li")];
+    const onScroll = () => {
+      const r = tl.getBoundingClientRect(), mid = innerHeight * 0.6;
+      tl.style.setProperty("--p", Math.min(Math.max((mid - r.top) / r.height, 0), 1));
+      tlItems.forEach((li) => li.classList.toggle("lit", li.getBoundingClientRect().top < mid));
+    };
+    addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
     showPath(0); showQuote(0); renderBook();
   </script>

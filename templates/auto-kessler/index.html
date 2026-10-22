@@ -41,29 +41,24 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero__panel">
-      <div class="hero__copy">
-        <p class="kicker">Certified pre-owned since 2009</p>
-        <h1>Inspected on 160 points. Sold with a 12-month warranty.</h1>
-        <p class="hero__lead">Every car on our floor has a full service history, a clean title and a written inspection report you can read before you visit.</p>
-        <form class="finder" id="finder">
-          <label><span>Make</span><select name="make" id="fMake"><option value="all">Any make</option></select></label>
-          <label><span>Body type</span><select name="body" id="fBody"><option value="all">Any body</option><option>Sedan</option><option>SUV</option><option>Coupé</option><option>Hatchback</option><option>Estate</option></select></label>
-          <label><span>Max price</span><select name="max" id="fMax"><option value="0">No limit</option><option value="30000">$30,000</option><option value="50000">$50,000</option><option value="80000">$80,000</option><option value="120000">$120,000</option></select></label>
-          <button class="btn btn--block" type="submit" id="finderBtn">Show 18 cars</button>
-        </form>
-      </div>
+    <div class="hero__slides" id="showTrack"></div>
+    <div class="container hero__in">
+      <p class="hero__kicker">Certified pre-owned · Inspected on 160 points · 12-month warranty</p>
+      <div class="hero__car" id="showInfo"></div>
+      <div class="hero__rail" id="showRail"></div>
     </div>
-    <div class="hero__show" id="show">
-      <div class="show__track" id="showTrack"></div>
-      <div class="show__bar">
-        <div class="show__info" id="showInfo"></div>
-        <div class="show__nav">
-          <button id="showPrev" aria-label="Previous car"><i class="ri-arrow-left-line"></i></button>
-          <span id="showNum">01 / 04</span>
-          <button id="showNext" aria-label="Next car"><i class="ri-arrow-right-line"></i></button>
-        </div>
-      </div>
+  </section>
+
+  <!-- Finder -->
+  <section class="finder-bar">
+    <div class="container">
+      <form class="finder" id="finder">
+        <p class="finder__title">Find your next car<span>18 cars in stock, updated daily</span></p>
+        <label><span>Make</span><select name="make" id="fMake"><option value="all">Any make</option></select></label>
+        <label><span>Body type</span><select name="body" id="fBody"><option value="all">Any body</option><option>Sedan</option><option>SUV</option><option>Coupé</option><option>Hatchback</option><option>Estate</option></select></label>
+        <label><span>Max price</span><select name="max" id="fMax"><option value="0">No limit</option><option value="30000">$30,000</option><option value="50000">$50,000</option><option value="80000">$80,000</option><option value="120000">$120,000</option></select></label>
+        <button class="btn" type="submit" id="finderBtn">Show 18 cars</button>
+      </form>
     </div>
   </section>
 
@@ -391,6 +386,7 @@
             <div class="car__foot"><strong>${money(c.price)}</strong><span>View details <i class="ri-arrow-right-line"></i></span></div>
           </div>
         </article>`).join("");
+      if (window.__motion) revealAll($("cars"));
     }
 
     function finderCount() {
@@ -458,19 +454,32 @@
     addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("modal").hidden) closeModal(); });
 
     // Hero showcase
-    const SHOW = [2, 6, 1, 8].map((id) => CARS.find((c) => c.id === id));
+    const SHOW = [2, 1, 6, 8].map((id) => CARS.find((c) => c.id === id));
+    const DUR = 6500;
     let si = 0, timer;
-    $("showTrack").innerHTML = SHOW.map((c, i) => `<img class="${i ? "" : "on"}" src="${U(c.img, 1600)}" alt="${c.year} ${c.make} ${c.model}" ${i ? 'loading="lazy"' : ""} />`).join("");
+    $("showTrack").innerHTML = SHOW.map((c, i) => `<img class="${i ? "" : "on"}" src="${U(c.img, 2200)}" alt="${c.year} ${c.make} ${c.model}" />`).join("");
+    $("showRail").innerHTML = SHOW.map((c, i) => `<button class="rail" data-i="${i}" aria-label="Show ${c.make} ${c.model}"><img src="${U(c.img, 240)}" alt="" /><span><strong>${c.make} ${c.model}</strong>${money(c.price)}</span><i class="rail__bar"></i></button>`).join("");
     function showSet(i) {
       si = (i + SHOW.length) % SHOW.length;
       const c = SHOW[si];
       document.querySelectorAll("#showTrack img").forEach((im, k) => im.classList.toggle("on", k === si));
-      $("showInfo").innerHTML = `<span>${c.year} · ${c.km.toLocaleString("en-US")} km · ${c.gear}</span><strong>${c.make} ${c.model}</strong><button data-open="${c.id}">${money(c.price)} <i class="ri-arrow-right-up-line"></i></button>`;
-      $("showNum").textContent = `0${si + 1} / 0${SHOW.length}`;
+      document.querySelectorAll(".rail").forEach((r, k) => {
+        r.classList.toggle("on", k === si);
+        const bar = r.querySelector(".rail__bar");
+        bar.style.animation = "none"; bar.offsetWidth;
+        bar.style.animation = k === si ? `fill ${DUR}ms linear forwards` : "";
+      });
+      $("showInfo").innerHTML = `
+        <p class="hero__meta">${c.year} · ${c.km.toLocaleString("en-US")} km · ${c.gear} · ${c.power}</p>
+        <h1>${c.make} <span>${c.model}</span></h1>
+        <div class="hero__row">
+          <strong class="hero__price">${money(c.price)}</strong>
+          <button class="btn" data-open="${c.id}">View this car <i class="ri-arrow-right-line"></i></button>
+          <a href="#stock" class="btn btn--glass">All 18 cars</a>
+        </div>`;
+      clearTimeout(timer); timer = setTimeout(() => showSet(si + 1), DUR);
     }
-    const auto = () => { clearInterval(timer); timer = setInterval(() => showSet(si + 1), 6000); };
-    $("showPrev").addEventListener("click", () => { showSet(si - 1); auto(); });
-    $("showNext").addEventListener("click", () => { showSet(si + 1); auto(); });
+    $("showRail").addEventListener("click", (e) => { const b = e.target.closest(".rail"); if (b) showSet(+b.dataset.i); });
     $("showInfo").addEventListener("click", (e) => { const b = e.target.closest("[data-open]"); if (b) openCar(+b.dataset.open); });
 
     // Reviews slider
@@ -495,7 +504,22 @@
       $(f).addEventListener("submit", (e) => { e.preventDefault(); $(ok).hidden = false; e.target.querySelectorAll("input:not([type=date])").forEach((i) => (i.value = "")); });
     });
 
-    updateSaved(); render(); finderCount(); showSet(0); auto();
+    updateSaved(); render(); finderCount(); showSet(0);
+
+    // Motion: scroll reveals
+    const REVEAL = [".makes__in",".stock__head",".car",".cert__copy > *",".cert__list li",".sell__copy > *",".sell .card",".service__head > *",".price-list",".service .card",".reviews__head",".review",".visit__info > *",".visit .card",".map",".footer__grid > div"].join(",");
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    function revealAll(root = document) {
+      root.querySelectorAll(REVEAL).forEach((el) => {
+        if (el.classList.contains("reveal")) return;
+        el.classList.add("reveal");
+        const sibs = [...el.parentElement.children].filter((c) => c.matches(REVEAL));
+        el.style.setProperty("--i", Math.min(sibs.indexOf(el), 5));
+        io.observe(el);
+      });
+    }
+    document.querySelectorAll(".cert__img").forEach((el) => { el.classList.add("reveal-img"); io.observe(el); });
+    revealAll(); window.__motion = true;
   </script>
 </body>
 </html>
