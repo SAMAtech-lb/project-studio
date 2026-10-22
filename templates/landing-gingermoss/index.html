@@ -36,8 +36,8 @@
         <div class="scene" id="scene">
           <div class="scene__media">
           <img class="scene__img" src="img/kitten.jpg" alt="Maple, a ginger tabby kitten, sitting in a sunny garden and watching you" />
-          <div class="eye eye--l"><div class="iris"><div class="pupil"></div></div><i class="shine"></i><i class="shine shine--sm"></i><b class="lid lid--top"></b><b class="lid lid--bot"></b></div>
-          <div class="eye eye--r"><div class="iris"><div class="pupil"></div></div><i class="shine"></i><i class="shine shine--sm"></i><b class="lid lid--top"></b><b class="lid lid--bot"></b></div>
+          <div class="eye eye--l" aria-hidden="true"><div class="iris"></div></div>
+          <div class="eye eye--r" aria-hidden="true"><div class="iris"></div></div>
           
           </div>
 
@@ -188,8 +188,8 @@
 
     /* ---------- Maple's eyes ---------- */
     const scene = $("scene");
-    const eyes = [...scene.querySelectorAll(".eye")].map((el) => ({ el, iris: el.querySelector(".iris"), pupil: el.querySelector(".pupil"), x: 0, y: 0, tx: 0, ty: 0 }));
-    let dil = 1, tDil = 1, last = performance.now();
+    const eyes = [...scene.querySelectorAll(".eye")].map((el) => ({ el, iris: el.querySelector(".iris"), x: 0, y: 0, tx: 0, ty: 0 }));
+    let last = performance.now();
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function look(px, py, fromUser = true) {
@@ -198,12 +198,9 @@
         const r = e.el.getBoundingClientRect();
         const dx = px - (r.left + r.width / 2), dy = py - (r.top + r.height / 2);
         const d = Math.hypot(dx, dy) || 1, reach = Math.min(d / 260, 1);
-        e.tx = (dx / d) * reach * r.width * 0.2;
-        e.ty = (dy / d) * reach * r.height * 0.14;
+        e.tx = (dx / d) * reach * r.width * 0.16;
+        e.ty = (dy / d) * reach * r.height * 0.1;
       });
-      const s = scene.getBoundingClientRect();
-      const near = Math.hypot(px - (s.left + s.width * 0.5), py - (s.top + s.height * 0.3));
-      tDil = near < 180 ? 1.25 : near > 700 ? 0.82 : 1;   // pupils widen up close, narrow far away
     }
     addEventListener("pointermove", (e) => look(e.clientX, e.clientY), { passive: true });
     addEventListener("touchmove", (e) => { const t = e.touches[0]; if (t) look(t.clientX, t.clientY); }, { passive: true });
@@ -214,22 +211,13 @@
         look(s.left + s.width * (0.5 + Math.cos(a) * 0.35), s.top + s.height * (0.3 + Math.sin(a * 1.6) * 0.3), false);
       }
       const k = reduce ? 1 : 0.15;
-      dil += (tDil - dil) * 0.07;
       eyes.forEach((e) => {
         e.x += (e.tx - e.x) * k; e.y += (e.ty - e.y) * k;
         e.iris.style.transform = `translate(${e.x.toFixed(2)}px, ${e.y.toFixed(2)}px)`;
-        e.pupil.style.transform = `scale(${dil.toFixed(3)})`;
       });
       requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
-
-    function blink() {
-      scene.classList.add("blink");
-      setTimeout(() => scene.classList.remove("blink"), 160);
-      setTimeout(blink, 2800 + Math.random() * 3200);
-    }
-    if (!reduce) setTimeout(blink, 1800);
 
     /* ---------- Data ---------- */
     const KITS = [

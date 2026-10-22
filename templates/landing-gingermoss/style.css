@@ -85,25 +85,20 @@ h1, h2, h3 { font-family: var(--head); color: var(--dark); font-weight: 700; lin
 .scene__tip.hide { opacity: 0; transform: translateY(8px); }
 
 /* Eyes (positions measured on the 1280×720 image) */
-.eye { position: absolute; z-index: 1; border-radius: 50%; overflow: hidden; background: radial-gradient(ellipse at 50% 60%, #fbf6ef 55%, #e6d8c6 100%); box-shadow: inset 0 0 0 2px rgba(70, 38, 16, .85), inset 0 6px 7px -2px rgba(90, 50, 20, .45); }
-.eye--l { left: 41.2%; top: 25.8%; width: 5.65%; height: 9.1%; transform: rotate(8deg); }
-.eye--r { left: 51.3%; top: 23.5%; width: 5.35%; height: 9.6%; transform: rotate(-6deg); }
-.iris { position: absolute; left: 50%; top: 50%; width: 76%; aspect-ratio: 1; margin: -38% 0 0 -38%; border-radius: 50%; will-change: transform;
-  background:
-    radial-gradient(circle, transparent 55%, rgba(20, 50, 10, .5) 72%, rgba(10, 30, 5, .9) 100%),
-    repeating-conic-gradient(rgba(255, 255, 255, .06) 0 6deg, transparent 6deg 14deg),
-    radial-gradient(circle at 50% 60%, #b6e07c 0%, #6fb43a 45%, #3e7f1f 78%, #23500f 100%);
-  box-shadow: 0 0 0 1px rgba(15, 35, 8, .6); }
-.eye--l .iris { margin-top: -34%; }
-.eye--r .iris { margin-top: -36%; }
-.pupil { position: absolute; left: 50%; top: 50%; width: 64%; height: 64%; margin: -32% 0 0 -32%; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #1a1a1a 0%, #050505 70%); transition: transform .08s linear; }
-.shine { position: absolute; z-index: 2; right: 22%; top: 18%; width: 22%; aspect-ratio: 1; border-radius: 50%; background: #fff; box-shadow: 0 0 4px rgba(255, 255, 255, .8); pointer-events: none; }
-.shine--sm { right: auto; left: 22%; top: 40%; width: 9%; opacity: .85; }
-.lid { position: absolute; z-index: 3; left: -10%; right: -10%; height: 56%; background: linear-gradient(180deg, #d98a45, #c7712d); transition: transform 70ms ease-in; }
-.lid--top { top: -6%; transform: translateY(-105%); border-radius: 0 0 50% 50%; }
-.lid--bot { bottom: -6%; transform: translateY(105%); border-radius: 50% 50% 0 0; background: linear-gradient(0deg, #f2e2cc, #e3b07c); }
-.scene.blink .lid--top { transform: translateY(0); }
-.scene.blink .lid--bot { transform: translateY(0); }
+/* Eyes: the real iris is cut from the photo and moved inside the eye socket.
+   Measurements are pixels on the 1280×720 image, converted to %. */
+.eye { position: absolute; z-index: 1; border-radius: 50%; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 62%, #f4e6e2 0%, #ead7d0 55%, #cdb2a4 100%);
+  box-shadow: inset 0 4px 5px -1px rgba(90, 45, 20, .55), inset 0 -2px 3px rgba(90, 45, 20, .25);
+  -webkit-mask: radial-gradient(closest-side, #000 86%, transparent 100%); mask: radial-gradient(closest-side, #000 86%, transparent 100%); }
+.eye--l { left: 41.41%; top: 26.67%; width: 5.55%; height: 8.06%; }
+.eye--r { left: 51.48%; top: 24.58%; width: 5.23%; height: 8.19%; }
+.iris { position: absolute; border-radius: 50%; will-change: transform; background-image: url("img/kitten.jpg"); background-repeat: no-repeat;
+  -webkit-mask: radial-gradient(circle, #000 88%, transparent 100%); mask: radial-gradient(circle, #000 88%, transparent 100%); }
+/* left iris: centre (572, 221), Ø 54 */
+.eye--l .iris { width: 76.1%; aspect-ratio: 1; left: 21.1%; top: 3.45%; background-size: 2370.4% auto; background-position: 44.45% 29.13%; }
+/* right iris: centre (685.5, 206.5), Ø 52 */
+.eye--r .iris { width: 77.6%; aspect-ratio: 1; left: 0.8%; top: 5.95%; background-size: 2461.5% auto; background-position: 53.70% 27.02%; }
 
 /* Perks */
 .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
