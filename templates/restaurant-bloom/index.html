@@ -431,7 +431,7 @@
       $("stamps").innerHTML = Array.from({ length: 10 }, (_, i) => i < 9 ? `<span class="stamp ${i < s ? "on" : ""}"><i class="ri-cup-fill"></i></span>` : `<span class="stamp free ${s >= 9 ? "on" : ""}">FREE<br/>COFFEE</span>`).join("");
       $("stamp-label").textContent = `${Math.min(s, 9)} / 9 stamps`;
       $("stamp-bar").style.width = (Math.min(s, 9) / 9) * 100 + "%";
-      $("stamp-msg").innerHTML = s >= 9 ? "<b>Your next coffee is free!</b> 🎉" : `<b>${9 - s} more</b> to your free coffee`;
+      $("stamp-msg").innerHTML = s >= 9 ? "<b>Your next coffee is free!</b>" : `<b>${9 - s} more</b> to your free coffee`;
     }
     function addStamps(n) { stamps = stamps % 10 + n; if (stamps > 9) stamps = 9; store.set("bb-stamps", stamps); renderStamps(); }
     $("stamp-reset").onclick = () => { stamps = 3; store.set("bb-stamps", 3); renderStamps(); };

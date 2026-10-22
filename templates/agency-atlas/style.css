@@ -90,7 +90,7 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.1;
 .globe-wrap canvas:active { cursor: grabbing; }
 .globe-ring { position: absolute; inset: 4%; border-radius: 50%; border: 1px dashed rgba(255, 255, 255, 0.1); animation: spin 80s linear infinite; pointer-events: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.gcard { position: absolute; z-index: 2; background: rgba(18, 27, 58, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); border-radius: 16px; padding: 12px 16px; color: #c9d1ea; font-size: 13px; display: flex; align-items: center; gap: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); animation: bob 6s ease-in-out infinite; }
+.gcard { position: absolute; z-index: 2; background: rgba(18, 27, 58, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); border-radius: 16px; padding: 12px 16px; color: #c9d1ea; font-size: 13px; display: flex; align-items: center; gap: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
 .gcard b { color: #fff; display: block; font-size: 14.5px; font-family: var(--head); font-weight: 600; letter-spacing: -0.2px; }
 .gcard i.ico { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; font-size: 19px; background: rgba(255, 106, 31, 0.16); color: var(--primary); flex-shrink: 0; }
 .gcard--a { left: 2%; top: 16%; }

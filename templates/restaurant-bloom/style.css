@@ -93,7 +93,7 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.15
 .hero__badge svg { position: absolute; inset: 0; animation: spin 16s linear infinite; }
 .hero__badge text { font-size: 11.5px; letter-spacing: 2.4px; font-weight: 700; text-transform: uppercase; fill: var(--dark); }
 .hero__badge i { font-size: 34px; }
-.hero__price { position: absolute; top: 8%; right: 2%; background: #fff; border-radius: 18px; padding: 12px 16px; box-shadow: var(--shadow); display: flex; gap: 12px; align-items: center; animation: bob 5s ease-in-out infinite; }
+.hero__price { position: absolute; top: 8%; right: 2%; background: #fff; border-radius: 18px; padding: 12px 16px; box-shadow: var(--shadow); display: flex; gap: 12px; align-items: center; }
 .hero__price img { width: 46px; height: 46px; border-radius: 12px; object-fit: cover; }
 .hero__price b { display: block; color: var(--dark); font-size: 15px; line-height: 1.2; }
 .hero__price small { color: var(--primary); font-weight: 700; }

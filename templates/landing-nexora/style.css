@@ -128,7 +128,7 @@ h2 span, h1 span { color: var(--primary); }
 .mock__list em { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px; }
 .ok { background: #dcfce7; color: var(--green); }
 .wait { background: #fef3c7; color: #b45309; }
-.float { position: absolute; display: flex; align-items: center; gap: 12px; background: var(--white); padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow); border: 1px solid var(--line); animation: bob 5s ease-in-out infinite; }
+.float { position: absolute; display: flex; align-items: center; gap: 12px; background: var(--white); padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow); border: 1px solid var(--line); }
 .float i { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-size: 20px; background: #dcfce7; color: var(--green); }
 .float strong { display: block; color: var(--dark); font-size: 14px; }
 .float small { font-size: 12px; }

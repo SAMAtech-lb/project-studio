@@ -73,7 +73,7 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); text-transform: u
 .hero__price .sep { width: 1px; height: 44px; background: #cfcfc8; }
 .hero__img { position: relative; }
 .hero__img img { width: 100%; aspect-ratio: 1.15; object-fit: cover; border-radius: 26px; mix-blend-mode: multiply; }
-.spec-chip { position: absolute; background: #fff; border-radius: 50px; padding: 8px 16px 8px 8px; display: flex; align-items: center; gap: 10px; box-shadow: 0 14px 34px rgba(17, 18, 20, 0.12); font-size: 13.5px; font-weight: 700; color: var(--dark); animation: bob 5s ease-in-out infinite; }
+.spec-chip { position: absolute; background: #fff; border-radius: 50px; padding: 8px 16px 8px 8px; display: flex; align-items: center; gap: 10px; box-shadow: 0 14px 34px rgba(17, 18, 20, 0.12); font-size: 13.5px; font-weight: 700; color: var(--dark); }
 .spec-chip i { width: 34px; height: 34px; border-radius: 50%; background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 17px; }
 .spec-chip--1 { left: -10px; top: 14%; }
 .spec-chip--2 { right: 4%; top: 6%; animation-delay: -1.5s; }

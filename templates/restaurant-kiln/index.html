@@ -378,7 +378,7 @@
       $("ring").style.strokeDasharray = C; $("ring").style.strokeDashoffset = C * (1 - Math.min(1, elapsed / T));
       $("t-time").textContent = fmt(elapsed);
       let a2 = 0; const cur = m.steps.find((s) => (a2 += s[1]) > elapsed);
-      $("t-step").textContent = elapsed >= T ? "Done — enjoy your coffee ☕" : running || elapsed ? cur[0] : `Total brew time ${fmt(T)}`;
+      $("t-step").textContent = elapsed >= T ? "Done — enjoy your coffee" : running || elapsed ? cur[0] : `Total brew time ${fmt(T)}`;
       $("t-play").innerHTML = running ? '<i class="ri-pause-fill"></i>' : '<i class="ri-play-fill"></i>';
     }
     function play() {
@@ -413,7 +413,7 @@
     /* Forms + toast */
     function toast(m) { $("toast-msg").textContent = m; $("toast").classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => $("toast").classList.remove("show"), 3500); }
     $("whole-form").addEventListener("submit", (e) => { e.preventDefault(); toast("Thanks! Our wholesale team will be in touch within 1 working day."); e.target.reset(); });
-    $("news").addEventListener("submit", (e) => { e.preventDefault(); toast("You're on the roast-day list ☕"); e.target.reset(); });
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); toast("You're on the roast-day list"); e.target.reset(); });
 
     /* Header & nav */
     const links = [...document.querySelectorAll("#nav a")];

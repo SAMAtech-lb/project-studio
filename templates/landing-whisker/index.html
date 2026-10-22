@@ -39,7 +39,7 @@
   <section class="hero" id="home">
     <div class="container hero__grid">
       <div class="hero__text">
-        <span class="chip"><i class="ri-eye-line"></i> Mochi is watching you</span>
+        <span class="chip"><i class="ri-truck-line"></i> Free delivery on orders over $45</span>
         <h1>Everything your cat <span>secretly</span> wants.</h1>
         <p>Fresh food, clumping litter, toys and cosy beds — picked by cat people, approved by very picky cats. Delivered to your door in 1–2 days.</p>
         <div class="hero__btns">
@@ -59,7 +59,7 @@
           <div class="eye eye--l"><div class="iris"><div class="pupil"></div></div><i class="glint"></i><b class="lid"></b></div>
           <div class="eye eye--r"><div class="iris"><div class="pupil"></div></div><i class="glint"></i><b class="lid"></b></div>
         </div>
-        <div class="bubble" id="bubble">Hi, I'm Mochi. Move your cursor — I'm watching.</div>
+        
         <div class="hero__tag"><img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=120&q=70" alt="" /><div><small>Mochi's favourite</small><strong>Salmon &amp; Pumpkin Kibble</strong></div></div>
       </div>
     </div>
@@ -68,7 +68,7 @@
   <!-- Categories -->
   <section class="section" id="shop">
     <div class="container">
-      <div class="title"><h2>Shop by <span>category</span></h2><p>Only cat things. Nothing for dogs. Mochi insisted.</p></div>
+      <div class="title"><h2>Shop by <span>category</span></h2><p>Over 900 products for cats of every age.</p></div>
       <div class="cats">
         <a href="#best" class="catg" data-filter="Food"><span><i class="ri-restaurant-2-line"></i></span><strong>Food</strong><small>Dry, wet &amp; raw</small></a>
         <a href="#best" class="catg" data-filter="Treats"><span><i class="ri-cake-3-line"></i></span><strong>Treats</strong><small>Crunchy &amp; lickable</small></a>
@@ -162,7 +162,7 @@
       <div><h4>Help</h4><a href="#">Delivery</a><a href="#">Returns</a><a href="#">Track order</a><a href="#">Contact us</a></div>
       <div><h4>Company</h4><a href="#">About us</a><a href="#tips">Cat care guides</a><a href="#">Shelter partners</a><a href="#">Careers</a></div>
     </div>
-    <div class="container footer__bottom"><span>© 2026 Whisker &amp; Co.</span><span>Mochi is a real cat and a very good boy.</span></div>
+    <div class="container footer__bottom"><span>© 2026 Whisker &amp; Co.</span><span>Prices in USD. Free delivery over $45 in the contiguous US.</span></div>
   </footer>
 
   <!-- Cart -->
@@ -242,13 +242,9 @@
     }
     if (!reduce) setTimeout(blink, 2200);
 
-    // click Mochi for a slow blink ("I love you" in cat)
-    const LINES = ["A slow blink means I trust you.", "Was that a treat bag I heard?", "I approve of the salmon kibble.", "Please scroll down. Gently.", "Hi, I'm Mochi. Move your cursor — I'm watching."];
-    let li = 0;
+    // click the cat for a slow blink
     stage.addEventListener("click", () => {
       cat.classList.add("slow-blink"); setTimeout(() => cat.classList.remove("slow-blink"), 900);
-      li = (li + 1) % LINES.length; $("bubble").textContent = LINES[li];
-      $("bubble").classList.remove("pop"); void $("bubble").offsetWidth; $("bubble").classList.add("pop");
     });
 
     /* ---------- Products ---------- */
@@ -294,7 +290,7 @@
       $("cartCount").textContent = count; $("cartCount").classList.toggle("has", count > 0);
       const left = Math.max(0, FREE - sub);
       $("ship").innerHTML = `<p>${left ? `Add <b>$${left}</b> more for free delivery` : `<i class="ri-checkbox-circle-fill"></i> Free delivery unlocked`}</p><div class="ship__bar"><i style="transform:scaleX(${Math.min(sub / FREE, 1)})"></i></div>`;
-      if (!ids.length) { $("cartItems").innerHTML = `<div class="empty"><i class="ri-shopping-basket-2-line"></i><strong>Your basket is empty</strong><span>Mochi is disappointed.</span></div>`; $("cartFoot").hidden = true; return; }
+      if (!ids.length) { $("cartItems").innerHTML = `<div class="empty"><i class="ri-shopping-basket-2-line"></i><strong>Your basket is empty</strong><span>Browse bestsellers to get started.</span></div>`; $("cartFoot").hidden = true; return; }
       $("cartFoot").hidden = false;
       $("cartItems").innerHTML = ids.map((k) => { const p = ALL[k]; return `<div class="line"><img src="${U(p.img, 160)}" alt="" /><div class="line__info"><strong>${p.n}</strong><span>$${p.p}</span></div><div class="qty"><button data-q="${k}" data-d="-1" aria-label="Remove one"><i class="ri-subtract-line"></i></button><span>${cart[k]}</span><button data-q="${k}" data-d="1" aria-label="Add one"><i class="ri-add-line"></i></button></div></div>`; }).join("");
       $("sub").textContent = `$${sub}`;
@@ -312,7 +308,7 @@
     renderCart();
 
     /* ---------- Misc ---------- */
-    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "Your code MOCHI15 is on its way. Purr."; e.target.reset(); });
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "Your 15% code is on its way to your inbox."; e.target.reset(); });
     addEventListener("scroll", () => $("header").classList.toggle("sticky", scrollY > 30), { passive: true });
     $("burger").addEventListener("click", () => document.body.classList.toggle("menu-open"));
     $("nav").addEventListener("click", (e) => { if (e.target.closest("a")) document.body.classList.remove("menu-open"); });

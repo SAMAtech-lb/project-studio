@@ -249,7 +249,7 @@
     const row = (ico, bg, col, t, s, a, plus) => `<div class="ui__row"><span class="ui__ico" style="background:${bg};color:${col}"><i class="${ico}"></i></span><div><b>${t}</b><small>${s}</small></div><span class="ui__amt ${plus ? "plus" : ""}">${a}</span></div>`;
     const bar = (t, used, max, col) => `<div><div class="ui__h"><span>${t}</span><small style="color:var(--text)">${gbp(used)} / ${gbp(max)}</small></div><div class="ui__bar"><span style="width:${Math.min(100, (used / max) * 100)}%;background:${col}"></span></div></div>`;
     const screens = {
-      home: () => `<div class="ui">${uiTop("Hi, Emma 👋")}
+      home: () => `<div class="ui">${uiTop("Hi, Emma")}
         <div class="ui__bal">Total balance<b>£8,426.50</b><span>▲ £312 this month</span></div>
         <div class="ui__card"><div class="ui__h">Spending this week <small>See all</small></div><div class="ui__chart">${[40, 65, 30, 80, 55, 90, 45].map((h, i) => `<span class="${i === 5 ? "on" : ""}" style="height:${h}%"></span>`).join("")}</div></div>
         <div class="ui__card"><div class="ui__h">Recent</div>
@@ -259,11 +259,11 @@
       budgets: () => `<div class="ui">${uiTop("October budgets")}
         <div class="ui__card"><div class="ui__h">Left to spend <small>12 days left</small></div><b style="font-size:24px;color:var(--dark)">£642.10</b><div class="ui__bar"><span style="width:62%;background:#12b76a"></span></div></div>
         <div class="ui__card" style="display:grid;gap:12px">
-          ${bar("🛒 Groceries", 286, 400, "#12b76a")}
-          ${bar("🍔 Eating out", 168, 150, "#f04438")}
-          ${bar("🚕 Transport", 74, 120, "#7a5af8")}
-          ${bar("🎬 Entertainment", 41, 80, "#f79009")}
-          ${bar("🛍️ Shopping", 112, 200, "#0b1b32")}
+          ${bar("Groceries", 286, 400, "#12b76a")}
+          ${bar("Eating out", 168, 150, "#f04438")}
+          ${bar("Transport", 74, 120, "#7a5af8")}
+          ${bar("Entertainment", 41, 80, "#f79009")}
+          ${bar("Shopping", 112, 200, "#0b1b32")}
         </div>
         <div class="ui__alert"><i class="ri-error-warning-fill"></i> Eating out is £18 over budget</div>${nav(1)}</div>`,
       insights: () => `<div class="ui">${uiTop("Insights")}

@@ -182,7 +182,7 @@
       $("total").textContent = money(sub + del);
       $("headTotal").textContent = money(sub + del);
       $("checkout").disabled = !count;
-      $("promo").textContent = sub >= FREE_OVER ? "🎉 You've unlocked free delivery" : `Add ${money(FREE_OVER - sub)} more for free delivery`;
+      $("promo").textContent = sub >= FREE_OVER ? "You've unlocked free delivery" : `Add ${money(FREE_OVER - sub)} more for free delivery`;
     }
 
     function toast(msg) {
@@ -203,7 +203,7 @@
       if (dec && --state.cart[dec] <= 0) delete state.cart[dec];
       renderCart();
     });
-    $("checkout").onclick = () => { state.cart = {}; renderCart(); toast("Order placed! Your food is on its way 🛵"); };
+    $("checkout").onclick = () => { state.cart = {}; renderCart(); toast("Order placed! Your food is on its way"); };
 
     renderCats(); renderItems(); renderCart();
   </script>

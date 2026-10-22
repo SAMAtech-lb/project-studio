@@ -447,7 +447,7 @@
       ["GET", "/stack", { frontend: ["React", "Next.js", "TypeScript", "Tailwind"], backend: ["Node.js", "Laravel", "PostgreSQL", "Redis"], infra: ["Docker", "AWS", "GitHub Actions"], favourite: "PostgreSQL" }],
       ["GET", "/projects?limit=3", { total: 64, data: PROJECTS.slice(0, 3).map((p) => ({ name: p.name, year: p.y, stack: p.tags })) }],
       ["GET", "/availability", { available: true, next_start: "2027-01-06", hours_per_week: 30, response_time: "< 24h" }],
-      ["POST", "/hire", { status: "accepted", message: "Great choice. Scroll down and send me a brief 👇", next_step: "#contact" }],
+      ["POST", "/hire", { status: "accepted", message: "Great choice. Scroll down and send me a brief", next_step: "#contact" }],
     ];
     $("endpoints").innerHTML = API.map(([m, path], i) => `<button class="ep${i ? "" : " on"}" data-i="${i}"><em class="${m === "POST" ? "post" : ""}">${m}</em>${path}</button>`).join("");
     const color = (json) => json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?)/g, (m) => {

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nibble &amp; Nap — Fresh Cat Food, Delivered</title>
+  <meta name="description" content="Nibble & Nap makes fresh, vet-designed cat food from real meat, portioned for your cat and delivered every two weeks. Plans from $1.90 a day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Announcement -->
+  <div class="bar">First box <b>50% off</b> · free delivery · cancel any time</div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo">nibble<span>&amp;</span>nap</a>
+      <nav class="nav" id="nav">
+        <a href="#how">How it works</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#plans">Plans &amp; prices</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#" class="header__login">Log in</a>
+      <a href="#plans" class="btn btn--sm">Get started</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero: Nori follows your cursor -->
+    <section class="hero" id="hero">
+      <div class="stage" id="stage" aria-label="Nori the kitten, who turns her head to follow your cursor">
+        <!-- frame grid: data-x -1 left / 0 / 1 right, data-y -1 up / 0 / 1 down. Add more frames (left, right, diagonals) and the head turns in those directions too. -->
+        <img class="frame on" src="img/cat-c.jpg" data-x="0" data-y="0" alt="Nori, a ginger kitten, looking at you" />
+        <img class="frame" src="img/cat-u.jpg" data-x="0" data-y="-1" alt="" />
+        <img class="frame" src="img/cat-d.jpg" data-x="0" data-y="1" alt="" />
+      </div>
+
+      <div class="container hero__in">
+        <div class="hero__text">
+          <span class="chip"><i class="ri-leaf-line"></i> Fresh, human-grade, vet-designed</span>
+          <h1>Real food for <span>real</span> little hunters.</h1>
+          <p>Fresh meals made from chicken, turkey and fish, gently cooked and portioned for your cat. Delivered to your door every two weeks.</p>
+          <div class="hero__btns">
+            <a href="#plans" class="btn">Build my cat's plan <i class="ri-arrow-right-line"></i></a>
+            <a href="#how" class="btn btn--ghost">How it works</a>
+          </div>
+        </div>
+        <aside class="hero__card">
+          <div class="hero__stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+          <p>“Our picky eater licks the bowl clean. Her coat has never looked better.”</p>
+          <span>— Priya, cat mum to Nori</span>
+          <hr />
+          <ul>
+            <li><strong>From $1.90</strong><span>per day</span></li>
+            <li><strong>4.9 / 5</strong><span>12,400 reviews</span></li>
+          </ul>
+        </aside>
+      </div>
+      
+    </section>
+
+    <!-- Logos -->
+    <section class="press">
+      <div class="container press__in">
+        <span>As seen in</span>
+        <ul><li>The Daily Paw</li><li>Northwind Living</li><li>Lumen Health</li><li>Orbit Magazine</li><li>Fieldnote Weekly</li></ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="title">
+          <h2>Fresh food in three easy steps</h2>
+          <p>No measuring, no guessing. We work out exactly how much your cat needs.</p>
+        </div>
+        <div class="steps">
+          <article class="step step--peach">
+            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=700&q=80" alt="Kitten" loading="lazy" />
+            <div><span class="step__n">1</span><h3>Tell us about your cat</h3><p>Age, weight, activity and any allergies. It takes about a minute.</p></div>
+          </article>
+          <article class="step step--teal">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=700&q=80" alt="Cat waiting for dinner" loading="lazy" />
+            <div><span class="step__n">2</span><h3>We cook &amp; portion</h3><p>Recipes are gently cooked in small batches and packed in daily portions.</p></div>
+          </article>
+          <article class="step step--plum">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80" alt="Happy cat" loading="lazy" />
+            <div><span class="step__n">3</span><h3>Delivered, cold</h3><p>Arrives every 2 weeks in a recyclable chilled box. Skip or pause any time.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipes -->
+    <section class="section section--cream" id="recipes">
+      <div class="container">
+        <div class="title">
+          <h2>Four recipes cats actually finish</h2>
+          <p>Every recipe is complete and balanced for kittens and adults, made with at least 70% meat.</p>
+        </div>
+        <div class="recipes" id="recipeTabs"></div>
+        <div class="recipe" id="recipe"></div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="title">
+          <h2>Simple plans, priced by your cat's size</h2>
+          <p>Prices include delivery every 2 weeks. Your first box is half price.</p>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Kitten</h3>
+            <p class="plan__who">Under 1 year · up to 3 kg</p>
+            <p class="plan__price"><strong>$1.90</strong> / day</p>
+            <p class="plan__box">$26.60 per 2-week box</p>
+            <ul><li><i class="ri-check-line"></i> 3 small meals a day</li><li><i class="ri-check-line"></i> Extra protein for growth</li><li><i class="ri-check-line"></i> Free kitten feeding guide</li></ul>
+            <a href="#" class="btn btn--line btn--block">Choose Kitten</a>
+          </article>
+          <article class="plan plan--main">
+            <span class="plan__badge">Most popular</span>
+            <h3>Adult</h3>
+            <p class="plan__who">1–7 years · 3–6 kg</p>
+            <p class="plan__price"><strong>$2.40</strong> / day</p>
+            <p class="plan__box">$33.60 per 2-week box</p>
+            <ul><li><i class="ri-check-line"></i> 2 meals a day</li><li><i class="ri-check-line"></i> Mix any 2 recipes</li><li><i class="ri-check-line"></i> Free treats in every box</li></ul>
+            <a href="#" class="btn btn--block">Choose Adult</a>
+          </article>
+          <article class="plan">
+            <h3>Big cat or 2 cats</h3>
+            <p class="plan__who">Over 6 kg, or two cats</p>
+            <p class="plan__price"><strong>$3.90</strong> / day</p>
+            <p class="plan__box">$54.60 per 2-week box</p>
+            <ul><li><i class="ri-check-line"></i> Portions for each cat</li><li><i class="ri-check-line"></i> Mix all 4 recipes</li><li><i class="ri-check-line"></i> 10% multi-cat discount</li></ul>
+            <a href="#" class="btn btn--line btn--block">Choose Big / 2 cats</a>
+          </article>
+        </div>
+        <p class="plans__note"><i class="ri-shield-check-line"></i> Happy-cat promise: if your cat won't eat it, we'll refund your first box.</p>
+      </div>
+    </section>
+
+    <!-- Compare -->
+    <section class="section section--plum">
+      <div class="container compare">
+        <div>
+          <h2>Why fresh beats kibble</h2>
+          <p>Most dry food is mostly carbohydrate. Cats are made to eat meat and get most of their water from food.</p>
+        </div>
+        <table>
+          <thead><tr><th></th><th>Nibble &amp; Nap</th><th>Typical dry food</th></tr></thead>
+          <tbody>
+            <tr><td>Meat content</td><td><i class="ri-check-line"></i> 70%+ real meat</td><td>Often 20–30%</td></tr>
+            <tr><td>Moisture</td><td><i class="ri-check-line"></i> 75% water</td><td>About 10%</td></tr>
+            <tr><td>Fillers</td><td><i class="ri-check-line"></i> No grains or fillers</td><td>Corn, wheat, soy</td></tr>
+            <tr><td>Portions</td><td><i class="ri-check-line"></i> Made for your cat</td><td>Guess from the bag</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="title"><h2>12,400 happy cats (and their humans)</h2></div>
+        <div class="reviews">
+          <figure class="review"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=600&q=80" alt="Milo the cat" loading="lazy" /><blockquote>“Milo used to leave half his food. Now he waits by the fridge at dinner time.”</blockquote><figcaption><strong>Sam &amp; Milo</strong><span>Adult plan · 8 months</span></figcaption></figure>
+          <figure class="review"><img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Ginger the cat" loading="lazy" /><blockquote>“Our vet noticed his weight was finally healthy at his last check-up. The portions make it easy.”</blockquote><figcaption><strong>Laura &amp; Ginger</strong><span>Adult plan · 1 year</span></figcaption></figure>
+          <figure class="review"><img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=600&q=80" alt="Luna the kitten" loading="lazy" /><blockquote>“Delivery is always on time and the boxes recycle. One less thing to remember.”</blockquote><figcaption><strong>Aisha &amp; Luna</strong><span>Kitten plan · 4 months</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--cream" id="faq">
+      <div class="container faq">
+        <div><h2>Questions?</h2><p>Our cat-care team is on chat 8am–8pm, every day.</p><a href="#" class="btn btn--line"><i class="ri-chat-smile-2-line"></i> Chat with us</a></div>
+        <div class="acc">
+          <details open><summary>How do I switch my cat to fresh food?<i class="ri-add-line"></i></summary><p>Mix it in slowly over 7 days. Your first box includes a transition guide with exact amounts for each day.</p></details>
+          <details><summary>How long does the food keep?<i class="ri-add-line"></i></summary><p>Up to 4 days in the fridge once opened and 3 months in the freezer. Each portion is dated.</p></details>
+          <details><summary>Can I skip or cancel?<i class="ri-add-line"></i></summary><p>Yes. Skip, pause or cancel online any time before your next box ships. No fees.</p></details>
+          <details><summary>Is it suitable for kittens?<i class="ri-add-line"></i></summary><p>All recipes are complete for growth, so they're suitable from 8 weeks old.</p></details>
+          <details><summary>Where do you deliver?<i class="ri-add-line"></i></summary><p>Across the mainland US in 1–3 days. Boxes stay cold for 48 hours.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta__in">
+        <h2>Your cat's first box is 50% off.</h2>
+        <form class="cta__form" id="ctaForm" novalidate>
+          <input type="text" name="cat" placeholder="Your cat's name" aria-label="Your cat's name" />
+          <input type="email" name="email" placeholder="Your email" aria-label="Your email" />
+          <button class="btn btn--dark" type="submit">Get my discount</button>
+        </form>
+        <p class="cta__msg" id="ctaMsg"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><a href="#top" class="logo logo--light">nibble<span>&amp;</span>nap</a><p>Fresh, vet-designed cat food made in small batches in Denver, Colorado.</p><div class="socials"><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a><a href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a><a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a></div></div>
+      <div><h4>Food</h4><a href="#recipes">Recipes</a><a href="#plans">Plans</a><a href="#">Treats</a><a href="#">Gift a box</a></div>
+      <div><h4>Help</h4><a href="#faq">FAQ</a><a href="#">Delivery</a><a href="#">Manage subscription</a><a href="#">Contact</a></div>
+      <div><h4>Company</h4><a href="#">Our vets</a><a href="#">Kitchen</a><a href="#">Shelter program</a><a href="#">Careers</a></div>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Nibble &amp; Nap Inc.</span><span>Made in Denver, Colorado · Ships across the mainland US</span></div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    /* ---------- Nori turns her head toward the cursor ----------
+       Each frame is the same kitten with her head pointing a different way.
+       We pick the frame nearest to the cursor direction and cross-fade to it,
+       plus a tiny 3D tilt so in-between angles feel smooth. */
+    const stage = $("stage");
+    const frames = [...stage.querySelectorAll(".frame")].map((el) => ({ el, x: +el.dataset.x, y: +el.dataset.y }));
+    let cur = frames[0], tx = 0, ty = 0, sx = 0, sy = 0, last = performance.now();
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function aim(px, py, user = true) {
+      if (user) last = performance.now();
+      const r = stage.getBoundingClientRect();
+      const hx = r.left + r.width / 2, hy = r.top + r.height * 0.36;      // Nori's face
+      tx = Math.max(-1, Math.min(1, (px - hx) / (r.width * 0.32)));
+      ty = Math.max(-1, Math.min(1, (py - hy) / (r.height * 0.42)));
+    }
+    function pick() {
+      // snap to a 3x3 direction grid, with a dead zone so small moves keep her looking at you
+      const gx = Math.abs(sx) < 0.38 ? 0 : Math.sign(sx), gy = Math.abs(sy) < 0.38 ? 0 : Math.sign(sy);
+      let best = frames[0], bd = Infinity;
+      frames.forEach((f) => { const d = (f.x - gx) ** 2 + (f.y - gy) ** 2; if (d < bd) { bd = d; best = f; } });
+      if (best !== cur) { cur.el.classList.remove("on"); best.el.classList.add("on"); cur = best; }
+    }
+    addEventListener("pointermove", (e) => aim(e.clientX, e.clientY), { passive: true });
+    addEventListener("touchmove", (e) => { const t = e.touches[0]; if (t) aim(t.clientX, t.clientY); }, { passive: true });
+
+    let prevT = performance.now();
+    function loop(t) {
+      const dt = Math.min(200, t - prevT); prevT = t;
+      const k = 1 - Math.exp(-dt / 110);                       // time-based easing, same feel at any frame rate
+      if (performance.now() - last > 4500) {                  // idle: she looks around by herself
+        const r = stage.getBoundingClientRect(), a = t / 1700;
+        aim(r.left + r.width / 2 + Math.sin(a) * r.width * 0.3, r.top + r.height * 0.36 + Math.sin(a * 0.7) * r.height * 0.5, false);
+      }
+      sx += (tx - sx) * k; sy += (ty - sy) * k;
+      pick();
+      if (!reduce) stage.style.transform = `perspective(1600px) rotateY(${(sx * 4).toFixed(2)}deg) rotateX(${(-sy * 2).toFixed(2)}deg) translateX(${(sx * 6).toFixed(1)}px)`;
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    /* ---------- Recipes ---------- */
+    const RECIPES = [
+      { n: "Chicken Feast", c: "#f2a65a", img: "1529778873920-4da4926a72c2", d: "Our most popular recipe. Free-range chicken thigh and liver with pumpkin and a little salmon oil for a shiny coat.", ing: ["Chicken thigh 62%", "Chicken liver 10%", "Pumpkin", "Salmon oil", "Taurine, vitamins & minerals"], nut: [["Protein", "15.2%"], ["Fat", "6.8%"], ["Moisture", "75%"], ["Calories", "128 kcal / 100 g"]] },
+      { n: "Turkey & Greens", c: "#8bbf6a", img: "1513245543132-31f507417b26", d: "A lighter recipe for indoor cats. Lean turkey breast with spinach and a little egg for extra protein.", ing: ["Turkey breast 58%", "Turkey heart 12%", "Egg", "Spinach", "Taurine, vitamins & minerals"], nut: [["Protein", "16.1%"], ["Fat", "4.9%"], ["Moisture", "76%"], ["Calories", "112 kcal / 100 g"]] },
+      { n: "Ocean Fish", c: "#5aa9c9", img: "1555685812-4b943f1cb0eb", d: "For fish lovers. Wild-caught whitefish and salmon, rich in omega-3 for skin, joints and coat.", ing: ["Whitefish 45%", "Salmon 25%", "Sweet potato", "Kelp", "Taurine, vitamins & minerals"], nut: [["Protein", "14.6%"], ["Fat", "7.4%"], ["Moisture", "74%"], ["Calories", "132 kcal / 100 g"]] },
+      { n: "Beef Supper", c: "#c9705a", img: "1518791841217-8f162f1e1131", d: "A rich, meaty recipe great for active cats and fussy eaters who want something different.", ing: ["Beef 60%", "Beef liver 10%", "Carrot", "Sardine oil", "Taurine, vitamins & minerals"], nut: [["Protein", "15.8%"], ["Fat", "8.1%"], ["Moisture", "73%"], ["Calories", "141 kcal / 100 g"]] },
+    ];
+    let ri = 0;
+    function renderRecipe(i) {
+      ri = i; const r = RECIPES[i];
+      $("recipeTabs").innerHTML = RECIPES.map((x, k) => `<button class="${k === i ? "on" : ""}" data-r="${k}" style="--c:${x.c}"><i></i>${x.n}</button>`).join("");
+      $("recipe").innerHTML = `
+        <div class="recipe__img" style="--c:${r.c}"><img src="https://images.unsplash.com/photo-${r.img}?auto=format&fit=crop&w=900&q=80" alt="${r.n}" loading="lazy" /></div>
+        <div class="recipe__body">
+          <h3>${r.n}</h3><p>${r.d}</p>
+          <div class="recipe__cols">
+            <div><h4>Ingredients</h4><ul>${r.ing.map((x) => `<li>${x}</li>`).join("")}</ul></div>
+            <div><h4>Nutrition</h4><dl>${r.nut.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("")}</dl></div>
+          </div>
+        </div>`;
+    }
+    $("recipeTabs").addEventListener("click", (e) => { const b = e.target.closest("[data-r]"); if (b) renderRecipe(+b.dataset.r); });
+    renderRecipe(0);
+
+    /* ---------- FAQ: one open at a time ---------- */
+    document.querySelectorAll(".acc details").forEach((d) => d.addEventListener("toggle", () => { if (d.open) document.querySelectorAll(".acc details").forEach((o) => { if (o !== d) o.open = false; }); }));
+
+    /* ---------- CTA form ---------- */
+    $("ctaForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = e.target, cat = f.cat.value.trim(), ok = /^\S+@\S+\.\S+$/.test(f.email.value.trim());
+      f.email.classList.toggle("bad", !ok);
+      $("ctaMsg").textContent = ok ? `Done! ${cat || "Your cat"}'s 50% code is on its way to ${f.email.value.trim()}.` : "Please enter a valid email address.";
+      if (ok) f.reset();
+    });
+
+    /* ---------- Header ---------- */
+    addEventListener("scroll", () => $("header").classList.toggle("sticky", scrollY > 30), { passive: true });
+    $("burger").addEventListener("click", () => document.body.classList.toggle("menu-open"));
+    $("nav").addEventListener("click", (e) => { if (e.target.closest("a")) document.body.classList.remove("menu-open"); });
+  </script>
+</body>
+</html>

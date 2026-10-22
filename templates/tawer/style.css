@@ -110,7 +110,7 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.18
 .hero__blob { position: absolute; inset: 0 0 0 40px; background: var(--primary); border-radius: 46% 54% 40% 60% / 52% 40% 60% 48%; transform: rotate(-6deg); }
 .hero__blob::after { content: ""; position: absolute; width: 120px; height: 120px; border-radius: 50%; background: var(--accent); left: -30px; bottom: 30px; }
 .hero__img { position: relative; width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; border-radius: 40% 40% 32px 32px / 32% 32% 32px 32px; border: 8px solid #fff; box-shadow: var(--shadow-lg); }
-.float { position: absolute; background: #fff; border-radius: 18px; padding: 14px 18px; box-shadow: var(--shadow-lg); font-size: 13.5px; animation: bob 5s ease-in-out infinite; }
+.float { position: absolute; background: #fff; border-radius: 18px; padding: 14px 18px; box-shadow: var(--shadow-lg); font-size: 13.5px; }
 .float b { color: var(--dark); font-family: var(--head); font-weight: 600; display: block; font-size: 15px; }
 .float small { display: block; }
 .float--level { left: -34px; top: 18%; width: 220px; }

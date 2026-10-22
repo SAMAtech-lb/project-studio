@@ -213,7 +213,6 @@ button { cursor: pointer; background: none; border: 0; }
   align-items: center;
   gap: 8px;
   box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.8);
-  animation: bob 5s ease-in-out infinite;
 }
 .sticker--a { top: 8%; left: -24px; background: var(--grad); color: #fff; rotate: -6deg; }
 .sticker--b { top: 46%; right: -26px; background: var(--light); color: var(--ink); rotate: 5deg; animation-delay: -1.6s; }

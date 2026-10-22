@@ -489,7 +489,7 @@
 
     /* Toast + forms */
     const toast = (msg) => { const t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 3200); };
-    $("heroForm").addEventListener("submit", (e) => { e.preventDefault(); toast("🎉 Your free trial is ready — check your inbox!"); e.target.reset(); });
+    $("heroForm").addEventListener("submit", (e) => { e.preventDefault(); toast("Your free trial is ready — check your inbox!"); e.target.reset(); });
     $("newsForm").addEventListener("submit", (e) => { e.preventDefault(); toast("Thanks for subscribing!"); e.target.reset(); });
     $("demoForm").addEventListener("submit", (e) => {
       e.preventDefault();
