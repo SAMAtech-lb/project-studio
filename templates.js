@@ -124,6 +124,19 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-rima",
+    name: "Rima Saad",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-rima/index.html",
+    description: "A bridal & editorial makeup artist in Beirut: arched photo hero, press strip, filterable portfolio with lightbox showing the products used for each look, bridal packages with real prices and travel fees, other services, about with kit brands, bride reviews, FAQ, and a wedding-date availability calendar (available / 1 slot left / booked) linked to a booking form.",
+    tags: ["Makeup artist", "Date availability", "Bridal packages", "Lightbox", "Light"],
+    palette: ["#ffffff", "#2b1a21", "#9c2250", "#f8efe9"],
+    fonts: "Playfair Display · Jost",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-11-29",
+  },
+  {
     id: "portfolio-noor",
     name: "Noor Al-Amin",
     category: "Portfolio",
