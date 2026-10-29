@@ -81,7 +81,7 @@ every template in the "ready" list.
 ### Phase C: new builds
 - [x] Pizza restaurant → **Rossa** (restaurant-rossa): Neapolitan, cream/tomato/basil, pizza builder, order drawer
 - [x] Architecture studio → **Varo** (arch-varo): bold grotesk, scroll-opening hero, sketch-vs-built compare
-- [ ] E-commerce store (candidate for the Pulse palette)
+- [x] E-commerce store → **Nook** (shop-nook): furniture, shop-the-room hotspots, to-scale "Will it fit?" planner, samples
 - [ ] Extra portfolio
 
 ### Phase D: rebuilds

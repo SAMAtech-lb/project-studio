@@ -570,6 +570,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-nook",
+    name: "Nook",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-nook/index.html",
+    description: "Warm furniture store with a hero slideshow and live product tag, category tiles, filter + sort + search product grid, quick-view with colour swatches, a shop-the-room photo with hotspots, a to-scale 'Will it fit?' sofa planner, free fabric sample picker, cart drawer with free-delivery progress and arrival date, reviews and showrooms.",
+    tags: ["Furniture", "Shop the room", "Will it fit planner", "Cart & quick view"],
+    palette: ["#f6f2ec", "#23211f", "#c98a1e", "#ebe3d6"],
+    fonts: "Fraunces · Inter",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-17",
+  },
+  {
     id: "shop-brightbyte",
     name: "Brightbyte",
     category: "E-commerce",
