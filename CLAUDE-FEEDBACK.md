@@ -82,7 +82,7 @@ every template in the "ready" list.
 - [x] Pizza restaurant → **Rossa** (restaurant-rossa): Neapolitan, cream/tomato/basil, pizza builder, order drawer
 - [x] Architecture studio → **Varo** (arch-varo): bold grotesk, scroll-opening hero, sketch-vs-built compare
 - [x] E-commerce store → **Nook** (shop-nook): furniture, shop-the-room hotspots, to-scale "Will it fit?" planner, samples
-- [ ] Extra portfolio
+- [x] Extra portfolio → **Theo Okafor** (portfolio-theo): sports photographer in the Pulse black + lime palette the owner liked
 
 ### Phase D: rebuilds
 - [ ] Chronica → luxury watch boutique

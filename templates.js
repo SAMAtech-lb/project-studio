@@ -124,6 +124,19 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-theo",
+    name: "Theo Okafor",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-theo/index.html",
+    description: "Sports photographer portfolio in black and electric lime: a camera-viewfinder hero (AF box follows the cursor, shutter flash, live EXIF strip), sport-filtered gallery with EXIF lightbox, pinned scroll campaign story, expandable rates, a six-week availability calendar where clients hold dates, and a booking brief form.",
+    tags: ["Sports photographer", "Viewfinder hero", "Availability calendar", "Black & lime"],
+    palette: ["#0b0b0c", "#f4f4f0", "#d7ff3a", "#1b1b1e"],
+    fonts: "League Gothic · Inter · JetBrains Mono",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-18",
+  },
+  {
     id: "portfolio-dina",
     name: "Dina Khoury",
     category: "Portfolio",
