@@ -298,3 +298,6 @@ h1 span, h2 span { color: var(--primary); }
   .reviews, .tips, .why, .footer__grid, .plans { grid-template-columns: 1fr; }
   .box__badge { right: 10px; width: 104px; height: 104px; }
 }
+
+/* Small phones: keep logo, cart and menu on one line */
+@media (max-width: 420px) { .header__actions .icon-btn:first-child { display: none; } }

@@ -56,7 +56,7 @@
         </div>
         <ul class="hero__stats reveal" style="--d:.75s">
           <li><b data-count="140">0</b><span>+ launches</span></li>
-          <li><b data-count="4.9" data-dec="1">0</b><span>Clutch rating</span></li>
+          <li><b data-count="4.9" data-dec="1">0</b><span>avg. client rating</span></li>
           <li><b data-count="11">0</b><span>years together</span></li>
         </ul>
       </div>
@@ -181,11 +181,11 @@
       </div>
     </section>
 
-    <!-- Awards -->
+    <!-- Milestones -->
     <section class="section awards">
       <div class="container">
         <div class="head head--row">
-          <div><span class="kicker reveal">Recognition</span><h2 class="h2 reveal">Awards &amp; <em class="grad">mentions.</em></h2></div>
+          <div><span class="kicker reveal">Milestones</span><h2 class="h2 reveal">Launches that <em class="grad">moved the needle.</em></h2></div>
         </div>
         <ul class="aw" id="awards"></ul>
       </div>
@@ -250,7 +250,7 @@
   <footer class="footer">
     <div class="footer__in">
       <a href="#top" class="logo"><span class="logo__mark"><i></i><i></i></span>Parallel</a>
-      <nav><a href="#">Careers <em>4 open</em></a><a href="#">Dribbble</a><a href="#">LinkedIn</a><a href="#">Clutch</a></nav>
+      <nav><a href="#">Careers <em>4 open</em></a><a href="#">Dribbble</a><a href="#">LinkedIn</a><a href="#">Behance</a></nav>
       <span>© 2026 Parallel Studio Lda</span>
     </div>
   </footer>
@@ -351,8 +351,8 @@
     $("tech1").innerHTML = [...TECH1, ...TECH1].map(chip).join("");
     $("tech2").innerHTML = [...TECH2, ...TECH2].map(chip).join("");
 
-    /* ---------- Awards with hover preview ---------- */
-    const AWARDS = [["Awwwards", "Site of the Day — Kickvault", "2026", "shop-kickvault"], ["CSS Design Awards", "UX Award — Stride Physio", "2025", "clinic-stride"], ["Webby Awards", "Honoree, Commerce — Brightbyte", "2025", "shop-brightbyte"], ["Clutch", "Top Development Company, Portugal", "2024–26", "realestate-havenly"], ["Lisbon Design Week", "Best Digital Product — Portline", "2024", "landing-portline"]];
+    /* ---------- Milestones with hover preview ---------- */
+    const AWARDS = [["Kickvault", "38k visitors in the first 10 minutes of a drop, zero downtime", "2026", "shop-kickvault"], ["Stride Physio", "62% of appointments now booked online", "2025", "clinic-stride"], ["Brightbyte", "+41% revenue per visitor after the compare tool", "2025", "shop-brightbyte"], ["Havenly", "Search across 2,400 homes in under a second", "2024", "realestate-havenly"], ["Portline", "Instant quotes cut sales calls by half", "2024", "landing-portline"]];
     $("awards").innerHTML = AWARDS.map(([o, w, y, img], i) => `<li class="reveal" style="--d:${i * .06}s" data-img="${img}"><span class="aw__org">${o}</span><span class="aw__what">${w}</span><span class="aw__y">${y}</span><i class="ri-arrow-right-up-line"></i></li>`).join("");
     const awF = $("awFloat"); let ax = 0, ay = 0, atx = 0, aty = 0;
     document.querySelectorAll("#awards li").forEach((li) => { li.addEventListener("mouseenter", () => { $("awImg").src = `img/${li.dataset.img}.jpg`; awF.classList.add("on"); }); li.addEventListener("mouseleave", () => awF.classList.remove("on")); });

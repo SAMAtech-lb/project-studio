@@ -159,7 +159,14 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--navy); line-height: 1.15
   .header.open nav.r { top: calc(100% + 150px); padding-top: 0; justify-content: flex-start; }
   .mobile-btn { display: block; justify-self: end; }
   .hero__meta { grid-template-columns: 1fr; justify-items: center; margin-top: 20px; }
-  .hero__meta p, .hero__meta .right { display: none; }
+  /* plate first, then the intro and booking button stacked under it (on the white band) */
+  .hero__meta { gap: 22px; }
+  .hero__meta > p, .hero__meta > .right { margin-top: 0; }
+  .hero__meta .hero__plate { order: -1; }
+  .hero__meta p { order: 1; text-align: center; color: #4a5a6d; max-width: 440px; font-size: 15px; }
+  .hero__meta .right { order: 2; justify-self: center; align-items: center; text-align: center; padding-bottom: 50px; }
+  .hero__meta .hero__rating { color: var(--navy); }
+  .hero__band { height: auto; top: calc(150px + 76vw); }
   .about .container, .reserve .container, .menu__cols { grid-template-columns: 1fr; }
   .about__img .years { right: 10px; }
   .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 200px); }

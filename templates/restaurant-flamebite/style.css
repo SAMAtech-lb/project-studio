@@ -163,6 +163,8 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.2;
 .mitem__body { flex: 1; }
 .mitem__top { display: flex; align-items: baseline; gap: 10px; }
 .mitem__top h4 { font-size: 19px; white-space: nowrap; }
+.mitem__body { min-width: 0; }
+@media (max-width: 560px) { .mitem { gap: 14px; padding: 14px; } .mitem img { width: 64px; height: 64px; } .mitem__top h4 { white-space: normal; font-size: 17px; } .mitem__top .dots { display: none; } .mitem__top { justify-content: space-between; } }
 .mitem__top .dots { flex: 1; border-bottom: 2px dotted #d6cbb7; }
 .mitem__top b { font-family: var(--head); color: var(--red); font-size: 20px; }
 .mitem p { font-size: 14px; margin-top: 4px; }

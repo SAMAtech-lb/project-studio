@@ -264,7 +264,7 @@ input[type="range"] { width: 100%; accent-color: var(--primary); }
 .reviews__img span b i { color: #f5a524; font-size: 20px; }
 .reviews__img span small { font-size: 13px; }
 .quote-ico { font-size: 60px; color: var(--primary); line-height: 1; }
-.slider { position: relative; min-height: 290px; }
+.slider { position: relative; min-height: 290px; overflow-x: clip; }
 .slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: translateX(30px); transition: 0.6s; }
 .slide.active { opacity: 1; visibility: visible; transform: none; position: relative; }
 .slide .stars { color: #f5a524; margin-bottom: 14px; font-size: 18px; }

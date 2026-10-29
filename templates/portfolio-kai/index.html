@@ -242,8 +242,13 @@
               </div>
             </div>
             <div class="field field--full">
-              <label for="fBudget">Budget</label>
-              <div class="budget"><input type="range" id="fBudget" min="1500" max="30000" step="500" value="6500" /><output id="budgetOut">$6,500</output></div>
+              <label>Budget</label>
+              <div class="types" id="fBudget">
+                <button type="button" class="chip" data-v="1800">Under $3k</button>
+                <button type="button" class="chip on" data-v="6500">$3k – $10k</button>
+                <button type="button" class="chip" data-v="14000">$10k – $20k</button>
+                <button type="button" class="chip" data-v="30000">$20k+</button>
+              </div>
             </div>
             <div class="field"><label for="fDate">Ideal shoot date</label><input id="fDate" type="date" /></div>
             <div class="field"><label for="fPlan">Package</label>
@@ -560,16 +565,12 @@
     });
     $("cvBtn").onclick = (e) => { e.preventDefault(); toast("Director's deck is on its way to your inbox"); };
     $("types").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (!b) return; $("types").querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", c === b)); });
-    const range = $("fBudget");
-    const updBudget = () => {
-      const val = +range.value;
-      $("budgetOut").textContent = (val >= 30000 ? "$30k+" : "$" + val.toLocaleString("en-US"));
-      range.style.setProperty("--p", ((val - range.min) / (range.max - range.min)) * 100 + "%");
-    };
-    range.addEventListener("input", updBudget); updBudget();
+    const setBudget = (v) => $("fBudget").querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", +c.dataset.v === v));
+    const updBudget = () => setBudget(6500);
+    $("fBudget").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) setBudget(+b.dataset.v); });
     document.querySelectorAll("[data-plan]").forEach((b) => b.addEventListener("click", () => {
       $("fPlan").value = b.dataset.plan;
-      range.value = { "Social cut": 1800, "Brand film": 6500, Campaign: 14000 }[b.dataset.plan] || 6500; updBudget();
+      setBudget({ "Social cut": 1800, "Brand film": 6500, Campaign: 14000 }[b.dataset.plan] || 6500);
     }));
     $("brief").addEventListener("submit", (e) => {
       e.preventDefault();

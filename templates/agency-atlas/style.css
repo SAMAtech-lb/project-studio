@@ -291,7 +291,7 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.1;
 .clutch__row { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
 .clutch__row span { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; padding: 8px 12px; font-size: 13px; color: #dfe4f5; display: flex; gap: 6px; align-items: center; }
 .clutch__row span i { color: var(--primary); }
-.tcards { position: relative; min-height: 340px; }
+.tcards { position: relative; min-height: 340px; overflow-x: clip; }
 .tcard { position: absolute; inset: 0; background: #fff; border: 1px solid var(--line); border-radius: 26px; padding: 40px; opacity: 0; visibility: hidden; transform: translateX(30px); transition: 0.6s; display: flex; flex-direction: column; }
 .tcard.active { opacity: 1; visibility: visible; transform: none; }
 .tcard > i { font-size: 46px; color: var(--primary); line-height: 1; }

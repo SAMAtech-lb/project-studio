@@ -425,7 +425,7 @@ kbd {
 .j-k { color: #6ee7ff; } .j-s { color: #b6ff3a; } .j-n { color: #ffb86b; } .j-b { color: #ff7ab2; }
 
 /* Stack orbit */
-.orbit-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.orbit-wrap { overflow-x: clip; overflow-y: visible; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 .orbit { position: relative; aspect-ratio: 1; width: min(560px, 100% - 60px); margin-inline: auto; }
 .ring { position: absolute; border-radius: 50%; border: 1px dashed var(--faint); animation: rot var(--t, 40s) linear infinite; }
 .ring--1 { inset: 28%; --t: 26s; }

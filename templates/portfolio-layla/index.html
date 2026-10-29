@@ -152,10 +152,10 @@
         </div>
         <div class="calc__grid reveal">
           <div class="calc__in">
-            <div class="field"><div class="field__top"><label for="cEmp">Employees</label><output id="oEmp"></output></div><input type="range" id="cEmp" min="10" max="2000" step="10" value="250" /></div>
-            <div class="field"><div class="field__top"><label for="cSal">Average salary</label><output id="oSal"></output></div><input type="range" id="cSal" min="20000" max="150000" step="1000" value="55000" /></div>
-            <div class="field"><div class="field__top"><label for="cRate">Yearly turnover</label><output id="oRate"></output></div><input type="range" id="cRate" min="3" max="50" step="1" value="22" /><small>Industry average is around 18%.</small></div>
-            <div class="field"><div class="field__top"><label for="cRep">Cost to replace one person</label><output id="oRep"></output></div><input type="range" id="cRep" min="20" max="150" step="5" value="40" /><small>% of salary — 30–50% for most roles, 100%+ for senior ones.</small></div>
+            <div class="field"><div class="field__top"><span class="field__label">Employees</span><output id="oEmp"></output></div><div class="seg" id="cEmp" role="radiogroup" aria-label="Employees"><button type="button" data-v="40">1–50</button><button type="button" data-v="120">51–200</button><button type="button" data-v="250" class="on">201–500</button><button type="button" data-v="800">500–1k</button><button type="button" data-v="2000">1k+</button></div></div>
+            <div class="field"><div class="field__top"><span class="field__label">Average salary</span><output id="oSal"></output></div><div class="seg" id="cSal" role="radiogroup" aria-label="Average salary"><button type="button" data-v="30000">€30k</button><button type="button" data-v="45000">€45k</button><button type="button" data-v="55000" class="on">€55k</button><button type="button" data-v="75000">€75k</button><button type="button" data-v="100000">€100k+</button></div></div>
+            <div class="field"><div class="field__top"><span class="field__label">Yearly turnover</span><output id="oRate"></output></div><div class="seg" id="cRate" role="radiogroup" aria-label="Yearly turnover"><button type="button" data-v="8">Low</button><button type="button" data-v="15">Average</button><button type="button" data-v="22" class="on">High</button><button type="button" data-v="35">Very high</button></div><small>Industry average is around 18%.</small></div>
+            <div class="field"><div class="field__top"><span class="field__label">Typical role leaving</span><output id="oRep"></output></div><div class="seg" id="cRep" role="radiogroup" aria-label="Typical role leaving"><button type="button" data-v="30">Entry level</button><button type="button" data-v="40" class="on">Specialist</button><button type="button" data-v="80">Manager</button><button type="button" data-v="150">Senior leader</button></div><small>Replacing someone costs 30–50% of salary for most roles, 100%+ for senior ones.</small></div>
           </div>
           <div class="calc__out">
             <small>Turnover is costing you</small>
@@ -435,8 +435,7 @@
     const shownVals = { cost: 0, save: 0, per: 0, leavers: 0 };
     let tween;
     function calc() {
-      ins.forEach((r) => r.style.setProperty("--p", ((r.value - r.min) / (r.max - r.min)) * 100 + "%"));
-      const [emp, sal, rate, rep] = ins.map((r) => +r.value);
+      const [emp, sal, rate, rep] = ins.map((g) => +g.querySelector(".on").dataset.v);
       $("oEmp").textContent = emp.toLocaleString("en-US");
       $("oSal").textContent = eur(sal);
       $("oRate").textContent = rate + "%";
@@ -456,7 +455,11 @@
       };
       tween = requestAnimationFrame(step);
     }
-    ins.forEach((r) => r.addEventListener("input", calc));
+    ins.forEach((g) => g.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      g.querySelectorAll("button").forEach((x) => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", x === b); });
+      calc();
+    }));
     calc();
 
     /* ---------- Results ---------- */

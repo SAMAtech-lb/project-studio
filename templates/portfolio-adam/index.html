@@ -57,19 +57,13 @@
         <span class="hero__ring"></span>
         <span class="hero__circle"></span>
         <div class="hero__photo"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Adam Hayes" /></div>
-        <span class="tech-badge tech-badge--1"><i class="devicon-react-original colored"></i></span>
-        <span class="tech-badge tech-badge--2"><i class="devicon-laravel-original colored"></i></span>
-        <span class="tech-badge tech-badge--3"><i class="devicon-nodejs-plain colored"></i></span>
-        <div class="float float--a"><i class="ri-award-fill"></i><div><b>Top Rated</b><small>Freelancer 2026</small></div></div>
-        <div class="float float--b"><i class="ri-checkbox-circle-fill"></i><div><b>Available</b><small>For new projects</small></div></div>
       </div>
     </div>
     <div class="container">
-      <div class="hero__stats">
-        <div class="hstat"><b data-count="6">0</b><span>Years of<br />Experience</span></div>
-        <div class="hstat"><b data-count="120">0</b><span>Projects<br />Completed</span></div>
-        <div class="hstat"><b data-count="85">0</b><span>Happy<br />Clients</span></div>
-        <div class="hstat"><b data-count="14">0</b><span>Awards<br />Won</span></div>
+      <div class="hero__now">
+        <span class="hero__live"><i></i> Taking 2 new projects for January 2027</span>
+        <span>Currently building <b>a booking platform for 40 London clinics</b></span>
+        <span>Replies within <b>24 hours</b></span>
       </div>
     </div>
   </section>
@@ -131,14 +125,13 @@
   <section class="section skills">
     <div class="container">
       <div class="reveal">
-        <span class="sub-title">My Skills</span>
+        <span class="sub-title">My Stack</span>
         <h2>Technologies I <span>Work With</span></h2>
-        <p style="margin-bottom:34px">I pick the right tool for each project, with a strong focus on the JavaScript and PHP ecosystems.</p>
-        <div class="bar"><div class="bar__top"><span>HTML &amp; CSS</span><span>95%</span></div><div class="bar__track"><div class="bar__fill" data-w="95"></div></div></div>
-        <div class="bar"><div class="bar__top"><span>JavaScript / TypeScript</span><span>92%</span></div><div class="bar__track"><div class="bar__fill" data-w="92"></div></div></div>
-        <div class="bar"><div class="bar__top"><span>React &amp; Next.js</span><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-w="90"></div></div></div>
-        <div class="bar"><div class="bar__top"><span>Laravel &amp; PHP</span><span>88%</span></div><div class="bar__track"><div class="bar__fill" data-w="88"></div></div></div>
-        <div class="bar"><div class="bar__top"><span>Node.js &amp; APIs</span><span>84%</span></div><div class="bar__track"><div class="bar__fill" data-w="84"></div></div></div>
+        <p style="margin-bottom:30px">I pick the right tool for each project, with a strong focus on the JavaScript and PHP ecosystems.</p>
+        <div class="stackrow"><b>Front end</b><span>React, Next.js, TypeScript, Tailwind. Every site I ship scores 90+ on mobile PageSpeed.</span></div>
+        <div class="stackrow"><b>Back end</b><span>Laravel and Node.js APIs, MySQL and Postgres, Stripe and email integrations.</span></div>
+        <div class="stackrow"><b>Shipping</b><span>Git, CI previews on every change, Vercel and Forge deploys, uptime monitoring.</span></div>
+        <div class="stackrow"><b>Design hand-off</b><span>I work straight from Figma and flag UX issues before they reach code.</span></div>
       </div>
       <div class="tech-grid reveal">
         <div class="tech"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
@@ -380,7 +373,6 @@
       if (!en.isIntersecting) return;
       const el = en.target;
       if (el.classList.contains("reveal")) el.classList.add("in");
-      el.querySelectorAll?.(".bar__fill").forEach((b) => (b.style.width = b.dataset.w + "%"));
       if (el.dataset.count) {
         const end = +el.dataset.count, suffix = el.dataset.suffix || "+", t0 = performance.now();
         const step = (t) => { const p = Math.min((t - t0) / 1600, 1); el.innerHTML = Math.round(end * (1 - Math.pow(1 - p, 3))).toLocaleString() + `<sup>${suffix}</sup>`; if (p < 1) requestAnimationFrame(step); };
