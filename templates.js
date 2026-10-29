@@ -6,6 +6,19 @@
 const TEMPLATES = [
   /* ---------------- Restaurants ---------------- */
   {
+    id: "restaurant-rossa",
+    name: "Rossa",
+    category: "Restaurant",
+    status: "live",
+    path: "templates/restaurant-rossa/index.html",
+    description: "Neapolitan wood-fired pizzeria with a spinning-pizza hero, delivery ZIP checker, live oven status, menu tabs with an order drawer (pickup or delivery), a build-your-own pizza where toppings drop onto an illustrated pie, oven temperature gauge, pizza school booking and table reservations.",
+    tags: ["Pizzeria", "Pizza builder", "Online ordering", "Table booking"],
+    palette: ["#fff6ea", "#2a1712", "#e2401f", "#1f6b3a"],
+    fonts: "Lilita One · DM Sans",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-15",
+  },
+  {
     id: "restaurant-saintroast",
     name: "Saint Roast",
     category: "Restaurant",
@@ -385,6 +398,19 @@ const TEMPLATES = [
   },
 
   /* ---------------- Business ---------------- */
+  {
+    id: "arch-varo",
+    name: "Varo Architects",
+    category: "Business",
+    status: "live",
+    path: "templates/arch-varo/index.html",
+    description: "Architecture studio with a scroll-opening hero photo, filterable project grid with full project modals (facts, area, status, gallery), a drag-to-compare concept sketch vs finished building (live pencil-line filter), five-stage process, partners, journal and a project enquiry form.",
+    tags: ["Architecture", "Sketch vs built", "Project modals", "Enquiry form"],
+    palette: ["#f5f4f0", "#1b1a18", "#c4532d", "#ecebe6"],
+    fonts: "Familjen Grotesk · Inter",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-16",
+  },
   {
     id: "tours-nocturne",
     name: "Nocturne",

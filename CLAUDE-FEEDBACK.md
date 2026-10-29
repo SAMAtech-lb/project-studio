@@ -79,8 +79,8 @@ every template in the "ready" list.
 - [x] Yusuf Demir: skill bars → tool list; extra hero tag removed
 
 ### Phase C: new builds
-- [ ] Pizza restaurant (different from Pizzaro)
-- [ ] Architecture studio (bold, not quiet editorial)
+- [x] Pizza restaurant → **Rossa** (restaurant-rossa): Neapolitan, cream/tomato/basil, pizza builder, order drawer
+- [x] Architecture studio → **Varo** (arch-varo): bold grotesk, scroll-opening hero, sketch-vs-built compare
 - [ ] E-commerce store (candidate for the Pulse palette)
 - [ ] Extra portfolio
 
