@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nocturne — Wadi Rum Night Sky Tours &amp; Star Camp</title>
+  <meta name="description" content="Guided stargazing nights, astrophotography workshops and an overnight star camp in Wadi Rum, Jordan. Live moon-phase calendar and online booking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__in">
+      <a href="#top" class="logo" aria-label="Nocturne home">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3d7bff"/><stop offset="1" stop-color="#9cc4ff"/></linearGradient></defs><path d="M26 5a15 15 0 1 0 9 26A13 13 0 0 1 26 5Z" fill="url(#lg)"/><path d="M30 9l1.2 2.8L34 13l-2.8 1.2L30 17l-1.2-2.8L26 13l2.8-1.2Z" fill="#fff"/></svg>
+        <span>NOCTURNE</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#tours">Tours</a>
+        <a href="#night">The night</a>
+        <a href="#sky">Sky guide</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="header__tel" href="tel:+962795550142"><i class="ri-phone-line"></i> +962 79 555 0142</a>
+      <a href="#book" class="btn btn--sm">Book a night</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <canvas id="skyCanvas" aria-hidden="true"></canvas>
+      <svg class="hero__ridge" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true">
+        <path class="r1" d="M0 150 L70 140 L110 96 L150 92 L178 130 L260 136 L300 70 L330 62 L352 74 L380 128 L470 140 L540 120 L600 124 L640 84 L700 80 L726 118 L820 132 L900 104 L940 100 L980 132 L1080 138 L1130 88 L1170 76 L1200 82 L1236 130 L1330 120 L1380 96 L1440 104 L1440 240 L0 240Z"/>
+        <path class="r2" d="M0 196 L120 186 L200 160 L260 178 L380 182 L470 166 L560 184 L700 176 L780 150 L840 170 L980 186 L1100 170 L1180 184 L1300 174 L1440 186 L1440 240 L0 240Z"/>
+      </svg>
+      <div class="hero__tag" id="constTag" aria-live="polite"><b></b><span></span></div>
+      <div class="container hero__in">
+        <p class="label hero__kicker"><i class="ri-map-pin-2-line"></i> Wadi Rum Protected Area · Jordan</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Wadi Rum,</span></span>
+          <span class="line"><span>after <em class="grad">dark.</em></span></span>
+        </h1>
+        <p class="hero__lead">Guided stargazing nights and a desert star camp under one of the darkest skies on Earth. Telescopes, a Bedouin dinner by the fire, and not a single city light on the horizon.</p>
+        <div class="hero__cta">
+          <a href="#book" class="btn">Book a night <i class="ri-arrow-right-up-line"></i></a>
+          <a href="#tours" class="btn btn--ghost">See the tours</a>
+        </div>
+        <p class="hero__hint"><i class="ri-cursor-line"></i> Move across the sky to find the constellations</p>
+      </div>
+    </section>
+
+    <!-- Tonight -->
+    <section class="tonight" aria-label="Tonight's sky over Wadi Rum">
+      <div class="container tonight__in reveal">
+        <div class="tonight__moon">
+          <svg id="tMoon" class="moon" viewBox="0 0 100 100" aria-hidden="true"></svg>
+          <div><small>Tonight · <span id="tDate"></span></small><b id="tPhase"></b><span id="tIllum"></span></div>
+        </div>
+        <div class="tonight__item"><small>Sunset</small><b id="tSunset"></b></div>
+        <div class="tonight__item"><small>Full darkness</small><b id="tDark"></b></div>
+        <div class="tonight__item"><small>Stargazing</small><b id="tScore"></b><span class="meter"><i id="tMeter"></i></span></div>
+        <div class="tonight__item"><small>Seats tonight</small><b id="tSeats"></b></div>
+        <a href="#book" class="btn btn--sm" id="tBook">Book tonight <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </section>
+
+    <!-- Darkness -->
+    <section class="section" id="darkness">
+      <div class="container dark">
+        <div class="dark__copy">
+          <p class="label reveal">Why Wadi Rum</p>
+          <h2 class="h2 reveal">Your city is hiding <span class="grad">4,000 stars.</span></h2>
+          <p class="reveal">Street lights wash out all but the brightest stars in most cities. Our camp sits deep in the protected desert, 60 km from the nearest town, in air that is bone-dry most of the year. On a moonless night you see around 4,500 stars with the naked eye, and the Milky Way is bright enough to cast a shadow on the sand.</p>
+          <div class="dark__switch reveal" role="tablist" aria-label="Compare the night sky">
+            <button role="tab" data-mode="0">City centre</button>
+            <button role="tab" data-mode="1">Suburbs</button>
+            <button role="tab" data-mode="2" class="on">Wadi Rum</button>
+          </div>
+          <dl class="dark__facts reveal">
+            <div><dt>Stars you can see</dt><dd id="dStars">~4,500</dd></div>
+            <div><dt>Bortle dark-sky class</dt><dd id="dBortle">1–2</dd></div>
+            <div><dt>Milky Way</dt><dd id="dMilky">Casts a shadow</dd></div>
+          </dl>
+        </div>
+        <figure class="dark__view reveal">
+          <canvas id="compare" aria-label="Simulated view of the same patch of sky from three places"></canvas>
+          <figcaption><span id="dPlace">Wadi Rum, moonless night</span><span>Same patch of sky, looking south</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Tours -->
+    <section class="section section--alt" id="tours">
+      <div class="container">
+        <div class="head head--row">
+          <div>
+            <p class="label reveal">Tours</p>
+            <h2 class="h2 reveal">Three ways to <span class="grad">spend the night.</span></h2>
+          </div>
+          <p class="head__p reveal">Every tour is led by our resident astronomers and runs every night of the year except when clouds roll in. If they do, you move to another night for free.</p>
+        </div>
+        <div class="tours" id="tourList"></div>
+      </div>
+    </section>
+
+    <!-- The night -->
+    <section class="section" id="night">
+      <div class="container night">
+        <div class="night__media" aria-hidden="true">
+          <div class="night__frame" id="nightFrame"></div>
+          <div class="night__clock"><i class="ri-time-line"></i><b id="nightTime">16:45</b></div>
+        </div>
+        <div class="night__steps">
+          <p class="label reveal">The Overnight Star Camp</p>
+          <h2 class="h2 reveal">From the last light <span class="grad">to the first.</span></h2>
+          <ol class="steps" id="steps"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sky guide -->
+    <section class="section section--alt" id="sky">
+      <div class="container">
+        <div class="head head--row">
+          <div>
+            <p class="label reveal">Sky guide</p>
+            <h2 class="h2 reveal">What you'll see <span class="grad" id="skyMonth">this month.</span></h2>
+          </div>
+          <p class="head__p reveal">Pick the month of your trip. Everything lit up below is above our horizon after dark that month.</p>
+        </div>
+        <div class="months reveal" id="months" role="tablist" aria-label="Month"></div>
+        <div class="objects" id="objects"></div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section book-sec" id="book">
+      <div class="container">
+        <div class="head head--c">
+          <p class="label reveal">Book a night</p>
+          <h2 class="h2 reveal">Choose your night <span class="grad">by the moon.</span></h2>
+          <p class="head__p reveal">The darker the moon, the more stars. Nights marked with a gold dot have less than 20% moonlight and book out first.</p>
+        </div>
+        <div class="book reveal">
+          <div class="cal">
+            <div class="cal__top">
+              <button class="cal__nav" id="calPrev" aria-label="Previous month"><i class="ri-arrow-left-s-line"></i></button>
+              <b id="calTitle"></b>
+              <button class="cal__nav" id="calNext" aria-label="Next month"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <div class="cal__week"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="cal__grid" id="calGrid"></div>
+            <div class="cal__legend"><span><i class="dot dot--best"></i> Best sky (under 20% moon)</span><span><i class="dot dot--low"></i> Few seats</span><span><i class="dot dot--out"></i> Sold out</span></div>
+          </div>
+          <form class="summary" id="bookForm" novalidate>
+            <p class="summary__date" id="sumDate"><i class="ri-calendar-event-line"></i> Pick a night on the calendar</p>
+            <fieldset class="opts" id="tourOpts"><legend>Tour</legend></fieldset>
+            <div class="guests">
+              <span>Guests</span>
+              <div class="stepper"><button type="button" id="gMinus" aria-label="Fewer guests"><i class="ri-subtract-line"></i></button><b id="gCount">2</b><button type="button" id="gPlus" aria-label="More guests"><i class="ri-add-line"></i></button></div>
+            </div>
+            <fieldset class="addons" id="addons"><legend>Add-ons</legend></fieldset>
+            <div class="row">
+              <input type="text" id="fName" placeholder="Full name" aria-label="Full name" required />
+              <input type="email" id="fEmail" placeholder="Email" aria-label="Email" required />
+            </div>
+            <input type="tel" id="fPhone" placeholder="Phone / WhatsApp" aria-label="Phone or WhatsApp" />
+            <div class="total"><span>Total</span><b id="total">0 JD</b></div>
+            <button class="btn btn--full" type="submit">Reserve my night <i class="ri-arrow-right-line"></i></button>
+            <p class="form-msg" id="bookMsg"></p>
+            <p class="summary__note"><i class="ri-cloud-off-line"></i> Cloudy night? Free move to another date, or a full refund.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <div class="head head--row">
+          <div>
+            <p class="label reveal">Gallery</p>
+            <h2 class="h2 reveal">Shot by guests, <span class="grad">on our nights.</span></h2>
+          </div>
+          <p class="head__p reveal">Most of these were taken on our Astrophotography Night, many by people holding a tripod for the first time.</p>
+        </div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews-sec" id="reviews">
+      <img class="reviews-sec__bg" src="https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy" />
+      <div class="container reviews">
+        <p class="label reveal">Reviews</p>
+        <div class="reviews__rating reveal"><span class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span> 4.9 from 1,240 guests</div>
+        <div class="quotes" id="quotes" aria-live="polite"></div>
+        <div class="quotes__ctrl">
+          <button id="qPrev" aria-label="Previous review"><i class="ri-arrow-left-line"></i></button>
+          <div class="quotes__dots" id="qDots"></div>
+          <button id="qNext" aria-label="Next review"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div class="faq__side">
+          <p class="label reveal">FAQ</p>
+          <h2 class="h2 reveal">Before you <span class="grad">come out.</span></h2>
+          <p class="reveal">Still unsure about something? Message us on WhatsApp. A real person from the camp answers, usually within the hour.</p>
+          <a class="btn btn--ghost reveal" href="https://wa.me/962795550142" target="_blank" rel="noopener"><i class="ri-whatsapp-line"></i> Chat with the camp</a>
+        </div>
+        <div class="acc" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="section section--alt" id="visit">
+      <div class="container visit">
+        <div class="visit__map reveal">
+          <iframe title="Map of Wadi Rum" loading="lazy" src="https://maps.google.com/maps?q=Wadi%20Rum%20Visitor%20Center&z=10&output=embed"></iframe>
+        </div>
+        <div class="visit__info">
+          <p class="label reveal">Getting here</p>
+          <h2 class="h2 reveal">Meet us at <span class="grad">Rum Village.</span></h2>
+          <ul class="ways">
+            <li class="reveal"><b>From Aqaba</b><span>1 hour by road. We can collect you from your hotel.</span></li>
+            <li class="reveal"><b>From Petra</b><span>1 h 30 min. Many guests combine both in two days.</span></li>
+            <li class="reveal"><b>From Amman</b><span>4 hours on the Desert Highway, or JETT bus to Aqaba.</span></li>
+          </ul>
+          <div class="contacts reveal">
+            <a href="tel:+962795550142"><i class="ri-phone-line"></i><span><small>Phone</small>+962 79 555 0142</span></a>
+            <a href="mailto:hello@nocturne-rum.com"><i class="ri-mail-line"></i><span><small>Email</small>hello@nocturne-rum.com</span></a>
+            <div><i class="ri-map-pin-line"></i><span><small>Meeting point</small>Rum Village Visitor Centre, Wadi Rum 77110, Jordan</span></div>
+            <div><i class="ri-time-line"></i><span><small>Office</small>Daily 10:00 – 23:00 (GMT+3)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cta">
+        <h2>The next new moon is <span class="grad" id="nextNew"></span></h2>
+        <a href="#book" class="btn">Reserve that night <i class="ri-arrow-right-up-line"></i></a>
+      </div>
+      <div class="footer__grid">
+        <div>
+          <a href="#top" class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M26 5a15 15 0 1 0 9 26A13 13 0 0 1 26 5Z" fill="url(#lg)"/><path d="M30 9l1.2 2.8L34 13l-2.8 1.2L30 17l-1.2-2.8L26 13l2.8-1.2Z" fill="#fff"/></svg><span>NOCTURNE</span></a>
+          <p>Night-sky tours and a desert star camp in Wadi Rum, run by astronomers and local Bedouin hosts since 2016.</p>
+          <div class="socials"><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a><a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a><a href="#" aria-label="TripAdvisor"><i class="ri-map-2-line"></i></a></div>
+        </div>
+        <div><h4>Tours</h4><a href="#tours">Dark Sky Evening</a><a href="#tours">Overnight Star Camp</a><a href="#tours">Astrophotography Night</a><a href="#book">Private groups</a></div>
+        <div><h4>Plan</h4><a href="#sky">Sky guide</a><a href="#night">How the night goes</a><a href="#faq">FAQ</a><a href="#visit">Getting here</a></div>
+        <div>
+          <h4>Meteor shower alerts</h4>
+          <p>One email before each big shower and new moon. Nothing else.</p>
+          <form class="news" id="news"><input type="email" required placeholder="Your email" aria-label="Your email" /><button aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button></form>
+          <p class="form-msg" id="newsMsg"></p>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>© <span id="year"></span> Nocturne Desert Astronomy. All rights reserved.</p><p>Licensed by the Wadi Rum Protected Area Authority</p></div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb__close" id="lbClose" aria-label="Close"><i class="ri-close-line"></i></button>
+    <button class="lb__nav lb__prev" id="lbPrev" aria-label="Previous photo"><i class="ri-arrow-left-s-line"></i></button>
+    <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb__nav lb__next" id="lbNext" aria-label="Next photo"><i class="ri-arrow-right-s-line"></i></button>
+  </div>
+
+  <!-- Booking confirmed -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <svg class="moon moon--lg" id="mMoon" viewBox="0 0 100 100" aria-hidden="true"></svg>
+      <h3 id="mTitle">Your night is reserved</h3>
+      <p id="mText"></p>
+      <div class="modal__ref">Booking ref <b id="mRef"></b></div>
+      <button class="btn" id="mClose">Done</button>
+    </div>
+  </div>
+
+  <a href="#top" class="totop" id="totop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></a>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const U = (id, w = 1000) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    /* =====================================================
+       Data
+       ===================================================== */
+    const TOURS = [
+      { id: "evening", name: "Dark Sky Evening", img: "1444703686981-a3abbc4d4fe3", time: "17:00 – 22:30", dur: "5.5 hours", group: "Up to 16", price: 49,
+        text: "Sunset from a dune, a zarb dinner cooked under the sand, then a guided tour of the sky with a laser pointer and our two 10-inch telescopes. Back at Rum Village by 22:30.",
+        inc: ["4×4 transfer from Rum Village", "Bedouin dinner & tea", "Naked-eye sky tour", "Telescope session"] },
+      { id: "camp", name: "Overnight Star Camp", img: "1484950763426-56b5bf172dbb", time: "16:45 – 08:00", dur: "Overnight", group: "Up to 16", price: 129, pop: true,
+        text: "Everything in the Evening tour, plus a late session after the moon sets, a night in a heated sky-view tent and coffee on the ridge at sunrise. The way most guests wish they'd done it.",
+        inc: ["Everything in Dark Sky Evening", "Late telescope session", "Sky-view tent with heating", "Sunrise breakfast"] },
+      { id: "photo", name: "Astrophotography Night", img: "1502134249126-9f3755a50d78", time: "18:30 – 01:30", dur: "7 hours", group: "Max 6", price: 99,
+        text: "A small-group workshop for anyone with a camera that has a manual mode. We set up on a ridge facing the Milky Way core and coach you until you have a shot you're proud of.",
+        inc: ["Tripod & red headlamp", "Settings & focusing coaching", "Star-tracker mount to share", "Editing walkthrough"] },
+    ];
+    const STEPS = [
+      ["16:45", "Pickup in Rum Village", "Meet your guide at the visitor centre and ride 40 minutes into the protected area by 4×4, past the Seven Pillars and Lawrence's Spring.", "1509316785289-025f5b846b35"],
+      ["17:35", "Sunset from Um Sabatah", "Climb the red dune as the cliffs turn copper. Venus is usually the first light to appear.", "1500964757637-c85e8a162699"],
+      ["18:30", "Dinner as the first stars come out", "Lamb and vegetables slow-cooked in a zarb oven under the sand, with sage tea around the fire.", "1489549132488-d00b7eee80f1"],
+      ["20:00", "Naked-eye sky tour", "Lights out. Our astronomer walks you through the constellations, planets and stories of the Bedouin sky with a green laser.", "1444703686981-a3abbc4d4fe3"],
+      ["21:15", "At the eyepiece", "Saturn's rings, star clusters and the Andromeda Galaxy through two 10-inch telescopes. Take photos through the eyepiece with your phone.", "1543722530-d2c3201371e7"],
+      ["23:30", "Sleep under the Milky Way", "Your heated sky-view tent has a clear roof. Most guests fall asleep watching for meteors.", "1465101162946-4377e57745c3"],
+      ["06:10", "Sunrise on the ridge", "Cardamom coffee on the rocks as the desert turns pink, then breakfast and the drive back.", "1520034475321-cbe63696469a"],
+    ];
+    const OBJECTS = [
+      { name: "Milky Way core", type: "Naked eye", img: "1502134249126-9f3755a50d78", m: [3, 4, 5, 6, 7, 8, 9, 10], text: "The bright centre of our galaxy rises over the southern cliffs. Best before midnight in summer." },
+      { name: "Andromeda Galaxy", type: "Naked eye", img: "1543722530-d2c3201371e7", m: [8, 9, 10, 11, 12, 1, 2], text: "2.5 million light years away and still visible as a soft smudge. Stunning in the telescope." },
+      { name: "Orion Nebula", type: "Binoculars", img: "1516339901601-2e1b62dc0c45", m: [11, 12, 1, 2, 3, 4], text: "A star nursery in Orion's sword. Through our telescopes you see its glowing gas clouds." },
+      { name: "Perseid meteors", type: "Naked eye", img: "1489549132488-d00b7eee80f1", m: [8], text: "Up to 100 meteors an hour around 12 August. Our most requested night of the year." },
+      { name: "Geminid meteors", type: "Naked eye", img: "1534841090574-cba2d662b62e", m: [12], text: "The richest shower of the year, peaking around 14 December with slow, bright meteors." },
+      { name: "North America Nebula", type: "Camera", img: "1531306728370-e2ebd9d7bb99", m: [6, 7, 8, 9, 10], text: "Faint to the eye, but a favourite target on the Astrophotography Night with a star tracker." },
+    ];
+    const GALLERY = [
+      ["1484950763426-56b5bf172dbb", "Our 4×4 under the Milky Way, Khazali canyon", "Rami K."],
+      ["1444703686981-a3abbc4d4fe3", "Standing on the ridge above camp", "Elise M."],
+      ["1502134249126-9f3755a50d78", "Milky Way core, 20 seconds at f/2.8", "Marta R."],
+      ["1419242902214-272b3f66ee7a", "Last light behind Jebel Rum", "Tom H."],
+      ["1543722530-d2c3201371e7", "Andromeda through the camp telescope", "Yusuf A."],
+      ["1465101162946-4377e57745c3", "Galactic centre, stacked 12 frames", "Lena S."],
+      ["1516339901601-2e1b62dc0c45", "Orion Nebula with a star tracker", "Daniel O."],
+      ["1531306728370-e2ebd9d7bb99", "North America Nebula, 2 hours of data", "Marta R."],
+      ["1528722828814-77b9b83aafb2", "The Milky Way at 2 a.m.", "Chen W."],
+      ["1489549132488-d00b7eee80f1", "A Perseid over the dunes", "Sara B."],
+    ];
+    const REVIEWS = [
+      ["I have travelled a lot and never seen a sky like this. When Omar turned the lights off, the whole group just went quiet. Then he pointed out Andromeda and I actually saw it with my own eyes.", "Elise Martin", "Lyon, France", "Overnight Star Camp"],
+      ["I had never used my camera on manual before. By midnight I had a Milky Way photo that is now framed in my living room. Small group, patient guide, great hot tea.", "Daniel Okafor", "London, UK", "Astrophotography Night"],
+      ["Our flight to Aqaba was delayed and they moved our booking to the next night without any fuss. The kids still talk about seeing Saturn's rings.", "Hannah & Mark Lewis", "Toronto, Canada", "Dark Sky Evening"],
+      ["The dinner alone would be worth it. Then the telescopes, then waking up at 4 a.m. to a sky full of stars through the tent roof. Best night of our whole Jordan trip.", "Sofía Ruiz", "Madrid, Spain", "Overnight Star Camp"],
+      ["Well organised from the first WhatsApp message to the drop-off. They picked us up from our hotel in Aqaba and even lent me a warm jacket.", "Ahmad Khalil", "Dubai, UAE", "Dark Sky Evening"],
+    ];
+    const FAQ = [
+      ["What happens if it's cloudy?", "We check the forecast every afternoon. If clouds are expected, we message you by 14:00 and you can move to any other night for free or take a full refund. Wadi Rum has over 300 clear nights a year, so it rarely happens."],
+      ["What should I wear?", "The desert gets cold after sunset, even in summer. Bring a warm layer, long trousers and closed shoes. From November to March, a proper jacket and hat. We keep spare blankets and jackets at camp."],
+      ["Can children join?", "Yes. Children aged 5 and up are welcome on the Dark Sky Evening and the Star Camp at half price. The Astrophotography Night is for ages 14+."],
+      ["Do I need my own camera?", "Not for the Evening or Camp tours. You can take photos through the telescopes with your phone and we help you line it up. For the Astrophotography Night, bring a camera with manual mode or rent one of ours."],
+      ["Is the full moon a bad time to come?", "You'll see fewer faint stars, but the moon itself is spectacular in the telescope and the desert glows silver. Nights with less than 20% moonlight are best for the Milky Way and are marked on our calendar."],
+      ["How do I pay and can I cancel?", "Reserve online now and pay at camp in cash or card. Free cancellation until 48 hours before your night."],
+    ];
+
+    /* =====================================================
+       Moon & sky maths
+       ===================================================== */
+    const SYN = 29.530588853, REF = Date.UTC(2000, 0, 6, 18, 14);
+    const at21 = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate(), 21);
+    const moonAge = (d) => { const a = ((d - REF) / 864e5) % SYN; return a < 0 ? a + SYN : a; };
+    const illum = (age) => (1 - Math.cos((2 * Math.PI * age) / SYN)) / 2;
+    const phaseName = (age) => { const p = age / SYN; return p < .03 || p > .97 ? "New moon" : p < .22 ? "Waxing crescent" : p < .28 ? "First quarter" : p < .47 ? "Waxing gibbous" : p < .53 ? "Full moon" : p < .72 ? "Waning gibbous" : p < .78 ? "Last quarter" : "Waning crescent"; };
+    const moonSVG = (age) => {
+      const p = age / SYN, k = Math.cos(2 * Math.PI * p), rx = Math.max(Math.abs(k) * 50, .01);
+      const d = p < .5 ? `M50 0A50 50 0 0 1 50 100A${rx} 50 0 0 ${k > 0 ? 0 : 1} 50 0Z` : `M50 0A50 50 0 0 0 50 100A${rx} 50 0 0 ${k > 0 ? 1 : 0} 50 0Z`;
+      return `<circle cx="50" cy="50" r="50" class="m-dark"/><path d="${d}" class="m-lit"/>`;
+    };
+    const SUNSET = ["17:20", "17:45", "18:05", "18:25", "18:45", "19:00", "19:00", "18:40", "18:10", "17:40", "17:15", "17:10"];
+    const addMin = (hm, m) => { const [h, mm] = hm.split(":").map(Number), t = h * 60 + mm + m; return `${String(Math.floor(t / 60) % 24).padStart(2, "0")}:${String(t % 60).padStart(2, "0")}`; };
+    const CAP = 16;
+    const seatsLeft = (d) => {
+      const x = Math.sin(d.getFullYear() * 400 + d.getMonth() * 37 + d.getDate() * 7.3) * 1e4, f = x - Math.floor(x);
+      let s = Math.floor(f * 17);
+      if (illum(moonAge(at21(d))) < .2) s = Math.floor(s / 3);
+      if ([4, 5].includes(d.getDay())) s = Math.floor(s * .6);
+      return s < 2 ? 0 : s;
+    };
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const fmt = (d, o) => d.toLocaleDateString("en-GB", o);
+
+    /* Tonight bar */
+    (() => {
+      const age = moonAge(at21(today)), il = illum(age), s = seatsLeft(today), sun = SUNSET[today.getMonth()];
+      $("tMoon").innerHTML = moonSVG(age);
+      $("tDate").textContent = fmt(today, { weekday: "short", day: "numeric", month: "short" });
+      $("tPhase").textContent = phaseName(age);
+      $("tIllum").textContent = `${Math.round(il * 100)}% illuminated`;
+      $("tSunset").textContent = sun;
+      $("tDark").textContent = addMin(sun, 80);
+      const score = 1 - il;
+      $("tScore").textContent = score > .8 ? "Excellent" : score > .55 ? "Very good" : score > .3 ? "Good" : "Moon-bright";
+      $("tMeter").style.setProperty("--w", Math.max(.12, score));
+      $("tSeats").textContent = s ? `${s} of ${CAP} left` : "Sold out";
+      $("tBook").addEventListener("click", () => selectDate(today));
+      let d = new Date(today);
+      for (let i = 0; i < 40; i++) { d.setDate(d.getDate() + 1); const a = moonAge(at21(d)); if (a < 1 || a > SYN - 1) break; }
+      $("nextNew").textContent = fmt(d, { weekday: "long", day: "numeric", month: "long" }) + ".";
+    })();
+
+    /* =====================================================
+       Hero: interactive constellation sky
+       ===================================================== */
+    const CONST = [
+      { name: "Orion", note: "The Hunter · Nov – Mar", at: [.66, .3], pts: [[0, 0], [.13, .02], [.065, -.07], [.045, .15], [.075, .14], [.105, .13], [.025, .3], [.155, .28]], ln: [[0, 2], [2, 1], [0, 3], [1, 5], [3, 4], [4, 5], [3, 6], [5, 7]] },
+      { name: "The Plough", note: "Ursa Major · all year", at: [.42, .12], pts: [[0, .02], [.05, 0], [.09, .01], [.13, .03], [.14, .09], [.21, .09], [.21, .02]], ln: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 3]] },
+      { name: "Cassiopeia", note: "The Queen · Aug – Feb", at: [.8, .1], pts: [[0, .03], [.04, .08], [.08, .04], [.12, .09], [.16, .02]], ln: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+      { name: "Scorpius", note: "The Scorpion · May – Sep", at: [.86, .44], pts: [[0, 0], [.01, .05], [0, .1], [.045, .08], [.07, .12], [.09, .17], [.1, .22], [.09, .27], [.06, .3], [.035, .29], [.025, .26]], ln: [[0, 1], [1, 2], [1, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]] },
+      { name: "Cygnus", note: "The Swan · Jun – Nov", at: [.12, .1], pts: [[.06, 0], [.06, .08], [.06, .2], [0, .1], [.12, .06]], ln: [[0, 1], [1, 2], [3, 1], [1, 4]] },
+    ];
+    (() => {
+      const cv = $("skyCanvas"), ctx = cv.getContext("2d"), tag = $("constTag"), hero = $("hero");
+      let W, H, S, dpr, stars = [], band, mx = -1e4, my = -1e4, ox = 0, oy = 0, active = -1, lastMove = 0, auto = 0, running = true, shoot = null, nextShoot = 3000;
+      const resize = () => {
+        dpr = Math.min(devicePixelRatio || 1, 2); W = cv.clientWidth; H = cv.clientHeight; S = Math.min(W, H) * (W < 700 ? .9 : 1.05);
+        cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const n = Math.min(1100, Math.round((W * H) / 1700));
+        stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H * .92, r: Math.random() ** 3 * 1.5 + .3, a: Math.random() * .6 + .25, t: Math.random() * 6.3, s: Math.random() * 1.5 + .4, z: Math.random() * .8 + .2 }));
+        band = document.createElement("canvas"); band.width = W; band.height = H; const b = band.getContext("2d");
+        b.translate(W * .5, H * .45); b.rotate(-.5);
+        for (let i = 0; i < 9; i++) { const g = b.createRadialGradient(0, 0, 0, 0, 0, 1); g.addColorStop(0, `rgba(${i % 2 ? "156,196,255" : "120,110,255"},.05)`); g.addColorStop(1, "rgba(0,0,0,0)"); b.save(); b.translate((i - 4) * W * .14, (Math.random() - .5) * 40); b.scale(W * .22, H * .12); b.fillStyle = g; b.fillRect(-1, -1, 2, 2); b.restore(); }
+        for (let i = 0; i < 2200; i++) { const x = (Math.random() - .5) * W * 1.6, y = (Math.random() + Math.random() + Math.random() - 1.5) * H * .09; b.fillStyle = `rgba(220,230,255,${Math.random() * .35})`; b.fillRect(x, y, .8, .8); }
+        CONST.forEach((c) => { c.p = c.pts.map(([x, y]) => [c.at[0] * W + x * S, c.at[1] * H + y * S]); c.cx = c.p.reduce((s, q) => s + q[0], 0) / c.p.length; c.cy = c.p.reduce((s, q) => s + q[1], 0) / c.p.length; c.v = c.v || 0; });
+      };
+      resize(); addEventListener("resize", resize);
+      hero.addEventListener("pointermove", (e) => { const r = cv.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; lastMove = performance.now(); });
+      hero.addEventListener("pointerleave", () => { mx = my = -1e4; });
+      new IntersectionObserver(([e]) => { running = e.isIntersecting; if (running) requestAnimationFrame(frame); }).observe(hero);
+      let prev = performance.now();
+      function frame(now) {
+        const dt = Math.min(now - prev, 50); prev = now;
+        ctx.clearRect(0, 0, W, H);
+        const tx = mx > -1e3 && !reduce ? (mx / W - .5) * -14 : 0, ty = my > -1e3 && !reduce ? (my / H - .5) * -10 : 0;
+        ox += (tx - ox) * .05; oy += (ty - oy) * .05;
+        ctx.drawImage(band, ox * .5, oy * .5, W, H);
+        for (const s of stars) {
+          const tw = reduce ? 1 : .65 + .35 * Math.sin(now * .001 * s.s + s.t);
+          ctx.globalAlpha = s.a * tw; ctx.fillStyle = "#e6eeff";
+          ctx.beginPath(); ctx.arc(s.x + ox * s.z, s.y + oy * s.z, s.r, 0, 6.283); ctx.fill();
+        }
+        // pick constellation
+        let near = -1, best = 1e9;
+        CONST.forEach((c, i) => { const d = Math.hypot(mx - c.cx - ox, my - c.cy - oy); if (d < Math.max(130, S * .2) && d < best) { best = d; near = i; } });
+        if (near < 0 && !reduce && now - lastMove > 2500) { if (now - auto > 3800) { auto = now; active = (active + 1) % CONST.length; } near = active; }
+        CONST.forEach((c, i) => {
+          c.v += ((i === near ? 1 : 0) - c.v) * Math.min(1, dt / 160);
+          const P = c.p.map(([x, y]) => [x + ox, y + oy]);
+          if (c.v > .01) {
+            ctx.globalAlpha = c.v * .75; ctx.strokeStyle = "#7fa8ff"; ctx.lineWidth = 1.2;
+            ctx.beginPath(); c.ln.forEach(([a, b]) => { const [x1, y1] = P[a], [x2, y2] = P[b]; ctx.moveTo(x1, y1); ctx.lineTo(x1 + (x2 - x1) * c.v, y1 + (y2 - y1) * c.v); }); ctx.stroke();
+          }
+          P.forEach(([x, y]) => { ctx.globalAlpha = .85 + c.v * .15; const g = ctx.createRadialGradient(x, y, 0, x, y, 6 + c.v * 4); g.addColorStop(0, "rgba(220,232,255,.9)"); g.addColorStop(1, "rgba(120,160,255,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 6 + c.v * 4, 0, 6.283); ctx.fill(); ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(x, y, 1.6, 0, 6.283); ctx.fill(); });
+        });
+        if (near >= 0 && CONST[near].v > .3) {
+          const c = CONST[near], maxY = Math.max(...c.p.map((q) => q[1]));
+          tag.querySelector("b").textContent = c.name; tag.querySelector("span").textContent = c.note;
+          tag.style.transform = `translate(${Math.min(W - 190, Math.max(12, c.cx + ox - 70))}px, ${maxY + oy + 18}px)`; tag.classList.add("on");
+        } else tag.classList.remove("on");
+        // shooting star
+        if (!reduce) {
+          nextShoot -= dt;
+          if (!shoot && nextShoot < 0) { shoot = { x: Math.random() * W * .7 + W * .2, y: Math.random() * H * .3, l: 0 }; nextShoot = 5000 + Math.random() * 5000; }
+          if (shoot) {
+            shoot.l += dt / 700; const k = shoot.l, x = shoot.x - k * 260, y = shoot.y + k * 120;
+            const g = ctx.createLinearGradient(x, y, x + 90, y - 42); g.addColorStop(0, "rgba(255,255,255,.9)"); g.addColorStop(1, "rgba(255,255,255,0)");
+            ctx.globalAlpha = Math.sin(Math.PI * Math.min(k, 1)); ctx.strokeStyle = g; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 90, y - 42); ctx.stroke();
+            if (k > 1) shoot = null;
+          }
+        }
+        ctx.globalAlpha = 1;
+        if (running) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+
+    /* =====================================================
+       Darkness comparison
+       ===================================================== */
+    (() => {
+      const cv = $("compare"), ctx = cv.getContext("2d");
+      const MODES = [
+        { n: 60, glow: 1, milky: 0, stars: "~60", bortle: "8–9", mw: "Invisible", place: "City centre, clear night" },
+        { n: 420, glow: .45, milky: .15, stars: "~400", bortle: "5–6", mw: "Faint, overhead only", place: "Suburbs, clear night" },
+        { n: 2600, glow: 0, milky: 1, stars: "~4,500", bortle: "1–2", mw: "Casts a shadow", place: "Wadi Rum, moonless night" },
+      ];
+      let W, H, pts = [], cur = { n: 2600, glow: 0, milky: 1 }, from, to = cur, t0 = 0;
+      const size = () => {
+        const dpr = Math.min(devicePixelRatio || 1, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        pts = Array.from({ length: 2600 }, (_, i) => { const inBand = Math.random() < .45; const x = Math.random() * W; const y = inBand ? H * .15 + x * .55 + (Math.random() - .5) * H * .22 : Math.random() * H; return { x, y, r: i < 60 ? 1.6 + Math.random() : i < 420 ? .9 + Math.random() * .6 : Math.random() * .8 + .3, band: inBand }; });
+        draw();
+      };
+      const draw = () => {
+        const g = ctx.createLinearGradient(0, 0, 0, H);
+        g.addColorStop(0, `rgb(${6 + 40 * cur.glow},${10 + 22 * cur.glow},${24 + 20 * cur.glow})`); g.addColorStop(1, `rgb(${14 + 120 * cur.glow},${18 + 60 * cur.glow},${40 + 10 * cur.glow})`);
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+        if (cur.milky > .01) { ctx.save(); ctx.translate(W / 2, H * .15 + W * .275); ctx.rotate(Math.atan(.55)); const m = ctx.createRadialGradient(0, 0, 0, 0, 0, W * .7); m.addColorStop(0, `rgba(150,170,255,${.22 * cur.milky})`); m.addColorStop(1, "rgba(150,170,255,0)"); ctx.scale(1, .22); ctx.fillStyle = m; ctx.beginPath(); ctx.arc(0, 0, W * .7, 0, 6.283); ctx.fill(); ctx.restore(); }
+        for (let i = 0; i < pts.length; i++) {
+          const a = Math.max(0, Math.min(1, cur.n - i)); if (a <= 0) break;
+          const p = pts[i]; if (p.band && cur.milky < .5 && i > 420) continue;
+          ctx.globalAlpha = a * (i < 420 ? .95 : .7); ctx.fillStyle = "#eef3ff"; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = "#03050d"; ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(0, H * .86); ctx.lineTo(W * .18, H * .8); ctx.lineTo(W * .26, H * .7); ctx.lineTo(W * .33, H * .72); ctx.lineTo(W * .4, H * .84); ctx.lineTo(W * .62, H * .86); ctx.lineTo(W * .74, H * .76); ctx.lineTo(W * .8, H * .77); ctx.lineTo(W * .86, H * .86); ctx.lineTo(W, H * .84); ctx.lineTo(W, H); ctx.fill();
+      };
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 900), e = 1 - (1 - k) ** 3;
+        cur = { n: from.n + (to.n - from.n) * e, glow: from.glow + (to.glow - from.glow) * e, milky: from.milky + (to.milky - from.milky) * e };
+        draw(); if (k < 1) requestAnimationFrame(step);
+      };
+      document.querySelectorAll(".dark__switch button").forEach((b) => b.addEventListener("click", () => {
+        document.querySelectorAll(".dark__switch button").forEach((x) => x.classList.toggle("on", x === b));
+        const m = MODES[b.dataset.mode]; from = { ...cur }; to = m; t0 = performance.now();
+        $("dStars").textContent = m.stars; $("dBortle").textContent = m.bortle; $("dMilky").textContent = m.mw; $("dPlace").textContent = m.place;
+        reduce ? (cur = { ...m }, draw()) : requestAnimationFrame(step);
+      }));
+      size(); addEventListener("resize", size);
+    })();
+
+    /* =====================================================
+       Tours
+       ===================================================== */
+    $("tourList").innerHTML = TOURS.map((t, i) => `
+      <article class="tour ${i % 2 ? "tour--flip" : ""} reveal">
+        <div class="tour__img"><img src="${U(t.img, 1200)}" alt="${t.name}" loading="lazy" />${t.pop ? '<span class="tour__pop">Most booked</span>' : ""}</div>
+        <div class="tour__body">
+          <p class="tour__time"><i class="ri-time-line"></i> ${t.time}</p>
+          <h3>${t.name}</h3>
+          <p>${t.text}</p>
+          <ul class="tour__inc">${t.inc.map((x) => `<li><i class="ri-check-line"></i>${x}</li>`).join("")}</ul>
+          <div class="tour__meta"><span><small>Duration</small>${t.dur}</span><span><small>Group</small>${t.group}</span><span><small>From</small><b>${t.price} JD</b> / person</span></div>
+          <button class="btn" data-tour="${t.id}">Book this tour <i class="ri-arrow-right-line"></i></button>
+        </div>
+      </article>`).join("");
+
+    /* =====================================================
+       The night: sticky photo swaps as the steps scroll
+       ===================================================== */
+    $("steps").innerHTML = STEPS.map(([t, h, p], i) => `<li class="step" data-i="${i}"><span class="step__t">${t}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join("");
+    $("nightFrame").innerHTML = STEPS.map(([, h, , img], i) => `<img src="${U(img, 1200)}" alt="${h}" class="${i ? "" : "on"}" loading="lazy" />`).join("");
+    const stepEls = [...document.querySelectorAll(".step")], frames = [...$("nightFrame").children];
+    const setStep = (i) => { stepEls.forEach((s, k) => s.classList.toggle("on", k === i)); frames.forEach((f, k) => f.classList.toggle("on", k === i)); $("nightTime").textContent = STEPS[i][0]; };
+    setStep(0);
+    const stepIO = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setStep(+e.target.dataset.i)), { rootMargin: "-45% 0px -45% 0px" });
+    stepEls.forEach((s) => stepIO.observe(s));
+
+    /* =====================================================
+       Sky guide by month
+       ===================================================== */
+    let month = today.getMonth() + 1;
+    const renderSky = () => {
+      $("months").innerHTML = MONTHS.map((m, i) => `<button role="tab" aria-selected="${i + 1 === month}" class="${i + 1 === month ? "on" : ""}" data-m="${i + 1}">${m.slice(0, 3)}</button>`).join("");
+      $("skyMonth").textContent = `in ${MONTHS[month - 1]}.`;
+      $("objects").innerHTML = OBJECTS.map((o) => {
+        const on = o.m.includes(month);
+        let back = month; for (let k = 1; k <= 12 && !on; k++) { back = ((month - 1 + k) % 12) + 1; if (o.m.includes(back)) break; }
+        return `<article class="obj ${on ? "" : "obj--off"}">
+          <div class="obj__img"><img src="${U(o.img, 700)}" alt="${o.name}" loading="lazy" /><span class="obj__type">${o.type}</span></div>
+          <div class="obj__body"><h3>${o.name}</h3><p>${o.text}</p>
+            <div class="obj__months" aria-label="Visible months">${MONTHS.map((m, i) => `<i class="${o.m.includes(i + 1) ? "v" : ""} ${i + 1 === month ? "now" : ""}" title="${m}"></i>`).join("")}</div>
+            <span class="obj__state">${on ? '<i class="ri-eye-line"></i> Visible this month' : `<i class="ri-time-line"></i> Back in ${MONTHS[back - 1]}`}</span>
+          </div></article>`;
+      }).join("");
+    };
+    $("months").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { month = +b.dataset.m; renderSky(); } });
+    renderSky();
+
+    /* =====================================================
+       Booking: moon calendar + summary
+       ===================================================== */
+    const ADDONS = [
+      { id: "transfer", name: "Hotel pickup from Aqaba", price: 20, per: true },
+      { id: "scope", name: "Private telescope session (30 min)", price: 35, per: false },
+      { id: "camera", name: "Camera & lens rental", price: 25, per: true },
+    ];
+    const B = { view: new Date(today.getFullYear(), today.getMonth() + (new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate() - today.getDate() < 7 ? 1 : 0), 1), date: null, tour: "camp", guests: 2, add: new Set() };
+    const maxDate = new Date(today); maxDate.setDate(maxDate.getDate() + 120);
+    $("tourOpts").insertAdjacentHTML("beforeend", TOURS.map((t) => `<label class="opt"><input type="radio" name="tour" value="${t.id}" ${t.id === B.tour ? "checked" : ""} /><span><b>${t.name}</b><small>${t.time}</small></span><em>${t.price} JD</em></label>`).join(""));
+    $("addons").insertAdjacentHTML("beforeend", ADDONS.map((a) => `<label class="chk"><input type="checkbox" value="${a.id}" /><span>${a.name}</span><em>+${a.price} JD${a.per ? " pp" : ""}</em></label>`).join(""));
+    const sameDay = (a, b) => a && b && a.toDateString() === b.toDateString();
+
+    const renderCal = () => {
+      const y = B.view.getFullYear(), m = B.view.getMonth(), first = (new Date(y, m, 1).getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
+      $("calTitle").textContent = `${MONTHS[m]} ${y}`;
+      $("calPrev").disabled = new Date(y, m, 1) <= new Date(today.getFullYear(), today.getMonth(), 1);
+      $("calNext").disabled = new Date(y, m + 1, 1) > maxDate;
+      let html = "<span></span>".repeat(first);
+      for (let d = 1; d <= days; d++) {
+        const dt = new Date(y, m, d), age = moonAge(at21(dt)), il = illum(age), s = seatsLeft(dt);
+        const past = dt < today || dt > maxDate, out = !past && s === 0;
+        html += `<button type="button" class="day ${il < .2 ? "day--best" : ""} ${out ? "day--out" : ""} ${!past && s && s <= 4 ? "day--low" : ""} ${sameDay(dt, B.date) ? "on" : ""}" data-d="${d}" ${past || out ? "disabled" : ""} aria-label="${fmt(dt, { day: "numeric", month: "long" })}, ${phaseName(age)}, ${out ? "sold out" : s + " seats left"}">
+          <span class="day__n">${d}</span><svg class="moon" viewBox="0 0 100 100" aria-hidden="true">${moonSVG(age)}</svg>
+          <small>${past ? "" : out ? "Full" : s <= 4 ? s + " left" : ""}</small></button>`;
+      }
+      $("calGrid").innerHTML = html;
+    };
+    const total = () => {
+      const t = TOURS.find((x) => x.id === B.tour);
+      let sum = t.price * B.guests;
+      B.add.forEach((id) => { const a = ADDONS.find((x) => x.id === id); sum += a.per ? a.price * B.guests : a.price; });
+      return sum;
+    };
+    const renderSum = () => {
+      const s = B.date ? seatsLeft(B.date) : CAP, max = Math.min(8, s);
+      if (B.guests > max) B.guests = max;
+      $("gCount").textContent = B.guests;
+      $("gMinus").disabled = B.guests <= 1; $("gPlus").disabled = B.guests >= max;
+      if (B.date) {
+        const age = moonAge(at21(B.date));
+        $("sumDate").innerHTML = `<svg class="moon" viewBox="0 0 100 100" aria-hidden="true">${moonSVG(age)}</svg><span><b>${fmt(B.date, { weekday: "long", day: "numeric", month: "long" })}</b><small>${phaseName(age)} · ${Math.round(illum(age) * 100)}% moonlight · ${s} seats left</small></span>`;
+        $("sumDate").classList.add("set");
+      }
+      $("total").textContent = `${total()} JD`;
+    };
+    function selectDate(d) { B.date = new Date(d); B.view = new Date(d.getFullYear(), d.getMonth(), 1); renderCal(); renderSum(); }
+
+    $("calGrid").addEventListener("click", (e) => { const b = e.target.closest(".day"); if (b && !b.disabled) selectDate(new Date(B.view.getFullYear(), B.view.getMonth(), +b.dataset.d)); });
+    $("calPrev").addEventListener("click", () => { B.view.setMonth(B.view.getMonth() - 1); renderCal(); });
+    $("calNext").addEventListener("click", () => { B.view.setMonth(B.view.getMonth() + 1); renderCal(); });
+    $("tourOpts").addEventListener("change", (e) => { B.tour = e.target.value; renderSum(); });
+    $("addons").addEventListener("change", (e) => { e.target.checked ? B.add.add(e.target.value) : B.add.delete(e.target.value); renderSum(); });
+    $("gMinus").addEventListener("click", () => { B.guests--; renderSum(); });
+    $("gPlus").addEventListener("click", () => { B.guests++; renderSum(); });
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-tour]"); if (!b) return;
+      B.tour = b.dataset.tour; document.querySelector(`#tourOpts input[value="${B.tour}"]`).checked = true; renderSum();
+      $("book").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    });
+    $("bookForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const msg = $("bookMsg"), name = $("fName").value.trim(), email = $("fEmail").value.trim();
+      if (!B.date) { msg.textContent = "Please pick a night on the calendar first."; msg.className = "form-msg err"; return; }
+      if (!name || !/^\S+@\S+\.\S+$/.test(email)) { msg.textContent = "Please add your name and a valid email."; msg.className = "form-msg err"; return; }
+      msg.textContent = "";
+      const t = TOURS.find((x) => x.id === B.tour);
+      $("mMoon").innerHTML = moonSVG(moonAge(at21(B.date)));
+      $("mText").textContent = `${t.name} for ${B.guests} ${B.guests > 1 ? "guests" : "guest"} on ${fmt(B.date, { weekday: "long", day: "numeric", month: "long" })}. Total ${total()} JD, paid at camp. We've sent the meeting details to ${email}.`;
+      $("mRef").textContent = "NOC-" + String(Math.floor(1000 + Math.random() * 9000));
+      $("modal").hidden = false; $("mClose").focus();
+      e.target.reset(); B.add.clear(); document.querySelector(`#tourOpts input[value="${B.tour}"]`).checked = true; renderSum();
+    });
+    $("mClose").addEventListener("click", () => ($("modal").hidden = true));
+    $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("modal").hidden = true; });
+    renderCal(); renderSum();
+
+    /* =====================================================
+       Gallery + lightbox
+       ===================================================== */
+    $("galleryGrid").innerHTML = GALLERY.map(([id, cap, by], i) => `<button class="shot reveal" data-i="${i}" style="--d:${(i % 4) * .06}s" aria-label="Open photo: ${cap}"><img src="${U(id, 800)}" alt="${cap}" loading="lazy" /><span><b>${cap}</b>by ${by}</span></button>`).join("");
+    let lb = 0;
+    const openLb = (i) => { lb = (i + GALLERY.length) % GALLERY.length; const [id, cap, by] = GALLERY[lb]; $("lbImg").src = U(id, 1800); $("lbImg").alt = cap; $("lbCap").innerHTML = `<b>${cap}</b> · Photo by ${by}`; $("lightbox").hidden = false; document.body.style.overflow = "hidden"; };
+    const closeLb = () => { $("lightbox").hidden = true; document.body.style.overflow = ""; };
+    $("galleryGrid").addEventListener("click", (e) => { const s = e.target.closest(".shot"); if (s) openLb(+s.dataset.i); });
+    $("lbClose").addEventListener("click", closeLb);
+    $("lbPrev").addEventListener("click", () => openLb(lb - 1));
+    $("lbNext").addEventListener("click", () => openLb(lb + 1));
+    $("lightbox").addEventListener("click", (e) => { if (e.target.id === "lightbox") closeLb(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") { closeLb(); $("modal").hidden = true; closeNav(); }
+      if (!$("lightbox").hidden && e.key === "ArrowLeft") openLb(lb - 1);
+      if (!$("lightbox").hidden && e.key === "ArrowRight") openLb(lb + 1);
+    });
+
+    /* =====================================================
+       Reviews slider
+       ===================================================== */
+    let q = 0, qTimer;
+    $("quotes").innerHTML = REVIEWS.map(([t, n, from, tour], i) => `<figure class="quote ${i ? "" : "on"}"><blockquote>“${t}”</blockquote><figcaption><b>${n}</b><span>${from} · ${tour}</span></figcaption></figure>`).join("");
+    $("qDots").innerHTML = REVIEWS.map((_, i) => `<button aria-label="Review ${i + 1}" class="${i ? "" : "on"}"></button>`).join("");
+    const showQ = (i) => {
+      q = (i + REVIEWS.length) % REVIEWS.length;
+      [...$("quotes").children].forEach((el, k) => el.classList.toggle("on", k === q));
+      [...$("qDots").children].forEach((el, k) => el.classList.toggle("on", k === q));
+      clearInterval(qTimer); if (!reduce) qTimer = setInterval(() => showQ(q + 1), 7000);
+    };
+    $("qPrev").addEventListener("click", () => showQ(q - 1));
+    $("qNext").addEventListener("click", () => showQ(q + 1));
+    $("qDots").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) showQ([...$("qDots").children].indexOf(b)); });
+    showQ(0);
+
+    /* =====================================================
+       FAQ accordion
+       ===================================================== */
+    $("faqList").innerHTML = FAQ.map(([qq, a], i) => `<div class="acc__item reveal ${i ? "" : "open"}"><button aria-expanded="${!i}">${qq}<i class="ri-add-line"></i></button><div class="acc__a"><div><p>${a}</p></div></div></div>`).join("");
+    $("faqList").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      const item = b.parentElement, open = !item.classList.contains("open");
+      document.querySelectorAll(".acc__item").forEach((x) => { x.classList.remove("open"); x.firstElementChild.setAttribute("aria-expanded", "false"); });
+      if (open) { item.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
+    });
+
+    /* =====================================================
+       Header, nav, forms, reveal
+       ===================================================== */
+    const header = $("header"), links = [...document.querySelectorAll(".nav a")];
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => { const o = document.body.classList.toggle("nav-open"); $("burger").setAttribute("aria-expanded", o); });
+    links.forEach((a) => a.addEventListener("click", closeNav));
+    const onScroll = () => {
+      header.classList.toggle("sticky", scrollY > 40);
+      $("totop").classList.toggle("show", scrollY > 900);
+      let cur = "";
+      links.forEach((a) => { const s = document.querySelector(a.getAttribute("href")); if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = a.getAttribute("href"); });
+      links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === cur));
+    };
+    addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "You're on the list. Clear skies!"; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>

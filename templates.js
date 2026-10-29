@@ -124,6 +124,32 @@ const TEMPLATES = [
 
   /* ---------------- Portfolios ---------------- */
   {
+    id: "portfolio-dina",
+    name: "Dina Khoury",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-dina/index.html",
+    description: "Night-sky product & brand designer portfolio with a draggable project-board hero, sticky stacking case studies with full case-study modals, cursor-preview services list, drag-scroll playground, client-tab testimonials and a multi-select project planner.",
+    tags: ["Product designer", "Draggable board", "Case studies", "Project planner"],
+    palette: ["#060a18", "#eef3ff", "#3d7bff", "#9cc4ff"],
+    fonts: "Syncopate · Outfit",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-14",
+  },
+  {
+    id: "portfolio-sami",
+    name: "Sami Rahal",
+    category: "Portfolio",
+    status: "live",
+    path: "templates/portfolio-sami/index.html",
+    description: "Night-sky full-stack developer portfolio with a starfield hero and interactive terminal, filterable case studies with modals, a hoverable stack constellation, experience timeline, GitHub contribution graph, writing and a contact form with copy-email.",
+    tags: ["Developer", "Interactive terminal", "Stack constellation", "Case studies"],
+    palette: ["#060a18", "#eef3ff", "#3d7bff", "#9cc4ff"],
+    fonts: "Syncopate · Outfit · JetBrains Mono",
+    stack: "HTML · CSS · Vanilla JS · Canvas · Devicon · Remix Icon",
+    added: "2026-12-13",
+  },
+  {
     id: "portfolio-mateo",
     name: "Mateo Ruiz",
     category: "Portfolio",
@@ -437,6 +463,19 @@ const TEMPLATES = [
   },
 
   /* ---------------- Business ---------------- */
+  {
+    id: "tours-nocturne",
+    name: "Nocturne",
+    category: "Business",
+    status: "live",
+    path: "templates/tours-nocturne/index.html",
+    description: "Night-sky tours & desert star camp with an interactive constellation hero, live tonight's-moon bar, city-vs-desert sky comparison, sky guide by month and a moon-phase booking calendar with seats, add-ons and totals.",
+    tags: ["Stargazing tours", "Moon calendar booking", "Interactive sky", "Dark theme"],
+    palette: ["#060a18", "#eef3ff", "#3d7bff", "#9cc4ff"],
+    fonts: "Syncopate · Outfit",
+    stack: "HTML · CSS · Vanilla JS · Canvas · Remix Icon",
+    added: "2026-12-12",
+  },
   {
     id: "clinic-stride",
     name: "Stride Physio",
@@ -793,19 +832,6 @@ const TEMPLATES = [
     fonts: "Space Grotesk · Inter",
     stack: "HTML · CSS · Vanilla JS · Canvas · Remix Icon",
     added: "2026-12-03",
-  },
-  {
-    id: "landing-nibble",
-    name: "Nibble & Nap",
-    category: "Landing page",
-    status: "live",
-    path: "templates/landing-nibble/index.html",
-    description: "A fresh cat food subscription brand where Nori the kitten turns her whole head to follow the cursor (real head-turn frames that cross-fade, with a slight 3D tilt and idle look-around). How it works, recipe tabs with ingredients and nutrition, plans priced by cat size, fresh vs kibble comparison, reviews, FAQ and a discount sign-up.",
-    tags: ["Pet food", "Head follows cursor", "Subscription", "Recipes", "Peach"],
-    palette: ["#f8d5b7", "#4a1f3d", "#e8583a", "#fff8f1"],
-    fonts: "Bowlby One · Manrope",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-11-25",
   },
   {
     id: "landing-gingermoss",

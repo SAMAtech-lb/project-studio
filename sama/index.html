@@ -4,241 +4,238 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAMA — Web, App, UI/UX &amp; Video Studio</title>
-  <meta name="description" content="SAMA is a digital studio that designs and builds websites, mobile apps and UI/UX, and edits videos that make brands stand out. See the projects we've built and start yours today." />
+  <meta name="description" content="SAMA (سماء — Arabic for sky) is a creative tech studio that designs and builds websites, mobile apps and UI/UX, and edits videos that make brands stand out." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' %3E%3Cdefs%3E%3ClinearGradient id='samaG' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%232a5fe0'/%3E%3Cstop offset='1' stop-color='%235b93ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='14' fill='url(%23samaG)'/%3E%3Cpath d='M9 35 19.5 18 26 28' fill='none' stroke='%239cc4ff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 35 29.5 13 39 35' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+
   <!-- Header -->
   <header class="header" id="header">
-    <div class="container header__in">
+    <div class="header__in">
       <a href="#home" class="logo" aria-label="SAMA home">
-        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#527FF5"/><path d="M27 13.5c-1.6-1.6-4-2.5-6.6-2.5-4 0-7 2.1-7 5.3 0 3.4 3.1 4.5 6.6 5.2 2.8.6 4.4 1.1 4.4 2.6 0 1.4-1.6 2.3-4 2.3-2.4 0-4.4-.9-5.8-2.4" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="29" cy="28.5" r="2.4" fill="#fff"/></svg>
-        <span>SAMA</span>
+        <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="samaG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2a5fe0"/><stop offset="1" stop-color="#5b93ff"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#samaG)"/><path d="M9 35 19.5 18 26 28" fill="none" stroke="#9cc4ff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 35 29.5 13 39 35" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="logo__word" aria-label="SAMA">SΛMΛ</span>
       </a>
       <nav class="nav" id="nav">
-        <a href="#home" class="active">Home</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
+        <a href="#video">Video</a>
         <a href="#process">Process</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="header__cta">
-        <a href="#contact" class="btn btn--sm">Start a project <i class="ri-arrow-right-up-line"></i></a>
-        <button class="burger" id="burger" aria-label="Open menu"><i class="ri-menu-4-line"></i></button>
-      </div>
+      <a href="#contact" class="btn btn--sm" data-magnet>Start a project <i class="ri-arrow-right-up-line"></i></a>
+      <button class="burger" id="burger" aria-label="Open menu"><i class="ri-menu-4-line"></i></button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero__grid" aria-hidden="true"></div>
-    <div class="container hero__in">
-      <div class="hero__text">
-        <span class="pill"><span class="dot"></span> Available for new projects</span>
-        <h1>We design, build &amp; edit <span class="hl">digital products</span> people love.</h1>
-        <p>SAMA is a creative tech studio. We craft websites, mobile apps, UI/UX and videos that help businesses look sharper, sell more and grow faster.</p>
-        <div class="hero__btns">
-          <a href="#contact" class="btn">Start your project <i class="ri-arrow-right-line"></i></a>
-          <a href="#work" class="btn btn--line"><i class="ri-eye-line"></i> See our work</a>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <img class="hero__bg" src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&w=2400&q=80" alt="" />
+      <div class="hero__in">
+        <div class="hero__copy">
+          <h1 class="hero__title">
+            <span class="line"><span>We build digital</span></span>
+            <span class="line"><span>products that</span></span>
+            <span class="line"><span class="grad">rise above.</span></span>
+          </h1>
+          <p class="hero__lead reveal" style="--d:.55s">A creative tech studio from Beirut. Websites, mobile apps, UI/UX and video for brands that refuse to blend in.</p>
+          <div class="hero__cta reveal" style="--d:.68s">
+            <a href="#contact" class="btn" data-magnet>Start your project <i class="ri-arrow-right-line"></i></a>
+            <a href="#work" class="btn btn--glass"><i class="ri-eye-line"></i> See the work</a>
+          </div>
+          <ul class="hero__proof reveal" style="--d:.8s">
+            <li><b data-count-id="projects">0</b><span>live projects</span></li>
+            <li><b data-count-id="cats">0</b><span>industries</span></li>
+            <li><b>24h</b><span>reply time</span></li>
+          </ul>
         </div>
-        <div class="hero__stats">
-          <div><strong id="statProjects">0</strong><small>Projects built</small></div>
-          <div><strong id="statCats">0</strong><small>Industries</small></div>
-          <div><strong>4</strong><small>Core services</small></div>
-        </div>
-      </div>
 
-      <div class="hero__visual">
-        <div class="frame frame--back"><div class="frame__bar"><i></i><i></i><i></i></div><div class="frame__screen"><iframe data-src="../templates/shop-monarch/index.html" title="Monarch preview" tabindex="-1" aria-hidden="true"></iframe></div></div>
-        <div class="frame frame--front"><div class="frame__bar"><i></i><i></i><i></i><span>sama.studio/work</span></div><div class="frame__screen"><iframe data-src="../templates/landing-nexora/index.html" title="Nexora preview" tabindex="-1" aria-hidden="true"></iframe></div></div>
-        <div class="phone"><div class="phone__notch"></div><div class="phone__screen"><iframe data-src="../templates/portfolio-sofia/index.html" title="Sofia Reyes mobile preview" tabindex="-1" aria-hidden="true"></iframe></div></div>
-        <div class="chip chip--a"><i class="ri-film-line"></i><div><strong>Video edit</strong><small>Reel · 00:32 · 4K</small></div><div class="wave"><span></span><span></span><span></span><span></span><span></span></div></div>
-        <div class="chip chip--b"><i class="ri-checkbox-circle-fill"></i><div><strong>Launched</strong><small>Responsive · SEO-ready</small></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech strip -->
-  <section class="tech">
-    <div class="container">
-      <p>Tools &amp; technologies we work with</p>
-      <div class="tech__row">
-        <span><i class="devicon-figma-plain"></i> Figma</span>
-        <span><i class="devicon-html5-plain"></i> HTML</span>
-        <span><i class="devicon-css3-plain"></i> CSS</span>
-        <span><i class="devicon-javascript-plain"></i> JavaScript</span>
-        <span><i class="devicon-react-original"></i> React</span>
-        <span><i class="devicon-flutter-plain"></i> Flutter</span>
-        <span><i class="devicon-swift-plain"></i> Swift</span>
-        <span><i class="devicon-kotlin-plain"></i> Kotlin</span>
-        <span><i class="devicon-firebase-plain"></i> Firebase</span>
-        <span><i class="devicon-premierepro-plain"></i> Premiere Pro</span>
-        <span><i class="devicon-aftereffects-plain"></i> After Effects</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="title reveal">
-        <span class="sub">What we do</span>
-        <h2>Services built to <span>grow your brand</span></h2>
-        <p>One team for design, development and content, so your website, app and videos all look and feel like one brand.</p>
-      </div>
-      <div class="services" id="servicesGrid"></div>
-    </div>
-  </section>
-
-  <!-- Work -->
-  <section class="section section--soft" id="work">
-    <div class="container">
-      <div class="work__head reveal">
-        <div>
-          <span class="sub">Our work</span>
-          <h2>Projects we've <span>built</span></h2>
-          <p>Live, fully working websites. Click any project to try it on desktop, tablet or mobile.</p>
-        </div>
-        <a href="../index.html" class="btn btn--line-dark">Open full studio <i class="ri-external-link-line"></i></a>
-      </div>
-      <div class="filters reveal" id="filters"></div>
-      <div class="work" id="workGrid"></div>
-      <div class="work__more"><button class="btn btn--line-dark" id="moreBtn">Load more projects</button></div>
-    </div>
-  </section>
-
-  <!-- Video editing -->
-  <section class="section section--navy" id="video">
-    <div class="container video">
-      <div class="video__text reveal">
-        <span class="sub sub--light">Video editing</span>
-        <h2>Videos that stop the scroll</h2>
-        <p>From short-form reels to brand films, we cut, colour-grade, add motion graphics, captions and sound so your story lands in the first three seconds.</p>
-        <div class="formats" id="formats"></div>
-        <a href="#contact" class="btn">Get a video quote <i class="ri-arrow-right-line"></i></a>
-      </div>
-      <div class="editor reveal" aria-hidden="true">
-        <div class="editor__top"><i></i><i></i><i></i><span>SAMA_brand-reel_v3.prproj</span></div>
-        <div class="editor__view">
-          <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80" alt="" />
-          <div class="editor__play"><i class="ri-play-fill"></i></div>
-          <div class="editor__caption">Your brand, in motion.</div>
-          <span class="editor__tc" id="timecode">00:00:12:08</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline__ruler"><span>00:00</span><span>00:10</span><span>00:20</span><span>00:30</span></div>
-          <div class="track track--v"><b style="width:22%"></b><b style="width:30%"></b><b style="width:18%"></b><b style="width:26%"></b></div>
-          <div class="track track--t"><b style="width:12%;margin-left:6%"></b><b style="width:20%;margin-left:18%"></b><b style="width:14%;margin-left:10%"></b></div>
-          <div class="track track--a"><span class="audio"></span></div>
-          <div class="playhead" id="playhead"></div>
+        <div class="show reveal" style="--d:.35s" aria-label="Recent SAMA projects">
+          <div class="show__browser">
+            <div class="show__bar"><i></i><i></i><i></i><span id="showUrl">havenly.com</span></div>
+            <div class="show__screen" id="showDesk"></div>
+          </div>
+          <div class="show__phone"><div class="show__notch"></div><div class="show__pscreen" id="showMob"></div></div>
+          <div class="show__caption"><span id="showCat">Real estate</span><b id="showName">Havenly</b><div class="show__dots" id="showDots"></div></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Process -->
-  <section class="section" id="process">
-    <div class="container">
-      <div class="title reveal">
-        <span class="sub">How we work</span>
-        <h2>From idea to launch in <span>4 clear steps</span></h2>
-      </div>
-      <div class="steps">
-        <div class="step reveal"><span class="step__n">01</span><i class="ri-chat-smile-2-line"></i><h3>Discover</h3><p>A free call to understand your goals, audience and budget. You get a clear plan and fixed quote.</p></div>
-        <div class="step reveal"><span class="step__n">02</span><i class="ri-pencil-ruler-2-line"></i><h3>Design</h3><p>Wireframes and UI designs in Figma. You review, comment and approve before any code is written.</p></div>
-        <div class="step reveal"><span class="step__n">03</span><i class="ri-code-s-slash-line"></i><h3>Build</h3><p>We develop, test on every device and share live previews so you see progress every week.</p></div>
-        <div class="step reveal"><span class="step__n">04</span><i class="ri-rocket-2-line"></i><h3>Launch &amp; grow</h3><p>We publish, set up analytics and SEO, and stay with you for updates, content and support.</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- Tech -->
+    <section class="tech" aria-label="Tools we use">
+      <div class="tech__track" id="tech"></div>
+    </section>
 
-  <!-- About / why -->
-  <section class="section section--soft" id="about">
-    <div class="container about">
-      <div class="about__text reveal">
-        <span class="sub">Why SAMA</span>
-        <h2>A small team with a <span>big standard</span></h2>
-        <p>SAMA brings designers, developers and video editors under one roof. That means faster decisions, a consistent look across every channel, and one team that truly understands your brand.</p>
-        <ul class="why">
-          <li><i class="ri-palette-line"></i><div><strong>Design-first</strong><span>Every project starts with UI/UX, not code.</span></div></li>
-          <li><i class="ri-smartphone-line"></i><div><strong>Mobile-perfect</strong><span>Tested on phones, tablets and desktops.</span></div></li>
-          <li><i class="ri-flashlight-line"></i><div><strong>Fast &amp; SEO-ready</strong><span>Clean code that loads quickly and ranks.</span></div></li>
-          <li><i class="ri-customer-service-2-line"></i><div><strong>Real support</strong><span>We're here after launch, not just before.</span></div></li>
+    <!-- Our promise -->
+    <section class="section name" id="promise">
+      <div class="container name__in">
+        <div class="name__copy">
+          <p class="label reveal">Our promise</p>
+          <h2 class="h2 reveal">No guesswork. <span class="grad">No surprises.</span></h2>
+          <p class="reveal">Agencies love vague timelines and growing invoices. We work the other way: you know the price, the plan and the person in charge before anything starts.</p>
+          <div class="nums reveal">
+            <div><strong data-count-id="projects">0</strong><span>live projects</span></div>
+            <div><strong data-count-id="cats">0</strong><span>industries served</span></div>
+            <div><strong>4</strong><span>disciplines, one team</span></div>
+            <div><strong>24h</strong><span>reply, every time</span></div>
+          </div>
+        </div>
+        <ul class="promise">
+          <li class="reveal"><i class="ri-price-tag-3-line"></i><div><strong>A fixed quote, up front</strong><span>One price agreed on day one. It doesn't grow halfway through.</span></div></li>
+          <li class="reveal" style="--d:.08s"><i class="ri-calendar-check-line"></i><div><strong>Progress you can see weekly</strong><span>A live preview link every week, so you're never left wondering.</span></div></li>
+          <li class="reveal" style="--d:.16s"><i class="ri-user-smile-line"></i><div><strong>One person, always reachable</strong><span>Message the person building your project directly on WhatsApp.</span></div></li>
         </ul>
       </div>
-      <div class="about__card reveal">
-        <div class="about__brand">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#527FF5"/><path d="M27 13.5c-1.6-1.6-4-2.5-6.6-2.5-4 0-7 2.1-7 5.3 0 3.4 3.1 4.5 6.6 5.2 2.8.6 4.4 1.1 4.4 2.6 0 1.4-1.6 2.3-4 2.3-2.4 0-4.4-.9-5.8-2.4" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="29" cy="28.5" r="2.4" fill="#fff"/></svg>
-          <div><strong>SAMA</strong><small>Creative tech studio</small></div>
-        </div>
-        <div class="about__nums">
-          <div><strong id="numProjects">0</strong><small>Live projects in our studio</small></div>
-          <div><strong id="numCats">0</strong><small>Industries served</small></div>
-          <div><strong>100%</strong><small>Responsive builds</small></div>
-          <div><strong>24h</strong><small>Reply time</small></div>
-        </div>
-        <div class="industries" id="industries"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container contact">
-      <div class="contact__info reveal">
-        <span class="sub">Contact</span>
-        <h2>Let's build something <span>great together</span></h2>
-        <p>Tell us about your project and we'll get back to you within 24 hours with ideas, a timeline and a quote.</p>
-        <a class="cline" id="cMail" href="#"><i class="ri-mail-line"></i><span><small>Email</small><b></b></span></a>
-        <a class="cline" id="cWhats" href="#" target="_blank" rel="noopener"><i class="ri-whatsapp-line"></i><span><small>WhatsApp</small><b></b></span></a>
-        <div class="cline"><i class="ri-map-pin-line"></i><span><small>Location</small><b id="cLoc"></b></span></div>
-        <div class="socials" id="socials"></div>
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="head">
+          <p class="label reveal">What we do</p>
+          <h2 class="h2 reveal">Four crafts. <span class="grad">One horizon.</span></h2>
+        </div>
+        <div class="services" id="servicesGrid"></div>
       </div>
-      <form class="form reveal" id="contactForm">
-        <label>What do you need?</label>
-        <div class="chips" id="needChips"></div>
-        <div class="row">
-          <input type="text" required placeholder="Your name" aria-label="Your name" />
-          <input type="email" required placeholder="Email address" aria-label="Email address" />
-        </div>
-        <label>Estimated budget</label>
-        <div class="chips chips--single" id="budgetChips">
-          <button type="button">&lt; $500</button><button type="button" class="on">$500 – $1,500</button><button type="button">$1,500 – $5,000</button><button type="button">$5,000+</button>
-        </div>
-        <textarea id="msg" rows="5" required placeholder="Tell us about your project, goals and timeline…" aria-label="Project details"></textarea>
-        <button class="btn btn--full" type="submit">Send message <i class="ri-send-plane-2-line"></i></button>
-        <p class="form-msg" id="formMsg"></p>
-      </form>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container cta__in reveal">
-      <div><h2>Have an idea? Let's make it real.</h2><p>Websites · Mobile apps · UI/UX · Video editing</p></div>
-      <a href="#contact" class="btn btn--white">Start a project <i class="ri-arrow-right-up-line"></i></a>
-    </div>
-  </section>
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="head head--row">
+          <div>
+            <p class="label reveal">Our work</p>
+            <h2 class="h2 reveal">Projects under <span class="grad">our sky.</span></h2>
+            <p class="head__p reveal">Live, fully working websites. Open any project to try it on desktop, tablet or mobile.</p>
+          </div>
+          <a href="../index.html" class="btn btn--glass reveal">Open the full studio <i class="ri-external-link-line"></i></a>
+        </div>
+        <div class="filters reveal" id="filters"></div>
+        <div class="work" id="workGrid"></div>
+        <div class="work__more"><button class="btn btn--glass" id="moreBtn">Load more projects <i class="ri-arrow-down-line"></i></button></div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="section" id="video">
+      <div class="container video">
+        <div class="video__text">
+          <p class="label reveal">Video editing</p>
+          <h2 class="h2 reveal">Stories that <span class="grad">move people.</span></h2>
+          <p class="reveal">From short-form reels to brand films, we cut, colour-grade, add motion graphics, captions and sound so your story lands in the first three seconds.</p>
+          <div class="formats" id="formats"></div>
+          <a href="#contact" class="btn reveal" data-magnet>Get a video quote <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="editor reveal" aria-hidden="true">
+          <div class="editor__top"><i></i><i></i><i></i><span>SAMA_brand-reel_v3.prproj</span></div>
+          <div class="editor__view">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80" alt="" />
+            <div class="editor__play"><i class="ri-play-fill"></i></div>
+            <div class="editor__caption">Your brand, in motion.</div>
+            <span class="editor__tc" id="timecode">00:00:12:08</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline__ruler"><span>00:00</span><span>00:10</span><span>00:20</span><span>00:30</span></div>
+            <div class="track track--v"><b style="width:22%"></b><b style="width:30%"></b><b style="width:18%"></b><b style="width:26%"></b></div>
+            <div class="track track--t"><b style="width:12%;margin-left:6%"></b><b style="width:20%;margin-left:18%"></b><b style="width:14%;margin-left:10%"></b></div>
+            <div class="track track--a"><span class="audio"></span></div>
+            <div class="playhead" id="playhead"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process: flight path -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="head head--c">
+          <p class="label reveal">How we work</p>
+          <h2 class="h2 reveal">From idea to <span class="grad">liftoff.</span></h2>
+        </div>
+        <div class="flight" id="flight">
+          <svg viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true"><path id="flightPath" d="M20 230 C 220 230, 260 120, 420 120 S 640 200, 780 110 S 1040 20, 1180 30" /></svg>
+          <span class="flight__comet" id="comet"></span>
+          <div class="steps">
+            <div class="step"><span class="step__n">01</span><i class="ri-chat-smile-2-line"></i><h3>Discover</h3><p>A free call about your goals, audience and budget. You leave with a clear plan and a fixed quote.</p></div>
+            <div class="step"><span class="step__n">02</span><i class="ri-pencil-ruler-2-line"></i><h3>Design</h3><p>Wireframes and UI in Figma. You review and approve before a single line of code.</p></div>
+            <div class="step"><span class="step__n">03</span><i class="ri-code-s-slash-line"></i><h3>Build</h3><p>We develop, test on every device and share live previews so you see progress every week.</p></div>
+            <div class="step"><span class="step__n">04</span><i class="ri-rocket-2-line"></i><h3>Launch &amp; grow</h3><p>We publish, set up analytics and SEO, and stay with you for updates and support.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section" id="about">
+      <div class="container why">
+        <div class="why__head">
+          <p class="label reveal">Why SAMA</p>
+          <h2 class="h2 reveal">A small team with a <span class="grad">big sky.</span></h2>
+          <p class="reveal">One team for design, code and content means faster decisions and a brand that looks the same on your site, your app and your reels.</p>
+        </div>
+        <div class="why__grid">
+          <div class="why__item reveal"><i class="ri-palette-line"></i><strong>Design-first</strong><span>Every project starts with UI/UX, not code.</span></div>
+          <div class="why__item reveal" style="--d:.08s"><i class="ri-smartphone-line"></i><strong>Mobile-perfect</strong><span>Tested on phones, tablets and desktops.</span></div>
+          <div class="why__item reveal" style="--d:.16s"><i class="ri-flashlight-line"></i><strong>Fast &amp; SEO-ready</strong><span>Clean code that loads quickly and ranks.</span></div>
+          <div class="why__item reveal" style="--d:.24s"><i class="ri-customer-service-2-line"></i><strong>Real support</strong><span>We're here after launch, not just before.</span></div>
+        </div>
+        <div class="industries reveal" id="industries"></div>
+      </div>
+    </section>
+
+    <!-- Contact (under the stars) -->
+    <section class="section contact-sec" id="contact">
+      <img class="contact-sec__bg" src="https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?auto=format&fit=crop&w=2200&q=75" alt="" loading="lazy" />
+      <div class="container contact">
+        <div class="contact__info">
+          <p class="label reveal">Contact</p>
+          <h2 class="h2 reveal">Let's build something <span class="grad">under the stars.</span></h2>
+          <p class="reveal">Tell us about your project and we'll get back to you within 24 hours with ideas, a timeline and a quote.</p>
+          <a class="cline reveal" id="cMail" href="#"><i class="ri-mail-line"></i><span><small>Email</small><b></b></span></a>
+          <a class="cline reveal" id="cWhats" href="#" target="_blank" rel="noopener"><i class="ri-whatsapp-line"></i><span><small>WhatsApp</small><b></b></span></a>
+          <div class="cline reveal"><i class="ri-map-pin-line"></i><span><small>Location</small><b id="cLoc"></b></span></div>
+          <div class="socials reveal" id="socials"></div>
+        </div>
+        <form class="form reveal" id="contactForm">
+          <label>What do you need?</label>
+          <div class="chips" id="needChips"></div>
+          <div class="row">
+            <input type="text" required placeholder="Your name" aria-label="Your name" />
+            <input type="email" required placeholder="Email address" aria-label="Email address" />
+          </div>
+          <label>Estimated budget</label>
+          <div class="chips" id="budgetChips">
+            <button type="button">&lt; $500</button><button type="button" class="on">$500 – $1,500</button><button type="button">$1,500 – $5,000</button><button type="button">$5,000+</button>
+          </div>
+          <textarea id="msg" rows="5" required placeholder="Tell us about your project, goals and timeline…" aria-label="Project details"></textarea>
+          <button class="btn btn--full" type="submit" data-magnet>Send message <i class="ri-send-plane-2-line"></i></button>
+          <p class="form-msg" id="formMsg"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__grid">
+    <p class="footer__word" aria-hidden="true">SΛMΛ</p>
+    <div class="footer__grid">
       <div>
-        <a href="#home" class="logo logo--light"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#527FF5"/><path d="M27 13.5c-1.6-1.6-4-2.5-6.6-2.5-4 0-7 2.1-7 5.3 0 3.4 3.1 4.5 6.6 5.2 2.8.6 4.4 1.1 4.4 2.6 0 1.4-1.6 2.3-4 2.3-2.4 0-4.4-.9-5.8-2.4" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="29" cy="28.5" r="2.4" fill="#fff"/></svg><span>SAMA</span></a>
+        <a href="#home" class="logo"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="samaG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2a5fe0"/><stop offset="1" stop-color="#5b93ff"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#samaG)"/><path d="M9 35 19.5 18 26 28" fill="none" stroke="#9cc4ff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 35 29.5 13 39 35" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="logo__word" aria-label="SAMA">SΛMΛ</span></a>
         <p>Creative tech studio for websites, mobile apps, UI/UX and video editing.</p>
       </div>
-      <div><h4>Services</h4><a href="#services">Web development</a><a href="#services">UI/UX design</a><a href="#services">Mobile &amp; app development</a><a href="#video">Video editing</a></div>
-      <div><h4>Company</h4><a href="#work">Our work</a><a href="#process">Process</a><a href="#about">About</a><a href="../index.html">Template studio</a></div>
+      <div><h4>Services</h4><a href="#services">Web development</a><a href="#services">UI/UX design</a><a href="#services">Mobile &amp; apps</a><a href="#video">Video editing</a></div>
+      <div><h4>Company</h4><a href="#work">Our work</a><a href="#process">Process</a><a href="#about">Why SAMA</a><a href="../index.html">Template studio</a></div>
       <div><h4>Get in touch</h4><a href="#" id="fMail"></a><a href="#" id="fWhats" target="_blank" rel="noopener"></a><div class="socials" id="fSocials"></div></div>
     </div>
-    <div class="container footer__bottom"><p>© <span id="year"></span> SAMA. All rights reserved.</p><p>Designed &amp; built by SAMA</p></div>
+    <div class="footer__bottom"><p>© <span id="year"></span> SAMA · سماء. All rights reserved.</p><p>Designed &amp; built under the same sky.</p></div>
   </footer>
 
   <!-- Project viewer -->
@@ -260,8 +257,6 @@
     <div class="viewer__stage"><div class="viewer__device" id="vDevice"><iframe id="vFrame" title="Project preview"></iframe></div></div>
   </div>
 
-  <button class="to-top" id="toTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
-
   <script src="../templates.js"></script>
   <script>
     /* ===== Edit your company details here ===== */
@@ -273,35 +268,40 @@
     };
 
     const $ = (id) => document.getElementById(id);
+    const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+    const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const PREVIEW_W = 1440;
-    const projects = (typeof TEMPLATES !== "undefined" ? TEMPLATES : []).filter((t) => t.status === "live")
-      .sort((a, b) => (b.added || "").localeCompare(a.added || ""));
+    const projects = (typeof TEMPLATES !== "undefined" ? TEMPLATES : []).filter((t) => t.status === "live").sort((a, b) => (b.added || "").localeCompare(a.added || ""));
     const cats = [...new Set(projects.map((p) => p.category))];
 
-    /* Services */
+    document.body.classList.add("is-night");
+
+    /* =====================================================
+       Content
+       ===================================================== */
+    const TECH = [["devicon-figma-plain", "Figma"], ["devicon-html5-plain", "HTML"], ["devicon-css3-plain", "CSS"], ["devicon-javascript-plain", "JavaScript"], ["devicon-react-original", "React"], ["devicon-nextjs-plain", "Next.js"], ["devicon-flutter-plain", "Flutter"], ["devicon-swift-plain", "Swift"], ["devicon-kotlin-plain", "Kotlin"], ["devicon-firebase-plain", "Firebase"], ["devicon-premierepro-plain", "Premiere Pro"], ["devicon-aftereffects-plain", "After Effects"]];
+    const chip = ([i, n]) => `<span><i class="${i}"></i>${n}</span>`;
+    $("tech").innerHTML = [...TECH, ...TECH].map(chip).join("");
+
     const services = [
-      { i: "ri-layout-masonry-line", t: "Web Development", d: "Fast, responsive websites, landing pages and online stores that turn visitors into customers.",
-        pts: ["Business & portfolio sites", "Landing pages", "E-commerce stores", "SEO & performance"] },
-      { i: "ri-pen-nib-line", t: "UI/UX Design", d: "User research, wireframes and pixel-perfect interfaces that are easy and enjoyable to use.",
-        pts: ["Wireframes & user flows", "Design systems", "Interactive prototypes", "Usability reviews"] },
-      { i: "ri-smartphone-line", t: "Mobile & App Development", d: "iOS and Android apps, plus web apps and dashboards, built to scale with your business.",
-        pts: ["iOS & Android apps", "Cross-platform (Flutter)", "Web apps & dashboards", "API & backend integration"] },
-      { i: "ri-film-line", t: "Video Editing", d: "Scroll-stopping reels, ads and brand videos with colour grading, motion graphics and captions.",
-        pts: ["Reels, TikTok & Shorts", "YouTube & brand films", "Motion graphics", "Colour & sound"] },
+      { i: "ri-layout-masonry-line", t: "Web Development", d: "Fast, responsive websites, landing pages and online stores that turn visitors into customers.", pts: ["Business & portfolio sites", "Landing pages", "E-commerce stores", "SEO & performance"] },
+      { i: "ri-pen-nib-line", t: "UI/UX Design", d: "User research, wireframes and pixel-perfect interfaces that are easy and enjoyable to use.", pts: ["Wireframes & user flows", "Design systems", "Interactive prototypes", "Usability reviews"] },
+      { i: "ri-smartphone-line", t: "Mobile & App Development", d: "iOS and Android apps, plus web apps and dashboards, built to scale with your business.", pts: ["iOS & Android apps", "Cross-platform (Flutter)", "Web apps & dashboards", "API & backend integration"] },
+      { i: "ri-film-line", t: "Video Editing", d: "Scroll-stopping reels, ads and brand videos with colour grading, motion graphics and captions.", pts: ["Reels, TikTok & Shorts", "YouTube & brand films", "Motion graphics", "Colour & sound"] },
     ];
     $("servicesGrid").innerHTML = services.map((s, i) => `
-      <article class="service reveal">
+      <article class="service reveal" style="--d:${i * .08}s" data-tilt>
         <div class="service__top"><span class="service__icon"><i class="${s.i}"></i></span><span class="service__n">0${i + 1}</span></div>
         <h3>${s.t}</h3><p>${s.d}</p>
         <ul>${s.pts.map((p) => `<li><i class="ri-check-line"></i>${p}</li>`).join("")}</ul>
-        <a href="#contact" class="service__link" data-need="${s.t}">Start a ${s.t.toLowerCase()} project <i class="ri-arrow-right-line"></i></a>
+        <a href="#contact" class="service__link" data-need="${s.t}">Start a project <i class="ri-arrow-right-up-line"></i></a>
       </article>`).join("");
 
-    /* Stats from the real project list */
-    const countTo = (el, n) => { const t0 = performance.now(); const tick = (t) => { const p = Math.min((t - t0) / 1400, 1); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))) + (p === 1 ? "+" : ""); if (p < 1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); };
-    countTo($("statProjects"), projects.length); countTo($("statCats"), cats.length);
-    $("numProjects").textContent = projects.length + "+"; $("numCats").textContent = cats.length;
-    $("industries").innerHTML = [...new Set(projects.flatMap((p) => p.tags.slice(0, 1)))].slice(0, 14).map((t) => `<span>${t}</span>`).join("");
+    /* Counters from the real project list */
+    const COUNTS = { projects: projects.length, cats: cats.length };
+    function countUp(el) { const end = COUNTS[el.dataset.countId] || 0, t0 = performance.now(); (function k(n) { const p = clamp((n - t0) / 1500, 0, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + (p === 1 && el.dataset.countId === "projects" ? "+" : ""); if (p < 1) requestAnimationFrame(k); })(t0); }
+    $("industries").innerHTML = [...new Set(projects.flatMap((p) => p.tags.slice(0, 1)))].slice(0, 18).map((t) => `<span>${t}</span>`).join("");
 
     /* Work grid with live thumbnails */
     let filter = "All", shown = 9;
@@ -309,67 +309,59 @@
     const thumbIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; const f = e.target; f.src = f.dataset.src; f.addEventListener("load", () => f.classList.add("ready"), { once: true }); thumbIO.unobserve(f); }), { rootMargin: "300px" });
     const scaleRO = new ResizeObserver((es) => es.forEach((e) => { const f = e.target.querySelector("iframe"); if (f) f.style.transform = `scale(${e.contentRect.width / (f.dataset.w || PREVIEW_W)})`; }));
     const listFiltered = () => projects.filter((p) => filter === "All" || p.category === filter);
-    const renderWork = () => {
+    // Only new cards are added on "Load more", so already-loaded previews never reload.
+    let rendered = 0;
+    const renderWork = (reset = true) => {
       const list = listFiltered();
-      $("workGrid").innerHTML = list.slice(0, shown).map((p) => `
-        <article class="proj" data-id="${p.id}" tabindex="0" role="button" aria-label="Preview ${p.name}">
+      if (reset) { $("workGrid").innerHTML = ""; rendered = 0; }
+      const html = list.slice(rendered, shown).map((p, k) => { const i = rendered + k; return `
+        <article class="proj ${i % 9 === 0 ? "proj--wide" : ""}" data-id="${p.id}" tabindex="0" role="button" aria-label="Preview ${p.name}" style="--d:${(i % 9) * .05}s">
           <div class="proj__thumb"><iframe data-src="../${p.path}" title="${p.name} thumbnail" tabindex="-1" aria-hidden="true"></iframe><span class="proj__view"><i class="ri-eye-line"></i> Live preview</span></div>
           <div class="proj__meta">
             <div><h3>${p.name}</h3><small>${p.category} · ${p.tags.slice(0, 2).join(" · ")}</small></div>
             <div class="proj__pal">${p.palette.slice(0, 4).map((c) => `<i style="background:${c}"></i>`).join("")}</div>
           </div>
-        </article>`).join("");
-      $("workGrid").querySelectorAll("iframe").forEach((f) => thumbIO.observe(f));
-      $("workGrid").querySelectorAll(".proj__thumb").forEach((t) => scaleRO.observe(t));
+        </article>`; }).join("");
+      const start = $("workGrid").children.length;
+      $("workGrid").insertAdjacentHTML("beforeend", html);
+      const fresh = [...$("workGrid").children].slice(start);
+      rendered = Math.min(shown, list.length);
+      fresh.forEach((card) => { thumbIO.observe(card.querySelector("iframe")); scaleRO.observe(card.querySelector(".proj__thumb")); });
+      requestAnimationFrame(() => fresh.forEach((p) => p.classList.add("in")));
       $("moreBtn").parentElement.hidden = list.length <= shown;
     };
     $("filters").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; filter = b.dataset.c; shown = 9; document.querySelectorAll("#filters button").forEach((x) => x.classList.toggle("on", x === b)); renderWork(); });
-    $("moreBtn").onclick = () => { shown += 9; renderWork(); };
+    $("moreBtn").onclick = () => { shown += 9; renderWork(false); };
     renderWork();
-
-    /* Hero previews */
-    document.querySelectorAll(".hero iframe").forEach((f) => { f.src = f.dataset.src; f.addEventListener("load", () => f.classList.add("ready"), { once: true }); });
-    document.querySelectorAll(".frame__screen").forEach((s) => scaleRO.observe(s));
-    document.querySelectorAll(".phone__screen iframe").forEach((f) => (f.dataset.w = 390));
-    document.querySelectorAll(".phone__screen").forEach((s) => scaleRO.observe(s));
 
     /* Viewer */
     let vIndex = -1;
-    const openViewer = (id) => {
-      const list = listFiltered(); vIndex = list.findIndex((p) => p.id === id); if (vIndex < 0) return;
-      const p = list[vIndex];
-      $("vName").textContent = p.name; $("vCat").textContent = p.category;
-      $("vFrame").src = "../" + p.path; $("vOpen").href = "../" + p.path;
-      $("viewer").hidden = false; document.body.style.overflow = "hidden";
-    };
+    const openViewer = (id) => { const list = listFiltered(); vIndex = list.findIndex((p) => p.id === id); if (vIndex < 0) return; const p = list[vIndex]; $("vName").textContent = p.name; $("vCat").textContent = p.category; $("vFrame").src = "../" + p.path; $("vOpen").href = "../" + p.path; $("viewer").hidden = false; document.body.style.overflow = "hidden"; };
     const closeViewer = () => { $("viewer").hidden = true; $("vFrame").src = "about:blank"; document.body.style.overflow = ""; };
-    const step = (d) => { const list = listFiltered(); openViewer(list[(vIndex + d + list.length) % list.length].id); };
+    const stepV = (d) => { const list = listFiltered(); openViewer(list[(vIndex + d + list.length) % list.length].id); };
     $("workGrid").addEventListener("click", (e) => { const c = e.target.closest(".proj"); if (c) openViewer(c.dataset.id); });
     $("workGrid").addEventListener("keydown", (e) => { const c = e.target.closest(".proj"); if (c && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openViewer(c.dataset.id); } });
-    $("vClose").onclick = closeViewer; $("vPrev").onclick = () => step(-1); $("vNext").onclick = () => step(1);
+    $("vClose").onclick = closeViewer; $("vPrev").onclick = () => stepV(-1); $("vNext").onclick = () => stepV(1);
     $("devices").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("vDevice").dataset.d = b.dataset.d; document.querySelectorAll("#devices button").forEach((x) => x.classList.toggle("on", x === b)); });
     addEventListener("keydown", (e) => {
-      if ($("viewer").hidden) { if (e.key === "Escape") $("nav").classList.remove("open"); return; }
-      if (e.key === "Escape") closeViewer(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1);
+      if ($("viewer").hidden) { if (e.key === "Escape") document.body.classList.remove("nav-open"); return; }
+      if (e.key === "Escape") closeViewer(); if (e.key === "ArrowRight") stepV(1); if (e.key === "ArrowLeft") stepV(-1);
     });
 
-    /* Video formats + animated timeline */
+    /* Video formats + timeline */
     $("formats").innerHTML = [["ri-smartphone-line", "Reels & TikTok", "9:16 · 15–60s"], ["ri-youtube-line", "YouTube videos", "16:9 · long-form"], ["ri-advertisement-line", "Ads & promos", "All platforms"], ["ri-magic-line", "Motion graphics", "Logos · titles"]]
-      .map(([i, t, s]) => `<div><i class="${i}"></i><strong>${t}</strong><small>${s}</small></div>`).join("");
+      .map(([i, t, s], k) => `<div class="reveal" style="--d:${k * .06}s"><i class="${i}"></i><strong>${t}</strong><small>${s}</small></div>`).join("");
     let ph = 38;
-    setInterval(() => {
-      ph = ph >= 98 ? 0 : ph + 0.25; $("playhead").style.left = ph + "%";
-      const sec = (ph / 100) * 32, f = Math.floor((sec % 1) * 25);
-      $("timecode").textContent = `00:00:${String(Math.floor(sec)).padStart(2, "0")}:${String(f).padStart(2, "0")}`;
-    }, 40);
+    setInterval(() => { ph = ph >= 98 ? 0 : ph + .25; $("playhead").style.left = ph + "%"; const sec = (ph / 100) * 32, f = Math.floor((sec % 1) * 25); $("timecode").textContent = `00:00:${String(Math.floor(sec)).padStart(2, "0")}:${String(f).padStart(2, "0")}`; }, 40);
+
+    /* Flight path */
+    const fp = $("flightPath"), FL = fp.getTotalLength(); fp.style.strokeDasharray = FL; fp.style.strokeDashoffset = FL;
 
     /* Contact */
     $("needChips").innerHTML = services.map((s, i) => `<button type="button" class="${i ? "" : "on"}">${s.t}</button>`).join("");
     $("needChips").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) b.classList.toggle("on"); });
     $("budgetChips").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("budgetChips").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); });
-    document.querySelectorAll("[data-need]").forEach((a) => a.addEventListener("click", () => {
-      $("needChips").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.textContent === a.dataset.need));
-    }));
+    document.querySelectorAll("[data-need]").forEach((a) => a.addEventListener("click", () => $("needChips").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.textContent === a.dataset.need))));
     const waNum = SAMA.whatsapp.replace(/[^\d]/g, "");
     $("cMail").href = $("fMail").href = "mailto:" + SAMA.email; $("cMail").querySelector("b").textContent = $("fMail").textContent = SAMA.email;
     $("cWhats").href = $("fWhats").href = "https://wa.me/" + waNum; $("cWhats").querySelector("b").textContent = $("fWhats").textContent = SAMA.whatsapp;
@@ -386,23 +378,69 @@
       $("formMsg").innerHTML = '<i class="ri-checkbox-circle-fill"></i> Thanks! Your email app is opening — we reply within 24 hours.';
     });
 
-    /* Header, nav */
-    const links = [...document.querySelectorAll(".nav a")];
-    const onScroll = () => {
+    /* =====================================================
+       Scroll: sky time, manifesto, flight, header
+       ===================================================== */
+    let ticking = false;
+    function onScroll() {
+      ticking = false;
+      const vh = innerHeight;
+      // flight path
+      const f = $("flight"), fr = f.getBoundingClientRect(), fpp = clamp((vh * .85 - fr.top) / (fr.height + vh * .3), 0, 1);
+      fp.style.strokeDashoffset = FL * (1 - fpp);
+      const pt = fp.getPointAtLength(FL * fpp), svg = fp.ownerSVGElement.getBoundingClientRect();
+      $("comet").style.transform = `translate(${pt.x / 1200 * svg.width}px, ${pt.y / 260 * svg.height}px)`;
+      document.querySelectorAll(".step").forEach((s, i) => s.classList.toggle("on", fpp > (i + .2) / 4));
+      // header
       $("header").classList.toggle("sticky", scrollY > 30);
-      $("toTop").classList.toggle("show", scrollY > 700);
-      let cur = "home";
-      links.forEach((a) => { const s = document.querySelector(a.getAttribute("href")); if (s && s.offsetTop - 140 <= scrollY) cur = s.id; });
-      links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
-    };
-    addEventListener("scroll", onScroll); onScroll();
-    $("burger").onclick = () => $("nav").classList.toggle("open");
-    links.forEach((a) => a.addEventListener("click", () => $("nav").classList.remove("open")));
-    $("toTop").onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+      let cur = ""; document.querySelectorAll("main section[id]").forEach((s) => { if (s.getBoundingClientRect().top < vh * .4) cur = s.id; });
+      document.querySelectorAll(".nav a").forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + cur));
+    }
+    addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    addEventListener("resize", onScroll); onScroll();
 
     /* Reveal */
-    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: 0.12 });
+    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: .12 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    /* Tilt + magnet */
+    if (!reduced && matchMedia("(pointer:fine)").matches) {
+      document.querySelectorAll("[data-tilt]").forEach((c) => {
+        c.addEventListener("pointermove", (e) => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`; c.style.setProperty("--gx", (x + .5) * 100 + "%"); c.style.setProperty("--gy", (y + .5) * 100 + "%"); });
+        c.addEventListener("pointerleave", () => (c.style.transform = ""));
+      });
+      document.querySelectorAll("[data-magnet]").forEach((b) => {
+        b.addEventListener("pointermove", (e) => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px,${(e.clientY - r.top - r.height / 2) * .35}px)`; });
+        b.addEventListener("pointerleave", () => (b.style.transform = ""));
+      });
+    }
+
+    /* Hero photo: slow drift with the cursor */
+    const photo = document.querySelector(".hero__bg");
+    if (!reduced) { let px = 0, py = 0, qx = 0, qy = 0; addEventListener("pointermove", (e) => { qx = e.clientX / innerWidth - .5; qy = e.clientY / innerHeight - .5; }); (function d() { px += (qx - px) * .04; py += (qy - py) * .04; photo.style.transform = `scale(1.08) translate(${px * -18}px, ${py * -12}px)`; requestAnimationFrame(d); })(); }
+
+    /* Hero showcase: cycles through real projects */
+    const SHOW = [["realestate-havenly", "Havenly", "Real estate", "havenly.com"], ["clinic-stride", "Stride Physio", "Booking system", "stridephysio.co.uk"], ["landing-portline", "Portline Logistics", "Logistics platform", "portlinelogistics.com"], ["shop-brightbyte", "Brightbyte", "E-commerce", "brightbyte.store"], ["restaurant-wokstreet", "Wok Street", "Online ordering", "wokstreet.com"]];
+    $("showDesk").innerHTML = SHOW.map(([f, n], i) => `<img class="${i ? "" : "on"}" src="img/${f}.jpg" alt="${n} website" />`).join("");
+    $("showMob").innerHTML = SHOW.map(([f, n], i) => `<img class="${i ? "" : "on"}" src="img/m-${f}.jpg" alt="${n} mobile site" />`).join("");
+    $("showDots").innerHTML = SHOW.map((_, i) => `<button class="${i ? "" : "on"}" aria-label="Show project ${i + 1}"></button>`).join("");
+    let si2 = 0, sT;
+    function showP(i) {
+      si2 = (i + SHOW.length) % SHOW.length;
+      ["showDesk", "showMob"].forEach((id) => $(id).querySelectorAll("img").forEach((im, k) => im.classList.toggle("on", k === si2)));
+      $("showDots").querySelectorAll("button").forEach((b, k) => b.classList.toggle("on", k === si2));
+      const [, n, c, u] = SHOW[si2]; $("showName").textContent = n; $("showCat").textContent = c; $("showUrl").textContent = u;
+      clearTimeout(sT); sT = setTimeout(() => showP(si2 + 1), 4200);
+    }
+    $("showDots").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) showP([...$("showDots").children].indexOf(b)); });
+    showP(0);
+    const cio = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } }), { threshold: .5 });
+    document.querySelectorAll("[data-count-id]").forEach((el) => cio.observe(el));
+
+    /* Nav */
+    $("burger").onclick = () => document.body.classList.toggle("nav-open");
+    $("nav").addEventListener("click", (e) => { if (e.target.tagName === "A") document.body.classList.remove("nav-open"); });
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
   </script>
 </body>
 </html>
