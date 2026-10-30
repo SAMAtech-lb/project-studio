@@ -71,15 +71,12 @@
         <p class="quick__msg" id="quickMsg"></p>
         <div class="hero__rating">
           <div class="g"><i class="ri-google-fill"></i><div><strong>4.9 <span class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span></strong><small>1,240+ Google reviews</small></div></div>
-          <div class="g"><i class="ri-medal-fill"></i><div><strong>Best of Austin</strong><small>Cleaning service 2025</small></div></div>
+          <div class="g"><i class="ri-shield-check-fill"></i><div><strong>$2M insured</strong><small>Every clean, every room</small></div></div>
         </div>
       </div>
       <div class="hero__visual reveal">
-        <div class="hero__blob"></div>
         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Professional cleaner wiping a window" />
-        <div class="badge badge--a"><i class="ri-leaf-fill"></i><div><strong>100% eco</strong><small>Non-toxic products</small></div></div>
-        <div class="badge badge--b"><strong>15+</strong><small>Years of<br />experience</small></div>
-        <div class="bubbles" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="avail"><p><i></i> Open slots this week</p><ul id="availList"></ul></div>
       </div>
     </div>
   </section>
@@ -87,10 +84,7 @@
   <!-- Features -->
   <section class="features">
     <div class="container features__in">
-      <div class="feature reveal"><i class="ri-shield-user-line"></i><div><h3>Vetted cleaners</h3><p>Background-checked &amp; trained</p></div></div>
-      <div class="feature reveal"><i class="ri-umbrella-line"></i><div><h3>Fully insured</h3><p>$2M liability coverage</p></div></div>
-      <div class="feature reveal"><i class="ri-leaf-line"></i><div><h3>Eco products</h3><p>Safe for kids &amp; pets</p></div></div>
-      <div class="feature reveal"><i class="ri-thumb-up-line"></i><div><h3>Happiness promise</h3><p>Not happy? We re-clean free</p></div></div>
+      <p class="promise reveal"><span>Background-checked cleaners</span><span>$2M liability cover</span><span>Products safe for kids &amp; pets</span><span>Not happy? We re-clean free</span></p>
     </div>
   </section>
 
@@ -100,7 +94,6 @@
       <div class="about__imgs reveal">
         <img class="about__a" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Freshly cleaned bright bathroom" loading="lazy" />
         <img class="about__b" src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=600&q=80" alt="Gloved hand holding a spray bottle" loading="lazy" />
-        <div class="about__badge"><i class="ri-award-fill"></i><strong data-count="18500" data-suffix="+">0</strong><small>Homes cleaned</small></div>
       </div>
       <div class="about__text reveal">
         <span class="sub-title">About Sparkle &amp; Co.</span>
@@ -224,14 +217,6 @@
   </section>
 
   <!-- Stats -->
-  <section class="stats">
-    <div class="container stats__in">
-      <div class="reveal"><i class="ri-home-heart-line"></i><strong data-count="18500" data-suffix="+">0</strong><span>Homes cleaned</span></div>
-      <div class="reveal"><i class="ri-team-line"></i><strong data-count="60" data-suffix="+">0</strong><span>Trained cleaners</span></div>
-      <div class="reveal"><i class="ri-building-line"></i><strong data-count="320">0</strong><span>Office clients</span></div>
-      <div class="reveal"><i class="ri-emotion-happy-line"></i><strong data-count="99" data-suffix="%">0</strong><span>Satisfaction rate</span></div>
-    </div>
-  </section>
 
   <!-- Team -->
   <section class="section section--light" id="team">
@@ -529,6 +514,12 @@
       io.unobserve(en.target);
     }), { threshold: 0.15 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    /* Open slots this week (fills the hero card) */
+    (() => {
+      const out = [], d = new Date();
+      for (let i = 1; out.length < 3 && i < 10; i++) { const x = new Date(d); x.setDate(d.getDate() + i); if (x.getDay() === 0) continue; out.push(`<li><span>${x.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</span><b>${["9:00 am", "1:00 pm", "10:30 am"][out.length]}</b></li>`); }
+      document.getElementById("availList").innerHTML = out.join("");
+    })();
   </script>
 </body>
 </html>

@@ -406,3 +406,25 @@ h2 span { color: var(--primary); }
   .form .row { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
 }
+
+/* De-vibe pass: no floating badges/blob/bubbles/stat strip; live slots card; promise line; timeline steps */
+.avail { position: absolute; left: -24px; bottom: 28px; z-index: 2; width: 250px; padding: 16px 18px; border-radius: 18px; background: #fff; box-shadow: 0 24px 50px -24px rgba(11, 35, 65, .45); animation: spRise .8s cubic-bezier(.2,.8,.2,1) both .6s; }
+.avail p { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: var(--dark, #0b2341); margin-bottom: 10px; }
+.avail p i { width: 8px; height: 8px; border-radius: 50%; background: #2bb673; box-shadow: 0 0 0 0 rgba(43, 182, 115, .5); animation: spPing 2s infinite; }
+.avail ul { list-style: none; display: grid; gap: 6px; }
+.avail li { display: flex; justify-content: space-between; font-size: 14px; padding: 6px 10px; border-radius: 10px; background: #f3f8fd; }
+.avail li b { color: var(--primary, #0a84d6); }
+@keyframes spPing { 70% { box-shadow: 0 0 0 8px rgba(43, 182, 115, 0); } 100% { box-shadow: 0 0 0 0 rgba(43, 182, 115, 0); } }
+@keyframes spRise { from { opacity: 0; transform: translateY(16px); } }
+.hero__visual img { border-radius: 28px; }
+.features { padding: 26px 0; }
+.promise { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 0; font-weight: 600; color: var(--dark, #0b2341); }
+.promise span { padding: 0 22px; border-left: 1px solid rgba(11, 35, 65, .15); }
+.promise span:first-child { border-left: 0; }
+.steps { position: relative; }
+.steps::before { content: ""; position: absolute; left: 8%; right: 8%; top: 70px; height: 2px; background: repeating-linear-gradient(90deg, var(--primary, #0a84d6) 0 8px, transparent 8px 16px); opacity: .35; }
+.step { position: relative; background: transparent !important; box-shadow: none !important; border: 0 !important; }
+.step__icon { background: #fff !important; box-shadow: 0 0 0 6px #fff, 0 10px 24px -12px rgba(11, 35, 65, .4) !important; }
+@media (max-width: 900px) { .avail { left: 12px; bottom: 12px; width: 220px; } .steps::before { display: none; } .promise span { border: 0; padding: 4px 12px; } }
+
+.features__in { display: block; padding: 22px 10px; }
