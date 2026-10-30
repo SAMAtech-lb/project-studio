@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-noor",
+    name: "Atelier Noor",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-noor/index.html",
+    description: "Luxury fashion store: centred-logo header, two-image campaign hero, category tiles, new-arrivals grid with quick-add sizes on hover, editorial banner, leather goods, quick view with gallery, sizes and details, wishlist, search, shopping bag and private appointment form.",
+    tags: ["Fashion", "Luxury", "Quick add", "Appointments"],
+    palette: ["#ffffff", "#141414", "#6b1f26", "#f7f4ef"],
+    fonts: "Playfair Display · Inter",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-31",
+  },
+  {
     id: "shop-marginalia",
     name: "Marginalia Books",
     category: "E-commerce",
@@ -646,19 +659,6 @@ const TEMPLATES = [
     fonts: "Inter Tight",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-26",
-  },
-  {
-    id: "shop-noor",
-    name: "Atelier Noor",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-noor/index.html",
-    description: "Luxury fashion house in white, black and oxblood: full-bleed editorial hero, a pinned horizontal-scroll lookbook where every look opens to shop, a staggered collection grid with category filters, a slide-in product panel with colour and size, an atelier story, a private fitting booking (Beirut or Paris) and a minimal bag.",
-    tags: ["Luxury fashion", "Scroll lookbook", "Private fitting", "Editorial"],
-    palette: ["#ffffff", "#111111", "#6b1e24", "#f3f1ee"],
-    fonts: "Tenor Sans · Inter",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-25",
   },
   {
     id: "shop-chronica",
