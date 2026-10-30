@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-cordwain",
+    name: "Fieldstone Shoe Co.",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-cordwain/index.html",
+    description: "Leather shoe store: header with search, full-width photo slider, style tiles, shop with filter sidebar (category, EU size, price) and sorting, quick view with gallery and size picker, wishlist, cart drawer, promo banners, reviews and store visit block.",
+    tags: ["Shoes", "Filters", "Size picker", "Cart drawer"],
+    palette: ["#ffffff", "#151515", "#a8541f", "#f5f5f3"],
+    fonts: "Outfit",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-29",
+  },
+  {
     id: "shop-northlight",
     name: "Hearth & Wick",
     category: "E-commerce",
@@ -633,19 +646,6 @@ const TEMPLATES = [
     fonts: "Tenor Sans · Inter",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-25",
-  },
-  {
-    id: "shop-cordwain",
-    name: "Cordwain",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-cordwain/index.html",
-    description: "Handmade leather shoe shop with a full-bleed hero, ready-to-wear grid with one-tap size buttons, a live SVG shoe customiser (style, six leathers, sole, laces, heel initials, live price), a foot-length size finder with UK/EU/US and width, a pinned four-week craft story, resoling booking and a bag drawer.",
-    tags: ["Shoes", "Shoe customiser", "Size finder", "Resoling"],
-    palette: ["#f8f5ef", "#241811", "#9a5a2b", "#f1ece3"],
-    fonts: "Archivo",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-24",
   },
   {
     id: "shop-marginalia",
