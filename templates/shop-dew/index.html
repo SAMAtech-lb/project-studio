@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dew Theory — Skin tint, balm and cheek colour for real skin</title>
+  <meta name="description" content="Dew Theory makes sheer skin tint, concealer balm and cream cheek in 18 shades. Match your shade in four taps and build a five-minute routine." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo" aria-label="Dew Theory home"><i></i>dew theory</a>
+      <nav class="nav" id="nav">
+        <a href="#match">Shade match</a>
+        <a href="#shop">Shop</a>
+        <a href="#routine">Routine</a>
+        <a href="#inside">What's inside</a>
+      </nav>
+      <button class="bag" id="bagBtn" aria-label="Open bag"><i class="ri-shopping-bag-line"></i><b id="bagCount">0</b></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__in">
+        <div class="hero__copy">
+          <h1 class="hero__title"><span class="ln"><span>Your skin,</span></span><span class="ln"><span>on a good day.</span></span></h1>
+          <p class="hero__lead fade">Sheer tint, balm and cheek colour that look like skin, not makeup. Eighteen shades, matched in four taps, with SPF 30 in every tint.</p>
+          <div class="hero__cta fade"><a href="#match" class="btn">Find my shade <i class="ri-arrow-right-line"></i></a><a href="#shop" class="link">Shop the set <i class="ri-arrow-right-up-line"></i></a></div>
+          <div class="hero__drops fade" id="drops" aria-hidden="true"></div>
+        </div>
+        <div class="hero__media">
+          <figure class="hero__img"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=80" alt="Close portrait of a woman with fresh, natural skin" /></figure>
+          <div class="hero__tube" aria-hidden="true"><svg viewBox="0 0 120 300"><rect x="30" y="0" width="60" height="64" rx="10" fill="#f3dc7c"/><path d="M24 70 h72 l-6 214 q-2 14 -16 14 h-28 q-14 0 -16 -14 Z" fill="#fbf8ef"/><path d="M24 70 h72 v14 h-72z" fill="#e9e3d2"/><text x="60" y="170" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="13" fill="#1d1f1a">dew</text><text x="60" y="186" text-anchor="middle" font-family="Manrope" font-size="9" fill="#5f6457">skin tint</text><circle cx="60" cy="226" r="9" id="tubeDot" fill="#d9a77f"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promise strip -->
+    <div class="strip">
+      <div class="container strip__in">
+        <p><i class="ri-sun-line"></i>SPF 30 in every tint</p>
+        <p><i class="ri-leaf-line"></i>Vegan, fragrance-free</p>
+        <p><i class="ri-drop-line"></i>Made for sensitive skin</p>
+        <p><i class="ri-recycle-line"></i>Glass and aluminium packs</p>
+      </div>
+    </div>
+
+    <!-- Shade match (signature) -->
+    <section class="section match-sec" id="match">
+      <div class="container match">
+        <div class="match__left">
+          <h2 class="h2">Match your shade</h2>
+          <p class="sub">Pick the depth closest to your jawline, then your undertone. The preview blends the tint into the skin so you can see if it disappears.</p>
+          <div class="step"><h4>Depth</h4><div class="depth" id="depth"></div></div>
+          <div class="step"><h4>Undertone</h4><div class="seg" id="under"><button data-v="c">Cool<small>pink, burns easily</small></button><button data-v="n" class="on">Neutral<small>a bit of both</small></button><button data-v="w">Warm<small>golden, tans easily</small></button></div></div>
+          <div class="step"><h4>Finish</h4><div class="seg seg--sm" id="look"><button data-v="sheer" class="on">Sheer</button><button data-v="buildable">Buildable</button></div></div>
+        </div>
+        <div class="match__right">
+          <div class="preview" id="preview">
+            <div class="preview__skin"></div>
+            <div class="preview__tint" id="tint"></div>
+            <span class="preview__line" aria-hidden="true"></span>
+            <span class="preview__lbl preview__lbl--l">your skin</span><span class="preview__lbl preview__lbl--r">with tint</span>
+          </div>
+          <div class="result">
+            <div><small>Your match</small><b id="mName">Shade 07 · Linen</b><span id="mNote">Neutral, light-medium. Blends seamlessly.</span></div>
+            <button class="btn" id="mAdd">Add tint · £28</button>
+          </div>
+          <p class="result__alt" id="mAlt"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="head"><h2 class="h2">Five things, done well</h2><p class="sub">No twenty-step kits. Each product works on its own and with the others.</p></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- Routine builder -->
+    <section class="section routine-sec" id="routine">
+      <div class="container routine">
+        <div class="routine__head">
+          <h2 class="h2">Build a five-minute routine</h2>
+          <p class="sub">Switch steps on and off. Buy three or more together and the set is 15% off.</p>
+        </div>
+        <div class="routine__body">
+          <ol class="steps" id="steps"></ol>
+          <aside class="sum">
+            <figure class="sum__img"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80" alt="A smiling woman with natural makeup" loading="lazy" /></figure>
+            <div class="sum__body">
+              <div class="sum__time"><b id="rMin">4</b><span>minutes, start to door</span></div>
+              <div class="sum__bar"><span id="rBar"></span></div>
+              <div class="sum__row"><span>Routine</span><s id="rWas"></s><b id="rTotal">£0</b></div>
+              <p class="sum__save" id="rSave"></p>
+              <button class="btn btn--full" id="rAdd">Add routine to bag</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inside -->
+    <section class="section inside-sec" id="inside">
+      <div class="container inside">
+        <figure class="inside__img"><img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&w=1200&q=80" alt="An open jar of cream balm" loading="lazy" /></figure>
+        <div>
+          <h2 class="h2">What's inside</h2>
+          <p class="sub">Short ingredient lists you can read. Tap one to see what it does.</p>
+          <ul class="ings" id="ings"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="head"><h2 class="h2">From people who wear it</h2><p class="sub"><b>4.8</b> average from 3,214 reviews</p></div>
+        <div class="reviews" id="reviewList"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-sec">
+      <div class="container faq">
+        <h2 class="h2">Questions</h2>
+        <div class="faq__list" id="faq"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <p class="footer__line">Less makeup.<br />More you.</p>
+        <form class="news" id="news"><label for="email">Shade launches and refills, once a month.</label><div><input id="email" type="email" required placeholder="you@email.com" /><button class="btn">Subscribe</button></div><p class="form-msg" id="newsMsg"></p></form>
+      </div>
+      <div class="footer__grid">
+        <a href="#top" class="logo"><i></i>dew theory</a>
+        <div><h4>Shop</h4><a href="#shop">Skin tint</a><a href="#shop">Concealer balm</a><a href="#shop">Cream cheek</a></div>
+        <div><h4>Help</h4><a href="#match">Shade match</a><a href="#">Delivery</a><a href="#">30-day returns</a></div>
+        <div><h4>Studio</h4><p>14 Clerkenwell Close<br />London EC1R 0AA<br />hello@dewtheory.co</p></div>
+      </div>
+      <p class="footer__bottom">© <span id="year"></span> Dew Theory Ltd · Photography from Unsplash</p>
+    </div>
+  </footer>
+
+  <!-- Bag -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Your bag</h3><button id="drawerClose" aria-label="Close bag"><i class="ri-close-line"></i></button></div>
+    <div class="drawer__free"><p id="freeTxt"></p><div><span id="freeBar"></span></div></div>
+    <ul class="drawer__list" id="drawerList"></ul>
+    <div class="drawer__foot"><div class="drawer__row"><span>Subtotal</span><b id="dSub">£0</b></div><button class="btn btn--full" id="checkout">Checkout</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const toast = (t) => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("on"), 2200); };
+
+    /* ---------- Shades: 6 depths x 3 undertones ---------- */
+    const NAMES = ["Rice", "Shell", "Oat", "Linen", "Honey", "Sand", "Almond", "Maple", "Chai", "Cinnamon", "Clove", "Teak", "Cocoa", "Walnut", "Espresso", "Ebony", "Onyx", "Umber"];
+    const DEPTH = [
+      { l: "Fair", c: { c: "#f5dccd", n: "#f3d9c1", w: "#f2d6b3" } },
+      { l: "Light", c: { c: "#ecc7b2", n: "#e9c3a2", w: "#e8c193" } },
+      { l: "Light-medium", c: { c: "#d9a98e", n: "#d6a57f", w: "#d4a26f" } },
+      { l: "Medium", c: { c: "#bb8467", n: "#b8805a", w: "#b67e4c" } },
+      { l: "Tan", c: { c: "#8e5a43", n: "#8b5838", w: "#89572e" } },
+      { l: "Deep", c: { c: "#5a3428", n: "#58341f", w: "#563318" } },
+    ];
+    const UO = ["c", "n", "w"], UL = { c: "Cool", n: "Neutral", w: "Warm" };
+    let d = 2, u = "n", look = "sheer";
+    $("depth").innerHTML = DEPTH.map((x, i) => `<button class="${i === d ? "on" : ""}" data-d="${i}" style="--c:${x.c.n}"><span></span>${x.l}</button>`).join("");
+    const shade = () => { const i = d * 3 + UO.indexOf(u); return { no: String(i + 1).padStart(2, "0"), name: NAMES[i], c: DEPTH[d].c[u] }; };
+    const match = () => {
+      const s = shade();
+      $("preview").style.setProperty("--skin", DEPTH[d].c[u]);
+      $("tint").style.setProperty("--tint", s.c);
+      $("tint").style.opacity = look === "sheer" ? 0.55 : 0.85;
+      $("mName").textContent = `Shade ${s.no} · ${s.name}`;
+      $("mNote").textContent = `${UL[u]}, ${DEPTH[d].l.toLowerCase()}. ${look === "sheer" ? "Sheer cover, evens out redness." : "Builds to medium cover in two layers."}`;
+      const near = [d - 1, d + 1].filter((x) => x >= 0 && x < 6).map((x) => `${String(x * 3 + UO.indexOf(u) + 1).padStart(2, "0")} ${NAMES[x * 3 + UO.indexOf(u)]}`);
+      $("mAlt").textContent = `Between shades? Try ${near.join(" or ")} too. Free swap within 30 days.`;
+      $("tubeDot").setAttribute("fill", s.c);
+      if (!reduce) { const t = $("tint"); t.classList.remove("go"); void t.offsetWidth; t.classList.add("go"); }
+    };
+    const segPick = (wrap, fn) => wrap.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; wrap.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); fn(b); match(); });
+    segPick($("depth"), (b) => { d = +b.dataset.d; });
+    segPick($("under"), (b) => { u = b.dataset.v; });
+    segPick($("look"), (b) => { look = b.dataset.v; });
+    match();
+
+    /* Hero drops: one per depth */
+    $("drops").innerHTML = DEPTH.map((x, i) => `<i style="--c:${x.c.n};--d:${0.6 + i * 0.07}s"></i>`).join("") + "<span>18 shades, fair to deep</span>";
+
+    /* ---------- Products (drawn in code) ---------- */
+    const tube = (c) => `<svg viewBox="0 0 120 240" aria-hidden="true"><rect x="34" y="0" width="52" height="50" rx="9" fill="#f3dc7c"/><path d="M28 56 h64 l-6 166 q-2 12 -14 12 h-24 q-12 0 -14 -12 Z" fill="#fff"/><circle cx="60" cy="170" r="9" fill="${c}"/><text x="60" y="130" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="12" fill="#1d1f1a">dew</text></svg>`;
+    const jar = (c) => `<svg viewBox="0 0 160 140" aria-hidden="true"><rect x="22" y="20" width="116" height="34" rx="8" fill="#f3dc7c"/><rect x="18" y="54" width="124" height="74" rx="14" fill="#fff"/><ellipse cx="80" cy="54" rx="56" ry="6" fill="${c}"/><text x="80" y="100" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="13" fill="#1d1f1a">dew</text></svg>`;
+    const stick = (c) => `<svg viewBox="0 0 80 240" aria-hidden="true"><rect x="18" y="80" width="44" height="150" rx="10" fill="#fff"/><rect x="18" y="80" width="44" height="14" fill="#e9e3d2"/><rect x="22" y="30" width="36" height="54" rx="8" fill="${c}"/><text x="40" y="170" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="11" fill="#1d1f1a">dew</text></svg>`;
+    const PR = [
+      { id: "tint", n: "Skin Tint SPF 30", s: "Sheer, 18 shades", p: 28, c: "#d6a57f", art: tube, step: "Even out", min: 1.5 },
+      { id: "balm", n: "Concealer Balm", s: "Spot cover, 12 shades", p: 22, c: "#c99673", art: jar, step: "Cover spots", min: 1 },
+      { id: "cheek", n: "Cream Cheek", s: "Fingertip blush, 6 shades", p: 20, c: "#d9837a", art: stick, step: "Add colour", min: 0.5 },
+      { id: "brow", n: "Brow Gel", s: "Clear or tinted", p: 16, c: "#7a5a46", art: tube, step: "Brush up brows", min: 0.5 },
+      { id: "lip", n: "Lip & Lid Oil", s: "Tinted gloss, 4 shades", p: 18, c: "#c8726f", art: stick, step: "Finish", min: 0.5 },
+    ];
+    $("grid").innerHTML = PR.map((x, i) => `<article class="card reveal" style="--d:${i * 0.07}s;--c:${x.c}"><div class="card__art">${x.art(x.c)}</div><div class="card__body"><h3>${x.n}</h3><p>${x.s}</p><div class="card__foot"><b>£${x.p}</b><button class="card__add" data-add="${x.id}" aria-label="Add ${x.n}"><i class="ri-add-line"></i></button></div></div></article>`).join("");
+
+    /* ---------- Routine ---------- */
+    const on = new Set(["tint", "balm", "cheek"]);
+    $("steps").innerHTML = PR.map((x) => `<li><button class="stepbtn${on.has(x.id) ? " on" : ""}" data-s="${x.id}" aria-pressed="${on.has(x.id)}"><span class="stepbtn__sw" style="--c:${x.c}"></span><span class="stepbtn__t"><b>${x.step}</b><small>${x.n} · ${x.min < 1 ? "30 sec" : x.min + " min"}</small></span><span class="stepbtn__p">£${x.p}</span><span class="stepbtn__tg" aria-hidden="true"></span></button></li>`).join("");
+    const routine = () => {
+      const items = PR.filter((x) => on.has(x.id));
+      const total = items.reduce((s, x) => s + x.p, 0), mins = items.reduce((s, x) => s + x.min, 0);
+      const disc = items.length >= 3 ? Math.round(total * 0.15) : 0;
+      $("rMin").textContent = mins % 1 ? mins.toFixed(1) : mins;
+      $("rBar").style.width = Math.min(100, (mins / 5) * 100) + "%";
+      $("rWas").textContent = disc ? "£" + total : "";
+      $("rTotal").textContent = "£" + (total - disc);
+      $("rSave").textContent = disc ? `You save £${disc} as a set` : items.length ? `Add ${3 - items.length} more for 15% off` : "Switch on at least one step";
+      $("rAdd").disabled = !items.length;
+    };
+    $("steps").addEventListener("click", (e) => { const b = e.target.closest("[data-s]"); if (!b) return; const id = b.dataset.s; on.has(id) ? on.delete(id) : on.add(id); b.classList.toggle("on", on.has(id)); b.setAttribute("aria-pressed", on.has(id)); routine(); });
+    routine();
+
+    /* ---------- Bag ---------- */
+    let bag = [];
+    try { bag = JSON.parse(localStorage.getItem("dewBag") || "[]"); } catch (e) {}
+    const FREE = 40;
+    const renderBag = () => {
+      const n = bag.reduce((s, i) => s + i.q, 0), sub = bag.reduce((s, i) => s + i.q * i.p, 0);
+      $("bagCount").textContent = n; $("bagCount").classList.toggle("on", n > 0);
+      $("drawerList").innerHTML = bag.length ? bag.map((i, k) => `<li><span class="dot" style="--c:${i.c}"></span><div><b>${i.n}</b><small>${i.s}</small></div><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div><span class="pr">£${i.p * i.q}</span></li>`).join("") : `<li class="empty">Your bag is empty. Start with your shade match.</li>`;
+      $("dSub").textContent = "£" + sub;
+      $("freeTxt").innerHTML = sub >= FREE ? "Free delivery unlocked" : `£${FREE - sub} away from free delivery`;
+      $("freeBar").style.width = Math.min(100, (sub / FREE) * 100) + "%";
+      try { localStorage.setItem("dewBag", JSON.stringify(bag)); } catch (e) {}
+    };
+    const add = (it, msg) => { const f = bag.find((i) => i.key === it.key); f ? f.q++ : bag.push({ ...it, q: 1 }); renderBag(); toast(msg || `${it.n} added`); $("bagBtn").classList.remove("bump"); void $("bagBtn").offsetWidth; $("bagBtn").classList.add("bump"); };
+    document.addEventListener("click", (e) => { const a = e.target.closest("[data-add]"); if (!a) return; const x = PR.find((p) => p.id === a.dataset.add); add({ key: x.id, n: x.n, s: x.s, p: x.p, c: x.c }); });
+    $("mAdd").addEventListener("click", () => { const s = shade(); add({ key: "tint-" + s.no, n: "Skin Tint SPF 30", s: `Shade ${s.no} · ${s.name}`, p: 28, c: s.c }); });
+    $("rAdd").addEventListener("click", () => {
+      const items = PR.filter((x) => on.has(x.id)); if (!items.length) return;
+      const total = items.reduce((s, x) => s + x.p, 0), disc = items.length >= 3 ? Math.round(total * 0.15) : 0;
+      add({ key: "set-" + [...on].sort().join("-"), n: `Routine set (${items.length})`, s: items.map((x) => x.n.split(" ")[0]).join(", "), p: total - disc, c: "#f3dc7c" }, "Routine added to bag");
+    });
+    $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const i = bag[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) bag.splice(+b.dataset.k, 1); renderBag(); });
+    const openBag = () => { document.body.classList.add("bag-open"); $("drawer").setAttribute("aria-hidden", "false"); };
+    const closeBag = () => { document.body.classList.remove("bag-open"); $("drawer").setAttribute("aria-hidden", "true"); };
+    $("bagBtn").addEventListener("click", openBag); $("drawerClose").addEventListener("click", closeBag); $("scrim").addEventListener("click", closeBag);
+    $("checkout").addEventListener("click", () => { if (!bag.length) return; bag = []; renderBag(); closeBag(); toast("Order placed. A shade card is in the box."); });
+    renderBag();
+
+    /* ---------- Ingredients ---------- */
+    const ING = [
+      ["Squalane", "Plant-derived oil that keeps the tint flexible and skin soft, without clogging pores."],
+      ["Niacinamide 2%", "Calms redness and evens tone over time, so you need less cover each week."],
+      ["Zinc oxide", "Mineral SPF 30 that sits on the skin and doesn't sting eyes."],
+      ["Shea butter", "Gives the concealer balm its slip so it melts in with a fingertip."],
+      ["Iron oxides", "The pigments. Mineral, stable and the reason the shades stay true all day."],
+    ];
+    $("ings").innerHTML = ING.map(([n, t], i) => `<li class="${i ? "" : "open"}"><button aria-expanded="${!i}">${n}<i class="ri-add-line"></i></button><div><p>${t}</p></div></li>`).join("");
+    $("ings").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const li = b.parentElement, was = li.classList.contains("open"); $("ings").querySelectorAll("li").forEach((x) => { x.classList.remove("open"); x.firstElementChild.setAttribute("aria-expanded", "false"); }); if (!was) { li.classList.add("open"); b.setAttribute("aria-expanded", "true"); } });
+
+    /* ---------- Reviews ---------- */
+    const REV = [
+      ["The first tint that matches my neck. I'm a 14 Walnut and I've never found a warm deep shade this right.", "Amara O.", "Shade 14 · Walnut"],
+      ["I have rosacea and this doesn't sting or go patchy. Looks like I slept well, which I didn't.", "Hannah L.", "Shade 04 · Linen"],
+      ["Cream Cheek in Fig is the only blush I've finished. Ever. Fingers, two taps, done.", "Priya S.", "Cream Cheek · Fig"],
+      ["Bought the three-step set for my daughter and ended up taking it. Ordering another.", "Claire M.", "Routine set"],
+    ];
+    $("reviewList").innerHTML = REV.map(([q, n, s], i) => `<figure class="rev reveal" style="--d:${i * 0.08}s"><div class="rev__stars">${'<i class="ri-star-fill"></i>'.repeat(5)}</div><blockquote>${q}</blockquote><figcaption><b>${n}</b><span>${s}</span></figcaption></figure>`).join("");
+
+    /* ---------- FAQ ---------- */
+    const FAQ = [
+      ["What if my shade is wrong?", "Swap it free within 30 days, even if it's opened. We send the new one before you send the old one back."],
+      ["Is the SPF enough on its own?", "SPF 30 is real protection, but most people apply less tint than sunscreen. On long sunny days, wear sunscreen underneath."],
+      ["Will it work on oily skin?", "Yes. The tint dries to a soft satin. If you shine by lunch, a tissue blot is all it needs."],
+      ["Do you test on animals?", "Never. We're vegan and certified cruelty-free, and so are our suppliers."],
+    ];
+    $("faq").innerHTML = FAQ.map(([q, a]) => `<details><summary>${q}<i class="ri-add-line"></i></summary><p>${a}</p></details>`).join("");
+
+    /* ---------- Misc ---------- */
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => $("burger").setAttribute("aria-expanded", document.body.classList.toggle("nav-open")));
+    document.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBag(); closeNav(); } });
+    const tubeEl = document.querySelector(".hero__tube");
+    addEventListener("scroll", () => { $("header").classList.toggle("sticky", scrollY > 20); if (!reduce && scrollY < 900) tubeEl.style.transform = `translateY(${scrollY * -0.15}px) rotate(${-8 + scrollY * 0.02}deg)`; }, { passive: true });
+    document.querySelectorAll(".head, .match__left, .match__right, .routine__head, .steps, .sum, .inside > *, .faq > *").forEach((el) => el.classList.add("reveal"));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "Thanks. First email lands next month."; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>

@@ -137,3 +137,14 @@ Not adopted where it conflicts with the owner's favourites (bold stats, colour).
 | Atelier Noor (luxury) | fashion house | white, black, oxblood | Tenor Sans + Inter | full-bleed scroll lookbook, private appointment |
 | Rouge Club (makeup, bold) | colour cosmetics | white, black, lipstick red | Inter Tight | lipstick try-on on an SVG mouth, shade finder |
 | Dew Theory (makeup, clean) | skin-first makeup | butter yellow, ink, sage | Manrope | skin-tint shade matcher + routine builder |
+
+**Progress (2026-10-30): all six built, checked (no JS errors, no 390px overflow) and pushed.**
+- [x] Northlight `shop-northlight`
+- [x] Marginalia `shop-marginalia`
+- [x] Cordwain `shop-cordwain`
+- [x] Atelier Noor `shop-noor`
+- [x] Rouge Club `shop-rouge`
+- [x] Dew Theory `shop-dew`
+
+Two makeup shops because the market splits in two: bold colour (lipstick, night out) and skin-first
+(tint, SPF, five-minute routine). Each one sells to a different client.
