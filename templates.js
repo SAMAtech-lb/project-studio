@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-northlight",
+    name: "Hearth & Wick",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-northlight/index.html",
+    description: "Classic candle store: announcement bar, centred-logo header, photo hero slider, category tiles, product tabs with hover image, quick view with sizes, wishlist, search, cart drawer with free-shipping bar, gift-set countdown, reviews, journal and Instagram grid.",
+    tags: ["Candles", "Shop", "Quick view", "Cart drawer"],
+    palette: ["#ffffff", "#6e3b2a", "#2a201b", "#faf6f1"],
+    fonts: "Cormorant Garamond · Jost",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-28",
+  },
+  {
     id: "shop-dew",
     name: "Dew Theory",
     category: "E-commerce",
@@ -646,19 +659,6 @@ const TEMPLATES = [
     fonts: "Newsreader · Inter Tight",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-23",
-  },
-  {
-    id: "shop-northlight",
-    name: "Northlight",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-northlight/index.html",
-    description: "Small-batch candle shop where every product is a jar drawn in code with a live flickering flame. A 'Lights out' switch turns the whole site to candlelight with a glow that follows the cursor. Includes a scent-family filter, a scent finder with a sampler, a three-candle gift box builder with a note, jar refills, cart drawer and studio story.",
-    tags: ["Candles", "Lights-out mode", "Gift box builder", "Scent finder"],
-    palette: ["#fbfaf7", "#1d1b19", "#f5a524", "#3d4a32"],
-    fonts: "Bricolage Grotesque",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-22",
   },
   {
     id: "shop-chronica",
