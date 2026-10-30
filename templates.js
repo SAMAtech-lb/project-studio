@@ -627,7 +627,7 @@ const TEMPLATES = [
     category: "E-commerce",
     status: "live",
     path: "templates/shop-marginalia/index.html",
-    description: "Independent bookshop store: photo hero with book search, genre tiles, bestseller/new/offer tabs with photographic covers, quick view with formats, book of the month, staff picks, author events with seat reservation, gift cards, basket drawer and visit block.",
+    description: "Independent bookshop store: photo hero with book search, genre tiles, bestseller/new/offer tabs with real book covers (Open Library), quick view with formats, book of the month, staff picks, author events with seat reservation, gift cards, basket drawer and visit block.",
     tags: ["Bookshop", "Search", "Events", "Basket"],
     palette: ["#ffffff", "#1f3d2c", "#c8402b", "#f6f2ea"],
     fonts: "Newsreader · Inter Tight",

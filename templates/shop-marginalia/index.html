@@ -44,7 +44,7 @@
           <h1>Find your next favourite book</h1>
           <p>Over 11,000 books on our shelves, picked and read by five booksellers. Order online and collect in store, or get free UK delivery over £25.</p>
           <form class="hero__search" id="heroSearch" role="search"><i class="ri-search-line"></i><input id="heroInput" type="search" placeholder="Search by title, author or ISBN" aria-label="Search books" /><button class="btn">Search</button></form>
-          <div class="hero__tags"><span>Popular:</span><button data-q="Vale">Ellen Vale</button><button data-q="Cookery">Cookery</button><button data-q="Children">Children's</button></div>
+          <div class="hero__tags"><span>Popular:</span><button data-q="Haig">Matt Haig</button><button data-q="Cookery">Cookery</button><button data-q="Children">Children's</button></div>
         </div>
       </div>
     </section>
@@ -84,11 +84,11 @@
         <div class="botm__cover reveal" id="botmCover"></div>
         <div class="botm__copy reveal">
           <span class="kicker">Book of the month · November</span>
-          <h2>The Salt Year</h2>
-          <p class="botm__by">by Ellen Vale</p>
-          <p>A marine biologist returns to the Cornish village she left at eighteen and spends one year counting seabirds and settling old debts. Quiet, funny and devastating in the best way.</p>
+          <h2>The Midnight Library</h2>
+          <p class="botm__by">by Matt Haig</p>
+          <p>Between life and death there is a library, and every book in it lets Nora try a life she could have lived. Warm, clever and full of hope, it is the book we recommend most this year.</p>
           <blockquote>“I pressed this into the hands of everyone who came in for a month. Not one has come back disappointed.” <cite>— Hannah, bookseller</cite></blockquote>
-          <div class="botm__buy"><p class="price"><s>£18.99</s>£14.99</p><button class="btn" data-add="1">Add to basket</button><button class="btn btn--line" data-quick="1">More details</button></div>
+          <div class="botm__buy"><p class="price"><s>£10.99</s>£8.99</p><button class="btn" data-add="1">Add to basket</button><button class="btn btn--line" data-quick="1">More details</button></div>
         </div>
       </div>
     </section>
@@ -105,8 +105,8 @@
     <section class="section" id="events">
       <div class="container events">
         <div class="events__intro reveal">
-          <h2>Author events</h2>
-          <p>Readings, signings and conversations in the shop. Tickets include £5 off the book on the night.</p>
+          <h2>Events in the shop</h2>
+          <p>Book club, story time, supper clubs and poetry nights. Tickets include £5 off the featured book on the night.</p>
           <img src="https://images.unsplash.com/photo-1764337482439-ae67981bff34?auto=format&fit=crop&w=900&q=80" alt="Cosy bookshop with full shelves" loading="lazy" />
         </div>
         <ul class="events__list" id="eventList"></ul>
@@ -206,22 +206,23 @@
 
     /* ---------- Catalogue ---------- */
     const B = [
-      { id: 1, t: "The Salt Year", a: "Ellen Vale", g: "Fiction", p: 14.99, was: 18.99, img: "1593763803214-d8dd436d9717", s: "band", r: 5, rc: 412, tags: ["best", "sale"], d: "A marine biologist returns to the Cornish village she left at eighteen and spends a year counting seabirds and settling old debts.", pages: 352, pub: "Harbour Press, 2026" },
-      { id: 2, t: "Quiet Mountains", a: "Tomas Reyes", g: "Travel", p: 20.00, img: "1533664733275-8b7566eb8b4f", s: "top", r: 4, rc: 96, tags: ["best", "new"], d: "Six months walking the Pyrenees on foot, sleeping in shepherds' huts and learning when to turn back.", pages: 288, pub: "Northwind Books, 2026" },
-      { id: 3, t: "Paper Moon", a: "Ines Kaur", g: "Fiction", p: 9.99, img: "1554147090-e1221a04a025", s: "top", r: 5, rc: 238, tags: ["best"], d: "Two sisters, one desert motel and the summer everything was said out loud. Our most-gifted paperback of the year.", pages: 304, pub: "Lumen, 2025" },
-      { id: 4, t: "The Small Kitchen", a: "Maya Odell", g: "Cookery", p: 26.00, img: "1554482091-af22387a7a0c", s: "band", r: 5, rc: 154, tags: ["best", "new"], d: "Ninety recipes for one or two people, from a week of soups to a Sunday roast for a tiny oven.", pages: 256, pub: "Fieldnote, 2026" },
-      { id: 5, t: "One Tree Hill", a: "Sam Hartley", g: "Children's", p: 7.99, img: "1705435896415-933b94be4ea5", s: "band", r: 5, rc: 87, tags: ["best", "new"], d: "A picture book about a lonely tree and the animals who visit it through the seasons. Ages 3–6.", pages: 32, pub: "Orbit Kids, 2026" },
-      { id: 6, t: "Still Life", a: "Clara Wynn", g: "Art & Design", p: 35.00, img: "1700213397224-0c2b30f3534b", s: "top", r: 4, rc: 41, tags: ["new"], d: "Four hundred years of flowers on canvas, beautifully reproduced with essays on each painting.", pages: 320, pub: "Arcade Editions, 2026" },
-      { id: 7, t: "Dunes", a: "Leo Marsh", g: "Fiction", p: 16.99, img: "1527261460248-b0abfd14c0da", s: "band", r: 4, rc: 119, tags: ["new"], d: "A thriller set on a research station in the Namib desert, where the sand keeps moving and so do the bodies.", pages: 416, pub: "Voltra, 2026" },
-      { id: 8, t: "Snowline", a: "Freya Lund", g: "Poetry", p: 10.99, img: "1518972734183-c5b490a7c637", s: "top", r: 5, rc: 63, tags: ["new", "best"], d: "Short, clear poems about winter, grief and starting again. Shortlisted for the Forward Prize.", pages: 96, pub: "Lumen, 2026" },
-      { id: 9, t: "Tulip Fever Days", a: "Anna Brink", g: "History", p: 12.99, was: 22.00, img: "1711578540657-875bc83726b6", s: "band", r: 4, rc: 77, tags: ["sale"], d: "How a flower crashed the Dutch economy in 1637, told through the letters of the people who lost everything.", pages: 368, pub: "Northwind Books, 2024" },
-      { id: 10, t: "The Garden Table", a: "Maya Odell", g: "Cookery", p: 15.00, was: 25.00, img: "1630745130518-6aec49d13861", s: "top", r: 5, rc: 201, tags: ["sale", "best"], d: "Vegetable-led cooking from the author of The Small Kitchen. Every recipe tested in a home kitchen.", pages: 272, pub: "Fieldnote, 2024" },
-      { id: 11, t: "Far Shore", a: "Jonah Pike", g: "Fiction", p: 8.99, was: 10.99, img: "1668086620216-851f13fbce3b", s: "band", r: 4, rc: 58, tags: ["sale"], d: "A novel in letters between a lighthouse keeper and the girl who rows out with his post.", pages: 240, pub: "Harbour Press, 2023" },
-      { id: 12, t: "The Bear Who Couldn't Sleep", a: "Sam Hartley", g: "Children's", p: 6.99, img: "1762114974446-385ed570b26e", s: "top", r: 5, rc: 144, tags: ["sale", "new"], was: 7.99, d: "A bedtime story with soft illustrations and a very sleepy ending. Ages 2–5.", pages: 28, pub: "Orbit Kids, 2025" },
+      { id: 1, t: "The Midnight Library", a: "Matt Haig", g: "Fiction", p: 8.99, was: 10.99, isbn: "9780525559474", r: 5, rc: 1412, tags: ["best", "sale"], d: "Between life and death there is a library, and every book in it lets Nora try a life she could have lived. A warm, clever novel about regret and second chances.", pages: 304, pub: "Canongate, 2020" },
+      { id: 2, t: "Where the Crawdads Sing", a: "Delia Owens", g: "Fiction", p: 9.99, isbn: "9780735219090", r: 5, rc: 2210, tags: ["best"], d: "A girl raised alone in the marshes of North Carolina becomes the prime suspect when a local man is found dead. Part mystery, part love letter to nature.", pages: 384, pub: "Putnam, 2018" },
+      { id: 3, t: "Normal People", a: "Sally Rooney", g: "Fiction", p: 8.99, isbn: "9781984822185", r: 4, rc: 980, tags: ["best", "new"], d: "Connell and Marianne grow up in the same small town in Ireland and keep finding their way back to each other through school, university and beyond.", pages: 288, pub: "Hogarth, 2019" },
+      { id: 4, t: "Salt, Fat, Acid, Heat", a: "Samin Nosrat", g: "Cookery", p: 30.00, isbn: "9781476753836", r: 5, rc: 640, tags: ["best", "new"], d: "Four elements that make food taste good, explained so you can cook without a recipe. Beautifully illustrated and genuinely useful.", pages: 480, pub: "Simon & Schuster, 2017" },
+      { id: 5, t: "The Gruffalo", a: "Julia Donaldson", g: "Children's", p: 7.99, isbn: "9780142403877", r: 5, rc: 1530, tags: ["best", "new"], d: "A clever mouse takes a stroll through the deep dark wood and invents a monster to scare off predators. Ages 3-7.", pages: 32, pub: "Puffin, 1999" },
+      { id: 6, t: "Steal Like an Artist", a: "Austin Kleon", g: "Art & Design", p: 11.99, isbn: "9780761169253", r: 4, rc: 410, tags: ["new"], d: "Ten short, illustrated lessons on creativity for anyone who makes things. A favourite gift for students.", pages: 160, pub: "Workman, 2012" },
+      { id: 7, t: "Project Hail Mary", a: "Andy Weir", g: "Fiction", p: 10.99, isbn: "9780593135204", r: 5, rc: 1120, tags: ["new", "best"], d: "A science teacher wakes up alone on a spaceship with no memory and the fate of Earth in his hands. Funny, tense and hard to put down.", pages: 496, pub: "Ballantine, 2021" },
+      { id: 8, t: "milk and honey", a: "rupi kaur", g: "Poetry", p: 10.99, isbn: "9781449474256", r: 4, rc: 870, tags: ["best"], d: "Short poems and drawings about love, loss, trauma and healing. One of the best-selling poetry books of the decade.", pages: 208, pub: "Andrews McMeel, 2015" },
+      { id: 9, t: "Sapiens", a: "Yuval Noah Harari", g: "History", p: 11.99, was: 16.99, isbn: "9780062316097", r: 5, rc: 1960, tags: ["sale"], d: "How a minor ape became the ruler of the planet, from the first humans to the age of algorithms. Big ideas, clearly told.", pages: 464, pub: "Harper, 2015" },
+      { id: 10, t: "Jerusalem", a: "Yotam Ottolenghi & Sami Tamimi", g: "Cookery", p: 20.00, was: 30.00, isbn: "9781607743941", r: 5, rc: 530, tags: ["sale"], d: "120 recipes from the city where the authors grew up, one in the Jewish west and one in the Arab east.", pages: 320, pub: "Ten Speed Press, 2012" },
+      { id: 11, t: "Klara and the Sun", a: "Kazuo Ishiguro", g: "Fiction", p: 9.99, isbn: "9780593318171", r: 4, rc: 620, tags: ["new"], d: "Klara, an Artificial Friend, watches the world from a shop window and waits to be chosen. A quiet, moving novel from the Nobel winner.", pages: 320, pub: "Knopf, 2021" },
+      { id: 12, t: "Into the Wild", a: "Jon Krakauer", g: "Travel", p: 9.99, was: 12.99, isbn: "9780385486804", r: 4, rc: 740, tags: ["sale", "new"], d: "The true story of Chris McCandless, who gave away everything and hitchhiked to Alaska to live off the land.", pages: 224, pub: "Anchor, 1997" },
     ];
     const GENRES = ["Fiction", "Children's", "Cookery", "Travel", "History", "Poetry", "Art & Design"];
     const GICON = { "Fiction": "ri-book-open-line", "Children's": "ri-bear-smile-line", "Cookery": "ri-restaurant-2-line", "Travel": "ri-compass-3-line", "History": "ri-ancient-pavilion-line", "Poetry": "ri-quill-pen-line", "Art & Design": "ri-palette-line" };
-    const cover = (b, big) => `<div class="cover cover--${b.s}${big ? " cover--big" : ""}"><img src="${U(b.img, big ? 900 : 500)}" alt="" loading="lazy" /><div class="cover__txt"><b>${b.t}</b><span>${b.a}</span></div></div>`;
+    const C = (b, size = "M") => `https://covers.openlibrary.org/b/isbn/${b.isbn}-${size}.jpg`;
+    const cover = (b, big) => `<div class="cover${big ? " cover--big" : ""}"><img src="${C(b, big ? "L" : "M")}" alt="${b.t} by ${b.a}, book cover" loading="lazy" /></div>`;
     const stars = (r) => '<i class="ri-star-fill"></i>'.repeat(r) + '<i class="ri-star-line"></i>'.repeat(5 - r);
     let wish = new Set(), tab = "best", genre = null, q = "";
     try { wish = new Set(JSON.parse(localStorage.getItem("mgWish") || "[]")); } catch (e) {}
@@ -259,18 +260,18 @@
 
     /* ---------- Staff picks ---------- */
     const PICKS = [
-      [3, "Hannah", "Fiction buyer", "I read it in one sitting on a train and missed my stop. Funny, sharp and full of heart."],
-      [8, "Owen", "Poetry & history", "Short enough for a lunch break, good enough to read twice. The best collection this year."],
-      [4, "Priya", "Cookery & children's", "I've cooked eleven recipes so far. The lentil soup alone is worth the price."],
+      [3, "Hannah", "Fiction buyer", "I read it in one sitting on a train and missed my stop. Sharp, tender and so true about first love."],
+      [7, "Owen", "Sci-fi & history", "The funniest book about saving the world I have ever read. Everyone I lend it to buys their own copy."],
+      [4, "Priya", "Cookery & children's", "It changed how I cook. After the salt chapter you will never under-season pasta water again."],
     ];
     $("picksGrid").innerHTML = PICKS.map(([id, n, role, quote], i) => { const b = B.find((x) => x.id === id); return `<article class="pick reveal" style="--d:${i * 0.1}s"><button class="pick__cover" data-quick="${b.id}" aria-label="View ${b.t}">${cover(b)}</button><div><blockquote>“${quote}”</blockquote><p class="pick__who"><b>${n}</b>${role}</p><h3>${b.t}</h3><p class="pick__by">${b.a} · ${gbp(b.p)}</p><button class="btn btn--light btn--sm" data-add="${b.id}">Add to basket</button></div></article>`; }).join("");
 
     /* ---------- Events ---------- */
     const EV = [
-      ["14", "Nov", "Thu 7pm", "Ellen Vale: The Salt Year", "Reading and signed copies with this month's book of the month.", 8, 12],
-      ["22", "Nov", "Sat 11am", "Children's story time", "Sam Hartley reads One Tree Hill. Free, ages 3–7, parents welcome.", 0, 4],
-      ["03", "Dec", "Wed 7pm", "Maya Odell in conversation", "Cooking for one, and the joy of a small kitchen. Tasting included.", 10, 20],
-      ["12", "Dec", "Fri 6pm", "Winter poetry evening", "Freya Lund and guests read from Snowline. Mulled wine on us.", 6, 0],
+      ["14", "Nov", "Thu 7pm", "Book club: The Midnight Library", "Our monthly book club discusses this month's pick. Wine and snacks included.", 5, 12],
+      ["22", "Nov", "Sat 11am", "Story time: The Gruffalo", "A reading with puppets and colouring. Free, ages 3–7, parents welcome.", 0, 4],
+      ["03", "Dec", "Wed 7pm", "Supper club: Salt, Fat, Acid, Heat", "Local chef Ana Ruiz cooks three dishes from the book. Tasting included.", 10, 20],
+      ["12", "Dec", "Fri 6pm", "Winter poetry open mic", "Bring a poem of your own or one you love. Mulled wine on us.", 0, 0],
     ];
     $("eventList").innerHTML = EV.map(([d, m, time, t, desc, price, left], i) => `<li class="event reveal" style="--d:${i * 0.08}s"><div class="event__date"><b>${d}</b><span>${m}</span></div><div class="event__info"><small>${time} · ${price ? "£" + price : "Free"}</small><h3>${t}</h3><p>${desc}</p></div><button class="btn ${left ? "btn--line" : "btn--off"}" data-event="${i}" ${left ? "" : "disabled"}>${left ? "Reserve" : "Sold out"}</button><span class="event__left">${left ? left + " seats left" : ""}</span></li>`).join("");
     $("eventList").addEventListener("click", (e) => { const b = e.target.closest("[data-event]"); if (!b) return; b.textContent = "Reserved"; b.disabled = true; b.classList.add("btn--done"); toast(`Seat reserved for ${EV[+b.dataset.event][3]}. We've emailed your ticket.`); });
@@ -278,23 +279,23 @@
     /* ---------- Gift cards ---------- */
     let gift = 25;
     $("amounts").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; gift = +b.dataset.v; $("amounts").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); $("giftAdd").textContent = `Buy a £${gift} gift card`; });
-    $("giftAdd").addEventListener("click", () => addItem({ key: "gift" + gift, t: `Gift card £${gift}`, a: "Marginalia Books", p: gift, img: "1543002588-bfa74002ed7e", f: "Digital" }));
+    $("giftAdd").addEventListener("click", () => addItem({ key: "gift" + gift, t: `Gift card £${gift}`, a: "Marginalia Books", p: gift, src: U("1543002588-bfa74002ed7e", 160), f: "Digital" }));
 
     /* ---------- Basket ---------- */
     let cart = [];
-    try { cart = JSON.parse(localStorage.getItem("mgCart") || "[]"); } catch (e) {}
+    try { cart = JSON.parse(localStorage.getItem("mgCart2") || "[]"); } catch (e) {}
     const FREE = 25;
     const renderCart = () => {
       const n = cart.reduce((s, i) => s + i.q, 0), sub = cart.reduce((s, i) => s + i.q * i.p, 0);
       $("cartCount").textContent = n; $("cartCount").classList.toggle("on", n > 0);
-      $("drawerList").innerHTML = cart.length ? cart.map((i, k) => `<li><img src="${U(i.img, 160)}" alt="" /><div><b>${i.t}</b><small>${i.a} · ${i.f}</small><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></div><div class="drawer__r"><span>${gbp(i.p * i.q)}</span><button data-rm="${k}" aria-label="Remove"><i class="ri-delete-bin-6-line"></i></button></div></li>`).join("") : `<li class="empty"><i class="ri-shopping-basket-line"></i><p>Your basket is empty.</p></li>`;
+      $("drawerList").innerHTML = cart.length ? cart.map((i, k) => `<li><img src="${i.src || U(i.img, 160)}" alt="" /><div><b>${i.t}</b><small>${i.a} · ${i.f}</small><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></div><div class="drawer__r"><span>${gbp(i.p * i.q)}</span><button data-rm="${k}" aria-label="Remove"><i class="ri-delete-bin-6-line"></i></button></div></li>`).join("") : `<li class="empty"><i class="ri-shopping-basket-line"></i><p>Your basket is empty.</p></li>`;
       $("dSub").textContent = gbp(sub);
       $("shipTxt").innerHTML = sub >= FREE ? "You qualify for <b>free UK delivery</b>" : `Spend <b>${gbp(FREE - sub)}</b> more for free UK delivery`;
       $("shipBar").style.width = Math.min(100, (sub / FREE) * 100) + "%";
-      try { localStorage.setItem("mgCart", JSON.stringify(cart)); } catch (e) {}
+      try { localStorage.setItem("mgCart2", JSON.stringify(cart)); } catch (e) {}
     };
     const addItem = (it) => { const f = cart.find((i) => i.key === it.key); f ? f.q++ : cart.push({ ...it, q: 1 }); renderCart(); toast(`${it.t} added to your basket`); $("cartBtn").classList.remove("bump"); void $("cartBtn").offsetWidth; $("cartBtn").classList.add("bump"); };
-    const addBook = (b, fmt = "Paperback", price = b.p) => addItem({ key: b.id + fmt, t: b.t, a: b.a, p: price, img: b.img, f: fmt });
+    const addBook = (b, fmt = "Paperback", price = b.p) => addItem({ key: b.id + fmt, t: b.t, a: b.a, p: price, src: C(b, "S"), f: fmt });
     $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.rm !== undefined) cart.splice(+b.dataset.rm, 1); else { const i = cart[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) cart.splice(+b.dataset.k, 1); } renderCart(); });
     const openCart = () => { closeModal(); document.body.classList.add("cart-open"); $("drawer").setAttribute("aria-hidden", "false"); };
     const closeCart = () => { document.body.classList.remove("cart-open"); $("drawer").setAttribute("aria-hidden", "true"); };
