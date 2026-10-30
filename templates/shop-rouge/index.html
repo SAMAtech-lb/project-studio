@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rouge Club — Lipstick that lasts the whole night</title>
+  <meta name="description" content="Rouge Club makes long-wear lipstick, liner and cheek colour in 24 shades. Try every shade on, find yours in three taps, and refill the case." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo" aria-label="Rouge Club home">ROUGE<span>CLUB</span></a>
+      <nav class="nav" id="nav">
+        <a href="#try">Try it on</a>
+        <a href="#shop">Shop</a>
+        <a href="#finder">Shade finder</a>
+        <a href="#refill">Refills</a>
+      </nav>
+      <button class="bag" id="bagBtn" aria-label="Open bag"><i class="ri-shopping-bag-4-line"></i><b id="bagCount">0</b></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__copy">
+        <h1 class="hero__title"><span class="ln"><span>Red, but</span></span><span class="ln"><span id="heroWord">louder.</span></span></h1>
+        <p class="hero__lead fade">Twenty-four long-wear shades that stay put through dinner, drinks and the last song. Vegan, refillable, and tested on 400 lips, never on animals.</p>
+        <div class="hero__cta fade"><a href="#try" class="btn">Try every shade on <i class="ri-arrow-right-line"></i></a><a href="#shop" class="btn btn--line">Shop lipstick</a></div>
+      </div>
+      <figure class="hero__img"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=80" alt="A woman applying red lipstick" /></figure>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+
+    <!-- Try on (signature) -->
+    <section class="section try" id="try">
+      <div class="container try__in">
+        <div class="try__stage" id="stage">
+          <svg class="lips" id="lips" viewBox="0 0 400 220" role="img" aria-label="Lips wearing the selected shade">
+            <defs>
+              <radialGradient id="gloss" cx="40%" cy="30%" r="40%"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <clipPath id="lipclip"><path d="M40 110 C80 72 130 52 170 70 C185 76 192 80 200 80 C208 80 215 76 230 70 C270 52 320 72 360 110 C320 160 260 185 200 185 C140 185 80 160 40 110 Z"/></clipPath>
+            </defs>
+            <path class="lips__base" d="M40 110 C80 72 130 52 170 70 C185 76 192 80 200 80 C208 80 215 76 230 70 C270 52 320 72 360 110 C320 160 260 185 200 185 C140 185 80 160 40 110 Z"/>
+            <g clip-path="url(#lipclip)">
+              <rect class="lips__wipe" id="wipe" x="0" y="0" width="400" height="220"/>
+              <path d="M40 112 C120 122 160 116 200 118 C240 116 280 122 360 112" fill="none" stroke="#000" stroke-opacity=".28" stroke-width="5"/>
+              <path d="M70 108 C120 96 160 100 200 106 C240 100 280 96 330 108" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="18"/>
+              <ellipse class="lips__shine" cx="150" cy="148" rx="46" ry="12" fill="url(#gloss)"/>
+              <ellipse class="lips__shine" cx="252" cy="150" rx="36" ry="10" fill="url(#gloss)"/>
+              <ellipse class="lips__shine lips__shine--top" cx="140" cy="88" rx="22" ry="6" fill="url(#gloss)"/>
+            </g>
+          </svg>
+          <div class="try__meta"><b id="shadeName">Club Red</b><span id="shadeDesc">Blue-based true red</span></div>
+        </div>
+        <div class="try__panel">
+          <h2 class="h2">Try it on</h2>
+          <p>Tap a shade to see it on. Switch the finish and the skin tone to match your own.</p>
+          <div class="opt"><h4>Shade</h4><div class="swatches" id="swatches"></div></div>
+          <div class="opt"><h4>Finish</h4><div class="seg" id="finish"><button data-v="matte">Matte</button><button data-v="satin" class="on">Satin</button><button data-v="gloss">Gloss</button></div></div>
+          <div class="opt"><h4>Skin tone</h4><div class="tones" id="tones"></div></div>
+          <div class="try__buy"><div><small>Long-wear lipstick, 3.5g</small><b>£24</b></div><button class="btn" id="tryAdd">Add <span id="tryName">Club Red</span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="head"><h2 class="h2">The kit</h2><div class="tabs" id="tabs" role="tablist" aria-label="Category"></div></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- Statement + photo -->
+    <section class="wear">
+      <figure class="wear__img"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1600&q=80" alt="Portrait of a woman against a pink wall" loading="lazy" /></figure>
+      <div class="wear__copy">
+        <h2 class="h2">Eight hours. One coat.</h2>
+        <p>We tested every formula on 400 people through a full working day and a night out. The shades that faded before midnight didn't make the line.</p>
+        <ul class="wear__list"><li><b>8 h</b><span>wear without touching up</span></li><li><b>0</b><span>animal testing, ever</span></li><li><b>24</b><span>shades, from nude to noir</span></li></ul>
+      </div>
+    </section>
+
+    <!-- Shade finder -->
+    <section class="section finder-sec" id="finder">
+      <div class="container finder">
+        <div>
+          <h2 class="h2">Find your three</h2>
+          <p class="finder__p">Answer two questions and we'll pick three shades that work with your undertone, from everyday to after dark.</p>
+        </div>
+        <div class="quiz">
+          <div class="q"><h3>Your undertone</h3><div class="seg" data-q="tone"><button data-v="cool">Cool · veins look blue</button><button data-v="warm">Warm · veins look green</button><button data-v="neutral">Neutral · a bit of both</button></div></div>
+          <div class="q"><h3>How bold?</h3><div class="seg" data-q="bold"><button data-v="1">Barely there</button><button data-v="2">Noticeable</button><button data-v="3">Full volume</button></div></div>
+          <div class="result" id="result"><p>Your three shades will appear here.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Refill -->
+    <section class="section refill-sec" id="refill">
+      <div class="container refill">
+        <figure class="refill__img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Lipstick, brushes and blush laid out on a pink surface" loading="lazy" /></figure>
+        <div>
+          <h2 class="h2">Keep the case.</h2>
+          <p>Every Rouge Club case is metal and made to last. When a bullet runs out, click in a new one. Refills cost £16, snap in without mess, and use 80% less packaging than a new lipstick.</p>
+          <a href="#shop" class="btn" id="refillBtn">Shop refills</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__big">ROUGE<span>CLUB</span></p>
+      <div class="footer__grid">
+        <div><p>Made in small batches in Manchester. Vegan and cruelty-free, certified by Leaping Bunny.</p></div>
+        <div><h4>Shop</h4><a href="#shop">Lips</a><a href="#shop">Cheeks</a><a href="#refill">Refills</a></div>
+        <div><h4>Help</h4><a href="#finder">Shade finder</a><a href="#">Delivery</a><a href="#">Returns</a></div>
+        <div><h4>The club</h4><form class="news" id="news"><input type="email" required placeholder="Email for new shades" aria-label="Email" /><button aria-label="Join"><i class="ri-arrow-right-line"></i></button></form><p class="form-msg" id="newsMsg"></p></div>
+      </div>
+      <p class="footer__bottom">© <span id="year"></span> Rouge Club Cosmetics Ltd · Photography from Unsplash</p>
+    </div>
+  </footer>
+
+  <!-- Bag -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Bag</h3><button id="drawerClose" aria-label="Close bag"><i class="ri-close-line"></i></button></div>
+    <ul class="drawer__list" id="drawerList"></ul>
+    <div class="drawer__foot"><div class="drawer__row"><span>Subtotal</span><b id="dSub">£0</b></div><p class="drawer__note">Free delivery over £30 · a sample with every order</p><button class="btn btn--full" id="checkout">Checkout</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const toast = (t) => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("on"), 2200); };
+
+    /* ---------- Shades ---------- */
+    const SH = [
+      { n: "Club Red", c: "#c3162b", d: "Blue-based true red", t: ["cool", "neutral"], b: 3 },
+      { n: "Siren", c: "#e0301e", d: "Orange-red, bright", t: ["warm"], b: 3 },
+      { n: "Merlot", c: "#6d1427", d: "Deep wine", t: ["cool", "neutral"], b: 3 },
+      { n: "Noir Cherry", c: "#3b0a17", d: "Near-black cherry", t: ["cool"], b: 3 },
+      { n: "Brick", c: "#9b3a2b", d: "Warm terracotta brown", t: ["warm", "neutral"], b: 2 },
+      { n: "Fuchsia Hour", c: "#c4206e", d: "Electric pink", t: ["cool"], b: 3 },
+      { n: "Rosewood", c: "#a85a5e", d: "Muted rose", t: ["neutral", "cool"], b: 2 },
+      { n: "Coral Bay", c: "#e8634f", d: "Juicy coral", t: ["warm"], b: 2 },
+      { n: "Bare", c: "#c08a7a", d: "Your lips, but better", t: ["neutral", "warm"], b: 1 },
+      { n: "Petal", c: "#d28c95", d: "Soft cool pink", t: ["cool"], b: 1 },
+      { n: "Toffee", c: "#9c6550", d: "Caramel nude", t: ["warm"], b: 1 },
+      { n: "Mauve Mood", c: "#8e5a74", d: "Dusty mauve", t: ["neutral"], b: 2 },
+    ];
+    const TONES = ["#f3d7c4", "#e6b996", "#c98e66", "#a46b47", "#7a4a2f", "#4c2e1e"];
+    let sh = 0, fin = "satin", tone = 2;
+    $("swatches").innerHTML = SH.map((s, i) => `<button class="${i ? "" : "on"}" data-i="${i}" style="--c:${s.c}" aria-label="${s.n}"><span>${s.n}</span></button>`).join("");
+    $("tones").innerHTML = TONES.map((t, i) => `<button class="${i === tone ? "on" : ""}" data-t="${i}" style="--c:${t}" aria-label="Skin tone ${i + 1}"></button>`).join("");
+    const lips = $("lips"), stage = $("stage");
+    const paint = (animate) => {
+      const s = SH[sh];
+      lips.style.setProperty("--lip", s.c);
+      stage.style.setProperty("--skin", TONES[tone]);
+      lips.dataset.finish = fin;
+      $("shadeName").textContent = s.n; $("shadeDesc").textContent = s.d; $("tryName").textContent = s.n;
+      document.documentElement.style.setProperty("--accent", s.c);
+      if (animate && !reduce) { const w = $("wipe"); w.classList.remove("go"); void w.getBoundingClientRect(); w.classList.add("go"); }
+    };
+    $("swatches").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("swatches").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); sh = +b.dataset.i; paint(true); });
+    $("finish").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("finish").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); fin = b.dataset.v; paint(false); });
+    $("tones").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("tones").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); tone = +b.dataset.t; paint(false); });
+    paint(false);
+
+    /* Hero word swap */
+    const WORDS = ["louder.", "longer.", "yours."];
+    let wi = 0;
+    if (!reduce) setInterval(() => { wi = (wi + 1) % WORDS.length; const el = $("heroWord"); el.classList.add("out"); setTimeout(() => { el.textContent = WORDS[wi]; el.classList.remove("out"); }, 350); }, 2800);
+    $("ticker").innerHTML = [0, 1].map(() => `<span>${SH.map((s) => `<i style="background:${s.c}"></i>${s.n}`).join("")}</span>`).join("");
+
+    /* ---------- Products (drawn in code) ---------- */
+    const bullet = (c) => `<svg viewBox="0 0 80 160" aria-hidden="true"><rect x="22" y="70" width="36" height="80" rx="3" fill="#141414"/><rect x="22" y="70" width="36" height="8" fill="#2a2a2a"/><rect x="26" y="40" width="28" height="34" rx="2" fill="#d9d4cf"/><path d="M28 42 L28 22 Q28 8 52 6 L52 42 Z" fill="${c}"/><path d="M30 40 L30 24 Q31 14 40 12" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/></svg>`;
+    const pot = (c) => `<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="64" r="44" fill="#141414"/><circle cx="60" cy="60" r="36" fill="${c}"/><circle cx="48" cy="48" r="10" fill="#fff" opacity=".18"/></svg>`;
+    const pencil = (c) => `<svg class="wide" viewBox="0 0 160 60" aria-hidden="true"><rect x="30" y="22" width="110" height="16" fill="#141414"/><path d="M30 22 L10 30 L30 38 Z" fill="#e8d9c5"/><path d="M10 30 L17 27 L17 33 Z" fill="${c}"/><rect x="132" y="22" width="8" height="16" fill="${c}"/></svg>`;
+    const PR = [
+      { id: "l1", n: "Long-wear Lipstick", s: "Club Red", c: "#c3162b", cat: "Lips", p: 24, art: bullet },
+      { id: "l2", n: "Long-wear Lipstick", s: "Merlot", c: "#6d1427", cat: "Lips", p: 24, art: bullet },
+      { id: "l3", n: "Long-wear Lipstick", s: "Bare", c: "#c08a7a", cat: "Lips", p: 24, art: bullet },
+      { id: "p1", n: "Precision Liner", s: "Red Rule", c: "#a3132a", cat: "Lips", p: 16, art: pencil },
+      { id: "p2", n: "Precision Liner", s: "Nude Line", c: "#a77464", cat: "Lips", p: 16, art: pencil },
+      { id: "c1", n: "Cheek Tint", s: "Flush", c: "#e0687a", cat: "Cheeks", p: 22, art: pot },
+      { id: "c2", n: "Cheek Tint", s: "Terracotta", c: "#c46a4a", cat: "Cheeks", p: 22, art: pot },
+      { id: "r1", n: "Lipstick Refill", s: "Any shade", c: "#c3162b", cat: "Refills", p: 16, art: bullet },
+    ];
+    const CATS = ["All", "Lips", "Cheeks", "Refills"];
+    let cat = "All";
+    const renderGrid = () => {
+      $("tabs").innerHTML = CATS.map((c) => `<button role="tab" class="${c === cat ? "on" : ""}" aria-selected="${c === cat}">${c}</button>`).join("");
+      $("grid").innerHTML = PR.filter((x) => cat === "All" || x.cat === cat).map((x, i) => `<article class="card" style="--d:${i * 0.05}s;--c:${x.c}"><div class="card__art">${x.art(x.c)}</div><div class="card__body"><div><h3>${x.n}</h3><p><i style="background:${x.c}"></i>${x.s}</p></div><b>£${x.p}</b></div><button class="card__add" data-add="${x.id}">Add to bag</button></article>`).join("");
+    };
+    $("tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { cat = b.textContent; renderGrid(); } });
+    $("refillBtn").addEventListener("click", () => { cat = "Refills"; renderGrid(); });
+    renderGrid();
+
+    /* ---------- Bag ---------- */
+    let bag = [];
+    try { bag = JSON.parse(localStorage.getItem("rougeBag") || "[]"); } catch (e) {}
+    const renderBag = () => {
+      const n = bag.reduce((s, i) => s + i.q, 0), sub = bag.reduce((s, i) => s + i.q * i.p, 0);
+      $("bagCount").textContent = n; $("bagCount").classList.toggle("on", n > 0);
+      $("drawerList").innerHTML = bag.length ? bag.map((i, k) => `<li><span class="dot" style="--c:${i.c}"></span><div><b>${i.n}</b><small>${i.s}</small><span>£${i.p}</span></div><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></li>`).join("") : `<li class="empty">Nothing here yet. Club Red is a good start.</li>`;
+      $("dSub").textContent = "£" + sub;
+      try { localStorage.setItem("rougeBag", JSON.stringify(bag)); } catch (e) {}
+    };
+    const add = (it) => { const f = bag.find((i) => i.key === it.key); f ? f.q++ : bag.push({ ...it, q: 1 }); renderBag(); toast(`${it.s} added`); $("bagBtn").classList.remove("bump"); void $("bagBtn").offsetWidth; $("bagBtn").classList.add("bump"); };
+    document.addEventListener("click", (e) => { const a = e.target.closest("[data-add]"); if (!a) return; const x = PR.find((p) => p.id === a.dataset.add); add({ key: x.id, n: x.n, s: x.s, p: x.p, c: x.c }); });
+    $("tryAdd").addEventListener("click", () => { const s = SH[sh]; add({ key: "try-" + s.n + fin, n: `Lipstick, ${fin}`, s: s.n, p: 24, c: s.c }); });
+    $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const i = bag[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) bag.splice(+b.dataset.k, 1); renderBag(); });
+    const openBag = () => { document.body.classList.add("bag-open"); $("drawer").setAttribute("aria-hidden", "false"); };
+    const closeBag = () => { document.body.classList.remove("bag-open"); $("drawer").setAttribute("aria-hidden", "true"); };
+    $("bagBtn").addEventListener("click", openBag); $("drawerClose").addEventListener("click", closeBag); $("scrim").addEventListener("click", closeBag);
+    $("checkout").addEventListener("click", () => { if (!bag.length) return; bag = []; renderBag(); closeBag(); toast("Order placed. Your sample is a surprise."); });
+    renderBag();
+
+    /* ---------- Shade finder ---------- */
+    const Q = {};
+    document.querySelectorAll(".quiz .seg").forEach((g) => g.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      g.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); Q[g.dataset.q] = b.dataset.v;
+      if (!Q.tone || !Q.bold) return;
+      const scored = SH.map((s, i) => ({ s, i, sc: (s.t.includes(Q.tone) ? 3 : 0) - Math.abs(s.b - +Q.bold) })).sort((a, b) => b.sc - a.sc).slice(0, 3);
+      $("result").innerHTML = `<div class="trio">${scored.map(({ s, i }, k) => `<button class="trio__i" data-try="${i}" style="--c:${s.c};--d:${k * 0.08}s"><span class="trio__sw"></span><b>${s.n}</b><small>${["Everyday", "Evening", "After dark"][k]}</small></button>`).join("")}</div><p class="trio__hint">Tap a shade to try it on.</p>`;
+    }));
+    $("result").addEventListener("click", (e) => { const b = e.target.closest("[data-try]"); if (!b) return; sh = +b.dataset.try; $("swatches").querySelectorAll("button").forEach((x, k) => x.classList.toggle("on", k === sh)); paint(true); $("try").scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); });
+
+    /* ---------- Misc ---------- */
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => $("burger").setAttribute("aria-expanded", document.body.classList.toggle("nav-open")));
+    document.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBag(); closeNav(); } });
+    addEventListener("scroll", () => { $("header").classList.toggle("sticky", scrollY > 20); if (!reduce) document.querySelector(".hero__img img").style.transform = `scale(1.06) translateY(${scrollY * 0.08}px)`; }, { passive: true });
+    document.querySelectorAll(".head, .try__stage, .try__panel, .wear__copy, .finder > div, .quiz, .refill > *").forEach((el) => el.classList.add("reveal"));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "You're in the club."; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>
