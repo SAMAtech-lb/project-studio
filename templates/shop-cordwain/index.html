@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cordwain — Handmade leather shoes from Northampton</title>
+  <meta name="description" content="Cordwain makes Goodyear-welted leather shoes by hand in Northampton. Design your own pair, find your size, and resole them for life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo" aria-label="Cordwain home">CORDWAIN</a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shoes</a>
+        <a href="#make">Make your pair</a>
+        <a href="#size">Sizing</a>
+        <a href="#craft">How they're made</a>
+        <a href="#resole">Resoling</a>
+      </nav>
+      <button class="bag" id="bagBtn" aria-label="Open bag"><i class="ri-shopping-bag-line"></i><b id="bagCount">0</b></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <figure class="hero__img"><img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=2200&q=80" alt="Close-up of a pair of polished brown leather shoes" /></figure>
+      <div class="container hero__in">
+        <h1 class="hero__title"><span class="ln"><span>Shoes built</span></span><span class="ln"><span>to be resoled.</span></span></h1>
+        <div class="hero__side fade">
+          <p>Calf leather, oak-bark soles and 200 hand operations in a Northampton workshop. Wear them for ten years, send them back, and we'll make them new again.</p>
+          <div class="hero__cta"><a href="#make" class="btn">Make your pair <i class="ri-arrow-right-line"></i></a><a href="#shop" class="btn btn--ghost">Shop ready to wear</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="head">
+          <h2 class="h2">Ready to wear</h2>
+          <div class="tabs" id="tabs" role="tablist" aria-label="Style"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- Customiser (signature) -->
+    <section class="section make-sec" id="make">
+      <div class="container make">
+        <div class="make__stage">
+          <svg class="shoe" id="shoe" viewBox="0 0 600 280" role="img" aria-label="Preview of your shoe">
+            <defs>
+              <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+            </defs>
+            <ellipse cx="305" cy="252" rx="270" ry="12" fill="#000" opacity=".12"/>
+            <path class="sole" d="M34 206 Q26 226 64 228 L452 228 L456 246 L566 246 L568 206 Z"/>
+            <path class="welt" d="M36 210 L566 210" />
+            <path class="upper" d="M40 206 C30 176 50 152 112 142 C180 132 228 120 268 102 C296 90 318 78 346 73 L470 80 C502 82 522 85 536 92 C558 108 566 150 566 206 Z"/>
+            <path d="M40 206 C30 176 50 152 112 142 C180 132 228 120 268 102 C296 90 318 78 346 73 L470 80 C502 82 522 85 536 92 C558 108 566 150 566 206 Z" fill="url(#shade)"/>
+            <path d="M70 160 C130 140 210 128 270 108 C300 96 330 84 360 80" fill="none" stroke="url(#shine)" stroke-width="22" stroke-linecap="round" opacity=".75"/>
+            <path class="collar" d="M350 77 C420 72 485 79 534 93"/>
+            <path class="seam" d="M282 98 C298 140 314 176 332 206"/>
+            <path class="seam" d="M540 96 C548 140 548 176 544 206"/>
+            <path class="seam toecap" d="M150 138 C138 160 142 186 156 206"/>
+            <g class="brogue"><circle cx="160" cy="146" r="2.4"/><circle cx="157" cy="160" r="2.4"/><circle cx="157" cy="174" r="2.4"/><circle cx="160" cy="188" r="2.4"/><circle cx="165" cy="200" r="2.4"/><circle cx="96" cy="166" r="2.2"/><circle cx="106" cy="160" r="2.2"/><circle cx="108" cy="174" r="2.2"/><circle cx="118" cy="166" r="2.2"/><circle cx="96" cy="180" r="2.2"/><circle cx="118" cy="182" r="2.2"/></g>
+            <path class="facing" d="M282 98 C300 88 322 78 350 74 L356 92 C332 96 312 104 296 114 Z"/>
+            <g class="laces"><path d="M296 104 L326 86 M300 112 L330 92 M308 96 L340 82 M318 102 L346 88"/><circle cx="296" cy="104" r="3.2"/><circle cx="326" cy="86" r="3.2"/><circle cx="310" cy="96" r="3.2"/><circle cx="340" cy="80" r="3.2"/></g>
+            <text class="mono" id="mono" x="500" y="160" text-anchor="middle"></text>
+          </svg>
+          <p class="make__ref" id="makeRef"></p>
+        </div>
+        <div class="make__panel">
+          <h2 class="h2">Make your pair</h2>
+          <p class="make__lead">Choose the leather, sole and finish. Made to order in four weeks.</p>
+          <div class="opt"><h4>Style</h4><div class="seg" id="oStyle"><button data-v="derby" class="on">Derby</button><button data-v="brogue">Brogue</button></div></div>
+          <div class="opt"><h4>Leather <span id="leatherName"></span></h4><div class="sw" id="oLeather"></div></div>
+          <div class="opt"><h4>Sole <span id="soleName"></span></h4><div class="seg" id="oSole"><button data-v="oak" class="on">Oak bark</button><button data-v="black">Black leather</button><button data-v="crepe">Natural crepe</button></div></div>
+          <div class="opt"><h4>Laces</h4><div class="seg" id="oLace"><button data-v="match" class="on">Matching</button><button data-v="contrast">Contrast cream</button></div></div>
+          <div class="opt"><h4>Initials on the heel</h4><input id="oMono" maxlength="3" placeholder="e.g. JMB" aria-label="Initials" /></div>
+          <div class="make__buy"><div><small>Your pair</small><b id="makePrice">£345</b></div><button class="btn" id="makeAdd">Add to bag</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Size finder -->
+    <section class="section" id="size">
+      <div class="container size">
+        <div>
+          <h2 class="h2">Find your size in a minute</h2>
+          <p class="size__lead">Stand on a sheet of paper, mark your heel and longest toe, and measure the gap in centimetres. Our lasts run true to UK sizing.</p>
+          <form class="size__form" id="sizeForm">
+            <label>Foot length (cm)<input id="footLen" type="number" step="0.1" min="22" max="32" value="26.5" /></label>
+            <div class="seg" id="width"><button type="button" data-v="0">Narrow</button><button type="button" data-v="1" class="on">Standard</button><button type="button" data-v="2">Wide</button></div>
+          </form>
+        </div>
+        <div class="size__out" id="sizeOut" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Craft: scroll story -->
+    <section class="craft" id="craft">
+      <div class="craft__sticky">
+        <div class="craft__imgs" id="craftImgs"></div>
+        <div class="container craft__in">
+          <h2 class="craft__title">Four weeks, one pair.</h2>
+          <div class="craft__steps" id="craftSteps"></div>
+          <div class="craft__bar"><i id="craftBar"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resole -->
+    <section class="section resole-sec" id="resole">
+      <div class="container resole">
+        <figure class="resole__img"><img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1200&q=80" alt="Well-worn brown leather boots" loading="lazy" /></figure>
+        <div>
+          <h2 class="h2">Send them back. Get them back new.</h2>
+          <p>Every Cordwain pair can be resoled, re-heeled and refinished in our workshop. Book it here, print the free label, and they're home in three weeks.</p>
+          <div class="seg seg--full" id="resoleOpt"><button data-p="85" class="on">Full resole · £85</button><button data-p="45">Heels only · £45</button><button data-p="30">Refinish · £30</button></div>
+          <button class="btn" id="resoleBtn">Book a resole · £85</button>
+          <p class="form-msg" id="resoleMsg"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="head"><h2 class="h2">Worn for years</h2></div>
+        <div class="reviews" id="reviews"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__big">CORDWAIN</p>
+      <div class="footer__grid">
+        <div><p>Workshop &amp; shop<br />14 Overstone Road, Northampton NN1 3JL</p><p>Open Tuesday to Saturday, 10–5</p></div>
+        <div><h4>Shop</h4><a href="#shop">Ready to wear</a><a href="#make">Make your pair</a><a href="#">Gift cards</a></div>
+        <div><h4>Care</h4><a href="#size">Sizing</a><a href="#resole">Resoling</a><a href="#">Shoe care</a></div>
+        <div><h4>Letters</h4><form class="news" id="news"><input type="email" required placeholder="Your email" aria-label="Email" /><button aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button></form><p class="form-msg" id="newsMsg"></p></div>
+      </div>
+      <p class="footer__bottom">© <span id="year"></span> Cordwain Shoemakers Ltd · Photography from Unsplash</p>
+    </div>
+  </footer>
+
+  <!-- Bag -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Your bag</h3><button id="drawerClose" aria-label="Close bag"><i class="ri-close-line"></i></button></div>
+    <ul class="drawer__list" id="drawerList"></ul>
+    <div class="drawer__foot"><div class="drawer__row"><span>Subtotal</span><b id="dSub">£0</b></div><p class="drawer__note">Free UK delivery and free exchanges on size.</p><button class="btn btn--full" id="checkout">Checkout</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const U = (id, w = 1200) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const toast = (t) => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("on"), 2400); };
+
+    /* ---------- Products ---------- */
+    const SHOES = [
+      { id: "harlow", n: "Harlow Derby", s: "Derby", c: "Chestnut calf", p: 320, img: "1449505278894-297fdb3edbc1" },
+      { id: "ellis", n: "Ellis Monk", s: "Monk", c: "Walnut calf", p: 360, img: "1533867617858-e7b97e060509" },
+      { id: "radley", n: "Radley Oxford", s: "Oxford", c: "Cognac calf", p: 340, img: "1614252235316-8c857d38b5f4" },
+      { id: "ashby", n: "Ashby Chelsea", s: "Boot", c: "Tan suede", p: 380, img: "1531310197839-ccf54634509e" },
+      { id: "brent", n: "Brent Field Boot", s: "Boot", c: "Oiled brown", p: 395, img: "1605812860427-4024433a70fd" },
+      { id: "wren", n: "Wren Brogue", s: "Oxford", c: "Teal calf", p: 345, img: "1560343090-f0409e92791a" },
+    ];
+    const STYLES = ["All", "Derby", "Oxford", "Monk", "Boot"];
+    let style = "All";
+    const renderGrid = () => {
+      $("tabs").innerHTML = STYLES.map((s) => `<button role="tab" class="${s === style ? "on" : ""}" aria-selected="${s === style}">${s}</button>`).join("");
+      $("grid").innerHTML = SHOES.filter((x) => style === "All" || x.s === style).map((x, i) => `
+        <article class="card" style="--d:${i * 0.06}s">
+          <div class="card__img"><img src="${U(x.img, 900)}" alt="${x.n} in ${x.c}" loading="lazy" /></div>
+          <div class="card__body"><div><h3>${x.n}</h3><p>${x.c}</p></div><b>£${x.p}</b></div>
+          <div class="card__sizes">${[6, 7, 8, 9, 10, 11].map((s) => `<button data-shoe="${x.id}" data-size="${s}">UK ${s}</button>`).join("")}</div>
+        </article>`).join("");
+    };
+    $("tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { style = b.textContent; renderGrid(); } });
+    renderGrid();
+
+    /* ---------- Bag ---------- */
+    let bag = [];
+    try { bag = JSON.parse(localStorage.getItem("cordwainBag") || "[]"); } catch (e) {}
+    const renderBag = () => {
+      const n = bag.reduce((s, i) => s + i.q, 0), sub = bag.reduce((s, i) => s + i.q * i.p, 0);
+      $("bagCount").textContent = n; $("bagCount").classList.toggle("on", n > 0);
+      $("drawerList").innerHTML = bag.length ? bag.map((i, k) => `<li><span class="mini" style="--c:${i.c}"></span><div><b>${i.n}</b><small>${i.sub}</small><span>£${i.p}</span></div><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></li>`).join("") : `<li class="empty">Your bag is empty.</li>`;
+      $("dSub").textContent = "£" + sub;
+      try { localStorage.setItem("cordwainBag", JSON.stringify(bag)); } catch (e) {}
+    };
+    const add = (item) => { const f = bag.find((i) => i.key === item.key); f ? f.q++ : bag.push({ ...item, q: 1 }); renderBag(); toast(`${item.n} added`); $("bagBtn").classList.remove("bump"); void $("bagBtn").offsetWidth; $("bagBtn").classList.add("bump"); };
+    $("grid").addEventListener("click", (e) => { const b = e.target.closest("[data-size]"); if (!b) return; const x = SHOES.find((s) => s.id === b.dataset.shoe); add({ key: x.id + b.dataset.size, n: x.n, sub: `${x.c} · UK ${b.dataset.size}`, p: x.p, c: "#8a5a35" }); });
+    $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const i = bag[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) bag.splice(+b.dataset.k, 1); renderBag(); });
+    const openBag = () => { document.body.classList.add("bag-open"); $("drawer").setAttribute("aria-hidden", "false"); };
+    const closeBag = () => { document.body.classList.remove("bag-open"); $("drawer").setAttribute("aria-hidden", "true"); };
+    $("bagBtn").addEventListener("click", openBag); $("drawerClose").addEventListener("click", closeBag); $("scrim").addEventListener("click", closeBag);
+    $("checkout").addEventListener("click", () => { if (!bag.length) return; bag = []; renderBag(); closeBag(); toast("Order placed. We'll email you when your shoes ship."); });
+    renderBag();
+
+    /* ---------- Customiser (signature) ---------- */
+    const LEATHERS = [["Chestnut", "#8a4a24", 0], ["Dark brown", "#3e2418", 0], ["Black", "#1b1716", 0], ["Burgundy", "#5e1f24", 15], ["Tan suede", "#b0804f", 25], ["Bottle green", "#23392c", 25]];
+    const SOLES = { oak: ["#c8935a", 0, "Oak bark"], black: ["#1b1716", 0, "Black leather"], crepe: ["#d9c29a", 20, "Natural crepe"] };
+    const M = { style: "derby", leather: 0, sole: "oak", lace: "match", mono: "" };
+    $("oLeather").innerHTML = LEATHERS.map(([n, c], i) => `<button style="--c:${c}" data-i="${i}" class="${i ? "" : "on"}" aria-label="${n}"></button>`).join("");
+    const shoe = $("shoe");
+    const renderShoe = (bump) => {
+      const [ln, lc, lp] = LEATHERS[M.leather], [sc, sp, sn] = SOLES[M.sole];
+      shoe.style.setProperty("--leather", lc); shoe.style.setProperty("--sole", sc);
+      shoe.style.setProperty("--lace", M.lace === "match" ? "color-mix(in srgb, " + lc + " 70%, #000)" : "#efe6d4");
+      shoe.classList.toggle("is-brogue", M.style === "brogue");
+      $("mono").textContent = M.mono.toUpperCase();
+      $("leatherName").textContent = ln; $("soleName").textContent = sn;
+      const price = 345 + lp + sp + (M.style === "brogue" ? 20 : 0) + (M.mono ? 15 : 0);
+      $("makePrice").textContent = "£" + price;
+      $("makeRef").textContent = `${M.style === "brogue" ? "Brogue" : "Derby"} · ${ln} · ${sn} sole${M.mono ? " · " + M.mono.toUpperCase() : ""}`;
+      if (bump && !reduce) { shoe.classList.remove("bump"); void shoe.getBoundingClientRect(); shoe.classList.add("bump"); }
+      return price;
+    };
+    const seg = (id, key) => $(id).addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $(id).querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); M[key] = b.dataset.v ?? +b.dataset.i; renderShoe(true); });
+    seg("oStyle", "style"); seg("oSole", "sole"); seg("oLace", "lace");
+    $("oLeather").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("oLeather").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); M.leather = +b.dataset.i; renderShoe(true); });
+    $("oMono").addEventListener("input", (e) => { M.mono = e.target.value.replace(/[^a-z]/gi, ""); e.target.value = M.mono.toUpperCase(); renderShoe(false); });
+    $("makeAdd").addEventListener("click", () => { const p = renderShoe(false); add({ key: "make-" + JSON.stringify(M), n: "Your Cordwain pair", sub: $("makeRef").textContent, p, c: LEATHERS[M.leather][1] }); });
+    renderShoe(false);
+
+    /* ---------- Size finder ---------- */
+    let wIdx = 1;
+    const renderSize = () => {
+      const cm = parseFloat($("footLen").value) || 26.5;
+      const uk = Math.round(((cm - 22) / 0.85 + 3.5) * 2) / 2, eu = Math.round(uk + 33.5), us = uk + 1;
+      const fit = ["E fitting (narrow)", "F fitting (standard)", "G fitting (wide)"][wIdx];
+      $("sizeOut").innerHTML = `<p>Your Cordwain size</p><b>UK ${uk}</b><div class="size__row"><span><small>EU</small>${eu}</span><span><small>US</small>${us}</span><span><small>Width</small>${fit.split(" ")[0]}</span></div><p class="size__tip">${fit}. Between sizes? Take the smaller one: calf leather gives about half a size in the first month.</p>`;
+    };
+    $("footLen").addEventListener("input", renderSize);
+    $("width").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("width").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); wIdx = +b.dataset.v; renderSize(); });
+    $("sizeForm").addEventListener("submit", (e) => e.preventDefault());
+    renderSize();
+
+    /* ---------- Craft scroll story ---------- */
+    const CRAFT = [["Week 1", "Clicking", "Each panel is cut by hand from a single calf hide, avoiding scars and stretch marks.", "1449505278894-297fdb3edbc1"], ["Week 2", "Lasting", "The upper is pulled over a wooden last and left to rest for ten days, so it holds its shape for life.", "1533867617858-e7b97e060509"], ["Week 3", "Welting", "A leather welt is stitched to the upper and the oak-bark sole, so the sole can be replaced again and again.", "1531310197839-ccf54634509e"], ["Week 4", "Finishing", "Edges are burnished, the leather is hand-polished in three coats, and every pair is checked twice.", "1614252235316-8c857d38b5f4"]];
+    $("craftImgs").innerHTML = CRAFT.map(([, , , img], i) => `<img src="${U(img, 1400)}" alt="" class="${i ? "" : "on"}" />`).join("");
+    $("craftSteps").innerHTML = CRAFT.map(([w, t, p], i) => `<div class="cs ${i ? "" : "on"}"><small>${w}</small><h3>${t}</h3><p>${p}</p></div>`).join("");
+    const craft = () => { const s = $("craft"), r = s.getBoundingClientRect(), total = s.offsetHeight - innerHeight, p = Math.min(1, Math.max(0, -r.top / Math.max(1, total))), k = Math.min(3, Math.floor(p * 4)); [...$("craftImgs").children].forEach((im, i) => im.classList.toggle("on", i === k)); [...$("craftSteps").children].forEach((c, i) => c.classList.toggle("on", i === k)); $("craftBar").style.transform = `scaleX(${p})`; };
+    addEventListener("scroll", craft, { passive: true }); craft();
+
+    /* ---------- Resole ---------- */
+    $("resoleOpt").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; $("resoleOpt").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); $("resoleBtn").textContent = "Book a resole · £" + b.dataset.p; });
+    $("resoleBtn").addEventListener("click", () => { $("resoleMsg").textContent = "Booked. Your free postage label is on its way by email."; $("resoleMsg").className = "form-msg ok"; });
+
+    /* ---------- Reviews ---------- */
+    const R = [["My Harlows are seven years old and on their second sole. They look better now than the day they arrived.", "James R., Leeds"], ["The size finder put me in a UK 8.5 F. First pair of shoes I haven't had to break in.", "Amira K., London"], ["Made my wedding shoes in burgundy with our initials on the heel. Still the best thing I own.", "Daniel P., Bristol"]];
+    $("reviews").innerHTML = R.map(([q, n], i) => `<figure class="rev reveal" style="--d:${i * 0.08}s"><blockquote>${q}</blockquote><figcaption>${n}</figcaption></figure>`).join("");
+
+    /* ---------- Header, reveal, misc ---------- */
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => $("burger").setAttribute("aria-expanded", document.body.classList.toggle("nav-open")));
+    document.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBag(); closeNav(); } });
+    addEventListener("scroll", () => { $("header").classList.toggle("sticky", scrollY > 20); if (!reduce) document.querySelector(".hero__img img").style.transform = `scale(1.08) translateY(${scrollY * 0.12}px)`; }, { passive: true });
+    document.querySelectorAll(".head, .make__stage, .make__panel, .size > *, .resole > *").forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", (i % 2) * 0.1 + "s"); });
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "Thanks. Expect a letter when new leathers arrive."; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>

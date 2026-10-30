@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-cordwain",
+    name: "Cordwain",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-cordwain/index.html",
+    description: "Handmade leather shoe shop with a full-bleed hero, ready-to-wear grid with one-tap size buttons, a live SVG shoe customiser (style, six leathers, sole, laces, heel initials, live price), a foot-length size finder with UK/EU/US and width, a pinned four-week craft story, resoling booking and a bag drawer.",
+    tags: ["Shoes", "Shoe customiser", "Size finder", "Resoling"],
+    palette: ["#f8f5ef", "#241811", "#9a5a2b", "#f1ece3"],
+    fonts: "Archivo",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-24",
+  },
+  {
     id: "shop-marginalia",
     name: "Marginalia Books",
     category: "E-commerce",
