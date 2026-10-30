@@ -90,7 +90,7 @@ every template in the "ready" list.
 - [x] Havenly → rebuilt: working search + map pins, 13 listings with full listing pages (gallery, monthly cost, tour booking), neighborhood guides, valuation wizard
 - [x] Loomwell → hero line reveal + image wipe + parallax, scroll reveals, values marquee; new sections: open-pricing cost breakdown (animated bars), Made in Porto journey (scroll-lit), community "shop it" grid, FAQ
 - [x] Ginger & Moss → cat hero untouched (now fades in); added brands marquee, 3-tap kit finder that builds a basket, rescue adoption cards, FAQ, scroll reveals; fixed phone header overflow
-- [ ] Clearview Dental → de-vibe
+- [x] Clearview Dental → removed floating badges, blob, pill tags, "20+" box and 6 icon tiles; added live "next opening" line, insurance marquee, image-led treatment explorer with prices, hero + scroll motion
 
 ### Phase E: de-vibe the 9
 - [ ] Bean & Bloom · [ ] Sofia Reyes · [ ] Maya Carter · [ ] Learnly · [ ] Nexora ·

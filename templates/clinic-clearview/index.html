@@ -30,7 +30,7 @@
   <section class="hero">
     <div class="container">
       <div>
-        <span class="pill"><i class="ri-shield-check-fill"></i> Accepting new patients</span>
+        <p class="next" id="next"><i></i><span>Next opening: <b id="nextSlot">today</b></span></p>
         <h1>Gentle dental care for a <span>healthy, confident</span> smile.</h1>
         <p>From routine check-ups to Invisalign and implants, our team makes every visit calm, clear and completely pain-free — for the whole family.</p>
         <div class="hero__ctas">
@@ -47,10 +47,8 @@
         </div>
       </div>
       <div class="hero__img">
-        <div class="hero__blob"></div>
-        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Dr. Emily Hart" />
-        <div class="badge badge--a"><i class="ri-user-heart-line"></i><div><b>15,000+</b>Happy patients</div></div>
-        <div class="badge badge--b"><i class="ri-emotion-happy-line"></i><div><b>Pain-free</b>Sedation available</div></div>
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Dr. Emily Hart, lead dentist" />
+        <p class="hero__cap"><b>Dr. Emily Hart</b> · Lead dentist, 18 years in Denver</p>
       </div>
     </div>
   </section>
@@ -58,20 +56,16 @@
   <section class="trust">
     <div class="container">
       <p>We accept most insurance plans:</p>
-      <div class="trust__logos"><span>Delta Dental</span><span>Cigna</span><span>MetLife</span><span>Aetna</span><span>Guardian</span><span>United</span></div>
+      <div class="trust__logos"><div class="trust__track"><span>Delta Dental</span><span>Cigna</span><span>MetLife</span><span>Aetna</span><span>Guardian</span><span>UnitedHealthcare</span><span>Humana</span><span>Delta Dental</span><span>Cigna</span><span>MetLife</span><span>Aetna</span><span>Guardian</span><span>UnitedHealthcare</span><span>Humana</span></div></div>
     </div>
   </section>
 
   <section class="services" id="services">
     <div class="container">
-      <div class="sh"><span class="pill">Our services</span><h2>Complete care under one roof</h2><p>Modern technology, transparent pricing and dentists who take the time to explain your options.</p></div>
-      <div class="svc-grid">
-        <div class="svc"><div class="svc__icon"><i class="ri-search-eye-line"></i></div><h3>Check-ups &amp; Cleaning</h3><p>Digital X-rays, oral cancer screening and a gentle professional clean.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
-        <div class="svc"><div class="svc__icon"><i class="ri-sparkling-2-line"></i></div><h3>Teeth Whitening</h3><p>Up to 8 shades brighter in a single 60-minute in-office session.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
-        <div class="svc"><div class="svc__icon"><i class="ri-align-vertically"></i></div><h3>Invisalign</h3><p>Clear aligners that straighten teeth discreetly. Free 3D smile scan.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
-        <div class="svc"><div class="svc__icon"><i class="ri-hammer-line"></i></div><h3>Dental Implants</h3><p>Permanent, natural-looking replacements for missing teeth.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
-        <div class="svc"><div class="svc__icon"><i class="ri-parent-line"></i></div><h3>Kids Dentistry</h3><p>Fun, fear-free visits that build healthy habits from the first tooth.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
-        <div class="svc"><div class="svc__icon"><i class="ri-first-aid-kit-line"></i></div><h3>Emergency Care</h3><p>Same-day appointments for toothaches, chips and lost fillings.</p><a href="#book">Book now <i class="ri-arrow-right-line"></i></a></div>
+      <div class="sh2"><div><p class="kicker">Treatments</p><h2>Everything, under one calm roof.</h2></div><p>Clear prices before we start, and dentists who explain every option in plain English.</p></div>
+      <div class="tx">
+        <div class="tx__list" id="txList" role="tablist" aria-label="Treatments"></div>
+        <div class="tx__panel" id="txPanel"></div>
       </div>
     </div>
   </section>
@@ -81,10 +75,9 @@
       <div class="about__imgs">
         <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Treatment room" />
         <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=600&q=80" alt="Consultation" />
-        <div class="about__exp"><b>20+</b>Years caring for Denver smiles</div>
       </div>
       <div>
-        <span class="pill">About the clinic</span>
+        <p class="kicker">About the clinic</p>
         <h2>Dentistry that feels more like a spa than a surgery</h2>
         <p>We built Clearview around one idea: nobody should dread the dentist. Noise-cancelling headphones, ceiling TVs, warm blankets and a team that never rushes.</p>
         <ul class="checks">
@@ -101,7 +94,7 @@
   <section class="booking" id="book">
     <div class="container">
       <div>
-        <span class="pill">Online booking</span>
+        <p class="kicker">Online booking</p>
         <h2>Book your appointment in under a minute</h2>
         <p>Pick a treatment, choose a time that suits you and we'll confirm by text. New patients get a free whitening touch-up.</p>
         <div class="info">
@@ -154,7 +147,7 @@
 
   <section class="doctors" id="doctors">
     <div class="container">
-      <div class="sh"><span class="pill">Our dentists</span><h2>Experienced, gentle &amp; genuinely kind</h2></div>
+      <div class="sh"><p class="kicker">Our dentists</p><h2>Experienced, gentle &amp; genuinely kind</h2></div>
       <div class="doc-grid">
         <div class="doc"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="" /><div class="doc__body"><div><h4>Dr. Emily Hart</h4><span>Lead Dentist, DDS</span></div><span class="doc__rating"><i class="ri-star-fill"></i> 4.9</span></div></div>
         <div class="doc"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="" /><div class="doc__body"><div><h4>Dr. Raj Patel</h4><span>Orthodontist</span></div><span class="doc__rating"><i class="ri-star-fill"></i> 5.0</span></div></div>
@@ -173,7 +166,7 @@
         <div class="who"><img id="rvImg" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" /><div><b id="rvName">Jessica Miller</b><span id="rvRole">Patient since 2021</span></div><div class="rnav"><button id="rvPrev" aria-label="Previous"><i class="ri-arrow-left-line"></i></button><button id="rvNext" aria-label="Next"><i class="ri-arrow-right-line"></i></button></div></div>
       </div>
       <div class="faq">
-        <span class="pill">FAQ</span>
+        <p class="kicker">FAQ</p>
         <h2>Common questions</h2>
         <details open><summary>Do you accept my insurance? <i class="ri-add-line"></i></summary><p>We're in-network with most major PPO plans and file all claims for you. Call us and we'll verify your coverage in minutes.</p></details>
         <details><summary>What if I don't have insurance? <i class="ri-add-line"></i></summary><p>Our Clearview Membership covers two cleanings, exams and X-rays for $29/month, plus 15% off all treatments.</p></details>
@@ -274,6 +267,44 @@
     $("rvNext").onclick = () => showReview(r + 1);
 
     $("burger").onclick = () => $("nav").classList.toggle("open");
+
+    /* ---------- Treatments explorer ---------- */
+    const TX = [
+      ["Check-up & clean", "1629909613654-28e377c37b09", "45 min", "from $95", "Digital X-rays, an oral cancer screening and a gentle professional clean. Most patients are back at work within the hour.", ["Low-dose digital X-rays", "Gum health check", "Polish and fluoride"]],
+      ["Teeth whitening", "1606811971618-4486d14f3f99", "60 min", "$349", "Up to eight shades brighter in a single in-office session, with a take-home kit to keep it that way.", ["Sensitivity-free gel", "Custom take-home trays", "Free top-up after 6 months"]],
+      ["Invisalign", "1588776814546-1ffcf47267a5", "Free scan", "from $3,900", "Clear aligners that straighten teeth without anyone noticing. See your new smile in 3D at the first visit.", ["Free 3D iTero scan", "0% financing over 24 months", "Average treatment 9 months"]],
+      ["Dental implants", "1631217868264-e5b90bb7e133", "2 visits", "from $2,800", "A permanent, natural-looking tooth that you brush and floss like the others. Planned with a 3D CT scan.", ["3D-guided placement", "Same-day temporary crown", "Lifetime implant warranty"]],
+      ["Kids' dentistry", "1588776814546-1ffcf47267a5", "30 min", "from $65", "Fun, fear-free visits that build good habits from the first tooth. Ceiling TVs and a prize box help.", ["Sealants and fluoride", "Gentle first-visit tour", "Covered by most plans"]],
+      ["Emergency care", "1629909613654-28e377c37b09", "Same day", "from $120", "Toothache, chipped tooth or lost filling? Call before noon and we'll see you today.", ["Same-day appointments", "Pain relief first", "Open Saturdays"]],
+    ];
+    let tx = 0;
+    const renderTx = () => {
+      $("txList").innerHTML = TX.map(([n, , d, p], i) => `<button role="tab" class="${i === tx ? "on" : ""}" aria-selected="${i === tx}"><span>${n}</span><small>${d} · ${p}</small><i class="ri-arrow-right-line"></i></button>`).join("");
+      const [n, img, d, p, txt, list] = TX[tx];
+      $("txPanel").innerHTML = `<div class="tx__img"><img src="https://images.unsplash.com/photo-${img}?auto=format&fit=crop&w=1100&q=80" alt="${n} at Clearview" /></div><div class="tx__body"><div class="tx__meta"><span><i class="ri-time-line"></i>${d}</span><span><i class="ri-price-tag-3-line"></i>${p}</span></div><h3>${n}</h3><p>${txt}</p><ul>${list.map((l) => `<li><i class="ri-check-line"></i>${l}</li>`).join("")}</ul><a href="#book" class="btn">Book ${n === "Invisalign" ? n : n.toLowerCase()} <i class="ri-arrow-right-line"></i></a></div>`;
+      $("txPanel").classList.remove("swap"); void $("txPanel").offsetWidth; $("txPanel").classList.add("swap");
+    };
+    $("txList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { tx = [...$("txList").children].indexOf(b); renderTx(); } });
+    renderTx();
+
+    /* ---------- Next opening (live, from opening hours) ---------- */
+    (() => {
+      const now = new Date(), d = now.getDay(), h = now.getHours() + now.getMinutes() / 60;
+      const open = d >= 1 && d <= 6, close = d === 6 ? 14 : 19;
+      let txt;
+      if (open && h < close - 1.5) { const t = Math.max(Math.ceil(h * 2) / 2 + 1, 8); txt = `today at ${Math.floor(t) > 12 ? Math.floor(t) - 12 : Math.floor(t)}:${t % 1 ? "30" : "00"} ${t >= 12 ? "pm" : "am"}`; }
+      else { const nd = new Date(now); do { nd.setDate(nd.getDate() + 1); } while (nd.getDay() === 0); txt = `${nd.toLocaleDateString("en-US", { weekday: "long" })} at 8:30 am`; }
+      $("nextSlot").textContent = txt;
+    })();
+
+    /* ---------- Motion ---------- */
+    const rm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll(".hero .container > div:first-child > *").forEach((el, i) => { el.classList.add("hin"); el.style.setProperty("--d", 0.1 + i * 0.1 + "s"); });
+    document.querySelectorAll(".sh2, .tx, .about__imgs, .about .container > div:last-child, .booking .container > div, .doctor, .doc, .split .container > div, .cta, .footer__grid > div").forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", (i % 3) * 0.08 + "s"); });
+    const ioCv = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); ioCv.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => ioCv.observe(el));
+    if (!rm) addEventListener("scroll", () => { const img = document.querySelector(".hero__img img"); if (img) img.style.transform = `translateY(${Math.min(scrollY, 600) * 0.06}px)`; }, { passive: true });
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
   </script>
 </body>
 </html>
