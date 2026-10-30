@@ -281,3 +281,20 @@ details p { padding-bottom: 18px; }
   .sec { grid-template-columns: 1fr; }
   .demo .two { grid-template-columns: 1fr; }
 }
+
+/* Bring the product to life: the hero conversation plays out; security as a list, not tiles */
+.hero h1 { letter-spacing: -.035em; }
+.hero h1 .u { position: relative; white-space: nowrap; }
+.hero h1 .u::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .12em; border-radius: 4px; background: var(--primary); transform: scaleX(0); transform-origin: left; animation: cvU 1s cubic-bezier(.2,.8,.2,1) forwards .6s; }
+@keyframes cvU { to { transform: scaleX(1); } }
+.msgs.play > * { opacity: 0; transform: translateY(10px); transition: opacity .5s, transform .5s cubic-bezier(.2,.8,.2,1); }
+.msgs.play > .show { opacity: 1; transform: none; }
+.typing { display: inline-flex; gap: 4px; padding: 10px 14px; border-radius: 14px; background: var(--primary-soft, #efeaff); align-self: flex-start; }
+.typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); animation: cvDot 1s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes cvDot { 50% { transform: translateY(-4px); opacity: .5; } }
+.sec { grid-template-columns: 1fr 1fr !important; gap: 0 48px !important; background: none !important; border: 0 !important; border-radius: 0 !important; }
+.sec div { display: grid; grid-template-columns: 34px 1fr; gap: 2px 12px; padding: 22px 0 !important; border-top: 1px solid var(--line); background: none !important; }
+.sec i { grid-row: span 2; margin-top: 2px; }
+.sec b { margin: 0 !important; }
+@media (max-width: 700px) { .sec { grid-template-columns: 1fr !important; } }

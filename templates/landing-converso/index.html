@@ -31,7 +31,7 @@
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="container">
-      <h1>The help desk with an AI agent that actually closes tickets</h1>
+      <h1>The help desk with an AI agent that <span class="u">actually closes</span> tickets.</h1>
       <p class="hero__lead">Converso answers customers from your own help centre, checks orders and issues refunds within the limits you set — and passes everything else to your team with the full story.</p>
       <div class="hero__btns"><a href="#pricing" class="btn">Start 14-day free trial</a><a href="#demo" class="btn btn--ghost">Book a demo</a></div>
       <p class="hero__note">No credit card required. Works alongside Zendesk, Intercom and Gorgias.</p>
@@ -50,7 +50,7 @@
           </div>
           <div class="thread">
             <div class="thread__head"><b>Order not delivered</b><span>Web chat · English · Lumen Store</span></div>
-            <div class="msgs">
+            <div class="msgs" id="msgs">
               <div class="m m--in"><p>Hi, my order hasn't arrived and it was supposed to come yesterday. Order number is LM-20481.</p><small>Emma · 10:41</small></div>
               <div class="action"><i class="ri-checkbox-circle-fill"></i><span>Looked up <b>LM-20481</b> in Shopify · tracking checked with Royal Mail</span></div>
               <div class="m m--ai"><p>Sorry about the wait, Emma. Your parcel was delayed at the Bristol depot and is now out for delivery — Royal Mail expects it today before 6pm. I've refunded the £4.95 delivery charge to your Visa ending 4417.</p>
@@ -220,6 +220,20 @@
     document.getElementById("demo-form").addEventListener("submit", (e) => { e.preventDefault(); document.getElementById("demo-box").classList.add("done"); });
     const io = new IntersectionObserver((en) => en.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: 0.1 });
     document.querySelectorAll(".fade").forEach((el) => io.observe(el));
+
+    /* Hero thread plays out: customer message, AI looks it up, types, replies */
+    (() => {
+      const box = document.getElementById("msgs"); if (!box || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const items = [...box.children], typing = document.createElement("div");
+      typing.className = "typing"; typing.innerHTML = "<i></i><i></i><i></i>";
+      box.classList.add("play");
+      const steps = [[0, 500], [1, 1400], ["t", 2100], [2, 3300], [3, 4600]];
+      steps.forEach(([k, ms]) => setTimeout(() => {
+        if (k === "t") { box.insertBefore(typing, items[2]); requestAnimationFrame(() => typing.classList.add("show")); return; }
+        if (k === 2) typing.remove();
+        items[k].classList.add("show");
+      }, ms));
+    })();
   </script>
 </body>
 </html>
