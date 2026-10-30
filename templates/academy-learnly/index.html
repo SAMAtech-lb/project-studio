@@ -23,16 +23,30 @@
     <div class="container">
       <div>
         <span class="tag"><i class="ri-fire-fill"></i> 1,200+ courses · new every week</span>
-        <h1>Learn the skills that <mark>move</mark> your <span>career</span> forward.</h1>
+        <h1>Learn the skills that move your <span>career</span> forward.</h1>
         <p>Practical, project-based courses taught by people who actually do the work — at companies like Northwind, Lumen and Arcade.</p>
         <form class="search" id="heroSearch"><i class="ri-search-line"></i><input id="heroQ" placeholder="What do you want to learn?" /><button class="btn">Search</button></form>
         <div class="popular">Popular: <button>UX Design</button><button>Python</button><button>Marketing</button><button>Excel</button></div>
       </div>
       <div class="hero__visual">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Students learning" />
-        <div class="float float--a"><i class="ri-medal-line"></i><div><b>Certificates</b>Recognised by employers</div></div>
-        <div class="float float--b"><i class="ri-play-circle-line"></i><div><b>12,400+ hours</b>of video lessons</div></div>
-        <div class="float float--c"><div class="avatars"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="" /></div><div><b>840k learners</b>in 190 countries</div></div>
+        <div class="player">
+          <div class="player__screen">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="UX Design Fundamentals, lesson 4" />
+            <button class="player__play" id="pPlay" aria-label="Play lesson preview"><i class="ri-pause-fill"></i></button>
+            <span class="player__cc">CC</span>
+            <div class="player__bar"><i id="pBar"></i></div>
+          </div>
+          <div class="player__info">
+            <p><small>UX Design Fundamentals · with Sara Lindqvist</small><b id="pTitle">4. Turning research into a user flow</b></p>
+            <ol class="player__list" id="pList">
+              <li class="done"><i class="ri-checkbox-circle-fill"></i>Interviewing five users <em>12:40</em></li>
+              <li class="done"><i class="ri-checkbox-circle-fill"></i>Affinity mapping <em>09:15</em></li>
+              <li class="done"><i class="ri-checkbox-circle-fill"></i>Writing a problem statement <em>07:30</em></li>
+              <li class="on"><i class="ri-play-circle-fill"></i>Turning research into a user flow <em id="pTime">0:00 / 11:20</em></li>
+              <li><i class="ri-lock-line"></i>Wireframing the flow <em>14:05</em></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -181,6 +195,20 @@
     $("ctaForm").addEventListener("submit", (e) => { e.preventDefault(); toast("Welcome to Learnly! Check your inbox."); e.target.reset(); });
     $("burger").onclick = () => $("nav").classList.toggle("open");
     renderCats(); renderCourses();
+
+    /* Lesson preview player: progress runs, play/pause toggles */
+    (() => {
+      const total = 680; let t = 214, playing = !matchMedia("(prefers-reduced-motion: reduce)").matches, timer;
+      const fmt = (x) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}`;
+      const draw = () => { document.getElementById("pBar").style.width = (t / total) * 100 + "%"; document.getElementById("pTime").textContent = `${fmt(t)} / ${fmt(total)}`; document.getElementById("pPlay").innerHTML = `<i class="ri-${playing ? "pause" : "play"}-fill"></i>`; };
+      const run = () => { clearInterval(timer); if (playing) timer = setInterval(() => { t = t >= total ? 0 : t + 1; draw(); }, 1000); };
+      document.getElementById("pPlay").addEventListener("click", () => { playing = !playing; draw(); run(); });
+      draw(); run();
+    })();
+    /* Scroll reveals */
+    document.querySelectorAll(".sh, .cat-grid, .course, .how__step, .teacher, .plan, .tcard, .cta").forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", (i % 4) * 0.07 + "s"); });
+    const lrIo = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); lrIo.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => lrIo.observe(el));
   </script>
 </body>
 </html>
