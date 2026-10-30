@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-marginalia",
+    name: "Marginalia Books",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-marginalia/index.html",
+    description: "Independent bookshop store: photo hero with book search, genre tiles, bestseller/new/offer tabs with photographic covers, quick view with formats, book of the month, staff picks, author events with seat reservation, gift cards, basket drawer and visit block.",
+    tags: ["Bookshop", "Search", "Events", "Basket"],
+    palette: ["#ffffff", "#1f3d2c", "#c8402b", "#f6f2ea"],
+    fonts: "Newsreader · Inter Tight",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-30",
+  },
+  {
     id: "shop-cordwain",
     name: "Fieldstone Shoe Co.",
     category: "E-commerce",
@@ -646,19 +659,6 @@ const TEMPLATES = [
     fonts: "Tenor Sans · Inter",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-25",
-  },
-  {
-    id: "shop-marginalia",
-    name: "Marginalia Books",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-marginalia/index.html",
-    description: "Independent bookshop with a staff-picks shelf of code-drawn spines that pull out and show the cover on hover, designed-in-code covers for fictional titles, genre filter and live search, book pages with a bookseller's note, blind-date parcels, events with seat reservation, a monthly book club and a basket.",
-    tags: ["Bookshop", "Interactive shelf", "Blind date with a book", "Book club"],
-    palette: ["#fafaf7", "#161616", "#1f3b2d", "#e0442b"],
-    fonts: "Newsreader · Inter Tight",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-23",
   },
   {
     id: "shop-chronica",
