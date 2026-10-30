@@ -89,7 +89,7 @@ every template in the "ready" list.
 - [x] Azure Bay → rebuilt as a bright Mallorca seafront hotel: live conditions strip, pinned horizontal "day" story, two-month nightly-price booking calendar
 - [x] Havenly → rebuilt: working search + map pins, 13 listings with full listing pages (gallery, monthly cost, tour booking), neighborhood guides, valuation wizard
 - [x] Loomwell → hero line reveal + image wipe + parallax, scroll reveals, values marquee; new sections: open-pricing cost breakdown (animated bars), Made in Porto journey (scroll-lit), community "shop it" grid, FAQ
-- [ ] Ginger & Moss → keep the cat, deepen the sections
+- [x] Ginger & Moss → cat hero untouched (now fades in); added brands marquee, 3-tap kit finder that builds a basket, rescue adoption cards, FAQ, scroll reveals; fixed phone header overflow
 - [ ] Clearview Dental → de-vibe
 
 ### Phase E: de-vibe the 9
