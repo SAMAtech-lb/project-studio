@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-chronica",
+    name: "Chronica",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-chronica/index.html",
+    description: "Light, luxurious Geneva boutique for certified pre-owned Rolex, Omega and Breitling: editorial hero, house tiles, a 'Find your watch' viewer with in-stock thumbnails, reference/year/condition/papers and price, reservations drawer, a live sweeping-seconds dial for the workshop story, heritage carousel and private-viewing booking.",
+    tags: ["Luxury watches", "Pre-owned Rolex", "Reserve & view", "Live dial"],
+    palette: ["#fbf9f5", "#10161f", "#a8834a", "#0d1a2c"],
+    fonts: "Bodoni Moda · Cinzel · Jost",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-19",
+  },
+  {
     id: "shop-nook",
     name: "Nook",
     category: "E-commerce",
@@ -633,19 +646,6 @@ const TEMPLATES = [
     fonts: "Montserrat · Inter",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-10-27",
-  },
-  {
-    id: "shop-chronica",
-    name: "Chronica",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-chronica/index.html",
-    description: "A clocks & watches store with a live ticking analog clock and world-time hero, category cards, product grid with category chips, price slider, search and sort, a watch personaliser (strap, live caseback engraving preview, gift box), weekend-sale countdown, repair booking form, open-now store hours and a cart drawer.",
-    tags: ["Watches", "Clocks", "Live clock", "Engraving configurator", "Repair booking"],
-    palette: ["#ffffff", "#13201c", "#0f6b55", "#e9a23b"],
-    fonts: "Red Hat Display",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-10-26",
   },
   {
     id: "shop-velora",

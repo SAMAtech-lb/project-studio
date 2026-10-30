@@ -85,7 +85,7 @@ every template in the "ready" list.
 - [x] Extra portfolio → **Theo Okafor** (portfolio-theo): sports photographer in the Pulse black + lime palette the owner liked
 
 ### Phase D: rebuilds
-- [ ] Chronica → luxury watch boutique
+- [x] Chronica → rebuilt as a light luxury Geneva boutique for certified pre-owned Rolex / Omega / Breitling (real watch photos show real logos, so a fictional "maison" looked fake); live sweeping dial, find-your-watch viewer, reservations, private viewing booking
 - [ ] Azure Bay → living resort site
 - [ ] Havenly → credible property site
 - [ ] Loomwell → motion + more sections
