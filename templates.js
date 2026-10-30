@@ -412,6 +412,19 @@ const TEMPLATES = [
 
   /* ---------------- Business ---------------- */
   {
+    id: "realestate-havenly",
+    name: "Havenly",
+    category: "Business",
+    status: "live",
+    path: "templates/realestate-havenly/index.html",
+    description: "Miami real estate brokerage with a working buy/rent search (area, type, beds, max price), quick filters and sort, a results grid synced to a map with price pins, full listing pages (gallery, facts, features, monthly cost estimate, tour booking, save), neighborhood guides with median prices, a four-step home valuation wizard, agents and reviews.",
+    tags: ["Real estate", "Search + map", "Listing pages", "Valuation wizard"],
+    palette: ["#0f1e3d", "#c8a35f", "#f6f7f9", "#ffffff"],
+    fonts: "Outfit",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-21",
+  },
+  {
     id: "hotel-azure",
     name: "Azure Bay",
     category: "Business",
@@ -501,19 +514,6 @@ const TEMPLATES = [
     fonts: "Lexend · DM Sans",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-10-21",
-  },
-  {
-    id: "realestate-havenly",
-    name: "Havenly",
-    category: "Business",
-    status: "live",
-    path: "templates/realestate-havenly/index.html",
-    description: "A real-estate agency site with working property search (buy/rent, type, beds, price), saved favourites, mortgage calculator and agent profiles.",
-    tags: ["Real estate", "Search filters", "Mortgage calculator"],
-    palette: ["#0f1e3d", "#c8a35f", "#f6f7f9"],
-    fonts: "Outfit",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-10-11",
   },
   {
     id: "gym-ironclad",
