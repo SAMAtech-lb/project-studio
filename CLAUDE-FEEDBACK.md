@@ -117,3 +117,23 @@ then commit and push to `main` in batches.
   Extra: a real 390px phone-overflow check found 13 templates wider than the screen
   (Nocturne calendar, Flamebite menu, Halo, Ella, Atlas, Whisker, Rami, Frolla, Orra, ...). Fixed the ones
   that broke layout or hid the menu; Frolla strip / Orra rings are clipped by html overflow and harmless.
+
+---
+
+## 5. Round 2 (2026-10-30): six new shops
+
+Owner asked for a candle shop, a book shop, a shoe shop, a "rich" (luxury) shop and makeup ("as many as needed"),
+picking theme, colours and design per niche, optionally guided by the taste-skill (github.com/Leonxlnx/taste-skill).
+
+Taste-skill rules adopted: headlines ≤ 2 lines, ≤ 2 typefaces, no pill badges / "01 02" step labels / gradient
+blobs / glows, real photos (no visible real brands), 8+ real motions with one signature move per site.
+Not adopted where it conflicts with the owner's favourites (bold stats, colour).
+
+| Shop | Concept | Palette | Type | Signature |
+|---|---|---|---|---|
+| Northlight (candles) | small-batch soy candles | wax white, ink, moss, flame amber | Bricolage Grotesque | "Lights out" switch: page goes dark, jars glow, cursor carries candlelight; jars drawn in code with live flames |
+| Marginalia (books) | independent bookshop | paper white, bottle green, signal red | Newsreader + Inter Tight | pull-out book spines shelf; blind-date-with-a-book; covers designed in code |
+| Cordwain (shoes) | handmade leather shoes | bone, espresso, cognac | Archivo | live shoe customiser (leather, sole, laces) drawn in SVG; size finder |
+| Atelier Noor (luxury) | fashion house | white, black, oxblood | Tenor Sans + Inter | full-bleed scroll lookbook, private appointment |
+| Rouge Club (makeup, bold) | colour cosmetics | white, black, lipstick red | Inter Tight | lipstick try-on on an SVG mouth, shade finder |
+| Dew Theory (makeup, clean) | skin-first makeup | butter yellow, ink, sage | Manrope | skin-tint shade matcher + routine builder |

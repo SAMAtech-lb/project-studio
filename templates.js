@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-northlight",
+    name: "Northlight",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-northlight/index.html",
+    description: "Small-batch candle shop where every product is a jar drawn in code with a live flickering flame. A 'Lights out' switch turns the whole site to candlelight with a glow that follows the cursor. Includes a scent-family filter, a scent finder with a sampler, a three-candle gift box builder with a note, jar refills, cart drawer and studio story.",
+    tags: ["Candles", "Lights-out mode", "Gift box builder", "Scent finder"],
+    palette: ["#fbfaf7", "#1d1b19", "#f5a524", "#3d4a32"],
+    fonts: "Bricolage Grotesque",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-22",
+  },
+  {
     id: "shop-chronica",
     name: "Chronica",
     category: "E-commerce",

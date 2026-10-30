@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northlight Candle Co. — Small-batch soy candles, poured in Edinburgh</title>
+  <meta name="description" content="Northlight pours soy and coconut wax candles by hand in Edinburgh. Woody, floral, fresh and gourmand scents, 60-hour burns, refills for life. Find your scent and build a gift box." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo" aria-label="Northlight home"><span class="logo__flame"></span>Northlight</a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#finder">Scent finder</a>
+        <a href="#gift">Gift box</a>
+        <a href="#refill">Refills</a>
+        <a href="#studio">Studio</a>
+      </nav>
+      <button class="switch" id="lights" aria-pressed="false" aria-label="Lights out"><span class="switch__knob"></span><span class="switch__txt">Lights out</span></button>
+      <button class="bag" id="bagBtn" aria-label="Open bag"><i class="ri-shopping-bag-3-line"></i><b id="bagCount">0</b></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__in">
+        <div class="hero__copy">
+          <h1 class="hero__title"><span class="ln"><span>Candles worth</span></span><span class="ln"><span>staying in for.</span></span></h1>
+          <p class="hero__lead fade">Soy and coconut wax, cotton wicks and fragrance oils blended in our Leith studio. Every candle burns for 60 hours, clean and slow, and every jar can be refilled for life.</p>
+          <div class="hero__cta fade"><a href="#shop" class="btn">Shop candles <i class="ri-arrow-right-line"></i></a><a href="#finder" class="btn btn--ghost">Find my scent</a></div>
+          <p class="hero__note fade"><i class="ri-truck-line"></i> Free UK delivery over £45 · posted the same day before 2pm</p>
+        </div>
+        <div class="hero__stage">
+          <figure class="hero__photo"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1300&q=80" alt="Two lit candles on a wooden table" /></figure>
+          <div class="hero__jar" id="heroJar"></div>
+        </div>
+      </div>
+      <div class="scents" aria-hidden="true"><div class="scents__track"><span>Cedar &amp; Smoke</span><span>Fig Leaf</span><span>Sea Salt &amp; Moss</span><span>Black Tea</span><span>Wild Rose</span><span>Burnt Honey</span><span>Juniper</span><span>Amber Library</span><span>Cedar &amp; Smoke</span><span>Fig Leaf</span><span>Sea Salt &amp; Moss</span><span>Black Tea</span><span>Wild Rose</span><span>Burnt Honey</span><span>Juniper</span><span>Amber Library</span></div></div>
+    </section>
+
+    <!-- Shop -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="head">
+          <h2 class="h2">The collection</h2>
+          <div class="fams" id="fams" role="tablist" aria-label="Scent family"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- Lights out moment -->
+    <section class="dark" id="dark">
+      <img class="dark__img" src="https://images.unsplash.com/photo-1570823635306-250abb06d4b3?auto=format&fit=crop&w=2000&q=80" alt="Hands cupped around a lit candle in a dark room" />
+      <div class="container dark__in">
+        <h2 class="dark__title">Made for the hour after the lights go off.</h2>
+        <p>Move your cursor. That glow is roughly what one Northlight candle gives a small room. Enough to read by, never enough to keep you awake.</p>
+      </div>
+    </section>
+
+    <!-- Scent finder -->
+    <section class="section finder-sec" id="finder">
+      <div class="container finder">
+        <div class="finder__copy">
+          <h2 class="h2">Not sure what you like?</h2>
+          <p>Tell us where the candle is going and how you want the room to feel. We'll match you to three scents, and you can order a sampler of all three for £12.</p>
+        </div>
+        <div class="quiz" id="quiz">
+          <div class="quiz__q"><h3>Where will it burn?</h3><div class="chips" data-q="room"><button data-v="living">Living room</button><button data-v="bed">Bedroom</button><button data-v="bath">Bathroom</button><button data-v="kitchen">Kitchen</button><button data-v="desk">Desk</button></div></div>
+          <div class="quiz__q"><h3>How should it feel?</h3><div class="chips" data-q="mood"><button data-v="calm">Calm</button><button data-v="cosy">Cosy</button><button data-v="fresh">Fresh</button><button data-v="bright">Bright</button></div></div>
+          <div class="quiz__out" id="quizOut"><p class="quiz__wait">Pick a room and a mood to see your matches.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift box -->
+    <section class="section gift-sec" id="gift">
+      <div class="container gift">
+        <div class="gift__box" id="giftBox" aria-live="polite">
+          <div class="gift__slots" id="giftSlots"></div>
+          <div class="gift__ribbon" aria-hidden="true"></div>
+        </div>
+        <div class="gift__panel">
+          <h2 class="h2">Build a gift box</h2>
+          <p>Choose any three candles. We add a box of long matches, a handwritten note and wrap it in recycled tissue. You save 15%.</p>
+          <div class="gift__pick" id="giftPick"></div>
+          <label class="gift__note"><span>Your note</span><textarea id="giftNote" rows="2" maxlength="140" placeholder="Happy new flat. Love, Sam"></textarea></label>
+          <div class="gift__total"><span>Gift box total</span><b id="giftTotal">£0</b><s id="giftWas"></s></div>
+          <button class="btn btn--full" id="giftAdd" disabled>Add gift box to bag</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Refills -->
+    <section class="section" id="refill">
+      <div class="container refill">
+        <figure class="refill__img"><img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?auto=format&fit=crop&w=1200&q=80" alt="A candle burning on a wooden table" loading="lazy" /></figure>
+        <div>
+          <h2 class="h2">Keep the jar. We'll refill it.</h2>
+          <p>Post your empty jar back with the free label in every box. We clean it, pour a fresh candle in any scent and send it home for £18, a third less than a new one.</p>
+          <div class="steps" id="steps">
+            <div class="step"><i class="ri-mail-send-line"></i><div><b>Post it back</b><span>Free returns label in every box</span></div></div>
+            <div class="step"><i class="ri-drop-line"></i><div><b>We clean and pour</b><span>Within five working days</span></div></div>
+            <div class="step"><i class="ri-home-heart-line"></i><div><b>It comes home</b><span>£18, any scent, any season</span></div></div>
+          </div>
+          <p class="refill__count"><b id="jarCount">0</b> jars refilled since 2019</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio -->
+    <section class="section studio-sec" id="studio">
+      <div class="container">
+        <div class="head"><h2 class="h2">Poured in Leith, by four people.</h2></div>
+        <div class="studio">
+          <figure class="studio__a"><img src="https://images.unsplash.com/photo-1602523961358-f9f03dd557db?auto=format&fit=crop&w=1100&q=80" alt="Three pillar candles burning in the studio" loading="lazy" /></figure>
+          <div class="studio__text">
+            <p>Isla started Northlight at her kitchen table in 2017 after one too many candles that smelled like nothing once lit. Today the four of us pour around 600 candles a week, in batches of 40, in a small studio off Constitution Street.</p>
+            <p>We test every scent for two weeks before it goes on sale, in real rooms, at real temperatures. If it doesn't fill a living room by the second hour, it doesn't make the cut.</p>
+          </div>
+          <figure class="studio__b"><img src="https://images.unsplash.com/photo-1596433809252-260c2745dfdd?auto=format&fit=crop&w=900&q=80" alt="A freshly poured candle burning" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews-sec">
+      <div class="container">
+        <div class="head"><h2 class="h2">From people who burn a lot of candles</h2><p class="rating">4.9 out of 5 · 3,180 reviews</p></div>
+        <div class="reviews" id="reviews"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <p class="footer__big">Light one tonight.</p>
+        <form class="news" id="news"><input type="email" required placeholder="Email for new scents and studio sales" aria-label="Email" /><button class="btn">Sign up</button></form>
+      </div>
+      <p class="news__msg" id="newsMsg"></p>
+      <div class="footer__grid">
+        <div><a href="#top" class="logo"><span class="logo__flame"></span>Northlight</a><p>Unit 4, 38 Constitution Street<br />Leith, Edinburgh EH6 6RS</p></div>
+        <div><h4>Shop</h4><a href="#shop">All candles</a><a href="#gift">Gift boxes</a><a href="#refill">Refills</a><a href="#finder">Sampler</a></div>
+        <div><h4>Help</h4><a href="#">Delivery</a><a href="#">Candle care</a><a href="#">Wholesale</a><a href="#">Contact</a></div>
+        <div><h4>Studio</h4><p>Open Saturdays 10–4</p><p>hello@northlightcandles.co.uk</p></div>
+      </div>
+      <p class="footer__bottom">© <span id="year"></span> Northlight Candle Co. · Photography from Unsplash</p>
+    </div>
+  </footer>
+
+  <!-- Bag -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Your bag</h3><button id="drawerClose" aria-label="Close bag"><i class="ri-close-line"></i></button></div>
+    <div class="free" id="free"></div>
+    <ul class="drawer__list" id="drawerList"></ul>
+    <div class="drawer__foot"><div class="drawer__row"><span>Subtotal</span><b id="dSub">£0</b></div><button class="btn btn--full" id="checkout">Checkout</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const gbp = (n) => "£" + (n % 1 ? n.toFixed(2) : n);
+    const toast = (t) => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("on"), 2400); };
+
+    /* =====================================================
+       Catalogue: every candle is drawn in code (jar + wax + label + live flame)
+       ===================================================== */
+    const C = [
+      { id: "cedar", n: "Cedar & Smoke", fam: "Woody", notes: "Cedarwood, birch tar, vetiver", wax: "#d8c9b1", glass: "#2a2522", p: 34, rooms: ["living", "desk"], moods: ["cosy", "calm"] },
+      { id: "library", n: "Amber Library", fam: "Woody", notes: "Amber, old paper, tonka", wax: "#e2c79a", glass: "#5a3a1e", p: 34, rooms: ["living", "bed", "desk"], moods: ["cosy"] },
+      { id: "juniper", n: "Juniper", fam: "Woody", notes: "Juniper berry, pine needle, frost", wax: "#dfe3d6", glass: "#26372b", p: 32, rooms: ["living", "kitchen"], moods: ["fresh", "calm"] },
+      { id: "rose", n: "Wild Rose", fam: "Floral", notes: "Dog rose, pink pepper, moss", wax: "#ecd2cf", glass: "#e9e4dc", p: 32, rooms: ["bed", "bath"], moods: ["calm", "bright"] },
+      { id: "fig", n: "Fig Leaf", fam: "Floral", notes: "Green fig, coconut, cedar", wax: "#d8dfc6", glass: "#e9e4dc", p: 32, rooms: ["living", "bath", "desk"], moods: ["fresh", "bright"] },
+      { id: "sea", n: "Sea Salt & Moss", fam: "Fresh", notes: "Sea salt, oakmoss, sage", wax: "#d9e2e0", glass: "#203238", p: 30, rooms: ["bath", "kitchen"], moods: ["fresh", "calm"] },
+      { id: "tea", n: "Black Tea", fam: "Fresh", notes: "Assam, bergamot, lemon peel", wax: "#e7d9bd", glass: "#e9e4dc", p: 30, rooms: ["kitchen", "desk"], moods: ["bright", "fresh"] },
+      { id: "honey", n: "Burnt Honey", fam: "Gourmand", notes: "Heather honey, smoked vanilla", wax: "#e9c98f", glass: "#2a2522", p: 34, rooms: ["living", "bed"], moods: ["cosy"] },
+    ];
+    const P = (id) => C.find((c) => c.id === id);
+    const jar = (c, big) => `<div class="jar ${big ? "jar--big" : ""}" style="--wax:${c.wax};--glass:${c.glass}"><span class="jar__glow"></span><span class="jar__flame"></span><span class="jar__wick"></span><span class="jar__body"><span class="jar__wax"></span><span class="jar__label"><b>${c.n}</b><small>${c.fam} · 220g</small></span></span></div>`;
+    $("heroJar").innerHTML = jar(P("cedar"), true);
+
+    /* Shop grid */
+    const FAMS = ["All", "Woody", "Floral", "Fresh", "Gourmand"];
+    let fam = "All";
+    const renderGrid = () => {
+      $("fams").innerHTML = FAMS.map((f) => `<button role="tab" class="${f === fam ? "on" : ""}" aria-selected="${f === fam}">${f}</button>`).join("");
+      $("grid").innerHTML = C.filter((c) => fam === "All" || c.fam === fam).map((c, i) => `
+        <article class="card" style="--d:${i * 0.06}s">
+          <div class="card__stage" style="--tint:${c.wax}">${jar(c)}</div>
+          <div class="card__body"><div><h3>${c.n}</h3><p>${c.notes}</p></div><b>${gbp(c.p)}</b></div>
+          <button class="card__add" data-add="${c.id}">Add to bag</button>
+        </article>`).join("");
+    };
+    $("fams").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { fam = b.textContent; renderGrid(); } });
+    renderGrid();
+
+    /* =====================================================
+       Bag
+       ===================================================== */
+    let bag = [];
+    try { bag = JSON.parse(localStorage.getItem("northlightBag") || "[]"); } catch (e) {}
+    const renderBag = () => {
+      const n = bag.reduce((s, i) => s + i.q, 0), sub = bag.reduce((s, i) => s + i.q * i.p, 0), left = Math.max(0, 45 - sub);
+      $("bagCount").textContent = n; $("bagCount").classList.toggle("on", n > 0);
+      $("free").innerHTML = `<p>${left ? `${gbp(left)} more for free delivery` : "Free delivery unlocked"}</p><span><i style="width:${Math.min(100, (sub / 45) * 100)}%"></i></span>`;
+      $("drawerList").innerHTML = bag.length ? bag.map((i, k) => `<li><div class="mini" style="--wax:${i.wax};--glass:${i.glass}"></div><div><b>${i.n}</b><small>${i.sub || "220g · 60-hour burn"}</small><span>${gbp(i.p)}</span></div><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></li>`).join("") : `<li class="empty">Nothing here yet. The Cedar &amp; Smoke is a good place to start.</li>`;
+      $("dSub").textContent = gbp(sub);
+      try { localStorage.setItem("northlightBag", JSON.stringify(bag)); } catch (e) {}
+    };
+    const addItem = (item) => { const f = bag.find((i) => i.key === item.key); f ? f.q++ : bag.push({ ...item, q: 1 }); renderBag(); toast(`${item.n} added`); $("bagBtn").classList.remove("bump"); void $("bagBtn").offsetWidth; $("bagBtn").classList.add("bump"); };
+    document.addEventListener("click", (e) => { const a = e.target.closest("[data-add]"); if (!a) return; const c = P(a.dataset.add); addItem({ key: c.id, n: c.n, p: c.p, wax: c.wax, glass: c.glass }); });
+    $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const i = bag[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) bag.splice(+b.dataset.k, 1); renderBag(); });
+    const openBag = () => { document.body.classList.add("bag-open"); $("drawer").setAttribute("aria-hidden", "false"); };
+    const closeBag = () => { document.body.classList.remove("bag-open"); $("drawer").setAttribute("aria-hidden", "true"); };
+    $("bagBtn").addEventListener("click", openBag); $("drawerClose").addEventListener("click", closeBag); $("scrim").addEventListener("click", closeBag);
+    $("checkout").addEventListener("click", () => { if (!bag.length) return; bag = []; renderBag(); closeBag(); toast("Order placed. We'll email your tracking link."); });
+    renderBag();
+
+    /* =====================================================
+       Lights out: the signature switch
+       ===================================================== */
+    const setDark = (on) => { document.body.classList.toggle("lights-out", on); $("lights").setAttribute("aria-pressed", on); $("lights").querySelector(".switch__txt").textContent = on ? "Lights on" : "Lights out"; try { localStorage.setItem("northlightDark", on ? "1" : ""); } catch (e) {} };
+    $("lights").addEventListener("click", () => setDark(!document.body.classList.contains("lights-out")));
+    try { if (localStorage.getItem("northlightDark")) setDark(true); } catch (e) {}
+    // cursor candlelight (page-wide when lights are out, and always inside the dark section)
+    let gx = innerWidth / 2, gy = innerHeight / 2, cx = gx, cy = gy;
+    addEventListener("pointermove", (e) => { gx = e.clientX; gy = e.clientY; });
+    const glowLoop = () => { cx += (gx - cx) * 0.12; cy += (gy - cy) * 0.12; $("glow").style.transform = `translate(${cx}px, ${cy}px)`; const d = $("dark").getBoundingClientRect(); $("dark").style.setProperty("--x", `${cx - d.left}px`); $("dark").style.setProperty("--y", `${cy - d.top}px`); requestAnimationFrame(glowLoop); };
+    glowLoop();
+
+    /* =====================================================
+       Scent finder
+       ===================================================== */
+    const Q = {};
+    document.querySelectorAll("#quiz .chips").forEach((g) => g.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      g.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); Q[g.dataset.q] = b.dataset.v;
+      if (!Q.room || !Q.mood) return;
+      const scored = C.map((c) => ({ c, s: (c.rooms.includes(Q.room) ? 2 : 0) + (c.moods.includes(Q.mood) ? 3 : 0) })).sort((a, b) => b.s - a.s).slice(0, 3).map((x) => x.c);
+      $("quizOut").innerHTML = `<h3>Your three</h3><div class="match">${scored.map((c, i) => `<div class="match__i" style="--d:${i * 0.08}s"><div class="match__jar">${jar(c)}</div><b>${c.n}</b><small>${c.notes}</small></div>`).join("")}</div><button class="btn btn--full" id="sampler">Order the sampler · £12</button>`;
+      $("sampler").addEventListener("click", () => addItem({ key: "sampler-" + scored.map((c) => c.id).join("-"), n: "Scent sampler", sub: scored.map((c) => c.n).join(", "), p: 12, wax: scored[0].wax, glass: scored[0].glass }));
+    }));
+
+    /* =====================================================
+       Gift box builder
+       ===================================================== */
+    let gift = [];
+    const renderGift = () => {
+      $("giftSlots").innerHTML = [0, 1, 2].map((i) => gift[i] ? `<div class="slot slot--on" data-rm="${i}" title="Remove">${jar(P(gift[i]))}</div>` : `<div class="slot"><span>${i + 1}</span></div>`).join("");
+      $("giftPick").innerHTML = C.map((c) => `<button class="${gift.includes(c.id) ? "on" : ""}" data-g="${c.id}" ${!gift.includes(c.id) && gift.length >= 3 ? "disabled" : ""}><i style="background:${c.wax}"></i>${c.n}</button>`).join("");
+      const was = gift.reduce((s, id) => s + P(id).p, 0) + (gift.length ? 4 : 0), now = Math.round(was * 0.85);
+      $("giftTotal").textContent = gbp(now); $("giftWas").textContent = gift.length ? gbp(was) : "";
+      $("giftAdd").disabled = gift.length < 3;
+      $("giftBox").classList.toggle("full", gift.length === 3);
+    };
+    $("giftPick").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b || b.disabled) return; const id = b.dataset.g; gift = gift.includes(id) ? gift.filter((x) => x !== id) : [...gift, id]; renderGift(); });
+    $("giftSlots").addEventListener("click", (e) => { const s = e.target.closest("[data-rm]"); if (s) { gift.splice(+s.dataset.rm, 1); renderGift(); } });
+    $("giftAdd").addEventListener("click", () => { const was = gift.reduce((s, id) => s + P(id).p, 0) + 4; const c = P(gift[0]); addItem({ key: "gift-" + gift.join("-") + Date.now(), n: "Gift box", sub: gift.map((id) => P(id).n).join(", ") + ($("giftNote").value ? ` · “${$("giftNote").value}”` : ""), p: Math.round(was * 0.85), wax: c.wax, glass: c.glass }); gift = []; $("giftNote").value = ""; renderGift(); openBag(); });
+    renderGift();
+
+    /* Reviews */
+    const R = [["Cedar & Smoke smells like a cabin with the stove going. Mine burned for 63 hours, I counted.", "Morag D.", "Glasgow"], ["I've refilled the same Fig Leaf jar four times now. The refill post-back is genuinely easy.", "Priya N.", "Bristol"], ["Bought the gift box for my sister's new flat. The handwritten note made her cry, in a good way.", "Tom H.", "Leeds"]];
+    $("reviews").innerHTML = R.map(([q, n, c], i) => `<figure class="rev reveal" style="--d:${i * 0.08}s"><blockquote>${q}</blockquote><figcaption>${n} · ${c}</figcaption></figure>`).join("");
+
+    /* Count-up, reveals, header */
+    const countUp = (el, end) => { if (reduce) return (el.textContent = end.toLocaleString("en-GB")); const t0 = performance.now(); const f = (t) => { const k = Math.min(1, (t - t0) / 1600); el.textContent = Math.round(end * (1 - (1 - k) ** 3)).toLocaleString("en-GB"); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+    document.querySelectorAll(".h2, .head, .card, .finder__copy, .quiz, .gift__box, .gift__panel, .refill__img, .refill > div, .step, .studio figure, .studio__text, .dark__in").forEach((el, i) => { el.classList.add("reveal"); if (!el.style.getPropertyValue("--d")) el.style.setProperty("--d", (i % 3) * 0.08 + "s"); });
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; e.target.classList.add("in"); if (e.target.querySelector("#jarCount")) countUp($("jarCount"), 41280); io.unobserve(e.target); }), { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    new MutationObserver(() => document.querySelectorAll("#grid .card:not(.reveal)").forEach((el) => el.classList.add("reveal", "in"))).observe($("grid"), { childList: true });
+    const links = [...document.querySelectorAll(".nav a")];
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => $("burger").setAttribute("aria-expanded", document.body.classList.toggle("nav-open")));
+    links.forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBag(); closeNav(); } });
+    addEventListener("scroll", () => { $("header").classList.toggle("sticky", scrollY > 20); if (!reduce) document.querySelector(".hero__photo img").style.transform = `scale(1.08) translateY(${scrollY * 0.06}px)`; }, { passive: true });
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "You're on the list. First email lands with the winter scents."; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>
