@@ -297,3 +297,21 @@ details p { padding-bottom: 17px; }
   .box { padding: 24px; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* De-vibe: included tools as a list beside a live deploy log, not an 8-tile grid */
+.incl { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.feats { grid-template-columns: 1fr 1fr !important; gap: 0 36px !important; border: 0 !important; }
+.feats div { display: grid; grid-template-columns: 30px 1fr; gap: 2px 12px; padding: 18px 0 !important; border: 0 !important; border-top: 1px solid var(--line) !important; background: none !important; }
+.feats i { grid-row: span 2; margin-top: 2px; }
+.feats h4 { margin: 0 !important; }
+.term { position: sticky; top: 100px; border-radius: 16px; overflow: hidden; background: #0b1f17; box-shadow: 0 40px 70px -40px rgba(11, 31, 23, .7); }
+.term__bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #10291f; }
+.term__bar i { width: 10px; height: 10px; border-radius: 50%; background: #2c4a3c; }
+.term__bar i:first-child { background: #ff6b5f; } .term__bar i:nth-child(2) { background: #ffbe2f; } .term__bar i:nth-child(3) { background: #2ac940; }
+.term__bar span { margin-left: 8px; font: 12px ui-monospace, monospace; color: #8fb5a2; }
+.term__body { margin: 0; min-height: 300px; padding: 18px 20px 22px; font: 13.5px/1.75 ui-monospace, "SFMono-Regular", Menlo, monospace; color: #cfe8db; white-space: normal; }
+.term__body .ok { color: #4ade80; } .term__body .dim { color: #6f9483; } .term__body .hl { color: #fbbf24; }
+.term__body .cur { display: inline-block; width: 8px; height: 15px; background: #4ade80; vertical-align: -2px; animation: hwBlink 1s steps(2, start) infinite; }
+@keyframes hwBlink { to { visibility: hidden; } }
+@media (max-width: 900px) { .incl { grid-template-columns: 1fr; } .term { position: relative; top: 0; } }
+@media (max-width: 600px) { .feats { grid-template-columns: 1fr !important; } }

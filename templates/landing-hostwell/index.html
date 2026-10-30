@@ -154,6 +154,11 @@
   <section class="section section--light">
     <div class="container">
       <div class="sh fade"><span class="label">Included with every plan</span><h2>Security and tools, built in</h2></div>
+      <div class="incl">
+      <div class="term fade" aria-label="Example deploy log">
+        <div class="term__bar"><i></i><i></i><i></i><span>bloombakery.co.uk · deploy</span></div>
+        <pre class="term__body" id="termLog"></pre>
+      </div>
       <div class="feats fade">
         <div><i class="ri-lock-line"></i><h4>Free SSL</h4><p>Let's Encrypt certificates issued and renewed automatically.</p></div>
         <div><i class="ri-history-line"></i><h4>Automatic backups</h4><p>Restore files or databases from any day in the last 30.</p></div>
@@ -163,6 +168,7 @@
         <div><i class="ri-git-branch-line"></i><h4>Git &amp; SSH access</h4><p>Deploy from GitHub, use WP-CLI and Composer.</p></div>
         <div><i class="ri-database-2-line"></i><h4>MySQL &amp; PHP 8.3</h4><p>Switch PHP versions per site in a couple of clicks.</p></div>
         <div><i class="ri-earth-line"></i><h4>Free CDN</h4><p>Static files cached close to your visitors.</p></div>
+      </div>
       </div>
     </div>
   </section>
@@ -293,6 +299,29 @@
     document.querySelectorAll("#nav a").forEach((a) => a.addEventListener("click", () => document.getElementById("nav").classList.remove("open")));
     const io = new IntersectionObserver((en) => en.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: 0.1 });
     document.querySelectorAll(".fade").forEach((el) => io.observe(el));
+
+    /* Deploy log types itself out when it scrolls into view */
+    (() => {
+      const el = document.getElementById("termLog"); if (!el) return;
+      const L = [
+        ['<span class="dim">$</span> git push hostwell main', 0],
+        ['<span class="dim">→</span> Building bloombakery.co.uk (PHP 8.3)', 500],
+        ['<span class="ok">✓</span> Dependencies installed <span class="dim">(composer, 4.1s)</span>', 900],
+        ['<span class="ok">✓</span> Database backup taken <span class="dim">· kept 30 days</span>', 700],
+        ['<span class="ok">✓</span> Malware scan clean <span class="dim">· 1,284 files</span>', 700],
+        ['<span class="ok">✓</span> SSL certificate valid <span class="dim">· renews 12 Feb</span>', 600],
+        ['<span class="ok">✓</span> Cache purged on 52 CDN edges', 600],
+        ['<span class="hl">●</span> Live in <b>38s</b> · zero downtime', 700],
+      ];
+      let started = false;
+      const run = async () => {
+        if (started) return; started = true;
+        const fast = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let html = "";
+        for (const [line, wait] of L) { if (!fast) await new Promise((r) => setTimeout(r, wait)); html += line + "<br>"; el.innerHTML = html + '<span class="cur"></span>'; }
+      };
+      new IntersectionObserver(([e], o) => { if (e.isIntersecting) { o.disconnect(); run(); } }, { threshold: 0.3 }).observe(el);
+    })();
   </script>
 </body>
 </html>
