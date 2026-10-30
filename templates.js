@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-dew",
+    name: "Dew Theory",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-dew/index.html",
+    description: "Skincare store: hero with product card, shop-by-concern filter, product grid with quick view (sizes, subscribe and save, how to use), morning routine bundle at 15% off, clinical results with count-ups, ingredient accordion, reviews, search and bag drawer.",
+    tags: ["Skincare", "Beauty", "Bundles", "Subscriptions"],
+    palette: ["#ffffff", "#1e2621", "#4f6b55", "#f7f4ee"],
+    fonts: "Fraunces · DM Sans",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2027-01-02",
+  },
+  {
     id: "shop-rouge",
     name: "Rouge Club",
     category: "E-commerce",
@@ -646,19 +659,6 @@ const TEMPLATES = [
     fonts: "Cormorant Garamond · Jost",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-28",
-  },
-  {
-    id: "shop-dew",
-    name: "Dew Theory",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-dew/index.html",
-    description: "Clean skin-first makeup shop: shade matcher that blends the tint into a skin preview by depth, undertone and finish, five-product range, routine builder with set discount, ingredient accordion, reviews and a bag with free-delivery bar.",
-    tags: ["Makeup", "Skincare", "Shade matcher", "Routine builder"],
-    palette: ["#fbf8ef", "#1d1f1a", "#f3dc7c", "#8f9f80"],
-    fonts: "Manrope",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-27",
   },
   {
     id: "shop-chronica",
