@@ -369,3 +369,4 @@ html { overflow-x: clip; }
 }
 
 @media (max-width: 480px) { .basket-btn { padding: 0 14px; } .basket-btn span { display: none; } .logo { font-size: 22px; } }
+@media (max-width: 480px) { .header__in { gap: 8px; } .logo__paw { width: 36px; height: 36px; } .burger { width: 42px; } }
