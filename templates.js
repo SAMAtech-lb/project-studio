@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-rouge",
+    name: "Rouge Club",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-rouge/index.html",
+    description: "Colour cosmetics store: announcement bar, split campaign hero, round category tiles, bestseller/new/sale tabs with shade dots, quick view with shade picker and quantity, wishlist, search, bag drawer with free-shipping bar, promo tiles, reviews and beauty tips.",
+    tags: ["Makeup", "Beauty", "Shade picker", "Cart drawer"],
+    palette: ["#ffffff", "#111111", "#c8102e", "#fbf0ef"],
+    fonts: "Montserrat",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2027-01-01",
+  },
+  {
     id: "shop-noor",
     name: "Atelier Noor",
     category: "E-commerce",
@@ -646,19 +659,6 @@ const TEMPLATES = [
     fonts: "Manrope",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-12-27",
-  },
-  {
-    id: "shop-rouge",
-    name: "Rouge Club",
-    category: "E-commerce",
-    status: "live",
-    path: "templates/shop-rouge/index.html",
-    description: "Bold lipstick brand: live try-on that repaints a drawn mouth by shade, finish and skin tone, code-drawn product kit with tabs, shade finder quiz, refills and a bag drawer.",
-    tags: ["Makeup", "Lipstick try-on", "Shade finder", "Cart drawer"],
-    palette: ["#ffffff", "#0f0f0f", "#c3162b", "#f7ecea"],
-    fonts: "Inter Tight",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-12-26",
   },
   {
     id: "shop-chronica",
