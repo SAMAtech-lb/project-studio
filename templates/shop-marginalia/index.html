@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marginalia Books — An independent bookshop in Bath</title>
+  <meta name="description" content="Marginalia is an independent bookshop on Walcot Street, Bath. Staff picks, blind dates with a book, author evenings and a monthly book club, delivered anywhere in the UK." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a href="#top" class="logo" aria-label="Marginalia home">Marginalia<span>.</span></a>
+      <nav class="nav" id="nav">
+        <a href="#shelf">Staff picks</a>
+        <a href="#browse">Browse</a>
+        <a href="#blind">Blind dates</a>
+        <a href="#events">Events</a>
+        <a href="#club">Book club</a>
+      </nav>
+      <form class="search" id="search" role="search"><i class="ri-search-line" onclick="document.getElementById('q').focus()"></i><input id="q" placeholder="Title or author" aria-label="Search books" /></form>
+      <button class="bag" id="bagBtn" aria-label="Open basket"><i class="ri-shopping-basket-line"></i><b id="bagCount">0</b></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__in">
+        <h1 class="hero__title"><span class="ln"><span>Books we've read</span></span><span class="ln"><span>before you do.</span></span></h1>
+        <div class="hero__side fade">
+          <p>Five booksellers, eleven thousand books and a reading chair by the window on Walcot Street. Every book on our tables has been read by one of us first.</p>
+          <a href="#shelf" class="btn">See this week's picks <i class="ri-arrow-down-line"></i></a>
+        </div>
+      </div>
+      <figure class="hero__img"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2200&q=80" alt="Long aisle of bookshelves lit by hanging bulbs" /></figure>
+    </section>
+
+    <!-- Shelf (signature) -->
+    <section class="section shelf-sec" id="shelf">
+      <div class="container">
+        <div class="head"><h2 class="h2">This week's staff picks</h2><p class="head__p">Hover a spine to pull it off the shelf. Click to read our note.</p></div>
+        <div class="shelf" id="shelf-row"></div>
+        <div class="shelf__plank"></div>
+      </div>
+    </section>
+
+    <!-- Browse -->
+    <section class="section" id="browse">
+      <div class="container">
+        <div class="head">
+          <h2 class="h2" id="browseTitle">Browse the tables</h2>
+          <div class="genres" id="genres" role="tablist" aria-label="Genre"></div>
+        </div>
+        <div class="books" id="books"></div>
+      </div>
+    </section>
+
+    <!-- Blind date -->
+    <section class="section blind-sec" id="blind">
+      <div class="container blind">
+        <div class="blind__copy">
+          <h2 class="h2">Blind date with a book</h2>
+          <p>Wrapped in brown paper with three words written on the front. No title, no author, no cover. If it isn't for you, bring it back within 30 days and swap it.</p>
+        </div>
+        <div class="parcels" id="parcels"></div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section" id="events">
+      <div class="container events">
+        <figure class="events__img"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80" alt="A curved wall of bookshelves" loading="lazy" /></figure>
+        <div>
+          <h2 class="h2">Evenings in the shop</h2>
+          <p class="events__p">Author talks, translation nights and a quiet reading hour. Tickets are £5 and come off any book you buy on the night.</p>
+          <ul class="ev" id="ev"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book club -->
+    <section class="section club-sec" id="club">
+      <div class="container club">
+        <div>
+          <h2 class="h2">One book a month, chosen for you.</h2>
+          <p>Tell us three books you loved. Each month a bookseller picks one for you, writes why on a card, and posts it. Pause or cancel whenever you like.</p>
+          <div class="plans" id="plans">
+            <button class="plan" data-p="12"><b>Paperback</b><span>£12 / month</span></button>
+            <button class="plan on" data-p="22"><b>Hardback</b><span>£22 / month</span></button>
+            <button class="plan" data-p="30"><b>Hardback + bookmark &amp; tea</b><span>£30 / month</span></button>
+          </div>
+          <form class="loves" id="loves">
+            <label>Three books you loved</label>
+            <input placeholder="e.g. A Little Life" aria-label="First book" />
+            <input placeholder="e.g. The Remains of the Day" aria-label="Second book" />
+            <input placeholder="e.g. Piranesi" aria-label="Third book" />
+            <button class="btn btn--full" type="submit">Start my book club · <span id="planPrice">£22</span></button>
+            <p class="form-msg" id="lovesMsg"></p>
+          </form>
+        </div>
+        <figure class="club__img"><img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=1100&q=80" alt="Someone reading a book in afternoon light" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="section visit-sec" id="visit">
+      <div class="container visit">
+        <div>
+          <h2 class="h2">Come and browse</h2>
+          <p class="visit__addr">27 Walcot Street, Bath BA1 5BN<br />01225 555 207 · shop@marginaliabooks.co.uk</p>
+          <ul class="hours" id="hours"></ul>
+        </div>
+        <figure class="visit__img"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80" alt="Wooden shelves full of old books" loading="lazy" /></figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__big">Read something good this week.</p>
+      <div class="footer__grid">
+        <div><a href="#top" class="logo">Marginalia<span>.</span></a><p>An independent bookshop since 2011. Member of the Booksellers Association.</p></div>
+        <div><h4>Shop</h4><a href="#shelf">Staff picks</a><a href="#blind">Blind dates</a><a href="#club">Book club</a><a href="#">Gift cards</a></div>
+        <div><h4>Shop floor</h4><a href="#events">Events</a><a href="#visit">Opening hours</a><a href="#">Ordering in</a><a href="#">Schools</a></div>
+        <div><h4>Letters from the shop</h4><form class="news" id="news"><input type="email" required placeholder="Your email" aria-label="Email" /><button aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button></form><p class="form-msg" id="newsMsg"></p></div>
+      </div>
+      <p class="footer__bottom">© <span id="year"></span> Marginalia Books Ltd · Photography from Unsplash</p>
+    </div>
+  </footer>
+
+  <!-- Book modal -->
+  <div class="modal" id="modal" hidden>
+    <article class="bk" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+      <button class="bk__close" id="bkClose" aria-label="Close"><i class="ri-close-line"></i></button>
+      <div id="bkBody"></div>
+    </article>
+  </div>
+
+  <!-- Basket -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Basket" aria-hidden="true">
+    <div class="drawer__head"><h3>Your basket</h3><button id="drawerClose" aria-label="Close basket"><i class="ri-close-line"></i></button></div>
+    <ul class="drawer__list" id="drawerList"></ul>
+    <div class="drawer__foot"><div class="drawer__row"><span>Subtotal</span><b id="dSub">£0</b></div><p class="drawer__note">Free UK delivery on two or more books. Or collect from the shop.</p><button class="btn btn--full" id="checkout">Checkout</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const gbp = (n) => "£" + n.toFixed(2).replace(/\.00$/, "");
+    const toast = (t) => { const el = $("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("on"), 2400); };
+
+    /* =====================================================
+       Catalogue (fictional titles; covers designed in code)
+       ===================================================== */
+    const B = [
+      { id: 1, t: "The Salt Orchard", a: "Maren Holt", g: "Fiction", p: 16.99, bg: "#1f3b2d", fg: "#f4efe2", m: "sun", pages: 384, pick: "Ruth", note: "A family, a failing apple farm and one terrible winter on the Norfolk coast. I cried on the bus. Twice." },
+      { id: 2, t: "Small Hours", a: "Tomas Ekberg", g: "Fiction", p: 9.99, bg: "#e0442b", fg: "#fff", m: "stripes", pages: 240, pick: "Callum", note: "Twenty-four short chapters, one for each hour of a single night in Malmö. Perfect for a long train." },
+      { id: 3, t: "A Field Guide to Leaving", a: "Ines Cardoso", g: "Fiction", p: 14.99, bg: "#f2d16b", fg: "#161616", m: "arch", pages: 312, pick: "Ruth", note: "Funny, sharp and very sad about mothers and daughters. The best dialogue I've read all year." },
+      { id: 4, t: "Underland Notes", a: "Sam Okoro", g: "Non-fiction", p: 20, bg: "#2b3a55", fg: "#e8ecf5", m: "circles", pages: 352, pick: "Femi", note: "Caves, mines and the people who work below us. Reads like a thriller, and you'll learn something every page." },
+      { id: 5, t: "The Quiet Kitchen", a: "Hana Mori", g: "Food", p: 26, bg: "#e9e3d6", fg: "#3a2f22", m: "bowl", pages: 288, pick: "Femi", note: "Ninety vegetable dishes that take less than thirty minutes. My copy is already splattered." },
+      { id: 6, t: "Glasswork", a: "Lena Varga", g: "Poetry", p: 10.99, bg: "#c9dbe6", fg: "#13304a", m: "lines", pages: 96, pick: "Callum", note: "Short poems about windows, weather and grief. Read one a day with your coffee." },
+      { id: 7, t: "Nightjar", a: "Owen Price", g: "Crime", p: 8.99, bg: "#161616", fg: "#e0442b", m: "moon", pages: 416, pick: "Isla", note: "A detective in the Brecon Beacons and a missing birdwatcher. Atmospheric and properly twisty." },
+      { id: 8, t: "How Cities Breathe", a: "Priya Raman", g: "Non-fiction", p: 22, bg: "#6c8a5f", fg: "#f4efe2", m: "grid", pages: 336, pick: "Isla", note: "Parks, rivers and air quality, from London to Lagos. Hopeful, which is rare in a book about climate." },
+      { id: 9, t: "The Paper Boat", a: "Ada Linde", g: "Children's", p: 12.99, bg: "#7fb3d5", fg: "#132a3b", m: "boat", pages: 40, pick: "Ruth", note: "A picture book about a boat that sails down a gutter to the sea. My nephew asks for it every night." },
+      { id: 10, t: "Ninety Days in Lisbon", a: "Rafael Sousa", g: "Travel", p: 18.99, bg: "#d98a4e", fg: "#20140b", m: "tiles", pages: 272, pick: "Callum", note: "A writer moves to Alfama for one season. Half travel book, half love letter to the city's bakeries." },
+      { id: 11, t: "The Cartographer's Daughter", a: "Elif Demir", g: "Fiction", p: 9.99, bg: "#4a2a3d", fg: "#f2d16b", m: "compass", pages: 448, pick: "Isla", note: "A big, sweeping novel set in 1920s Istanbul. Clear your weekend." },
+      { id: 12, t: "Rain on Tin", a: "Jun Park", g: "Poetry", p: 11.99, bg: "#d6d3cc", fg: "#1f3b2d", m: "drops", pages: 112, pick: "Femi", note: "Poems about moving from Busan to Glasgow. Tender and funny in the same breath." },
+    ];
+    const motif = (m, fg) => {
+      const s = `fill="${fg}"`, st = `stroke="${fg}" fill="none" stroke-width="3"`;
+      return {
+        sun: `<circle cx="60" cy="70" r="26" ${s}/><path d="M10 120h100" ${st}/>`,
+        stripes: [0, 1, 2, 3, 4].map((i) => `<rect x="10" y="${40 + i * 16}" width="100" height="7" ${s}/>`).join(""),
+        arch: `<path d="M25 125V75a35 35 0 0 1 70 0v50" ${st}/><circle cx="60" cy="58" r="6" ${s}/>`,
+        circles: [0, 1, 2].map((i) => `<circle cx="60" cy="80" r="${14 + i * 14}" ${st}/>`).join(""),
+        bowl: `<path d="M22 80h76a38 38 0 0 1-76 0Z" ${s}/><path d="M48 50c0-10 10-10 10-20M66 52c0-10 10-10 10-20" ${st}/>`,
+        lines: [0, 1, 2, 3, 4, 5].map((i) => `<path d="M${20 + i * 14} 40v80" ${st}/>`).join(""),
+        moon: `<path d="M74 45a32 32 0 1 0 0 64a26 26 0 1 1 0-64Z" ${s}/>`,
+        grid: [0, 1, 2].map((r) => [0, 1, 2].map((c) => `<rect x="${24 + c * 26}" y="${44 + r * 26}" width="18" height="18" ${(r + c) % 2 ? st : s}/>`).join("")).join(""),
+        boat: `<path d="M20 100h80l-14 18H34Z" ${s}/><path d="M60 40v58M60 44l30 40H60" ${st}/>`,
+        tiles: [0, 1, 2, 3].map((i) => `<path d="M${22 + (i % 2) * 40} ${44 + Math.floor(i / 2) * 40}h36v36h-36Zm18 0v36m-18-18h36" ${st}/>`).join(""),
+        compass: `<circle cx="60" cy="80" r="34" ${st}/><path d="M60 50l8 30-8 30-8-30Z" ${s}/>`,
+        drops: [0, 1, 2, 3, 4, 5, 6, 7].map((i) => `<path d="M${20 + (i % 4) * 26} ${50 + Math.floor(i / 4) * 36}l-6 14" ${st}/>`).join(""),
+      }[m];
+    };
+    const cover = (b) => `<div class="cover" style="--bg:${b.bg};--fg:${b.fg}"><svg viewBox="0 0 120 150" aria-hidden="true">${motif(b.m, b.fg)}</svg><b>${b.t}</b><small>${b.a}</small></div>`;
+    const Bk = (id) => B.find((b) => b.id === id);
+
+    /* =====================================================
+       The shelf (signature): spines drawn in code
+       ===================================================== */
+    const picks = [1, 4, 2, 7, 5, 11, 6, 3, 8, 10, 12, 9];
+    $("shelf-row").innerHTML = picks.map((id, i) => { const b = Bk(id); const w = Math.max(58, Math.min(112, 40 + b.pages / 6)); const h = 300 + ((id * 37) % 80); return `<button class="spine" style="--bg:${b.bg};--fg:${b.fg};--w:${w}px;--h:${h}px;--d:${i * 0.05}s" data-open="${b.id}" aria-label="${b.t} by ${b.a}"><span class="spine__t">${b.t}</span><span class="spine__a">${b.a.split(" ").pop()}</span><span class="spine__peek">${cover(b)}</span></button>`; }).join("");
+
+    /* =====================================================
+       Browse + search
+       ===================================================== */
+    const G = ["All", ...new Set(B.map((b) => b.g))];
+    let g = "All", q = "";
+    const renderBooks = () => {
+      $("genres").innerHTML = G.map((x) => `<button role="tab" class="${x === g ? "on" : ""}" aria-selected="${x === g}">${x}</button>`).join("");
+      const list = B.filter((b) => (g === "All" || b.g === g) && (`${b.t} ${b.a}`.toLowerCase().includes(q)));
+      $("browseTitle").textContent = q ? `Results for “${q}”` : "Browse the tables";
+      $("books").innerHTML = list.length ? list.map((b, i) => `<article class="book" style="--d:${i * 0.04}s"><button class="book__cover" data-open="${b.id}" aria-label="Open ${b.t}">${cover(b)}</button><h3>${b.t}</h3><p>${b.a}</p><div class="book__foot"><b>${gbp(b.p)}</b><button class="book__add" data-add="${b.id}" aria-label="Add ${b.t} to basket"><i class="ri-add-line"></i></button></div></article>`).join("") : `<p class="empty">Nothing on our tables matches that. We can order almost any book in two days: <a href="mailto:shop@marginaliabooks.co.uk">email us</a>.</p>`;
+    };
+    $("genres").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { g = b.textContent; renderBooks(); } });
+    $("q").addEventListener("input", (e) => { q = e.target.value.trim().toLowerCase(); g = "All"; renderBooks(); });
+    $("search").addEventListener("submit", (e) => { e.preventDefault(); $("browse").scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); });
+    renderBooks();
+
+    /* =====================================================
+       Book modal
+       ===================================================== */
+    const openBook = (id) => {
+      const b = Bk(id);
+      $("bkBody").innerHTML = `<div class="bk__in"><div class="bk__cover">${cover(b)}</div><div class="bk__info"><p class="bk__g">${b.g} · ${b.pages} pages</p><h3 id="bkTitle">${b.t}</h3><p class="bk__a">${b.a}</p><blockquote class="bk__note">“${b.note}”<cite>${b.pick}, bookseller</cite></blockquote><div class="bk__buy"><b>${gbp(b.p)}</b><button class="btn" data-add="${b.id}">Add to basket</button></div><p class="bk__stock"><i class="ri-checkbox-circle-fill"></i> ${3 + (b.id % 5)} in the shop · posted today if ordered by 3pm</p></div></div>`;
+      $("modal").hidden = false; document.body.style.overflow = "hidden"; $("bkClose").focus();
+    };
+    const closeBook = () => { $("modal").hidden = true; document.body.style.overflow = ""; };
+    document.addEventListener("click", (e) => { const o = e.target.closest("[data-open]"); if (o) openBook(+o.dataset.open); });
+    $("bkClose").addEventListener("click", closeBook);
+    $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeBook(); });
+
+    /* =====================================================
+       Basket
+       ===================================================== */
+    let bag = [];
+    try { bag = JSON.parse(localStorage.getItem("marginaliaBag") || "[]"); } catch (e) {}
+    const renderBag = () => {
+      const n = bag.reduce((s, i) => s + i.q, 0), sub = bag.reduce((s, i) => s + i.q * i.p, 0);
+      $("bagCount").textContent = n; $("bagCount").classList.toggle("on", n > 0);
+      $("drawerList").innerHTML = bag.length ? bag.map((i, k) => `<li><div class="mini" style="--bg:${i.bg}"></div><div><b>${i.t}</b><small>${i.a}</small><span>${gbp(i.p)}</span></div><div class="qty"><button data-k="${k}" data-d="-1" aria-label="One less"><i class="ri-subtract-line"></i></button><b>${i.q}</b><button data-k="${k}" data-d="1" aria-label="One more"><i class="ri-add-line"></i></button></div></li>`).join("") : `<li class="empty">Your basket is empty. Ruth recommends The Salt Orchard.</li>`;
+      $("dSub").textContent = gbp(sub);
+      try { localStorage.setItem("marginaliaBag", JSON.stringify(bag)); } catch (e) {}
+    };
+    const add = (item) => { const f = bag.find((i) => i.key === item.key); f ? f.q++ : bag.push({ ...item, q: 1 }); renderBag(); toast(`${item.t} is in your basket`); $("bagBtn").classList.remove("bump"); void $("bagBtn").offsetWidth; $("bagBtn").classList.add("bump"); };
+    document.addEventListener("click", (e) => { const a = e.target.closest("[data-add]"); if (!a) return; const b = Bk(+a.dataset.add); add({ key: "b" + b.id, t: b.t, a: b.a, p: b.p, bg: b.bg }); });
+    $("drawerList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const i = bag[+b.dataset.k]; i.q += +b.dataset.d; if (i.q < 1) bag.splice(+b.dataset.k, 1); renderBag(); });
+    const openBag = () => { document.body.classList.add("bag-open"); $("drawer").setAttribute("aria-hidden", "false"); };
+    const closeBag = () => { document.body.classList.remove("bag-open"); $("drawer").setAttribute("aria-hidden", "true"); };
+    $("bagBtn").addEventListener("click", openBag); $("drawerClose").addEventListener("click", closeBag); $("scrim").addEventListener("click", closeBag);
+    $("checkout").addEventListener("click", () => { if (!bag.length) return; bag = []; renderBag(); closeBag(); toast("Order placed. We'll wrap it in brown paper."); });
+    renderBag();
+
+    /* =====================================================
+       Blind dates
+       ===================================================== */
+    const DATES = [["Grief", "Islands", "Letters"], ["Murder", "Snow", "Siblings"], ["Paris", "Bakery", "Second chances"], ["Space", "Silence", "One crew"], ["Summer", "Cousins", "Secrets"], ["Witches", "Scotland", "Revenge"]];
+    $("parcels").innerHTML = DATES.map((w, i) => `<button class="parcel" data-p="${i}" style="--r:${(i % 3 - 1) * 2}deg;--d:${i * 0.06}s"><span class="parcel__string"></span><span class="parcel__words">${w.map((x) => `<i>${x}</i>`).join("")}</span><span class="parcel__price">£11 · Add</span></button>`).join("");
+    $("parcels").addEventListener("click", (e) => { const p = e.target.closest(".parcel"); if (!p) return; const w = DATES[+p.dataset.p]; add({ key: "blind" + p.dataset.p, t: "Blind date: " + w.join(", "), a: "Wrapped by our booksellers", p: 11, bg: "#b7926a" }); p.classList.add("picked"); setTimeout(() => p.classList.remove("picked"), 700); });
+
+    /* =====================================================
+       Events
+       ===================================================== */
+    const base = new Date(); base.setHours(0, 0, 0, 0);
+    const EV = [[4, "19:00", "Maren Holt on The Salt Orchard", "In conversation with our bookseller Ruth."], [11, "18:30", "Translation night: Nordic crime", "Three translators read the same page and argue about it."], [17, "10:00", "Saturday story hour", "For ages 3 to 7. Free, no ticket needed."], [25, "19:00", "Silent reading hour", "Phones off, lamps on, a glass of wine. Bring your own book or buy one."]];
+    const going = new Set();
+    const renderEv = () => {
+      $("ev").innerHTML = EV.map(([d, t, h, p], i) => { const dt = new Date(base); dt.setDate(base.getDate() + d); return `<li class="${going.has(i) ? "going" : ""}"><span class="ev__date"><b>${dt.getDate()}</b>${dt.toLocaleDateString("en-GB", { month: "short" })}</span><div><h3>${h}</h3><p>${dt.toLocaleDateString("en-GB", { weekday: "long" })} ${t} · ${p}</p></div><button data-ev="${i}">${going.has(i) ? '<i class="ri-check-line"></i> You\'re going' : "Reserve · £5"}</button></li>`; }).join("");
+    };
+    $("ev").addEventListener("click", (e) => { const b = e.target.closest("[data-ev]"); if (!b) return; const i = +b.dataset.ev; going.has(i) ? going.delete(i) : going.add(i); renderEv(); if (going.has(i)) toast("Seat reserved. Pay on the night."); });
+    renderEv();
+
+    /* Club */
+    $("plans").addEventListener("click", (e) => { const b = e.target.closest(".plan"); if (!b) return; $("plans").querySelectorAll(".plan").forEach((x) => x.classList.toggle("on", x === b)); $("planPrice").textContent = "£" + b.dataset.p; });
+    $("loves").addEventListener("submit", (e) => { e.preventDefault(); const vals = [...e.target.querySelectorAll("input")].map((i) => i.value.trim()).filter(Boolean); const m = $("lovesMsg"); if (vals.length < 3) { m.textContent = "Tell us three books so we can pick well."; m.className = "form-msg err"; return; } m.textContent = `Lovely. A bookseller who also loved ${vals[0]} will choose your first book this week.`; m.className = "form-msg ok"; e.target.reset(); });
+
+    /* Hours */
+    const H = [["Monday", "10–6"], ["Tuesday", "10–6"], ["Wednesday", "10–6"], ["Thursday", "10–8"], ["Friday", "10–6"], ["Saturday", "9–6"], ["Sunday", "11–4"]];
+    const td = (new Date().getDay() + 6) % 7;
+    $("hours").innerHTML = H.map(([d, h], i) => `<li class="${i === td ? "today" : ""}"><span>${d}</span><b>${h}</b></li>`).join("");
+    $("news").addEventListener("submit", (e) => { e.preventDefault(); $("newsMsg").textContent = "Thanks. Our next letter goes out on Friday."; e.target.reset(); });
+    $("year").textContent = new Date().getFullYear();
+
+    /* Header, reveal */
+    const closeNav = () => { document.body.classList.remove("nav-open"); $("burger").setAttribute("aria-expanded", "false"); };
+    $("burger").addEventListener("click", () => $("burger").setAttribute("aria-expanded", document.body.classList.toggle("nav-open")));
+    document.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBook(); closeBag(); closeNav(); } });
+    addEventListener("scroll", () => { $("header").classList.toggle("sticky", scrollY > 20); if (!reduce) document.querySelector(".hero__img img").style.transform = `translateY(${scrollY * 0.15}px) scale(1.1)`; }, { passive: true });
+    document.querySelectorAll(".head, .blind__copy, .events__img, .events > div, .club > div, .club__img, .visit > *").forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", (i % 3) * 0.08 + "s"); });
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+    document.querySelectorAll(".reveal, .shelf, .parcels").forEach((el) => io.observe(el));
+    requestAnimationFrame(() => document.body.classList.add("loaded"));
+  </script>
+</body>
+</html>

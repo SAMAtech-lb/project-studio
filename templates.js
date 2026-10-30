@@ -583,6 +583,19 @@ const TEMPLATES = [
 
   /* ---------------- E-commerce ---------------- */
   {
+    id: "shop-marginalia",
+    name: "Marginalia Books",
+    category: "E-commerce",
+    status: "live",
+    path: "templates/shop-marginalia/index.html",
+    description: "Independent bookshop with a staff-picks shelf of code-drawn spines that pull out and show the cover on hover, designed-in-code covers for fictional titles, genre filter and live search, book pages with a bookseller's note, blind-date parcels, events with seat reservation, a monthly book club and a basket.",
+    tags: ["Bookshop", "Interactive shelf", "Blind date with a book", "Book club"],
+    palette: ["#fafaf7", "#161616", "#1f3b2d", "#e0442b"],
+    fonts: "Newsreader · Inter Tight",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-23",
+  },
+  {
     id: "shop-northlight",
     name: "Northlight",
     category: "E-commerce",
