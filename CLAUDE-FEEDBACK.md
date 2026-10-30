@@ -86,7 +86,7 @@ every template in the "ready" list.
 
 ### Phase D: rebuilds
 - [x] Chronica → rebuilt as a light luxury Geneva boutique for certified pre-owned Rolex / Omega / Breitling (real watch photos show real logos, so a fictional "maison" looked fake); live sweeping dial, find-your-watch viewer, reservations, private viewing booking
-- [ ] Azure Bay → living resort site
+- [x] Azure Bay → rebuilt as a bright Mallorca seafront hotel: live conditions strip, pinned horizontal "day" story, two-month nightly-price booking calendar
 - [ ] Havenly → credible property site
 - [ ] Loomwell → motion + more sections
 - [ ] Ginger & Moss → keep the cat, deepen the sections

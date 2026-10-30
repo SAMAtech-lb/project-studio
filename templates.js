@@ -412,6 +412,19 @@ const TEMPLATES = [
 
   /* ---------------- Business ---------------- */
   {
+    id: "hotel-azure",
+    name: "Azure Bay",
+    category: "Business",
+    status: "live",
+    path: "templates/hotel-azure/index.html",
+    description: "Bright Mediterranean seafront hotel: crossfading hero with a booking bar, live conditions strip (air, sea, sunset, local time), room tabs with galleries, a pinned horizontal 'day at the hotel' story, today's-catch restaurant menu, a two-month booking calendar with nightly prices, sold-out nights, room choice, guests, offers and a live total, plus offers, reviews and directions.",
+    tags: ["Hotel", "Booking calendar", "Live conditions", "Mediterranean"],
+    palette: ["#fbfaf7", "#0b2a3a", "#0f6d8c", "#e07a4f"],
+    fonts: "Instrument Serif · Outfit",
+    stack: "HTML · CSS · Vanilla JS · Remix Icon",
+    added: "2026-12-20",
+  },
+  {
     id: "arch-varo",
     name: "Varo Architects",
     category: "Business",
@@ -527,19 +540,6 @@ const TEMPLATES = [
     fonts: "Figtree",
     stack: "HTML · CSS · Vanilla JS · Remix Icon",
     added: "2026-10-11",
-  },
-  {
-    id: "hotel-azure",
-    name: "Azure Bay",
-    category: "Business",
-    status: "live",
-    path: "templates/hotel-azure/index.html",
-    description: "A luxury resort website with an availability bar that calculates nights and price, villa cards, amenities, experiences, reviews and location.",
-    tags: ["Hotel", "Resort", "Booking bar", "Luxury"],
-    palette: ["#f3eee6", "#12343b", "#b08d57"],
-    fonts: "Bodoni Moda · Jost",
-    stack: "HTML · CSS · Vanilla JS · Remix Icon",
-    added: "2026-10-10",
   },
   {
     id: "law-whitmore",
