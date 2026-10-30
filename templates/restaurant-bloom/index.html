@@ -45,8 +45,6 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <i class="ri-seedling-line bean bean--1"></i>
-    <i class="ri-cup-line bean bean--2"></i>
     <div class="container">
       <div class="reveal">
         <span class="sub-title"><i class="ri-sun-line"></i> Good mornings start here</span>
@@ -56,20 +54,12 @@
           <a href="#menu" class="btn">Order Ahead <i class="ri-shopping-bag-3-line"></i></a>
           <a href="#menu" class="btn btn--outline">View Menu</a>
         </div>
-        <div class="hero__stats">
-          <div><b>4.9★</b><small>1,200+ Google reviews</small></div>
-          <div><b>6am</b><small>Baking starts daily</small></div>
-          <div><b>5 min</b><small>Average pickup time</small></div>
-        </div>
+        <p class="oven" id="oven"><i></i><span id="ovenTxt">Out of the oven</span></p>
       </div>
       <div class="hero__visual reveal">
         <div class="hero__main"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Barista pouring latte art" /></div>
         <div class="hero__small"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80" alt="Freshly baked croissants" /></div>
-        <div class="hero__badge" aria-hidden="true">
-          <svg viewBox="0 0 128 128"><defs><path id="c" d="M64,64 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0" /></defs><text><textPath href="#c">Freshly baked · every morning ·</textPath></text></svg>
-          <i class="ri-cake-3-line"></i>
-        </div>
-        <div class="hero__price"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=120&q=80" alt="" /><div><b>Flat White</b><small>£3.40 · Bestseller</small></div></div>
+
       </div>
     </div>
   </section>
@@ -77,12 +67,7 @@
   <!-- Perks -->
   <div class="perks">
     <div class="container">
-      <div class="perks__grid reveal">
-        <div class="perk"><i class="ri-plant-line"></i><div><b>Ethically sourced</b><small>Direct-trade single origins</small></div></div>
-        <div class="perk"><i class="ri-cake-2-line"></i><div><b>Baked in-house</b><small>From scratch, every day</small></div></div>
-        <div class="perk"><i class="ri-leaf-line"></i><div><b>Oat milk at no extra</b><small>On Tuesdays &amp; Thursdays</small></div></div>
-        <div class="perk"><i class="ri-wifi-line"></i><div><b>Free Wi-Fi &amp; sockets</b><small>Laptops welcome till 2pm</small></div></div>
-      </div>
+      <div class="perks__line reveal"><span>Direct-trade single origins</span><span>Everything baked in-house from 6am</span><span>Free oat milk on Tuesdays &amp; Thursdays</span><span>Laptops welcome till 2pm</span></div>
     </div>
   </div>
 
@@ -459,6 +444,15 @@
     /* Reveal */
     const io = new IntersectionObserver((en) => en.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    /* "Out of the oven" ticker in the hero, rotating through this morning's bakes */
+    (() => {
+      const el = document.getElementById("ovenTxt"); if (!el) return;
+      const bakes = [["Almond croissants", 12], ["Cinnamon buns", 4], ["Sourdough loaves", 26], ["Cardamom knots", 9]];
+      let i = 0;
+      const show = () => { const [n, m] = bakes[i]; el.innerHTML = `Out of the oven <b>${m} min ago</b>: ${n.toLowerCase()}`; i = (i + 1) % bakes.length; };
+      show(); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(() => { el.style.opacity = 0; setTimeout(() => { show(); el.style.opacity = 1; }, 300); }, 3800);
+    })();
   </script>
 </body>
 </html>

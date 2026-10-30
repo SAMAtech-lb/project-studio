@@ -93,8 +93,15 @@ every template in the "ready" list.
 - [x] Clearview Dental → removed floating badges, blob, pill tags, "20+" box and 6 icon tiles; added live "next opening" line, insurance marquee, image-led treatment explorer with prices, hero + scroll motion
 
 ### Phase E: de-vibe the 9
-- [ ] Bean & Bloom · [ ] Sofia Reyes · [ ] Maya Carter · [ ] Learnly · [ ] Nexora ·
-      [ ] Monivo · [ ] Converso · [ ] Hostwell · [ ] Sparkle & Co.
+- [x] Bean & Bloom: floating beans, rotating badge, price sticker and stat row removed; live "out of the oven" ticker; perks as a line
+- [x] Sofia Reyes: spinning badge, chips and stat strip removed; real work fanned behind the portrait; process as a timeline
+- [x] Maya Carter: floating stat cards, blob and stats band removed; plain portrait with a real quote
+- [x] Learnly: floating badges and highlighter removed; live lesson-player hero; topic pills; timeline steps
+- [x] Nexora: floating chips and stats band removed; benefits as an editorial list (ROI sliders kept, per owner)
+- [x] Monivo: floating chips and stats band removed; features as an editorial list (savings sliders kept)
+- [x] Converso: hero conversation now plays out live; underline accent; security as a list
+- [x] Hostwell: 8 icon tiles become a list beside a live deploy log
+- [x] Sparkle & Co.: blob, bubbles, badges and stat strip removed; live open-slots card; promise line; timeline steps
 
 ### Verification for every item
 Headless Edge scroll-capture (desktop 1440) + phone 500px, no JS errors, no horizontal overflow,
@@ -103,6 +110,8 @@ then commit and push to `main` in batches.
 ---
 
 ## 4. Progress log
+- 2026-10-30: Phases C, D and E done. Final sweep: 70 templates, no JS errors; phone overflow only on
+  Frolla/Orra (clipped, invisible) and Rania (+5px, left untouched per owner).
 - 2026-10-29: audit done, plan written.
 - 2026-10-29: Phase A done (12 removed, registry now 66). Phase B done.
   Extra: a real 390px phone-overflow check found 13 templates wider than the screen

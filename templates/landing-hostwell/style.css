@@ -315,3 +315,5 @@ details p { padding-bottom: 17px; }
 @keyframes hwBlink { to { visibility: hidden; } }
 @media (max-width: 900px) { .incl { grid-template-columns: 1fr; } .term { position: relative; top: 0; } }
 @media (max-width: 600px) { .feats { grid-template-columns: 1fr !important; } }
+#compare .sh, #compare h2, #compare p { max-width: 100%; overflow-wrap: anywhere; }
+.domain__grid > * { min-width: 0; }

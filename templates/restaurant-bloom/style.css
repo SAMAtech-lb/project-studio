@@ -366,3 +366,18 @@ h1, h2, h3, h4 { font-family: var(--head); color: var(--dark); line-height: 1.15
   .modal__body { padding: 22px 20px 24px; }
   .modal__foot { flex-direction: column; align-items: stretch; }
 }
+
+/* De-vibe: no floating beans, rotating badge, price sticker or stat row; a live "out of the oven" line instead */
+.oven { display: flex; align-items: center; gap: 10px; margin-top: 30px; font-size: 16px; color: var(--dark, #2b1d14); }
+.oven i { width: 9px; height: 9px; border-radius: 50%; background: #e0722f; box-shadow: 0 0 0 0 rgba(224, 114, 47, .5); animation: bbPing 2s infinite; flex: none; }
+.oven b { color: var(--primary, #6f4527); }
+@keyframes bbPing { 70% { box-shadow: 0 0 0 8px rgba(224, 114, 47, 0); } 100% { box-shadow: 0 0 0 0 rgba(224, 114, 47, 0); } }
+.hero__main { animation: bbIn 1.2s cubic-bezier(.2,.8,.2,1) both .15s; }
+.hero__small { animation: bbIn 1.2s cubic-bezier(.2,.8,.2,1) both .45s; }
+@keyframes bbIn { from { opacity: 0; transform: translateY(24px) scale(.97); } }
+.perks__line { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 0; padding: 22px 0; font-weight: 600; color: var(--dark, #2b1d14); }
+.perks__line span { padding: 0 22px; border-left: 1px solid rgba(43, 29, 20, .15); }
+.perks__line span:first-child { border-left: 0; }
+@media (max-width: 700px) { .perks__line span { border: 0; padding: 4px 12px; } }
+#ovenTxt { transition: opacity .3s; }
+.loyal > * { min-width: 0; }
