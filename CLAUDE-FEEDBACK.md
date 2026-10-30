@@ -148,3 +148,19 @@ Not adopted where it conflicts with the owner's favourites (bold stats, colour).
 
 Two makeup shops because the market splits in two: bold colour (lipstick, night out) and skin-first
 (tint, SPF, five-minute routine). Each one sells to a different client.
+
+### Round 2 rejected and rebuilt (2026-10-30)
+
+Owner feedback: all six were unrealistic ("weird", "cartoonish", "unuseful interaction"), the giant
+title/wordmark before the footer is ugly, no customisers, normal stores only, real product photos.
+Candle reference: a standard Shopify-style candle theme (announcement bar, centred logo, photo slider).
+
+All six rebuilt as normal stores with real Unsplash product photos (same folders/ids):
+- [x] `shop-northlight` → **Hearth & Wick** (candles): slider, categories, product tabs, quick view, gift countdown
+- [x] `shop-cordwain` → **Fieldstone** (shoes): filter sidebar (category/size/price), sort, size picker
+- [x] `shop-marginalia` → **Marginalia Books**: photo hero with search, genres, photographic covers, events, gift cards
+- [x] `shop-noor` → **Atelier Noor** (luxury fashion): campaign hero, hover quick-add sizes, appointments
+- [x] `shop-rouge` → **Rouge Club** (colour cosmetics): category circles, shade dots, shade picker in quick view
+- [x] `shop-dew` → **Dew Theory** (skincare): shop by concern, subscribe & save, routine bundle
+
+Rules saved to the build-template skill ("Realistic, ready-to-use sites") and memory.
