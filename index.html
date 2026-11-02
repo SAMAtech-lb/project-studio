@@ -29,7 +29,15 @@
           <button class="chip on" data-status="all">All</button>
           <button class="chip" data-status="live">Live</button>
           <button class="chip" data-status="soon">In progress</button>
+          <button class="chip" data-status="sama">On SAMA</button>
         </div>
+      </div>
+
+      <div class="side__group pf-panel">
+        <span class="mono side__label">SAMA portfolio</span>
+        <p class="pf-count"><b id="pfCount">0</b> of 30 projects</p>
+        <p class="pf-note" id="pfNote" aria-live="polite"></p>
+        <button class="btn btn--sm pf-save" id="pfSave" hidden>Save to website</button>
       </div>
 
       <div class="side__cta">
@@ -104,6 +112,7 @@
         <button class="icon-btn" id="prevBtn" aria-label="Previous template">←</button>
         <button class="icon-btn" id="nextBtn" aria-label="Next template">→</button>
         <button class="icon-btn" id="infoBtn" aria-label="Template details">i</button>
+        <button class="pf-btn pf-btn--bar" id="vPf"></button>
         <a class="btn btn--sm" id="openNew" target="_blank" rel="noopener">Open ↗</a>
       </div>
     </div>
@@ -136,6 +145,8 @@
   <div class="toast" id="toast"></div>
 
   <script src="templates.js"></script>
+  <script src="portfolio.js"></script>
+  <script src="portfolio-store.js"></script>
   <script src="dashboard.js"></script>
 </body>
 </html>

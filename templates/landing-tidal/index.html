@@ -19,7 +19,7 @@
       <a href="#top" class="logo"><span class="logo__mark"><i></i><i></i><i></i></span>Tidal<b>Networks</b></a>
       <nav class="nav" id="nav">
         <a href="#services">Services</a>
-        <a href="#build">How we build</a>
+        <!-- <a href="#build">How we build</a> -->
         <a href="#projects">Projects</a>
         <a href="#careers">Careers</a>
       </nav>
@@ -72,7 +72,7 @@
       </div>
     </section>
 
-    <!-- How we build: pinned street cross-section -->
+    <!-- How we build (disabled): pinned street cross-section
     <section class="build" id="build">
       <div class="build__pin">
         <div class="build__in">
@@ -90,37 +90,37 @@
               </defs>
               <rect width="1200" height="230" fill="url(#sky)" />
               <g class="stars"><circle cx="90" cy="50" r="1.5" /><circle cx="300" cy="90" r="1.2" /><circle cx="520" cy="40" r="1.5" /><circle cx="700" cy="80" r="1" /><circle cx="840" cy="30" r="1.4" /></g>
-              <!-- house -->
+              [house]
               <g class="house">
                 <path d="M930 230V130l90-60 90 60v100z" fill="#1c2f52" />
                 <path d="M915 135l105-72 105 72" fill="none" stroke="#2c4775" stroke-width="10" stroke-linejoin="round" />
                 <rect class="win" x="955" y="150" width="34" height="30" rx="3" /><rect class="win" x="1052" y="150" width="34" height="30" rx="3" />
                 <rect x="1004" y="182" width="32" height="48" rx="3" fill="#2c4775" />
               </g>
-              <!-- cabinet -->
+              [cabinet]
               <g class="cab"><rect x="180" y="168" width="54" height="62" rx="4" fill="#1f6b55" /><rect x="188" y="178" width="38" height="4" fill="#36a585" /></g>
-              <!-- road -->
+              [road]
               <rect y="230" width="1200" height="290" fill="url(#soil)" />
               <rect y="222" width="1200" height="22" fill="#2b3038" />
               <path d="M0 233h1200" stroke="#e8c547" stroke-width="2" stroke-dasharray="40 30" opacity=".5" />
               <g class="strata" opacity=".5"><path d="M0 300 C200 290 400 310 600 298 S1000 290 1200 302" stroke="#3a2f27" stroke-width="2" fill="none" /><path d="M0 410 C250 400 500 420 750 405 S1050 400 1200 412" stroke="#3a2f27" stroke-width="2" fill="none" /></g>
               <g class="stones" fill="#4a3d33"><circle cx="80" cy="270" r="5" /><circle cx="120" cy="450" r="7" /><circle cx="300" cy="480" r="4" /><circle cx="470" cy="455" r="6" /><circle cx="660" cy="490" r="5" /><circle cx="820" cy="470" r="7" /><circle cx="1100" cy="280" r="6" /><circle cx="1150" cy="460" r="4" /><circle cx="40" cy="380" r="4" /><circle cx="1080" cy="380" r="5" /></g>
               <g class="services"><rect x="0" y="440" width="1200" height="16" rx="8" fill="#2563eb" opacity=".75" /><text x="20" y="476" font-family="Chakra Petch" font-size="14" fill="#7ea6ff">Existing water main</text><rect x="0" y="492" width="1200" height="10" rx="5" fill="#eab308" opacity=".75" /><text x="1010" y="486" font-family="Chakra Petch" font-size="14" fill="#f5d36b">Gas line</text></g>
-              <!-- survey -->
+              [survey]
               <g class="survey"><path d="M150 226h880" stroke="#ff4fd8" stroke-width="3" stroke-dasharray="14 10" /><g transform="translate(560 140)"><path d="M0 82L-22 0M0 82L22 0M0 82L0 0" stroke="#cfd8e6" stroke-width="3" /><rect x="-16" y="-18" width="32" height="20" rx="3" fill="#ffd60a" /></g></g>
-              <!-- trench -->
+              [trench]
               <rect class="cut" x="150" y="244" width="880" height="150" fill="#3a2f27" />
               <g class="digger" id="digger"><rect x="-60" y="168" width="90" height="44" rx="6" fill="#ffb703" /><rect x="-40" y="140" width="40" height="32" rx="4" fill="#fb8500" /><circle cx="-40" cy="214" r="12" fill="#222" /><circle cx="15" cy="214" r="12" fill="#222" /><path d="M30 180l50-30 18 40" stroke="#fb8500" stroke-width="10" fill="none" stroke-linecap="round" /></g>
-              <!-- duct -->
+              [duct]
               <rect class="duct" x="160" y="340" width="860" height="28" rx="14" fill="#ff7a1a" />
-              <!-- fibre -->
+              [fibre]
               <path class="fibre" d="M170 354H1010" stroke="url(#glow)" stroke-width="6" stroke-linecap="round" />
               <path class="fibre fibre--pulse" d="M170 354H1010" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
-              <!-- backfill -->
+              [backfill]
               <rect class="fill" x="150" y="244" width="880" height="80" fill="#2a2420" />
-              <!-- splice + drop to house -->
+              [splice + drop to house]
               <g class="splice"><rect x="1000" y="320" width="56" height="66" rx="8" fill="#0ea5e9" /><path d="M1028 320V230" stroke="url(#glow)" stroke-width="5" /><path d="M207 230v124" stroke="url(#glow)" stroke-width="5" /></g>
-              <!-- labels -->
+              [labels]
               <g class="labels" font-family="Chakra Petch" font-size="20" fill="#cfd8e6">
                 <text x="160" y="430" class="lb lb2">Trench 600 mm</text>
                 <text x="420" y="430" class="lb lb3">50 mm duct</text>
@@ -133,6 +133,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- Projects -->
     <section class="section projects" id="projects">
@@ -276,7 +277,8 @@
       </article>`).join("");
 
     /* ---------- Build stages ---------- */
-    $("stageList").innerHTML = STAGES.map(([t], i) => `<li data-i="${i}"><span>0${i + 1}</span>${t}</li>`).join("");
+    const hasBuild = !!$("build");
+    if (hasBuild) $("stageList").innerHTML = STAGES.map(([t], i) => `<li data-i="${i}"><span>0${i + 1}</span>${t}</li>`).join("");
     let curStage = -1;
     function setStage(i) {
       if (i === curStage) return; curStage = i;
@@ -284,7 +286,7 @@
       $("stageTxt").innerHTML = `<p class="build__no grad">0${i + 1}</p><h3>${STAGES[i][0]}</h3><p>${STAGES[i][1]}</p>`;
       document.querySelectorAll("#stageList li").forEach((li, k) => { li.classList.toggle("on", k === i); li.classList.toggle("done", k < i); });
     }
-    setStage(0);
+    if (hasBuild) setStage(0);
 
     /* ---------- Projects ---------- */
     const CATS = ["All", ...new Set(PROJECTS.map((p) => p.cat))];
@@ -320,11 +322,14 @@
     let ticking = false;
     function onScroll() {
       ticking = false;
-      const vh = innerHeight, b = $("build"), r = b.getBoundingClientRect();
-      const p = clamp(-r.top / Math.max(1, b.offsetHeight - vh), 0, .999);
-      setStage(Math.floor(p * STAGES.length));
-      $("stageBar").style.width = (p * 100) + "%";
-      $("digger").style.transform = `translateX(${150 + clamp((p * STAGES.length - 1), 0, 1) * 880}px)`;
+      const vh = innerHeight;
+      if (hasBuild) {
+        const b = $("build"), r = b.getBoundingClientRect();
+        const p = clamp(-r.top / Math.max(1, b.offsetHeight - vh), 0, .999);
+        setStage(Math.floor(p * STAGES.length));
+        $("stageBar").style.width = (p * 100) + "%";
+        $("digger").style.transform = `translateX(${150 + clamp((p * STAGES.length - 1), 0, 1) * 880}px)`;
+      }
       $("header").classList.toggle("sticky", scrollY > 30);
       let cur = ""; document.querySelectorAll("main section[id]").forEach((s) => { if (s.getBoundingClientRect().top < vh * .4) cur = s.id; });
       document.querySelectorAll(".nav a").forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + cur));

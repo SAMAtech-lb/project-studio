@@ -85,29 +85,32 @@
       <div class="container build">
         <div class="build__stage">
           <div class="pie" id="pie">
-            <div class="pie__crust"></div>
-            <div class="pie__sauce" id="pieSauce"></div>
-            <div class="pie__cheese"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <img class="pie__base" id="pieBase" src="img/base-rossa.webp" alt="Your pizza on a Rossa base" width="960" height="960" loading="lazy" />
             <div class="pie__tops" id="pieTops"></div>
+            <div class="pie__halves" id="pieHalves" aria-hidden="true"></div>
           </div>
-          <div class="build__price"><span>Your pizza</span><b id="bPrice">$15</b></div>
         </div>
         <div class="build__panel">
           <p class="eyebrow">Build your own</p>
           <h2 class="h2">Make it <em>yours.</em></h2>
-          <p class="build__lead">Start from our 48-hour dough and add up to five toppings. Watch it come together, then send it to the oven.</p>
+          <p class="build__lead">Start from our 48-hour dough and add up to five toppings, on the whole pizza or just one half.</p>
           <div class="step">
-            <h4>1. Base</h4>
-            <div class="chips" id="bases"></div>
+            <h4>1. Choose a base</h4>
+            <div class="bases" id="bases"></div>
           </div>
           <div class="step">
-            <h4>2. Toppings <small id="topCount">0 / 5</small></h4>
-            <div class="chips chips--tops" id="tops"></div>
+            <h4>2. Add toppings <small id="topCount">0 of 5</small></h4>
+            <div class="tops" id="tops"></div>
+          </div>
+          <div class="step" id="sumStep" hidden>
+            <h4>3. Where should they go?</h4>
+            <ul class="picked" id="picked"></ul>
           </div>
           <div class="build__actions">
-            <button class="btn" id="bAdd">Add to order <i class="ri-add-line"></i></button>
-            <button class="btn btn--ghost" id="bReset"><i class="ri-refresh-line"></i> Start over</button>
+            <button class="btn" id="bAdd">Add to order · <span id="bPrice">$15</span></button>
+            <button class="btn btn--ghost" id="bReset">Start over</button>
           </div>
+          <p class="build__note">Every pizza is 12 in and bakes for 90 seconds at 485°C. Toppings shown are our real ingredients.</p>
         </div>
       </div>
     </section>
@@ -246,19 +249,20 @@
       { id: "nutella", cat: "Dolci", name: "Pizza Nutella", price: 14, img: "1601924582970-9238bcb495d9", desc: "Our dough, Nutella, hazelnuts, powdered sugar. Sharing size" },
     ];
     const BASES = [
-      { id: "rossa", name: "Rossa", price: 15, sauce: "#c8341b" },
-      { id: "bianca", name: "Bianca", price: 15, sauce: "#f3e2b8" },
-      { id: "pesto", name: "Pistachio pesto", price: 17, sauce: "#8aa13c" },
+      { id: "rossa", name: "Rossa", desc: "San Marzano tomato, fior di latte", price: 15 },
+      { id: "bianca", name: "Bianca", desc: "Fior di latte, olive oil, no tomato", price: 15 },
+      { id: "pesto", name: "Pesto", desc: "Basil pesto, fior di latte", price: 17 },
     ];
+    /* row = row in img/toppings.webp, v = pieces in that row, size = % of the pizza, n = pieces on a whole pizza */
     const TOPS = [
-      { id: "pep", name: "Soppressata", price: 3, n: 9 },
-      { id: "mush", name: "Mushrooms", price: 2, n: 8 },
-      { id: "olive", name: "Olives", price: 2, n: 12 },
-      { id: "basil", name: "Basil", price: 1, n: 7 },
-      { id: "tom", name: "Cherry tomatoes", price: 2, n: 8 },
-      { id: "onion", name: "Red onion", price: 1, n: 10 },
-      { id: "chili", name: "Calabrian chilli", price: 2, n: 10 },
-      { id: "nduja", name: "'Nduja", price: 3, n: 8 },
+      { id: "pep", name: "Soppressata", price: 3, row: 0, v: 7, size: 23, n: 9, z: 1.55 },
+      { id: "olive", name: "Black olives", price: 2, row: 1, v: 7, size: 15, n: 13, z: 1.9 },
+      { id: "tom", name: "Roma tomato", price: 2, row: 2, v: 4, size: 15.5, n: 6, z: 1 },
+      { id: "mush", name: "Mushrooms", price: 2, row: 3, v: 8, size: 22, n: 11, z: 2.1 },
+      { id: "basil", name: "Fresh basil", price: 1, row: 4, v: 7, size: 16, n: 6, z: 1 },
+      { id: "chili", name: "Calabrian chilli", price: 2, row: 5, v: 5, size: 11.5, n: 10, z: 1.3 },
+      { id: "onion", name: "Red onion", price: 1, row: 6, v: 4, size: 17, n: 10, z: 1.05 },
+      { id: "nduja", name: "'Nduja", price: 3, row: 7, v: 7, size: 15, n: 10, z: 1.6 },
     ];
     const REVIEWS = [
       ["The closest thing to Naples I've found in New York. The crust is soft and blistered and the Margherita is perfect.", "Giulia M.", "Google review"],
@@ -343,39 +347,65 @@
     renderMenu();
 
     /* =====================================================
-       Pizza builder (CSS/SVG pizza, toppings drop in)
+       Pizza builder (real photographed base and toppings)
        ===================================================== */
-    const B = { base: "rossa", tops: [] };
-    const svgTop = {
-      pep: () => `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#a8261a"/><circle cx="20" cy="20" r="18" fill="none" stroke="#7d1a10" stroke-width="2"/><circle cx="13" cy="15" r="2.6" fill="#e9b39a" opacity=".7"/><circle cx="25" cy="24" r="2" fill="#e9b39a" opacity=".6"/><circle cx="22" cy="12" r="1.6" fill="#e9b39a" opacity=".6"/></svg>`,
-      mush: () => `<svg viewBox="0 0 40 40"><path d="M6 20a14 12 0 0 1 28 0Z" fill="#c9a77c"/><path d="M6 20a14 12 0 0 1 28 0" fill="none" stroke="#8b6a45" stroke-width="2"/><rect x="16" y="20" width="8" height="12" rx="3" fill="#e8d6b5"/></svg>`,
-      olive: () => `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="11" fill="none" stroke="#2b2622" stroke-width="7"/></svg>`,
-      basil: () => `<svg viewBox="0 0 40 40"><path d="M6 30C8 12 26 4 34 6 32 20 22 34 6 30Z" fill="#2f7d32"/><path d="M8 29C16 22 24 14 33 7" stroke="#1d5a20" stroke-width="1.6" fill="none"/></svg>`,
-      tom: () => `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#e3412a"/><circle cx="20" cy="20" r="9" fill="#f26a50"/><circle cx="17" cy="18" r="1.5" fill="#f7d36b"/><circle cx="23" cy="21" r="1.5" fill="#f7d36b"/><circle cx="19" cy="24" r="1.5" fill="#f7d36b"/></svg>`,
-      onion: () => `<svg viewBox="0 0 40 40"><path d="M6 26C12 10 28 10 34 26" fill="none" stroke="#9b3b78" stroke-width="4" stroke-linecap="round"/><path d="M11 26C15 16 25 16 29 26" fill="none" stroke="#e6c3da" stroke-width="2" stroke-linecap="round"/></svg>`,
-      chili: () => `<svg viewBox="0 0 40 40"><ellipse cx="20" cy="20" rx="9" ry="4" fill="#d62d1d" transform="rotate(-30 20 20)"/></svg>`,
-      nduja: () => `<svg viewBox="0 0 40 40"><path d="M10 22c-2-8 8-14 14-10 8 0 10 10 4 14-6 6-16 4-18-4Z" fill="#b8361e"/><path d="M14 20c2-3 6-4 9-2" stroke="#e2714f" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    const B = { base: "rossa", tops: [], where: {}, spots: {} };
+    const LAYER = ["tom", "pep", "nduja", "mush", "onion", "olive", "chili", "basil"];
+    const WHERE = [["whole", "Whole"], ["left", "Left half"], ["right", "Right half"]];
+    const topById = (id) => TOPS.find((t) => t.id === id);
+    const hash = (s) => [...s].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+    const sprite = (t, k) => `background-position:${((k % t.v) / 7) * 100}% ${(t.row / 7) * 100}%`;
+    /* Spread pieces evenly and away from what is already on the pizza, like a pizzaiolo would */
+    const place = (id) => {
+      const t = topById(id), w = B.where[id];
+      let seed = hash(id + w);
+      const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+      const others = Object.entries(B.spots).filter(([k]) => k !== id).flatMap(([, v]) => v);
+      const mine = [], count = w === "whole" ? t.n : Math.ceil(t.n * .55);
+      for (let k = 0; k < count; k++) {
+        let best = null, bestScore = -1;
+        for (let c = 0; c < 36; c++) {
+          const a = rnd() * 6.2832, d = Math.sqrt(rnd()) * 33;
+          const x = 50 + Math.cos(a) * d, y = 50 + Math.sin(a) * d;
+          if (w === "left" && x > 47) continue;
+          if (w === "right" && x < 53) continue;
+          const near = (list, f) => list.reduce((m, p) => Math.min(m, Math.hypot(p.x - x, p.y - y) * f), 99);
+          const score = Math.min(near(mine, 1), near(others, 1.7));
+          if (score > bestScore) { bestScore = score; best = { x, y }; }
+        }
+        if (best) mine.push({ ...best, r: Math.round(rnd() * 360), s: .9 + rnd() * .2, k });
+      }
+      B.spots[id] = mine;
     };
-    // Deterministic scatter positions inside the sauce circle
-    // Sunflower spread (golden angle) so each topping covers the whole pizza evenly
-    const scatter = (seed, n) => { let s = seed * 9301 + 49297; const r = () => ((s = (s * 9301 + 49297) % 233280) / 233280); const off = r() * 6.28; return Array.from({ length: n }, (_, i) => { const a = i * 2.39996 + off, d = Math.sqrt((i + 0.5) / n) * 0.84 + (r() - 0.5) * 0.08; return { x: 50 + Math.cos(a) * d * 50, y: 50 + Math.sin(a) * d * 50, rot: r() * 360, sc: 0.8 + r() * 0.4 }; }); };
-    const price = () => BASES.find((b) => b.id === B.base).price + B.tops.reduce((s, t) => s + TOPS.find((x) => x.id === t).price, 0);
+    const price = () => BASES.find((b) => b.id === B.base).price + B.tops.reduce((s, id) => s + topById(id).price, 0);
     const renderBuilder = (dropped) => {
-      $("bases").innerHTML = BASES.map((b) => `<button class="${b.id === B.base ? "on" : ""}" data-b="${b.id}"><i style="background:${b.sauce}"></i>${b.name}<small>$${b.price}</small></button>`).join("");
-      $("tops").innerHTML = TOPS.map((t) => `<button class="${B.tops.includes(t.id) ? "on" : ""}" data-t="${t.id}" ${!B.tops.includes(t.id) && B.tops.length >= 5 ? "disabled" : ""}><span class="ico">${svgTop[t.id]()}</span>${t.name}<small>+$${t.price}</small></button>`).join("");
-      $("pieSauce").style.background = BASES.find((b) => b.id === B.base).sauce;
-      $("pieTops").innerHTML = B.tops.map((t, ti) => scatter(ti + t.length * 7, TOPS.find((x) => x.id === t).n).map((p, k) => `<span class="top ${t === dropped ? "drop" : ""}" style="left:${p.x}%;top:${p.y}%;--r:${p.rot}deg;--s:${p.sc};--d:${k * 0.04}s">${svgTop[t]()}</span>`).join("")).join("");
-      $("topCount").textContent = `${B.tops.length} / 5`;
+      $("bases").innerHTML = BASES.map((b) => `<button class="base ${b.id === B.base ? "on" : ""}" data-b="${b.id}" aria-pressed="${b.id === B.base}"><img src="img/base-${b.id}.webp" alt="" loading="lazy" /><span><b>${b.name}</b><small>${b.desc}</small></span><em>$${b.price}</em></button>`).join("");
+      $("tops").innerHTML = TOPS.map((t) => { const on = B.tops.includes(t.id); return `<button class="tp ${on ? "on" : ""}" data-t="${t.id}" aria-pressed="${on}" ${!on && B.tops.length >= 5 ? "disabled" : ""}><span class="tp__img" style="${sprite(t, 0)};transform:scale(${t.z})"></span><span class="tp__name">${t.name}</span><small>+$${t.price}</small></button>`; }).join("");
+      $("pieBase").src = `img/base-${B.base}.webp`;
+      $("pieTops").innerHTML = LAYER.filter((id) => B.tops.includes(id)).map((id) => { const t = topById(id); return B.spots[id].map((p, k) => `<span class="top ${id === dropped ? "drop" : ""}" style="left:${p.x}%;top:${p.y}%;width:${t.size}%;--r:${p.r}deg;--s:${p.s};--d:${k * .035}s;${sprite(t, p.k)}"></span>`).join(""); }).join("");
+      const halves = B.tops.some((id) => B.where[id] !== "whole");
+      $("pieHalves").classList.toggle("on", halves);
+      $("sumStep").hidden = !B.tops.length;
+      $("picked").innerHTML = B.tops.map((id) => `<li><span class="tp__img" style="${sprite(topById(id), 0)};transform:scale(${topById(id).z})"></span><b>${topById(id).name}</b><span class="seg" role="group" aria-label="Where to put ${topById(id).name}">${WHERE.map(([w, l]) => `<button class="${B.where[id] === w ? "on" : ""}" data-pt="${id}" data-w="${w}" aria-pressed="${B.where[id] === w}">${l}</button>`).join("")}</span><button class="picked__x" data-rm="${id}" aria-label="Remove ${topById(id).name}"><i class="ri-close-line"></i></button></li>`).join("");
+      $("topCount").textContent = `${B.tops.length} of 5`;
       $("bPrice").textContent = money(price());
     };
+    const dropTop = (id) => { B.tops = B.tops.filter((x) => x !== id); delete B.where[id]; delete B.spots[id]; renderBuilder(); };
     $("bases").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { B.base = b.dataset.b; renderBuilder(); } });
     $("tops").addEventListener("click", (e) => {
       const b = e.target.closest("button"); if (!b || b.disabled) return; const t = b.dataset.t;
-      if (B.tops.includes(t)) { B.tops = B.tops.filter((x) => x !== t); renderBuilder(); } else { B.tops.push(t); renderBuilder(t); }
+      if (B.tops.includes(t)) dropTop(t);
+      else { B.tops.push(t); B.where[t] = "whole"; place(t); renderBuilder(t); }
     });
-    $("bReset").addEventListener("click", () => { B.base = "rossa"; B.tops = []; renderBuilder(); });
+    $("picked").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (b.dataset.rm) { dropTop(b.dataset.rm); return; }
+      B.where[b.dataset.pt] = b.dataset.w; place(b.dataset.pt); renderBuilder(b.dataset.pt);
+    });
+    $("bReset").addEventListener("click", () => { B.base = "rossa"; B.tops = []; B.where = {}; B.spots = {}; renderBuilder(); });
     $("bAdd").addEventListener("click", () => {
-      const base = BASES.find((b) => b.id === B.base), note = [base.name, ...B.tops.map((t) => TOPS.find((x) => x.id === t).name)].join(" · ");
+      const base = BASES.find((b) => b.id === B.base);
+      const note = [base.name, ...B.tops.map((id) => topById(id).name + (B.where[id] === "whole" ? "" : ` (${B.where[id]} half)`))].join(" · ");
       addToCart({ id: "custom", name: "Your own pizza", price: price(), note });
       $("pie").classList.remove("bake"); void $("pie").offsetWidth; $("pie").classList.add("bake");
     });

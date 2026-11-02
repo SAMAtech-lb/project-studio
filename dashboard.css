@@ -711,3 +711,41 @@ kbd {
     transition-duration: 0.001s !important;
   }
 }
+
+/* ---------- SAMA portfolio ---------- */
+.pf-count { font-size: 1.05rem; }
+.pf-count b { font-weight: 700; }
+.pf-count b.over { color: var(--lime); }
+.pf-note { margin-top: 0.3rem; font-size: 0.82rem; line-height: 1.35; color: var(--dim); }
+.pf-save { width: 100%; margin-top: 0.7rem; justify-content: center; }
+.pf-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--line);
+}
+.pf-rank { font-size: 0.82rem; color: var(--dim); white-space: nowrap; }
+.pf-rank b { color: var(--text); font-weight: 700; }
+.pf-btn {
+  padding: 0.42rem 0.8rem;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.pf-btn:hover { background: var(--lime); border-color: var(--lime); color: #0f0f0e; }
+.pf-btn:active { transform: scale(0.96); }
+.pf-btn.is-on { background: transparent; border-color: var(--line); color: var(--dim); }
+.pf-btn.is-on:hover { background: transparent; border-color: #ff6b5e; color: #ff6b5e; }
+.pf-btn--bar { margin-right: 0.2rem; }
+@media (max-width: 760px) { .pf-btn--bar { font-size: 0.72rem; padding: 0.35rem 0.55rem; } }

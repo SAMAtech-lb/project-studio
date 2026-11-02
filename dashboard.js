@@ -33,7 +33,8 @@ function filtered() {
   const q = state.query.trim().toLowerCase();
   const list = TEMPLATES.filter((t) => {
     if (state.category !== "All" && t.category !== state.category) return false;
-    if (state.status !== "all" && t.status !== state.status) return false;
+    if (state.status === "sama") { if (!sama.includes(t.id)) return false; }
+    else if (state.status !== "all" && t.status !== state.status) return false;
     if (!q) return true;
     return [t.name, t.category, t.description, ...t.tags].join(" ").toLowerCase().includes(q);
   });
@@ -47,6 +48,70 @@ function filtered() {
   return list.sort((a, b) => (a.status === b.status ? sorters[state.sort](a, b) : a.status === "live" ? -1 : 1));
 }
 
+/* ---------- SAMA portfolio ---------- */
+let sama = samaPortfolio().filter((id) => TEMPLATES.some((t) => t.id === id));
+let samaSaved = JSON.stringify(SAMA_DEFAULT);
+const pfLabel = (id) => (sama.includes(id) ? "Remove from portfolio" : "Add to portfolio");
+const pfRank = (id) => (sama.includes(id) ? `<b>#${sama.indexOf(id) + 1}</b> on SAMA` : "Not on SAMA");
+const pfButton = (id) => `<div class="pf-row"><span class="pf-rank" data-pfrank="${id}">${pfRank(id)}</span><button class="pf-btn ${sama.includes(id) ? "is-on" : ""}" data-pf="${id}" aria-pressed="${sama.includes(id)}">${pfLabel(id)}</button></div>`;
+
+function syncPortfolio() {
+  $$("[data-pf]").forEach((b) => {
+    const on = sama.includes(b.dataset.pf);
+    b.textContent = pfLabel(b.dataset.pf);
+    b.classList.toggle("is-on", on);
+    b.setAttribute("aria-pressed", on);
+  });
+  $$("[data-pfrank]").forEach((el) => { el.innerHTML = pfRank(el.dataset.pfrank); });
+  const unsaved = JSON.stringify(sama) !== samaSaved;
+  $("#pfCount").textContent = sama.length;
+  $("#pfCount").classList.toggle("over", sama.length !== 30);
+  $("#pfSave").hidden = !unsaved;
+  $("#pfNote").textContent = unsaved
+    ? "Showing on SAMA in this browser. Save to publish it for visitors."
+    : "SAMA is up to date.";
+}
+
+function togglePortfolio(id) {
+  const t = TEMPLATES.find((x) => x.id === id);
+  if (!t) return;
+  const adding = !sama.includes(id);
+  sama = adding ? [...sama, id] : sama.filter((x) => x !== id);
+  samaRemember(sama);
+  syncPortfolio();
+  if (state.status === "sama") renderGrid();
+  if (adding && sama.length > 30) toast(`${t.name} added at #${sama.length}. That's over your top 30, so consider removing one.`);
+  else toast(`${t.name} ${adding ? `added to SAMA at #${sama.length}` : "removed from SAMA"}`);
+}
+
+function portfolioFile() {
+  return `/* Projects on the SAMA portfolio, best first. Forma's "Save to website" button rewrites this file. */\nconst SAMA_DEFAULT = [\n${sama.map((id) => `  "${id}",\n`).join("")}];\n`;
+}
+
+async function savePortfolio() {
+  const text = portfolioFile();
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await showSaveFilePicker({ suggestedName: "portfolio.js", types: [{ description: "JavaScript", accept: { "text/javascript": [".js"] } }] });
+      const file = await handle.createWritable();
+      await file.write(text);
+      await file.close();
+      samaSaved = JSON.stringify(sama);
+      syncPortfolio();
+      toast("Saved. Choose the portfolio.js in your studio folder, then publish it with the site.");
+      return;
+    } catch (e) {
+      if (e.name === "AbortError") return;
+    }
+  }
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(new Blob([text], { type: "text/javascript" }));
+  link.download = "portfolio.js";
+  link.click();
+  URL.revokeObjectURL(link.href);
+  toast("Downloaded portfolio.js. Replace the one in your studio folder with it.");
+}
+
 /* ---------- Cards ---------- */
 function cardHTML(t, i) {
   const live = t.status === "live";
@@ -54,7 +119,7 @@ function cardHTML(t, i) {
   const tags = t.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
 
   const thumb = live
-    ? `<iframe data-src="${t.path}" title="${t.name} thumbnail" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+    ? `<iframe data-src="${t.path}?nointro" title="${t.name} thumbnail" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
        <div class="thumb__overlay"><span>Preview →</span></div>`
     : `<div class="placeholder" style="background:${t.palette[0]};color:${t.palette[1]}">
          <div class="shape" style="background:${t.palette[2]}"></div>
@@ -73,6 +138,7 @@ function cardHTML(t, i) {
       <div class="dots">${dots}</div>
       <span class="mono">${t.category}</span>
       <div class="card__tags">${tags}</div>
+      ${live ? pfButton(t.id) : ""}
     </div>
   </article>`;
 }
@@ -140,6 +206,8 @@ function openViewer(id, push = true) {
   $("#iStack").textContent = t.stack;
   $("#iPalette").innerHTML = t.palette.map((c) => `<span style="background:${c}" data-hex="${c}"></span>`).join("");
   $("#iTags").innerHTML = t.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
+  $("#vPf").dataset.pf = t.id;
+  syncPortfolio();
   $("#iCta").href = `mailto:hello@forma.studio?subject=${encodeURIComponent(`I'm interested in the ${t.name} template`)}`;
 
   if (push) history.pushState(null, "", `#/preview/${t.id}`);
@@ -221,6 +289,8 @@ $("#viewToggle").addEventListener("click", (e) => {
 });
 
 $("#grid").addEventListener("click", (e) => {
+  const pf = e.target.closest("[data-pf]");
+  if (pf) { togglePortfolio(pf.dataset.pf); return; }
   const card = e.target.closest(".card");
   if (!card) return;
   if (card.dataset.id) openViewer(card.dataset.id);
@@ -228,6 +298,7 @@ $("#grid").addEventListener("click", (e) => {
 });
 
 $("#grid").addEventListener("keydown", (e) => {
+  if (e.target.closest("[data-pf]")) return;
   const card = e.target.closest(".card--live");
   if (card && (e.key === "Enter" || e.key === " ")) {
     e.preventDefault();
@@ -235,6 +306,8 @@ $("#grid").addEventListener("keydown", (e) => {
   }
 });
 
+$("#vPf").addEventListener("click", (e) => togglePortfolio(e.currentTarget.dataset.pf));
+$("#pfSave").addEventListener("click", savePortfolio);
 $("#menuBtn").addEventListener("click", () => $("#side").classList.toggle("open"));
 $("#closeViewer").addEventListener("click", () => closeViewer());
 $("#prevBtn").addEventListener("click", () => step(-1));
@@ -272,5 +345,6 @@ $("#countLive").textContent = LIVE.length;
 $$("#viewToggle button").forEach((b) => b.classList.toggle("on", b.dataset.view === state.view));
 renderCategories();
 renderGrid();
+syncPortfolio();
 setDevice("desktop");
 route();

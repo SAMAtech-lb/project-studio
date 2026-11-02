@@ -258,6 +258,8 @@
   </div>
 
   <script src="../templates.js"></script>
+  <script src="../portfolio.js"></script>
+  <script src="../portfolio-store.js"></script>
   <script>
     /* ===== Edit your company details here ===== */
     const SAMA = {
@@ -272,7 +274,10 @@
     const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const PREVIEW_W = 1440;
-    const projects = (typeof TEMPLATES !== "undefined" ? TEMPLATES : []).filter((t) => t.status === "live").sort((a, b) => (b.added || "").localeCompare(a.added || ""));
+    /* The list lives in ../portfolio.js and is managed from Forma Studio */
+    const FEATURED = samaPortfolio();
+    const ALL = typeof TEMPLATES !== "undefined" ? TEMPLATES : [];
+    const projects = FEATURED.map((id) => ALL.find((t) => t.id === id && t.status === "live")).filter(Boolean);
     const cats = [...new Set(projects.map((p) => p.category))];
 
     document.body.classList.add("is-night");
@@ -316,7 +321,7 @@
       if (reset) { $("workGrid").innerHTML = ""; rendered = 0; }
       const html = list.slice(rendered, shown).map((p, k) => { const i = rendered + k; return `
         <article class="proj ${i % 9 === 0 ? "proj--wide" : ""}" data-id="${p.id}" tabindex="0" role="button" aria-label="Preview ${p.name}" style="--d:${(i % 9) * .05}s">
-          <div class="proj__thumb"><iframe data-src="../${p.path}" title="${p.name} thumbnail" tabindex="-1" aria-hidden="true"></iframe><span class="proj__view"><i class="ri-eye-line"></i> Live preview</span></div>
+          <div class="proj__thumb"><iframe data-src="../${p.path}?nointro" title="${p.name} thumbnail" tabindex="-1" aria-hidden="true"></iframe><span class="proj__view"><i class="ri-eye-line"></i> Live preview</span></div>
           <div class="proj__meta">
             <div><h3>${p.name}</h3><small>${p.category} · ${p.tags.slice(0, 2).join(" · ")}</small></div>
             <div class="proj__pal">${p.palette.slice(0, 4).map((c) => `<i style="background:${c}"></i>`).join("")}</div>

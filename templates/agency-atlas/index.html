@@ -196,7 +196,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div><a href="#top" class="logo"><span class="logo__mark"></span>Atlas Labs</a><p>Global software development company. Web, mobile, AI and cloud — designed and built around the clock.</p><div class="socials"><a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="#" aria-label="Dribbble"><i class="ri-dribbble-line"></i></a><a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="#" aria-label="X"><i class="ri-twitter-x-line"></i></a></div></div>
+        <div><a href="#top" class="logo"><span class="logo__mark"></span>Atlas Labs</a><p>Global software development company. Web, mobile, AI and cloud — designed and built around the clock.</p><div class="socials"><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://dribbble.com/" target="_blank" rel="noopener" aria-label="Dribbble"><i class="ri-dribbble-line"></i></a><a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i class="ri-twitter-x-line"></i></a></div></div>
         <div><h4>Services</h4><ul><li><a href="#services">Web platforms</a></li><li><a href="#services">Mobile apps</a></li><li><a href="#services">AI &amp; data</a></li><li><a href="#services">Cloud &amp; DevOps</a></li></ul></div>
         <div><h4>Company</h4><ul><li><a href="#work">Our work</a></li><li><a href="#team">Our team</a></li><li><a href="#team">Careers · 14 open roles</a></li><li><a href="#contact">Contact</a></li></ul></div>
         <div><h4>Offices</h4><div class="foffices" id="foffices"></div></div>
@@ -341,7 +341,7 @@
 
     /* ---------- Team ---------- */
     const memberHTML = (m) => `<div class="member reveal in"><img src="${U(m.img, m.lead ? 700 : 500)}" alt="${m.n}" loading="lazy" /><span class="member__loc"><i class="ri-map-pin-2-fill"></i>${m.city}</span>
-      <div class="member__info"><b>${m.n}</b><small>${m.r}</small>${m.bio ? `<p class="member__bio">${m.bio}</p>` : ""}<div class="member__soc"><a href="#" aria-label="${m.n} on LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="#" aria-label="${m.n} on X"><i class="ri-twitter-x-line"></i></a>${m.d === "design" ? `<a href="#" aria-label="Dribbble"><i class="ri-dribbble-line"></i></a>` : `<a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>`}</div></div></div>`;
+      <div class="member__info"><b>${m.n}</b><small>${m.r}</small>${m.bio ? `<p class="member__bio">${m.bio}</p>` : ""}</div></div>`;
     $("leaders").innerHTML = TEAM.filter((m) => m.lead).map(memberHTML).join("");
     const deps = [["all", "All"], ["engineering", "Engineering"], ["design", "Design"], ["product", "Product"]];
     $("team-filters").innerHTML = deps.map(([k, n], i) => `<button class="${i ? "" : "active"}" data-d="${k}">${n}<span>${k === "all" ? TEAM.filter((m) => !m.lead).length : TEAM.filter((m) => m.d === k).length}</span></button>`).join("");
