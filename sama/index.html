@@ -60,11 +60,11 @@
 
         <div class="show reveal" style="--d:.35s" aria-label="Recent SAMA projects">
           <div class="show__browser">
-            <div class="show__bar"><i></i><i></i><i></i><span id="showUrl">havenly.com</span></div>
+            <div class="show__bar"><i></i><i></i><i></i><span id="showUrl">atlaslabs.com</span></div>
             <div class="show__screen" id="showDesk"></div>
           </div>
           <div class="show__phone"><div class="show__notch"></div><div class="show__pscreen" id="showMob"></div></div>
-          <div class="show__caption"><span id="showCat">Real estate</span><b id="showName">Havenly</b><div class="show__dots" id="showDots"></div></div>
+          <div class="show__caption"><span id="showCat">Software company</span><b id="showName">Atlas Labs</b><div class="show__dots" id="showDots"></div></div>
         </div>
       </div>
     </section>
@@ -425,7 +425,7 @@
     if (!reduced) { let px = 0, py = 0, qx = 0, qy = 0; addEventListener("pointermove", (e) => { qx = e.clientX / innerWidth - .5; qy = e.clientY / innerHeight - .5; }); (function d() { px += (qx - px) * .04; py += (qy - py) * .04; photo.style.transform = `scale(1.08) translate(${px * -18}px, ${py * -12}px)`; requestAnimationFrame(d); })(); }
 
     /* Hero showcase: cycles through real projects */
-    const SHOW = [["realestate-havenly", "Havenly", "Real estate", "havenly.com"], ["clinic-stride", "Stride Physio", "Booking system", "stridephysio.co.uk"], ["landing-portline", "Portline Logistics", "Logistics platform", "portlinelogistics.com"], ["shop-brightbyte", "Brightbyte", "E-commerce", "brightbyte.store"], ["restaurant-wokstreet", "Wok Street", "Online ordering", "wokstreet.com"]];
+    const SHOW = [["agency-atlas", "Atlas Labs", "Software company", "atlaslabs.com"], ["shop-norde", "Norde", "Fashion store", "nordestore.com"], ["realestate-havenly", "Havenly", "Real estate", "havenly.com"], ["portfolio-rami", "Rami Aziz", "Developer portfolio", "ramiaziz.dev"], ["landing-portline", "Portline Logistics", "Logistics platform", "portlinelogistics.com"]];
     $("showDesk").innerHTML = SHOW.map(([f, n], i) => `<img class="${i ? "" : "on"}" src="img/${f}.jpg" alt="${n} website" />`).join("");
     $("showMob").innerHTML = SHOW.map(([f, n], i) => `<img class="${i ? "" : "on"}" src="img/m-${f}.jpg" alt="${n} mobile site" />`).join("");
     $("showDots").innerHTML = SHOW.map((_, i) => `<button class="${i ? "" : "on"}" aria-label="Show project ${i + 1}"></button>`).join("");

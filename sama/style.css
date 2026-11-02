@@ -334,7 +334,6 @@ a.cline:hover i { background: var(--sky-grad); color: #fff; }
 .hero__proof li { padding: 0 30px; border-left: 1px solid var(--line); }
 .hero__proof li:first-child { padding-left: 0; border-left: 0; }
 .hero__proof b { display: block; font: 700 2rem var(--font); letter-spacing: -.03em; }
-.hero__proof li:first-child b::after { content: "+"; }
 .hero__proof span { font-size: .85rem; color: var(--muted); }
 
 .show { position: relative; padding: 10px 40px 70px 0; }
